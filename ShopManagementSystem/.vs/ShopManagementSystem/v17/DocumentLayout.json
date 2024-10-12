@@ -1,0 +1,110 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2A49FECD-18CE-4A32-B5CA-6F6B504ABC67}|PresentationLayer\\PresentationLayer.csproj|c:\\users\\ivanb\\onedrive\\escritorio\\shopmanager-main\\shopmanager-main\\shopmanagementsystem\\presentationlayer\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2A49FECD-18CE-4A32-B5CA-6F6B504ABC67}|PresentationLayer\\PresentationLayer.csproj|solutionrelative:presentationlayer\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A49FECD-18CE-4A32-B5CA-6F6B504ABC67}|PresentationLayer\\PresentationLayer.csproj|c:\\users\\ivanb\\onedrive\\escritorio\\shopmanager-main\\shopmanager-main\\shopmanagementsystem\\presentationlayer\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A49FECD-18CE-4A32-B5CA-6F6B504ABC67}|PresentationLayer\\PresentationLayer.csproj|solutionrelative:presentationlayer\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A49FECD-18CE-4A32-B5CA-6F6B504ABC67}|PresentationLayer\\PresentationLayer.csproj|c:\\users\\ivanb\\onedrive\\escritorio\\shopmanager-main\\shopmanager-main\\shopmanagementsystem\\presentationlayer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A49FECD-18CE-4A32-B5CA-6F6B504ABC67}|PresentationLayer\\PresentationLayer.csproj|solutionrelative:presentationlayer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A49FECD-18CE-4A32-B5CA-6F6B504ABC67}|PresentationLayer\\PresentationLayer.csproj|c:\\users\\ivanb\\onedrive\\escritorio\\shopmanager-main\\shopmanager-main\\shopmanagementsystem\\presentationlayer\\forms\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2A49FECD-18CE-4A32-B5CA-6F6B504ABC67}|PresentationLayer\\PresentationLayer.csproj|solutionrelative:presentationlayer\\forms\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A49FECD-18CE-4A32-B5CA-6F6B504ABC67}|PresentationLayer\\PresentationLayer.csproj|c:\\users\\ivanb\\onedrive\\escritorio\\shopmanager-main\\shopmanager-main\\shopmanagementsystem\\presentationlayer\\presentationlayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2A49FECD-18CE-4A32-B5CA-6F6B504ABC67}|PresentationLayer\\PresentationLayer.csproj|solutionrelative:presentationlayer\\presentationlayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "PresentationLayer\\Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\Forms\\LoginForm.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "PresentationLayer\\Forms\\LoginForm.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T05:52:09.554Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\Program.cs",
+              "RelativeDocumentMoniker": "PresentationLayer\\Program.cs",
+              "ToolTip": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\Program.cs",
+              "RelativeToolTip": "PresentationLayer\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T05:51:06.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dashboard.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\Forms\\Dashboard.cs",
+              "RelativeDocumentMoniker": "PresentationLayer\\Forms\\Dashboard.cs",
+              "ToolTip": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\Forms\\Dashboard.cs [Dise\u00F1o]",
+              "RelativeToolTip": "PresentationLayer\\Forms\\Dashboard.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T23:41:40.697Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "PresentationLayer\\Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\Forms\\LoginForm.cs*",
+              "RelativeToolTip": "PresentationLayer\\Forms\\LoginForm.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T22:47:03.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PresentationLayer.csproj",
+              "DocumentMoniker": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\PresentationLayer.csproj",
+              "RelativeDocumentMoniker": "PresentationLayer\\PresentationLayer.csproj",
+              "ToolTip": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\PresentationLayer.csproj",
+              "RelativeToolTip": "PresentationLayer\\PresentationLayer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-11T22:21:59.729Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
