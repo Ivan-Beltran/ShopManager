@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MINEDUCYT\\Desktop\\ShopManager\\ShopManager\\ShopManagementSystem\\PresentationLayer\\PresentationLayer.csproj": {}
+    "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\PresentationLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MINEDUCYT\\Desktop\\ShopManager\\ShopManager\\ShopManagementSystem\\PresentationLayer\\PresentationLayer.csproj": {
+    "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\PresentationLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MINEDUCYT\\Desktop\\ShopManager\\ShopManager\\ShopManagementSystem\\PresentationLayer\\PresentationLayer.csproj",
+        "projectUniqueName": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\PresentationLayer.csproj",
         "projectName": "PresentationLayer",
-        "projectPath": "C:\\Users\\MINEDUCYT\\Desktop\\ShopManager\\ShopManager\\ShopManagementSystem\\PresentationLayer\\PresentationLayer.csproj",
-        "packagesPath": "C:\\Users\\MINEDUCYT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MINEDUCYT\\Desktop\\ShopManager\\ShopManager\\ShopManagementSystem\\PresentationLayer\\obj\\",
+        "projectPath": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\PresentationLayer.csproj",
+        "packagesPath": "C:\\Users\\ivanb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MINEDUCYT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ivanb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +44,12 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "FontAwesome.Sharp": {
+              "target": "Package",
+              "version": "[6.6.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

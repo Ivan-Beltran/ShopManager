@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ztVwRFvhn8I=",
+  "dgSpecHash": "p4W4ebrFixg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\MINEDUCYT\\Desktop\\ShopManager\\ShopManager\\ShopManagementSystem\\PresentationLayer\\PresentationLayer.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\ivanb\\OneDrive\\Escritorio\\ShopManager-main\\ShopManager-main\\ShopManagementSystem\\PresentationLayer\\PresentationLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ivanb\\.nuget\\packages\\fontawesome.sharp\\6.6.0\\fontawesome.sharp.6.6.0.nupkg.sha512"
+  ],
   "logs": []
 }
