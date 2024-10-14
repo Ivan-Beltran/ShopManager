@@ -30,7 +30,7 @@ namespace PresentationLayer.Forms
             };
             if (_employeeServices.FindEmployee(employees))
             {
-                MessageBox.Show("bienvenido");
+                
                 Dashboard dashboard = new Dashboard();
                 dashboard.Show();
                 this.Hide();
