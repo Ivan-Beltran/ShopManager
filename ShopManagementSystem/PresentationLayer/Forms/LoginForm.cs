@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer.Services;
 using CommonLayer.Entities;
+using FluentValidation.Results;
+using PresentationLayer.Validations;
 
 namespace PresentationLayer.Forms
 {
@@ -21,16 +23,25 @@ namespace PresentationLayer.Forms
             _employeeServices = new EmployeesServices();
         }
 
+
         private void LoginButton_Click(object sender, EventArgs e)
         {
             Employees employees = new Employees()
             {
-                User=UserTextBox.Text,
-                Password=PasswordTextBox.Text,
+                User = UserTextBox.Text,
+                Password = PasswordTextBox.Text,
             };
-            if (_employeeServices.FindEmployee(employees))
+            LoginValidators loginValidator = new LoginValidators();
+            ValidationResult result = loginValidator.Validate(employees);
+
+            if (!result.IsValid)
             {
-                
+                DisplayValidationErrors(result);
+
+            }
+            else if (_employeeServices.FindEmployee(employees))
+            {
+
                 Dashboard dashboard = new Dashboard();
                 dashboard.Show();
                 this.Hide();
@@ -38,7 +49,24 @@ namespace PresentationLayer.Forms
             else
             {
                 MessageBox.Show("usuario o contraseña incorrectos");
-            } 
+            }
+        }
+            private void DisplayValidationErrors(ValidationResult result)
+            {
+            validationsErrorProvider.Clear();
+
+                foreach (var error in result.Errors)
+                {
+                    switch (error.PropertyName)
+                    {
+                        case nameof(Employees.User):
+                            validationsErrorProvider.SetError(UserTextBox, error.ErrorMessage);
+                            break;
+                        case nameof(Employees.Password):
+                            validationsErrorProvider.SetError(PasswordTextBox, error.ErrorMessage);
+                            break;
+                    }
+                }
+            }
         }
     }
-}
