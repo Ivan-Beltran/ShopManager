@@ -30,11 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             sidebarPanel = new Panel();
-            logoPictureBox = new PictureBox();
-            inicioIconButton = new FontAwesome.Sharp.IconButton();
-            personalIconButton = new FontAwesome.Sharp.IconButton();
-            ventasIconButton = new FontAwesome.Sharp.IconButton();
             inventarioIconButton = new FontAwesome.Sharp.IconButton();
+            ventasIconButton = new FontAwesome.Sharp.IconButton();
+            personalIconButton = new FontAwesome.Sharp.IconButton();
+            inicioIconButton = new FontAwesome.Sharp.IconButton();
+            logoPictureBox = new PictureBox();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
             sidebarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             SuspendLayout();
@@ -49,78 +53,10 @@
             sidebarPanel.Controls.Add(logoPictureBox);
             sidebarPanel.Dock = DockStyle.Left;
             sidebarPanel.Location = new Point(0, 0);
+            sidebarPanel.Margin = new Padding(2, 2, 2, 2);
             sidebarPanel.Name = "sidebarPanel";
-            sidebarPanel.Size = new Size(232, 676);
+            sidebarPanel.Size = new Size(186, 541);
             sidebarPanel.TabIndex = 0;
-            // 
-            // logoPictureBox
-            // 
-            logoPictureBox.BackColor = Color.Transparent;
-            logoPictureBox.BackgroundImage = (Image)resources.GetObject("logoPictureBox.BackgroundImage");
-            logoPictureBox.BackgroundImageLayout = ImageLayout.Zoom;
-            logoPictureBox.Location = new Point(0, -33);
-            logoPictureBox.Margin = new Padding(4);
-            logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(245, 189);
-            logoPictureBox.TabIndex = 1;
-            logoPictureBox.TabStop = false;
-            // 
-            // inicioIconButton
-            // 
-            inicioIconButton.BackColor = Color.Black;
-            inicioIconButton.FlatAppearance.BorderSize = 0;
-            inicioIconButton.FlatStyle = FlatStyle.Flat;
-            inicioIconButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            inicioIconButton.ForeColor = SystemColors.ButtonHighlight;
-            inicioIconButton.IconChar = FontAwesome.Sharp.IconChar.HomeUser;
-            inicioIconButton.IconColor = Color.White;
-            inicioIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            inicioIconButton.IconSize = 32;
-            inicioIconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            inicioIconButton.Location = new Point(0, 129);
-            inicioIconButton.Name = "inicioIconButton";
-            inicioIconButton.Size = new Size(232, 56);
-            inicioIconButton.TabIndex = 1;
-            inicioIconButton.Text = "Inicio";
-            inicioIconButton.UseVisualStyleBackColor = false;
-            // 
-            // personalIconButton
-            // 
-            personalIconButton.BackColor = Color.Transparent;
-            personalIconButton.FlatAppearance.BorderSize = 0;
-            personalIconButton.FlatStyle = FlatStyle.Flat;
-            personalIconButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            personalIconButton.ForeColor = SystemColors.ActiveCaptionText;
-            personalIconButton.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            personalIconButton.IconColor = Color.Black;
-            personalIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            personalIconButton.IconSize = 32;
-            personalIconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            personalIconButton.Location = new Point(0, 233);
-            personalIconButton.Name = "personalIconButton";
-            personalIconButton.Size = new Size(232, 56);
-            personalIconButton.TabIndex = 2;
-            personalIconButton.Text = "Personal";
-            personalIconButton.UseVisualStyleBackColor = false;
-            // 
-            // ventasIconButton
-            // 
-            ventasIconButton.BackColor = Color.Transparent;
-            ventasIconButton.FlatAppearance.BorderSize = 0;
-            ventasIconButton.FlatStyle = FlatStyle.Flat;
-            ventasIconButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ventasIconButton.ForeColor = SystemColors.ActiveCaptionText;
-            ventasIconButton.IconChar = FontAwesome.Sharp.IconChar.MoneyBillTrendUp;
-            ventasIconButton.IconColor = Color.Black;
-            ventasIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ventasIconButton.IconSize = 32;
-            ventasIconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            ventasIconButton.Location = new Point(0, 182);
-            ventasIconButton.Name = "ventasIconButton";
-            ventasIconButton.Size = new Size(232, 56);
-            ventasIconButton.TabIndex = 3;
-            ventasIconButton.Text = "Ventas";
-            ventasIconButton.UseVisualStyleBackColor = false;
             // 
             // inventarioIconButton
             // 
@@ -134,25 +70,131 @@
             inventarioIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             inventarioIconButton.IconSize = 32;
             inventarioIconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            inventarioIconButton.Location = new Point(0, 286);
+            inventarioIconButton.Location = new Point(0, 229);
+            inventarioIconButton.Margin = new Padding(2, 2, 2, 2);
             inventarioIconButton.Name = "inventarioIconButton";
-            inventarioIconButton.Size = new Size(232, 56);
+            inventarioIconButton.Size = new Size(186, 45);
             inventarioIconButton.TabIndex = 4;
             inventarioIconButton.Text = "Inventario";
             inventarioIconButton.UseVisualStyleBackColor = false;
             // 
+            // ventasIconButton
+            // 
+            ventasIconButton.BackColor = Color.Transparent;
+            ventasIconButton.FlatAppearance.BorderSize = 0;
+            ventasIconButton.FlatStyle = FlatStyle.Flat;
+            ventasIconButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ventasIconButton.ForeColor = SystemColors.ActiveCaptionText;
+            ventasIconButton.IconChar = FontAwesome.Sharp.IconChar.MoneyBillTrendUp;
+            ventasIconButton.IconColor = Color.Black;
+            ventasIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ventasIconButton.IconSize = 32;
+            ventasIconButton.ImageAlign = ContentAlignment.MiddleLeft;
+            ventasIconButton.Location = new Point(0, 146);
+            ventasIconButton.Margin = new Padding(2, 2, 2, 2);
+            ventasIconButton.Name = "ventasIconButton";
+            ventasIconButton.Size = new Size(186, 45);
+            ventasIconButton.TabIndex = 3;
+            ventasIconButton.Text = "Ventas";
+            ventasIconButton.UseVisualStyleBackColor = false;
+            // 
+            // personalIconButton
+            // 
+            personalIconButton.BackColor = Color.Transparent;
+            personalIconButton.FlatAppearance.BorderSize = 0;
+            personalIconButton.FlatStyle = FlatStyle.Flat;
+            personalIconButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            personalIconButton.ForeColor = SystemColors.ActiveCaptionText;
+            personalIconButton.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            personalIconButton.IconColor = Color.Black;
+            personalIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            personalIconButton.IconSize = 32;
+            personalIconButton.ImageAlign = ContentAlignment.MiddleLeft;
+            personalIconButton.Location = new Point(0, 186);
+            personalIconButton.Margin = new Padding(2, 2, 2, 2);
+            personalIconButton.Name = "personalIconButton";
+            personalIconButton.Size = new Size(186, 45);
+            personalIconButton.TabIndex = 2;
+            personalIconButton.Text = "Personal";
+            personalIconButton.UseVisualStyleBackColor = false;
+            // 
+            // inicioIconButton
+            // 
+            inicioIconButton.BackColor = Color.Black;
+            inicioIconButton.FlatAppearance.BorderSize = 0;
+            inicioIconButton.FlatStyle = FlatStyle.Flat;
+            inicioIconButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            inicioIconButton.ForeColor = SystemColors.ButtonHighlight;
+            inicioIconButton.IconChar = FontAwesome.Sharp.IconChar.HomeUser;
+            inicioIconButton.IconColor = Color.White;
+            inicioIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            inicioIconButton.IconSize = 32;
+            inicioIconButton.ImageAlign = ContentAlignment.MiddleLeft;
+            inicioIconButton.Location = new Point(0, 103);
+            inicioIconButton.Margin = new Padding(2, 2, 2, 2);
+            inicioIconButton.Name = "inicioIconButton";
+            inicioIconButton.Size = new Size(186, 45);
+            inicioIconButton.TabIndex = 1;
+            inicioIconButton.Text = "Inicio";
+            inicioIconButton.UseVisualStyleBackColor = false;
+            // 
+            // logoPictureBox
+            // 
+            logoPictureBox.BackColor = Color.Transparent;
+            logoPictureBox.BackgroundImage = (Image)resources.GetObject("logoPictureBox.BackgroundImage");
+            logoPictureBox.BackgroundImageLayout = ImageLayout.Zoom;
+            logoPictureBox.Location = new Point(0, -26);
+            logoPictureBox.Name = "logoPictureBox";
+            logoPictureBox.Size = new Size(196, 151);
+            logoPictureBox.TabIndex = 1;
+            logoPictureBox.TabStop = false;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(486, 98);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(125, 27);
+            textBox1.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(486, 146);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(125, 27);
+            textBox2.TabIndex = 2;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(486, 204);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(125, 27);
+            textBox3.TabIndex = 3;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(486, 260);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(125, 27);
+            textBox4.TabIndex = 4;
+            // 
             // Dashboard
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1676, 676);
+            ClientSize = new Size(1341, 541);
+            Controls.Add(textBox4);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(sidebarPanel);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Dashboard";
             Text = "Dashboard";
             sidebarPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -163,5 +205,9 @@
         private FontAwesome.Sharp.IconButton inventarioIconButton;
         private FontAwesome.Sharp.IconButton ventasIconButton;
         private FontAwesome.Sharp.IconButton personalIconButton;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private TextBox textBox4;
     }
 }
