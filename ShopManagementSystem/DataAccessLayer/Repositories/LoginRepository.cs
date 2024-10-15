@@ -19,7 +19,7 @@ namespace DataAccessLayer.Repositories
         }
         
         //metoedo para crear un objeto con los atributos del empleado
-        public EmployeeSesion GetEmployeSesion(EmployeesInput employees)
+        public EmployeeSesion GetSesion(EmployeesInput employees)
         {
             EmployeeSesion employeeSesion= null;
 

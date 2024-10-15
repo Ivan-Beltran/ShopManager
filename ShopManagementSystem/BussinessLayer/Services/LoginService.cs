@@ -19,9 +19,9 @@ namespace BussinessLayer.Services
 
         
 
-        public EmployeeSesion GetEmployeeSesion(EmployeesInput employees)
+        public EmployeeSesion GetSesion(EmployeesInput employees)
         {
-            return _loginRepository.GetEmployeSesion(employees);
+            return _loginRepository.GetSesion(employees);
         }
 
        

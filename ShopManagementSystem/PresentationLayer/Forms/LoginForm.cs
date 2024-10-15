@@ -43,7 +43,7 @@ namespace PresentationLayer.Forms
             {
                 try
                 {
-                    EmployeeSesion employeeSesion = _loginServices.GetEmployeeSesion(employeesInput);
+                    EmployeeSesion employeeSesion = _loginServices.GetSesion(employeesInput);
 
                     if (employeeSesion != null)
                     {
