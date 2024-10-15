@@ -20,19 +20,9 @@ namespace PresentationLayer.Forms
         {
             InitializeComponent();
             _employeeSesion = employeeSesion;
-            loadData();
+            
         }
 
-        public void loadData()
-        {
-            textBox1.Text=_employeeSesion.EmployeeNames;
-            textBox2.Text = _employeeSesion.EmployeeUser;
-            textBox3.Text = _employeeSesion.EmployeeDUI;
-            if (_employeeSesion.EmployeeRoleId == 1)
-            {
-                textBox4.Text = "gerente";
-            }
-
-        }
+        
     }
 }

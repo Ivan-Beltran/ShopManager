@@ -17,36 +17,9 @@ namespace DataAccessLayer.Repositories
         {
             _dbconnect = new SqlConnect();
         }
-        // metodo para consultar si el usuario existe en la DB
-        public bool FindEmployee(Employees employees)
-        {
-            bool foundEmployee = false;
-
-                using (var connection = _dbconnect.GetConnection())
-                {
-                    string query = @"select * FROM Employees
-                                WHERE UserEmployee=@UserEmployee
-                                AND   PasswordEmployee=@PasswordEmployee";
-
-                    using (var command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@UserEmployee", employees.User);
-                        command.Parameters.AddWithValue("@PasswordEmployee", employees.Password);
-                        connection.Open();
-                        using (var reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                foundEmployee = true;
-                            }
-                        }
-                    }
-                }
-            
-            return foundEmployee;
-        }
+        
         //metoedo para crear un objeto con los atributos del empleado
-        public EmployeeSesion GetEmployeSesion(Employees employees)
+        public EmployeeSesion GetEmployeSesion(EmployeesInput employees)
         {
             EmployeeSesion employeeSesion= null;
 
@@ -71,7 +44,7 @@ namespace DataAccessLayer.Repositories
                 {
                     command.Parameters.AddWithValue("@UserEmployee",employees.User);
                     command.Parameters.AddWithValue("@PasswordEmployee",employees.Password);
-
+                    command.CommandTimeout = 10;
                     connection.Open();
 
                     using (var reader = command.ExecuteReader())

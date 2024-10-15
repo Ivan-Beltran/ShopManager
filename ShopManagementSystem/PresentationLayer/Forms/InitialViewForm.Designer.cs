@@ -49,7 +49,7 @@
             // 
             // iniciarSesionButton
             // 
-            iniciarSesionButton.BackColor = Color.FromArgb(242, 172, 41);
+            iniciarSesionButton.BackColor = Color.White;
             iniciarSesionButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
             iniciarSesionButton.ForeColor = Color.Black;
             iniciarSesionButton.Location = new Point(644, 436);
@@ -63,8 +63,9 @@
             // 
             // registarseButton
             // 
-            registarseButton.BackColor = Color.FromArgb(255, 235, 174);
+            registarseButton.BackColor = Color.Bisque;
             registarseButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
+            registarseButton.ForeColor = SystemColors.ActiveCaptionText;
             registarseButton.Location = new Point(920, 436);
             registarseButton.Margin = new Padding(2);
             registarseButton.Name = "registarseButton";
@@ -78,7 +79,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            BackColor = SystemColors.ControlLightLight;
+            BackColor = Color.White;
             ClientSize = new Size(1341, 541);
             Controls.Add(registarseButton);
             Controls.Add(iniciarSesionButton);

@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace PresentationLayer.Validations
 {
-    public class LoginValidators : AbstractValidator<Employees>
+    public class LoginValidators : AbstractValidator<EmployeesInput>
     {
         public LoginValidators()
         {
             RuleLevelCascadeMode = CascadeMode.Stop;
 
-            RuleFor(employees => employees.User)
+            RuleFor(employeesInput => employeesInput.User)
                 .NotEmpty().WithMessage("Usuario rellenar campo obligatorio");
 
-            RuleFor(employees => employees.Password)
+            RuleFor(employeesInput => employeesInput.Password)
                 .NotEmpty().WithMessage("La contraseña no puede estar vacia");
         }
     }

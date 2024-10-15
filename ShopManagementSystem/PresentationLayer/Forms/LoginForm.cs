@@ -26,12 +26,14 @@ namespace PresentationLayer.Forms
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            Employees employee = new Employees();
-            employee.User=UserTextBox.Text;
-            employee.Password=PasswordTextBox.Text;
+            EmployeesInput employeesInput = new EmployeesInput
+            {
+                User = UserTextBox.Text,
+                Password = PasswordTextBox.Text
+            };
 
-            LoginValidators loginValidator= new LoginValidators();
-            ValidationResult result= loginValidator.Validate(employee);
+            LoginValidators loginValidator = new LoginValidators();
+            ValidationResult result = loginValidator.Validate(employeesInput);
 
             if (!result.IsValid)
             {
@@ -39,31 +41,41 @@ namespace PresentationLayer.Forms
             }
             else
             {
-                if (_loginServices.FindEmployee(employee))
+                try
                 {
-                    EmployeeSesion employeeSesion1 = new EmployeeSesion();
-                    employeeSesion1 = _loginServices.GetEmployeeSesion(employee);
-                    if (employeeSesion1.EmployeeRoleId == 1)
-                    {
-                        Dashboard dashboard = new Dashboard(employeeSesion1);
+                    EmployeeSesion employeeSesion = _loginServices.GetEmployeeSesion(employeesInput);
 
-                        this.Hide();
-                        dashboard.Show();
-                    }
-                    else if (employeeSesion1.EmployeeRoleId == 2)
+                    if (employeeSesion != null)
                     {
-                        employeeForm employeeForm = new employeeForm();
-                        this.Hide();
-                        employeeForm.Show();
+                        if (employeeSesion.EmployeeRoleId == 1)
+                        {
+                            Dashboard dashboard = new Dashboard(employeeSesion);
+                            this.Hide();
+                            dashboard.Show();
+                        }
+                        else if (employeeSesion.EmployeeRoleId == 2)
+                        {
+                            EmployeeForm employeeForm = new EmployeeForm();
+                            this.Hide();
+                            employeeForm.Show();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Credenciales no válidas");
                     }
                 }
-                else
+                catch (ArgumentException ex)
                 {
-                    MessageBox.Show("credenciales invalidas");
+                    MessageBox.Show(ex.Message); // Manejo de argumento vacío
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Se produjo un error inesperado: {ex.Message}"); // Manejo de errores inesperados
                 }
             }
         }
-        
+
         private void DisplayValidationErrors(ValidationResult result)
         {
             validationsErrorProvider.Clear();
@@ -72,10 +84,10 @@ namespace PresentationLayer.Forms
             {
                 switch (error.PropertyName)
                 {
-                    case nameof(Employees.User):
+                    case nameof(EmployeesInput.User):
                         validationsErrorProvider.SetError(UserTextBox, error.ErrorMessage);
                         break;
-                    case nameof(Employees.Password):
+                    case nameof(EmployeesInput.Password):
                         validationsErrorProvider.SetError(PasswordTextBox, error.ErrorMessage);
                         break;
                 }

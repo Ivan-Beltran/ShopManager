@@ -17,12 +17,9 @@ namespace BussinessLayer.Services
             _loginRepository = new LoginRepository();
         }
 
-        public bool FindEmployee(Employees employees)
-        {
-           return  _loginRepository.FindEmployee(employees);
-        }
+        
 
-        public EmployeeSesion GetEmployeeSesion(Employees employees)
+        public EmployeeSesion GetEmployeeSesion(EmployeesInput employees)
         {
             return _loginRepository.GetEmployeSesion(employees);
         }
