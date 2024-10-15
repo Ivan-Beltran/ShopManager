@@ -16,57 +16,72 @@ namespace PresentationLayer.Forms
 {
     public partial class LoginForm : Form
     {
-        private EmployeesServices _employeeServices;
+        private LoginService _loginServices;
         public LoginForm()
         {
             InitializeComponent();
-            _employeeServices = new EmployeesServices();
+            _loginServices = new LoginService();
         }
 
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            Employees employees = new Employees()
-            {
-                User = UserTextBox.Text,
-                Password = PasswordTextBox.Text,
-            };
-            LoginValidators loginValidator = new LoginValidators();
-            ValidationResult result = loginValidator.Validate(employees);
+            Employees employee = new Employees();
+            employee.User=UserTextBox.Text;
+            employee.Password=PasswordTextBox.Text;
+
+            LoginValidators loginValidator= new LoginValidators();
+            ValidationResult result= loginValidator.Validate(employee);
 
             if (!result.IsValid)
             {
                 DisplayValidationErrors(result);
-
-            }
-            else if (_employeeServices.FindEmployee(employees))
-            {
-
-                Dashboard dashboard = new Dashboard();
-                dashboard.Show();
-                this.Hide();
             }
             else
             {
-                MessageBox.Show("usuario o contraseña incorrectos");
-            }
-        }
-            private void DisplayValidationErrors(ValidationResult result)
-            {
-            validationsErrorProvider.Clear();
-
-                foreach (var error in result.Errors)
+                if (_loginServices.FindEmployee(employee))
                 {
-                    switch (error.PropertyName)
+                    EmployeeSesion employeeSesion1 = new EmployeeSesion();
+                    employeeSesion1 = _loginServices.GetEmployeeSesion(employee);
+                    if (employeeSesion1.EmployeeRoleId == 1)
                     {
-                        case nameof(Employees.User):
-                            validationsErrorProvider.SetError(UserTextBox, error.ErrorMessage);
-                            break;
-                        case nameof(Employees.Password):
-                            validationsErrorProvider.SetError(PasswordTextBox, error.ErrorMessage);
-                            break;
+                        Dashboard dashboard = new Dashboard();
+
+                        this.Hide();
+                        dashboard.Show();
                     }
+                    else if (employeeSesion1.EmployeeRoleId == 2)
+                    {
+                        employeeForm employeeForm = new employeeForm();
+                        this.Hide();
+                        employeeForm.Show();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("credenciales invalidas");
                 }
             }
         }
+        
+        private void DisplayValidationErrors(ValidationResult result)
+        {
+            validationsErrorProvider.Clear();
+
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(Employees.User):
+                        validationsErrorProvider.SetError(UserTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Employees.Password):
+                        validationsErrorProvider.SetError(PasswordTextBox, error.ErrorMessage);
+                        break;
+                }
+            }
+
+        }
+
     }
+}

@@ -83,7 +83,7 @@
             // 
             LoginButton.BackColor = Color.Goldenrod;
             LoginButton.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LoginButton.Location = new Point(369, 183);
+            LoginButton.Location = new Point(375, 169);
             LoginButton.Margin = new Padding(3, 2, 3, 2);
             LoginButton.Name = "LoginButton";
             LoginButton.Size = new Size(95, 35);
