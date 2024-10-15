@@ -81,7 +81,7 @@
             // 
             // LoginButton
             // 
-            LoginButton.BackColor = Color.Goldenrod;
+            LoginButton.BackColor = Color.Lavender;
             LoginButton.Font = new Font("Tahoma", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LoginButton.Location = new Point(375, 169);
             LoginButton.Margin = new Padding(3, 2, 3, 2);
@@ -120,7 +120,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(249, 220, 92);
+            BackColor = Color.FromArgb(12, 183, 242);
             ClientSize = new Size(876, 395);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
