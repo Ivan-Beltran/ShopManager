@@ -17,7 +17,7 @@ namespace DataAccessLayer.Repositories
         {
             _dbconnect = new SqlConnect();
         }
-
+        // metodo para consultar si el usuario existe en la DB
         public bool FindEmployee(Employees employees)
         {
             bool foundEmployee = false;
@@ -45,7 +45,7 @@ namespace DataAccessLayer.Repositories
             
             return foundEmployee;
         }
-
+        //metoedo para crear un objeto con los atributos del empleado
         public EmployeeSesion GetEmployeSesion(Employees employees)
         {
             EmployeeSesion employeeSesion= null;
@@ -95,7 +95,7 @@ namespace DataAccessLayer.Repositories
                 }
             }
 
-            return employeeSesion; // Devuelve el objeto encontrado, o null si no se encontró.
+            return employeeSesion; 
         }
     }
 }

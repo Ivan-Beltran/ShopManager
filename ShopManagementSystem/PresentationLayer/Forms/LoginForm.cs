@@ -45,7 +45,7 @@ namespace PresentationLayer.Forms
                     employeeSesion1 = _loginServices.GetEmployeeSesion(employee);
                     if (employeeSesion1.EmployeeRoleId == 1)
                     {
-                        Dashboard dashboard = new Dashboard();
+                        Dashboard dashboard = new Dashboard(employeeSesion1);
 
                         this.Hide();
                         dashboard.Show();

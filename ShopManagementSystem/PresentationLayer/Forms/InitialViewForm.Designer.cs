@@ -40,7 +40,7 @@
             loginPictureBox.BackColor = Color.Transparent;
             loginPictureBox.BackgroundImage = (Image)resources.GetObject("loginPictureBox.BackgroundImage");
             loginPictureBox.BackgroundImageLayout = ImageLayout.Zoom;
-            loginPictureBox.Location = new Point(302, 10);
+            loginPictureBox.Location = new Point(636, 41);
             loginPictureBox.Margin = new Padding(2);
             loginPictureBox.Name = "loginPictureBox";
             loginPictureBox.Size = new Size(458, 382);
@@ -49,10 +49,10 @@
             // 
             // iniciarSesionButton
             // 
-            iniciarSesionButton.BackColor = Color.Gold;
+            iniciarSesionButton.BackColor = Color.FromArgb(242, 172, 41);
             iniciarSesionButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
             iniciarSesionButton.ForeColor = Color.Black;
-            iniciarSesionButton.Location = new Point(310, 405);
+            iniciarSesionButton.Location = new Point(644, 436);
             iniciarSesionButton.Margin = new Padding(2);
             iniciarSesionButton.Name = "iniciarSesionButton";
             iniciarSesionButton.Size = new Size(158, 38);
@@ -63,9 +63,9 @@
             // 
             // registarseButton
             // 
-            registarseButton.BackColor = Color.Gold;
+            registarseButton.BackColor = Color.FromArgb(255, 235, 174);
             registarseButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
-            registarseButton.Location = new Point(586, 405);
+            registarseButton.Location = new Point(920, 436);
             registarseButton.Margin = new Padding(2);
             registarseButton.Name = "registarseButton";
             registarseButton.Size = new Size(158, 38);
@@ -77,14 +77,16 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(1060, 488);
+            ClientSize = new Size(1341, 541);
             Controls.Add(registarseButton);
             Controls.Add(iniciarSesionButton);
             Controls.Add(loginPictureBox);
             Margin = new Padding(2);
             Name = "InitialViewForm";
             Text = "Login";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)loginPictureBox).EndInit();
             ResumeLayout(false);
         }
