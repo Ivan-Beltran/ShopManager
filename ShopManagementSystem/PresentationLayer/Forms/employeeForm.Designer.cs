@@ -41,7 +41,7 @@
             // 
             // sidebarPanel
             // 
-            sidebarPanel.BackColor = Color.FromArgb(249, 220, 92);
+            sidebarPanel.BackColor = Color.FromArgb(124, 218, 249);
             sidebarPanel.Controls.Add(inventarioIconButton);
             sidebarPanel.Controls.Add(ventasIconButton);
             sidebarPanel.Controls.Add(personalIconButton);
@@ -110,7 +110,7 @@
             personalIconButton.Name = "personalIconButton";
             personalIconButton.Size = new Size(163, 34);
             personalIconButton.TabIndex = 2;
-            personalIconButton.Text = "   Ver inventario";
+            personalIconButton.Text = "    Ver inventario";
             personalIconButton.UseVisualStyleBackColor = false;
             // 
             // logoPictureBox
