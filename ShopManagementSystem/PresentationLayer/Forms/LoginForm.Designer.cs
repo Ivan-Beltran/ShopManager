@@ -120,7 +120,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(12, 183, 242);
+            BackColor = Color.FromArgb(124, 218, 249);
             ClientSize = new Size(876, 395);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -132,6 +132,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "LoginForm";
             Text = "LoginForm";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)validationsErrorProvider).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

@@ -42,7 +42,7 @@
             // 
             // sidebarPanel
             // 
-            sidebarPanel.BackColor = Color.FromArgb(249, 220, 92);
+            sidebarPanel.BackColor = Color.FromArgb(124, 218, 249);
             sidebarPanel.Controls.Add(inventarioIconButton);
             sidebarPanel.Controls.Add(ventasIconButton);
             sidebarPanel.Controls.Add(personalIconButton);
