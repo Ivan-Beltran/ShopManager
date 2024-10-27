@@ -49,7 +49,7 @@ namespace PresentationLayer.Forms
                     {
                         if (employeeSesion.EmployeeRoleId == 1)
                         {
-                            Dashboard dashboard = new Dashboard(employeeSesion);
+                            DashboardForm dashboard = new DashboardForm(employeeSesion);
                             this.Hide();
                             dashboard.Show();
                         }

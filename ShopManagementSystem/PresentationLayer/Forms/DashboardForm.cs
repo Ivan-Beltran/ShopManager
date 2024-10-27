@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Forms
 {
-    public partial class Dashboard : Form
+    public partial class DashboardForm : Form
     {
   
         private EmployeeSesion _employeeSesion;
 
-        public Dashboard(EmployeeSesion employeeSesion)
+        public DashboardForm(EmployeeSesion employeeSesion)
         {
             InitializeComponent();
             _employeeSesion = employeeSesion;

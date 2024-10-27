@@ -8,8 +8,8 @@ namespace CommonLayer.Entities
 {
     public class ProductType
     {
-        public int Id { get; set; }
-        public string TypeOfProduct { get; set; }
-        public string Details { get; set; }
+        public int ProductTypeId { get; set; }
+        public string ProductCategory { get; set; }
+        public string CategoryDescription { get; set; }
     }
 }

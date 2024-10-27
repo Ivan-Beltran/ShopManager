@@ -61,10 +61,10 @@
             LoginButton.FlatStyle = FlatStyle.Flat;
             LoginButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LoginButton.ForeColor = Color.White;
-            LoginButton.Location = new Point(332, 778);
-            LoginButton.Margin = new Padding(4);
+            LoginButton.Location = new Point(232, 467);
+            LoginButton.Margin = new Padding(3, 2, 3, 2);
             LoginButton.Name = "LoginButton";
-            LoginButton.Size = new Size(252, 51);
+            LoginButton.Size = new Size(176, 31);
             LoginButton.TabIndex = 4;
             LoginButton.Text = "Iniciar session";
             LoginButton.UseVisualStyleBackColor = false;
@@ -74,10 +74,10 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(966, 4);
-            pictureBox1.Margin = new Padding(4);
+            pictureBox1.Location = new Point(482, 2);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(470, 459);
+            pictureBox1.Size = new Size(329, 275);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
@@ -90,10 +90,10 @@
             Registredbutton.FlatStyle = FlatStyle.Flat;
             Registredbutton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Registredbutton.ForeColor = Color.White;
-            Registredbutton.Location = new Point(592, 778);
-            Registredbutton.Margin = new Padding(4);
+            Registredbutton.Location = new Point(414, 467);
+            Registredbutton.Margin = new Padding(3, 2, 3, 2);
             Registredbutton.Name = "Registredbutton";
-            Registredbutton.Size = new Size(244, 51);
+            Registredbutton.Size = new Size(171, 31);
             Registredbutton.TabIndex = 5;
             Registredbutton.Text = "Registarse";
             Registredbutton.UseVisualStyleBackColor = false;
@@ -102,10 +102,10 @@
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = Properties.Resources.Password_Icon;
-            pictureBox3.Location = new Point(332, 640);
-            pictureBox3.Margin = new Padding(4);
+            pictureBox3.Location = new Point(232, 384);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(42, 41);
+            pictureBox3.Size = new Size(29, 25);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 8;
             pictureBox3.TabStop = false;
@@ -113,20 +113,20 @@
             // UserTextBox
             // 
             UserTextBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            UserTextBox.Location = new Point(415, 554);
-            UserTextBox.Margin = new Padding(4);
+            UserTextBox.Location = new Point(290, 332);
+            UserTextBox.Margin = new Padding(3, 2, 3, 2);
             UserTextBox.Name = "UserTextBox";
-            UserTextBox.Size = new Size(420, 35);
+            UserTextBox.Size = new Size(295, 26);
             UserTextBox.TabIndex = 2;
             UserTextBox.Text = "Usuario";
             // 
             // PasswordTextBox
             // 
             PasswordTextBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PasswordTextBox.Location = new Point(415, 644);
-            PasswordTextBox.Margin = new Padding(4);
+            PasswordTextBox.Location = new Point(290, 386);
+            PasswordTextBox.Margin = new Padding(3, 2, 3, 2);
             PasswordTextBox.Name = "PasswordTextBox";
-            PasswordTextBox.Size = new Size(420, 35);
+            PasswordTextBox.Size = new Size(295, 26);
             PasswordTextBox.TabIndex = 3;
             PasswordTextBox.Text = "Contraseña";
             // 
@@ -134,10 +134,10 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = Properties.Resources.User_Icon;
-            pictureBox2.Location = new Point(332, 548);
-            pictureBox2.Margin = new Padding(4);
+            pictureBox2.Location = new Point(232, 329);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(42, 44);
+            pictureBox2.Size = new Size(29, 26);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
@@ -149,10 +149,9 @@
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Segoe UI", 40.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(178, 60);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(27, -54);
             label1.Name = "label1";
-            label1.Size = new Size(632, 106);
+            label1.Size = new Size(442, 64);
             label1.TabIndex = 9;
             label1.Text = "¡BIENVENIDO!\r\n";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -169,10 +168,10 @@
             panel1.Controls.Add(UserTextBox);
             panel1.Controls.Add(LoginButton);
             panel1.Controls.Add(PasswordTextBox);
-            panel1.Location = new Point(4, 4);
-            panel1.Margin = new Padding(4);
+            panel1.Location = new Point(3, 2);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(954, 1042);
+            panel1.Size = new Size(473, 445);
             panel1.TabIndex = 10;
             // 
             // tableLayoutPanel1
@@ -184,21 +183,21 @@
             tableLayoutPanel1.Controls.Add(pictureBox1, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Margin = new Padding(4);
+            tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1924, 1050);
+            tableLayoutPanel1.Size = new Size(959, 449);
             tableLayoutPanel1.TabIndex = 11;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1924, 1050);
+            ClientSize = new Size(959, 449);
             Controls.Add(tableLayoutPanel1);
-            Margin = new Padding(4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "LoginForm";
             Text = "LoginForm";
             WindowState = FormWindowState.Maximized;
