@@ -8,9 +8,9 @@ namespace CommonLayer.Entities
 {
     public class Role
     {
-        public int Id { get; set; }
-        public int Type { get; set; }
-        public string Details {  get; set; }
+        public int RoleId { get; set; }
+        public int RoleType { get; set; }
+        public string RoleDescription {  get; set; }
 
     }
 }
