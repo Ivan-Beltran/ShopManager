@@ -21,9 +21,22 @@ namespace PresentationLayer.Forms
         {
             InitializeComponent();
             _loginServices = new LoginService();
+            PasswordTextBox.PasswordChar = '*';
+            ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
         }
 
-
+        private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ShowPasswordCheckBox.Checked)
+            {
+                
+                PasswordTextBox.PasswordChar = '\0'; 
+            }
+            else
+            {
+                PasswordTextBox.PasswordChar = '*';
+            }
+        }
         private void LoginButton_Click(object sender, EventArgs e)
         {
             EmployeesInput employeesInput = new EmployeesInput
