@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD:ShopManagementSystem/PresentationLayer/Forms/Dashboard.Designer.cs
-=======
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
->>>>>>> dac12ab0b60abd4e2202427356f6df2fbec4e3b2:ShopManagementSystem/PresentationLayer/Forms/DashboardForm.Designer.cs
             sidebarPanel = new Panel();
             inventarioIconButton = new FontAwesome.Sharp.IconButton();
             ventasIconButton = new FontAwesome.Sharp.IconButton();

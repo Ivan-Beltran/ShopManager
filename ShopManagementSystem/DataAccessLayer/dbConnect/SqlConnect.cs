@@ -13,11 +13,9 @@ namespace DataAccessLayer.dbConnect
 
         public SqlConnect()
         {
-<<<<<<< HEAD
-            _connectionString = "Data Source=YONATAN-CHICAS\\SQLEXPRESS;Initial Catalog=StoreDB;Integrated Security=True;Trust Server Certificate=True";
-=======
-            _connectionString = "Data Source=DESKTOP-NFDMETJ\\SQLEXPRESS;Initial Catalog=StoreDB﻿;Integrated Security=True;Encrypt=False";
->>>>>>> dac12ab0b60abd4e2202427356f6df2fbec4e3b2
+
+            _connectionString = "Data Source=.;Initial Catalog=StoreDB;Integrated Security=True;Encrypt=False";
+
         }
 
         public SqlConnection GetConnection()
