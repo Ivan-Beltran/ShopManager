@@ -61,6 +61,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.ErrorImage = null;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(859, 238);
             pictureBox1.Name = "pictureBox1";
@@ -127,7 +128,9 @@
             // UserIconpictureBox
             // 
             UserIconpictureBox.BackColor = Color.Transparent;
-            UserIconpictureBox.Image = Properties.Resources.User_Icon;
+            UserIconpictureBox.ErrorImage = null;
+            UserIconpictureBox.Image = (Image)resources.GetObject("UserIconpictureBox.Image");
+            UserIconpictureBox.InitialImage = null;
             UserIconpictureBox.Location = new Point(56, 406);
             UserIconpictureBox.Margin = new Padding(3, 4, 3, 4);
             UserIconpictureBox.Name = "UserIconpictureBox";
@@ -139,7 +142,7 @@
             // PasworrdIconPictureBox3
             // 
             PasworrdIconPictureBox3.BackColor = Color.Transparent;
-            PasworrdIconPictureBox3.Image = Properties.Resources.Password_Icon;
+            PasworrdIconPictureBox3.Image = (Image)resources.GetObject("PasworrdIconPictureBox3.Image");
             PasworrdIconPictureBox3.Location = new Point(56, 507);
             PasworrdIconPictureBox3.Margin = new Padding(3, 4, 3, 4);
             PasworrdIconPictureBox3.Name = "PasworrdIconPictureBox3";

@@ -80,11 +80,11 @@ namespace PresentationLayer.Forms
                 }
                 catch (ArgumentException ex)
                 {
-                    MessageBox.Show(ex.Message); // Manejo de argumento vacío
+                    MessageBox.Show(ex.Message); 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Se produjo un error inesperado: {ex.Message}"); // Manejo de errores inesperados
+                    MessageBox.Show($"Se produjo un error inesperado: {ex.Message}"); 
                 }
             }
         }

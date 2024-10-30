@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             sidebarPanel = new Panel();
             inventarioIconButton = new FontAwesome.Sharp.IconButton();
@@ -144,10 +143,10 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.ClickZy;
-            pictureBox1.Location = new Point(2, -23);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, -22);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(257, 249);
+            pictureBox1.Size = new Size(257, 237);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -168,15 +167,16 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.Home__1669_x_858_px_;
+            pictureBox2.Enabled = false;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1754, 997);
+            pictureBox2.Size = new Size(1764, 997);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
-            // Dashboard
+            // DashboardForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -185,7 +185,7 @@
             Controls.Add(PrincipalPanel);
             Controls.Add(sidebarPanel);
             Margin = new Padding(2, 3, 2, 3);
-            Name = "Dashboard";
+            Name = "DashboardForm";
             Text = "Dashboard";
             WindowState = FormWindowState.Maximized;
             sidebarPanel.ResumeLayout(false);
