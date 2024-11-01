@@ -55,7 +55,7 @@ namespace PresentationLayer.Forms
             if (!result.IsValid)
             {
                 DisplayValidationErrors(result);
-                LoadingIndicator.Visible = false;
+                
                 LoginButton.Enabled = true;
                 return;
             }
