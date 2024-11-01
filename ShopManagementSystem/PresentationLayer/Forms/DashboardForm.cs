@@ -20,6 +20,7 @@ namespace PresentationLayer.Forms
         {
             InitializeComponent();
             _employeeSesion = employeeSesion;
+            employeeNameLabel.Text = _employeeSesion.Names;
 
         }
         private Form activeForm = null;
@@ -42,6 +43,6 @@ namespace PresentationLayer.Forms
             openChildForm(new HomeForm());
         }
 
-
+        
     }
 }

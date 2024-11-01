@@ -61,7 +61,6 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.ErrorImage = null;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(859, 238);
             pictureBox1.Name = "pictureBox1";
@@ -210,6 +209,7 @@
             PasswordTextBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PasswordTextBox.Location = new Point(123, 521);
             PasswordTextBox.Name = "PasswordTextBox";
+            PasswordTextBox.PasswordChar = '*';
             PasswordTextBox.Size = new Size(337, 30);
             PasswordTextBox.TabIndex = 3;
             PasswordTextBox.Text = "Contraseña";

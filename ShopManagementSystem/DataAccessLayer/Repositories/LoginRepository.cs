@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 using DataAccessLayer.dbConnect;
 using CommonLayer.Entities;
 using Microsoft.Data.SqlClient;
+using System.Data;
+using System.Security.Cryptography.X509Certificates;
+using Dapper;
 
 namespace DataAccessLayer.Repositories
 {
-    public class LoginRepository
+    public class LoginRepository: ILoginRepository
     {
-        private SqlConnect _dbconnect;
+        private ISqlConnect _dbConnection;
 
-        public LoginRepository()
+        public LoginRepository( ISqlConnect dbconnection)
         {
-            _dbconnect = new SqlConnect();
+            _dbConnection = dbconnection;
         }
-        
-        //metoedo para crear un objeto con los atributos del empleado
-        public EmployeeSesion GetSesion(EmployeesInput employees)
-        {
-            EmployeeSesion employeeSesion= null;
 
-            using (var connection = _dbconnect.GetConnection())
+        //metoedo para crear un objeto con los atributos del empleado usando dapper
+
+        public async Task<EmployeeSesion> GetSessionAsync(EmployeesInput employeesInput)
+        {
+            using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"SELECT
                            E.EmployeeId,
@@ -37,38 +39,10 @@ namespace DataAccessLayer.Repositories
                         FROM Employees AS E
                         INNER JOIN Roles AS R
                         ON E.RoleId = R.RoleId
-                        WHERE UserEmployee = @UserEmployee
-                        AND PasswordEmployee = @PasswordEmployee";
+                        WHERE E.UserEmployee = @UserEmployee";
 
-                using (var command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@UserEmployee",employees.User);
-                    command.Parameters.AddWithValue("@PasswordEmployee",employees.Password);
-                    command.CommandTimeout = 10;
-                    connection.Open();
-
-                    using (var reader = command.ExecuteReader())
-                    {
-                        if (reader.Read()) 
-                        {
-                           
-                            employeeSesion = new EmployeeSesion
-                            {
-                                EmployeeId = reader.GetInt32(reader.GetOrdinal("EmployeeId")),
-                                EmployeeNames = reader.GetString(reader.GetOrdinal("Names")),
-                                EmployeeLastNames = reader.GetString(reader.GetOrdinal("LastNames")),
-                                EmployeeUser = reader.GetString(reader.GetOrdinal("UserEmployee")),
-                                EmployeePassword= reader.GetString(reader.GetOrdinal("PasswordEmployee")),
-                                EmployeeDUI = reader.GetString(reader.GetOrdinal("DUI")),
-                                EmployeeEmail = reader.GetString(reader.GetOrdinal("Email")),
-                                EmployeeRoleId = reader.GetInt32(reader.GetOrdinal("RoleId"))
-                            };
-                        }
-                    }
-                }
+                return await connection.QueryFirstOrDefaultAsync<EmployeeSesion>(query, new { UserEmployee = employeesInput.User });
             }
-
-            return employeeSesion; 
         }
     }
 }

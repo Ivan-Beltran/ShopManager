@@ -9,13 +9,13 @@ namespace CommonLayer.Entities
     public class EmployeeSesion
     {
         public int EmployeeId { get; set; }
-        public string EmployeeNames { get; set; }
-        public string EmployeeLastNames { get; set; }
-        public string EmployeeUser { get; set; }
-        public string EmployeePassword { get; set; }
-        public string EmployeeDUI { get; set; }
-        public string EmployeeEmail { get; set; }
+        public string Names { get; set; }
+        public string LastNames { get; set; }
+        public string UserEmployee { get; set; }
+        public string PasswordEmployee { get; set; }
+        public string DUI { get; set; }
+        public string Email { get; set; }
 
-        public int EmployeeRoleId { get; set; }
+        public int RoleId { get; set; }
     }
 }

@@ -8,22 +8,22 @@ using CommonLayer.Entities;
 
 namespace BussinessLayer.Services
 {
-    public class LoginService
+    public class LoginService : ILoginService
     {
-        private LoginRepository _loginRepository;
+        private ILoginRepository _loginRepository;
 
-        public LoginService()
+        public LoginService(ILoginRepository loginRepository)
         {
-            _loginRepository = new LoginRepository();
+            _loginRepository = loginRepository;
         }
 
+
+        public async Task<EmployeeSesion> GetSessionAsync(EmployeesInput employees)
+        {
+            return await _loginRepository.GetSessionAsync(employees);
+        }
         
 
-        public EmployeeSesion GetSesion(EmployeesInput employees)
-        {
-            return _loginRepository.GetSesion(employees);
-        }
 
-       
     }
 }

@@ -1,13 +1,14 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer.dbConnect
 {
-    public class SqlConnect
+    public class SqlConnect : ISqlConnect
     {
         private readonly string _connectionString;
 
@@ -18,7 +19,7 @@ namespace DataAccessLayer.dbConnect
 
         }
 
-        public SqlConnection GetConnection()
+        public IDbConnection GetConnection()
         {
             return new SqlConnection(_connectionString);
         }

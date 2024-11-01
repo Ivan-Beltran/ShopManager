@@ -16,11 +16,11 @@ namespace PresentationLayer.Forms
 {
     public partial class LoginForm : Form
     {
-        private LoginService _loginServices;
-        public LoginForm()
+        private ILoginService _loginServices;
+        public LoginForm(ILoginService loginServices)
         {
             InitializeComponent();
-            _loginServices = new LoginService();
+            _loginServices = loginServices;
             PasswordTextBox.PasswordChar = '*';
             ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
         }
@@ -37,8 +37,12 @@ namespace PresentationLayer.Forms
                 PasswordTextBox.PasswordChar = '*';
             }
         }
-        private void LoginButton_Click(object sender, EventArgs e)
+        private async void LoginButton_Click(object sender, EventArgs e)
         {
+            
+            LoginButton.Enabled = false;
+            
+
             EmployeesInput employeesInput = new EmployeesInput
             {
                 User = UserTextBox.Text,
@@ -51,41 +55,52 @@ namespace PresentationLayer.Forms
             if (!result.IsValid)
             {
                 DisplayValidationErrors(result);
+                LoadingIndicator.Visible = false;
+                LoginButton.Enabled = true;
+                return;
             }
-            else
-            {
-                try
-                {
-                    EmployeeSesion employeeSesion = _loginServices.GetSesion(employeesInput);
 
-                    if (employeeSesion != null)
+            try
+            {
+                EmployeeSesion employeeSesion = await _loginServices.GetSessionAsync(employeesInput);
+
+                if (employeeSesion == null)
+                {
+                    MessageBox.Show("No se encontró ningún usuario.");
+                }
+                else
+                {
+                    if (employeeSesion.PasswordEmployee == employeesInput.Password)
                     {
-                        if (employeeSesion.EmployeeRoleId == 1)
+                        switch (employeeSesion.RoleId)
                         {
-                            DashboardForm dashboard = new DashboardForm(employeeSesion);
-                            this.Hide();
-                            dashboard.Show();
-                        }
-                        else if (employeeSesion.EmployeeRoleId == 2)
-                        {
-                            EmployeeForm employeeForm = new EmployeeForm();
-                            this.Hide();
-                            employeeForm.Show();
+                            case 1:
+                                this.Hide();
+                                DashboardForm dashboardForm = new DashboardForm(employeeSesion);
+                                dashboardForm.Show();
+                                break;
+                            case 2:
+                                MessageBox.Show("Eres cajero.");
+                                break;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Credenciales no válidas");
+                        MessageBox.Show("Contraseña incorrecta.", "Error");
                     }
                 }
-                catch (ArgumentException ex)
-                {
-                    MessageBox.Show(ex.Message); 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Se produjo un error inesperado: {ex.Message}"); 
-                }
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Se produjo un error inesperado: {ex.Message}");
+            }
+            finally
+            {
+                LoginButton.Enabled = true;
             }
         }
 
