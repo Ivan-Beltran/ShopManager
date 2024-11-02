@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonLayer.Entities
+namespace CommonLayer.InputEntities
 {
     public class EmployeesInput
     {
@@ -12,11 +12,11 @@ namespace CommonLayer.Entities
         public string Name { get; set; }
         public string LastName { get; set; }
         public string User { get; set; }
-        public string Password {get; set;}
-        public int DUI {  get; set; }
+        public string Password { get; set; }
+        public int DUI { get; set; }
         public string Email { get; set; }
 
-        public int RoleId {  get; set; }
+        public int RoleId { get; set; }
 
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BussinessLayer.Services;
 
 namespace PresentationLayer.Forms
 {
@@ -15,12 +16,16 @@ namespace PresentationLayer.Forms
     {
 
         private EmployeeSesion _employeeSesion;
+        private readonly IEmployeeService employeeService;
+        
 
-        public DashboardForm(EmployeeSesion employeeSesion)
+        public DashboardForm(EmployeeSesion employeeSesion,IEmployeeService _employeeService)
         {
             InitializeComponent();
             _employeeSesion = employeeSesion;
             employeeNameLabel.Text = _employeeSesion.Names;
+            employeeService=_employeeService;
+            
 
         }
         private Form activeForm = null;
@@ -43,6 +48,13 @@ namespace PresentationLayer.Forms
             openChildForm(new HomeForm());
         }
 
+       
         
+        private void personalIconButton_Click(object sender, EventArgs e)
+        {
+              
+
+              openChildForm(new ViewEmployeesForm(employeeService));
+        }
     }
 }

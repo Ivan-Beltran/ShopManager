@@ -35,13 +35,19 @@ namespace PresentationLayer
 
                     //Forms
                     services.AddTransient<LoginForm>();
+                    services.AddTransient<DashboardForm>();
+                    services.AddTransient<ViewEmployeesForm>();
 
 
                     //Repositories
                     services.AddScoped<ILoginRepository,LoginRepository>();
+                    services.AddScoped<IEmployeesRepository,EmployeeRepository>();  
+                    
 
                     //Services
                     services.AddScoped<ILoginService,LoginService>();
+                    services.AddScoped<IEmployeeService,EmployeeService>();
+                    
 
                     //Connection
                     services.AddSingleton<ISqlConnect,SqlConnect>();

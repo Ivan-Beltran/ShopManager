@@ -153,6 +153,7 @@
             personalIconButton.TabIndex = 2;
             personalIconButton.Text = "Personal";
             personalIconButton.UseVisualStyleBackColor = false;
+            personalIconButton.Click += personalIconButton_Click;
             // 
             // HomeButton
             // 

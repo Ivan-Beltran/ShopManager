@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Repositories;
 using CommonLayer.Entities;
+using CommonLayer.InputEntities;
 
 namespace BussinessLayer.Services
 {

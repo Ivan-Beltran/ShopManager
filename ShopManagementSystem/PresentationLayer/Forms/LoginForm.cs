@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer.Services;
 using CommonLayer.Entities;
+using CommonLayer.InputEntities;
 using FluentValidation.Results;
 using PresentationLayer.Validations;
 
@@ -17,12 +18,14 @@ namespace PresentationLayer.Forms
     public partial class LoginForm : Form
     {
         private ILoginService _loginServices;
-        public LoginForm(ILoginService loginServices)
+        private IEmployeeService _employeeServices;
+        public LoginForm(ILoginService loginServices, IEmployeeService employeeServices)
         {
             InitializeComponent();
             _loginServices = loginServices;
             PasswordTextBox.PasswordChar = '*';
             ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
+            _employeeServices = employeeServices;
         }
 
         private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -76,7 +79,7 @@ namespace PresentationLayer.Forms
                         {
                             case 1:
                                 this.Hide();
-                                DashboardForm dashboardForm = new DashboardForm(employeeSesion);
+                                DashboardForm dashboardForm = new DashboardForm(employeeSesion,_employeeServices);
                                 dashboardForm.Show();
                                 break;
                             case 2:

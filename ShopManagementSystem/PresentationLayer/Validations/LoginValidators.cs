@@ -1,4 +1,4 @@
-﻿using CommonLayer.Entities;
+﻿using CommonLayer.InputEntities;
 using FluentValidation;
 using PresentationLayer.Forms;
 using System;

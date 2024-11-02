@@ -9,6 +9,7 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Security.Cryptography.X509Certificates;
 using Dapper;
+using CommonLayer.InputEntities;
 
 namespace DataAccessLayer.Repositories
 {

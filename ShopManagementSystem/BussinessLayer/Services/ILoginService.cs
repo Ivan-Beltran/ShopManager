@@ -1,4 +1,5 @@
 ﻿using CommonLayer.Entities;
+using CommonLayer.InputEntities;
 
 namespace BussinessLayer.Services
 {
