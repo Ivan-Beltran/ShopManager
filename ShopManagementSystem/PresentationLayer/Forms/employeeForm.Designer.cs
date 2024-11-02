@@ -40,16 +40,16 @@
             // 
             // sidebarPanel
             // 
-            sidebarPanel.BackColor = Color.FromArgb(124, 218, 249);
+            sidebarPanel.BackColor = Color.FromArgb(0, 166, 225);
             sidebarPanel.Controls.Add(inventarioIconButton);
             sidebarPanel.Controls.Add(ventasIconButton);
             sidebarPanel.Controls.Add(personalIconButton);
             sidebarPanel.Controls.Add(logoPictureBox);
             sidebarPanel.Dock = DockStyle.Left;
             sidebarPanel.Location = new Point(0, 0);
-            sidebarPanel.Margin = new Padding(2, 3, 2, 3);
+            sidebarPanel.Margin = new Padding(2);
             sidebarPanel.Name = "sidebarPanel";
-            sidebarPanel.Size = new Size(186, 600);
+            sidebarPanel.Size = new Size(163, 699);
             sidebarPanel.TabIndex = 1;
             // 
             // inventarioIconButton
@@ -64,10 +64,10 @@
             inventarioIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             inventarioIconButton.IconSize = 32;
             inventarioIconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            inventarioIconButton.Location = new Point(0, 229);
-            inventarioIconButton.Margin = new Padding(2, 3, 2, 3);
+            inventarioIconButton.Location = new Point(0, 172);
+            inventarioIconButton.Margin = new Padding(2);
             inventarioIconButton.Name = "inventarioIconButton";
-            inventarioIconButton.Size = new Size(186, 81);
+            inventarioIconButton.Size = new Size(163, 61);
             inventarioIconButton.TabIndex = 4;
             inventarioIconButton.Text = "  Historial de ventas";
             inventarioIconButton.UseVisualStyleBackColor = false;
@@ -84,10 +84,10 @@
             ventasIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ventasIconButton.IconSize = 32;
             ventasIconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            ventasIconButton.Location = new Point(0, 147);
-            ventasIconButton.Margin = new Padding(2, 3, 2, 3);
+            ventasIconButton.Location = new Point(0, 110);
+            ventasIconButton.Margin = new Padding(2);
             ventasIconButton.Name = "ventasIconButton";
-            ventasIconButton.Size = new Size(186, 45);
+            ventasIconButton.Size = new Size(163, 34);
             ventasIconButton.TabIndex = 3;
             ventasIconButton.Text = "Vender";
             ventasIconButton.UseVisualStyleBackColor = false;
@@ -104,10 +104,10 @@
             personalIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             personalIconButton.IconSize = 32;
             personalIconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            personalIconButton.Location = new Point(0, 187);
-            personalIconButton.Margin = new Padding(2, 3, 2, 3);
+            personalIconButton.Location = new Point(0, 140);
+            personalIconButton.Margin = new Padding(2);
             personalIconButton.Name = "personalIconButton";
-            personalIconButton.Size = new Size(186, 45);
+            personalIconButton.Size = new Size(163, 34);
             personalIconButton.TabIndex = 2;
             personalIconButton.Text = "    Ver inventario";
             personalIconButton.UseVisualStyleBackColor = false;
@@ -118,18 +118,18 @@
             logoPictureBox.BackgroundImage = (Image)resources.GetObject("logoPictureBox.BackgroundImage");
             logoPictureBox.BackgroundImageLayout = ImageLayout.Zoom;
             logoPictureBox.Location = new Point(0, 0);
+            logoPictureBox.Margin = new Padding(3, 2, 3, 2);
             logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(197, 151);
+            logoPictureBox.Size = new Size(172, 113);
             logoPictureBox.TabIndex = 1;
             logoPictureBox.TabStop = false;
             // 
             // EmployeeForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(1145, 699);
             Controls.Add(sidebarPanel);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "EmployeeForm";
             Text = "EmployeeForm";
             sidebarPanel.ResumeLayout(false);
