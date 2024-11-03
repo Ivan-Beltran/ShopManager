@@ -29,41 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesForm));
-            pictureBox2 = new PictureBox();
             sidebarPanel = new Panel();
             welcomeLabel = new Label();
             inventarioIconButton = new FontAwesome.Sharp.IconButton();
-            pictureBox1 = new PictureBox();
-            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            salesPictureBox = new PictureBox();
             PrincipalPanel = new Panel();
-            saleDataGridView = new DataGridView();
-            addSaleButton = new Button();
-            editSaleButton = new Button();
             deleteSaleButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            editSaleButton = new Button();
+            addSaleButton = new Button();
+            saleDataGridView = new DataGridView();
             sidebarPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)salesPictureBox).BeginInit();
             PrincipalPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)saleDataGridView).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Enabled = false;
-            pictureBox2.Location = new Point(-34, -350);
-            pictureBox2.Margin = new Padding(4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(2076, 1238);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
             // 
             // sidebarPanel
             // 
             sidebarPanel.BackColor = Color.FromArgb(0, 166, 225);
             sidebarPanel.Controls.Add(welcomeLabel);
             sidebarPanel.Controls.Add(inventarioIconButton);
-            sidebarPanel.Controls.Add(pictureBox1);
+            sidebarPanel.Controls.Add(salesPictureBox);
             sidebarPanel.Dock = DockStyle.Top;
             sidebarPanel.Location = new Point(0, 0);
             sidebarPanel.Margin = new Padding(2, 4, 2, 4);
@@ -74,11 +60,12 @@
             // welcomeLabel
             // 
             welcomeLabel.AutoSize = true;
+            welcomeLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             welcomeLabel.ForeColor = Color.White;
-            welcomeLabel.Location = new Point(813, 62);
+            welcomeLabel.Location = new Point(782, 49);
             welcomeLabel.Margin = new Padding(4, 0, 4, 0);
             welcomeLabel.Name = "welcomeLabel";
-            welcomeLabel.Size = new Size(99, 25);
+            welcomeLabel.Size = new Size(164, 38);
             welcomeLabel.TabIndex = 0;
             welcomeLabel.Text = "Bienvenido";
             // 
@@ -102,22 +89,17 @@
             inventarioIconButton.Text = "Inventario";
             inventarioIconButton.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // salesPictureBox
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(741, -29);
-            pictureBox1.Margin = new Padding(4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(237, 116);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // sqlCommand1
-            // 
-            sqlCommand1.CommandTimeout = 30;
-            sqlCommand1.EnableOptimizedParameterBinding = false;
+            salesPictureBox.BackColor = Color.Transparent;
+            salesPictureBox.Image = (Image)resources.GetObject("salesPictureBox.Image");
+            salesPictureBox.Location = new Point(741, -29);
+            salesPictureBox.Margin = new Padding(4);
+            salesPictureBox.Name = "salesPictureBox";
+            salesPictureBox.Size = new Size(237, 116);
+            salesPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            salesPictureBox.TabIndex = 0;
+            salesPictureBox.TabStop = false;
             // 
             // PrincipalPanel
             // 
@@ -125,7 +107,6 @@
             PrincipalPanel.Controls.Add(editSaleButton);
             PrincipalPanel.Controls.Add(addSaleButton);
             PrincipalPanel.Controls.Add(saleDataGridView);
-            PrincipalPanel.Controls.Add(pictureBox2);
             PrincipalPanel.Dock = DockStyle.Fill;
             PrincipalPanel.Location = new Point(0, 0);
             PrincipalPanel.Margin = new Padding(4);
@@ -133,41 +114,47 @@
             PrincipalPanel.Size = new Size(1820, 580);
             PrincipalPanel.TabIndex = 3;
             // 
+            // deleteSaleButton
+            // 
+            deleteSaleButton.BackColor = Color.FromArgb(0, 166, 225);
+            deleteSaleButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            deleteSaleButton.Location = new Point(442, 419);
+            deleteSaleButton.Name = "deleteSaleButton";
+            deleteSaleButton.Size = new Size(353, 65);
+            deleteSaleButton.TabIndex = 7;
+            deleteSaleButton.Text = "Eliminar";
+            deleteSaleButton.UseVisualStyleBackColor = false;
+            // 
+            // editSaleButton
+            // 
+            editSaleButton.BackColor = Color.FromArgb(0, 166, 225);
+            editSaleButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            editSaleButton.Location = new Point(442, 323);
+            editSaleButton.Name = "editSaleButton";
+            editSaleButton.Size = new Size(353, 65);
+            editSaleButton.TabIndex = 6;
+            editSaleButton.Text = "Editar";
+            editSaleButton.UseVisualStyleBackColor = false;
+            // 
+            // addSaleButton
+            // 
+            addSaleButton.BackColor = Color.FromArgb(0, 166, 225);
+            addSaleButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            addSaleButton.Location = new Point(442, 235);
+            addSaleButton.Name = "addSaleButton";
+            addSaleButton.Size = new Size(353, 65);
+            addSaleButton.TabIndex = 5;
+            addSaleButton.Text = "Agregar";
+            addSaleButton.UseVisualStyleBackColor = false;
+            // 
             // saleDataGridView
             // 
             saleDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             saleDataGridView.Location = new Point(1028, 98);
             saleDataGridView.Name = "saleDataGridView";
             saleDataGridView.RowHeadersWidth = 62;
-            saleDataGridView.Size = new Size(500, 489);
+            saleDataGridView.Size = new Size(616, 489);
             saleDataGridView.TabIndex = 4;
-            // 
-            // addSaleButton
-            // 
-            addSaleButton.Location = new Point(371, 129);
-            addSaleButton.Name = "addSaleButton";
-            addSaleButton.Size = new Size(353, 65);
-            addSaleButton.TabIndex = 5;
-            addSaleButton.Text = "Agregar";
-            addSaleButton.UseVisualStyleBackColor = true;
-            // 
-            // editSaleButton
-            // 
-            editSaleButton.Location = new Point(371, 217);
-            editSaleButton.Name = "editSaleButton";
-            editSaleButton.Size = new Size(353, 65);
-            editSaleButton.TabIndex = 6;
-            editSaleButton.Text = "Editar";
-            editSaleButton.UseVisualStyleBackColor = true;
-            // 
-            // deleteSaleButton
-            // 
-            deleteSaleButton.Location = new Point(371, 313);
-            deleteSaleButton.Name = "deleteSaleButton";
-            deleteSaleButton.Size = new Size(353, 65);
-            deleteSaleButton.TabIndex = 7;
-            deleteSaleButton.Text = "Eliminar";
-            deleteSaleButton.UseVisualStyleBackColor = true;
             // 
             // SalesForm
             // 
@@ -178,23 +165,19 @@
             Controls.Add(PrincipalPanel);
             Name = "SalesForm";
             Text = "SaleForm";
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             sidebarPanel.ResumeLayout(false);
             sidebarPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)salesPictureBox).EndInit();
             PrincipalPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)saleDataGridView).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox pictureBox2;
         private Panel sidebarPanel;
         private Label welcomeLabel;
         private FontAwesome.Sharp.IconButton inventarioIconButton;
-        private PictureBox pictureBox1;
-        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private PictureBox salesPictureBox;
         private Panel PrincipalPanel;
         private DataGridView saleDataGridView;
         private Button deleteSaleButton;
