@@ -38,29 +38,16 @@
             editSaleButton = new Button();
             addSaleButton = new Button();
             saleDataGridView = new DataGridView();
-<<<<<<< HEAD
-=======
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
->>>>>>> 1f4d60de9e59f82bc672b3b16d7ee7322c4366b9
+
+            
             sidebarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)salesPictureBox).BeginInit();
             PrincipalPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)saleDataGridView).BeginInit();
             SuspendLayout();
             // 
-<<<<<<< HEAD
-=======
-            // pictureBox2
-            // 
-            pictureBox2.Enabled = false;
-            pictureBox2.Location = new Point(-27, -280);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1661, 990);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
-            // 
->>>>>>> 1f4d60de9e59f82bc672b3b16d7ee7322c4366b9
+
+        
             // sidebarPanel
             // 
             sidebarPanel.BackColor = Color.FromArgb(0, 166, 225);
@@ -79,16 +66,16 @@
             welcomeLabel.AutoSize = true;
             welcomeLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             welcomeLabel.ForeColor = Color.White;
-<<<<<<< HEAD
+
             welcomeLabel.Location = new Point(782, 49);
             welcomeLabel.Margin = new Padding(4, 0, 4, 0);
             welcomeLabel.Name = "welcomeLabel";
             welcomeLabel.Size = new Size(164, 38);
-=======
+
             welcomeLabel.Location = new Point(608, 40);
             welcomeLabel.Name = "welcomeLabel";
             welcomeLabel.Size = new Size(83, 20);
->>>>>>> 1f4d60de9e59f82bc672b3b16d7ee7322c4366b9
+
             welcomeLabel.TabIndex = 0;
             welcomeLabel.Text = "Bienvenido";
             // 
@@ -114,7 +101,7 @@
             // 
             // salesPictureBox
             // 
-<<<<<<< HEAD
+
             salesPictureBox.BackColor = Color.Transparent;
             salesPictureBox.Image = (Image)resources.GetObject("salesPictureBox.Image");
             salesPictureBox.Location = new Point(741, -29);
@@ -124,21 +111,8 @@
             salesPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             salesPictureBox.TabIndex = 0;
             salesPictureBox.TabStop = false;
-=======
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(593, -23);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 93);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // sqlCommand1
-            // 
-            sqlCommand1.CommandTimeout = 30;
-            sqlCommand1.EnableOptimizedParameterBinding = false;
->>>>>>> 1f4d60de9e59f82bc672b3b16d7ee7322c4366b9
+
+
             // 
             // PrincipalPanel
             // 
@@ -154,7 +128,7 @@
             // 
             // deleteSaleButton
             // 
-<<<<<<< HEAD
+
             deleteSaleButton.BackColor = Color.FromArgb(0, 166, 225);
             deleteSaleButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             deleteSaleButton.Location = new Point(442, 419);
@@ -185,51 +159,18 @@
             addSaleButton.TabIndex = 5;
             addSaleButton.Text = "Agregar";
             addSaleButton.UseVisualStyleBackColor = false;
-=======
-            deleteSaleButton.Location = new Point(297, 250);
-            deleteSaleButton.Margin = new Padding(2, 2, 2, 2);
-            deleteSaleButton.Name = "deleteSaleButton";
-            deleteSaleButton.Size = new Size(282, 52);
-            deleteSaleButton.TabIndex = 7;
-            deleteSaleButton.Text = "Eliminar";
-            deleteSaleButton.UseVisualStyleBackColor = true;
-            // 
-            // editSaleButton
-            // 
-            editSaleButton.Location = new Point(297, 174);
-            editSaleButton.Margin = new Padding(2, 2, 2, 2);
-            editSaleButton.Name = "editSaleButton";
-            editSaleButton.Size = new Size(282, 52);
-            editSaleButton.TabIndex = 6;
-            editSaleButton.Text = "Editar";
-            editSaleButton.UseVisualStyleBackColor = true;
-            // 
-            // addSaleButton
-            // 
-            addSaleButton.Location = new Point(297, 103);
-            addSaleButton.Margin = new Padding(2, 2, 2, 2);
-            addSaleButton.Name = "addSaleButton";
-            addSaleButton.Size = new Size(282, 52);
-            addSaleButton.TabIndex = 5;
-            addSaleButton.Text = "Agregar";
-            addSaleButton.UseVisualStyleBackColor = true;
->>>>>>> 1f4d60de9e59f82bc672b3b16d7ee7322c4366b9
+
+       
             // 
             // saleDataGridView
             // 
             saleDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
+
             saleDataGridView.Location = new Point(1028, 98);
             saleDataGridView.Name = "saleDataGridView";
             saleDataGridView.RowHeadersWidth = 62;
             saleDataGridView.Size = new Size(616, 489);
-=======
-            saleDataGridView.Location = new Point(822, 78);
             saleDataGridView.Margin = new Padding(2, 2, 2, 2);
-            saleDataGridView.Name = "saleDataGridView";
-            saleDataGridView.RowHeadersWidth = 62;
-            saleDataGridView.Size = new Size(400, 391);
->>>>>>> 1f4d60de9e59f82bc672b3b16d7ee7322c4366b9
             saleDataGridView.TabIndex = 4;
             // 
             // SalesForm

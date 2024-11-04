@@ -15,11 +15,11 @@ namespace PresentationLayer.Forms
     public partial class DashboardForm : Form
     {
 
-        private EmployeeSesion _employeeSesion;
+        private Employees _employeeSesion;
         private readonly IEmployeeService employeeService;
         
 
-        public DashboardForm(EmployeeSesion employeeSesion,IEmployeeService _employeeService)
+        public DashboardForm(Employees employeeSesion,IEmployeeService _employeeService)
         {
             InitializeComponent();
             _employeeSesion = employeeSesion;

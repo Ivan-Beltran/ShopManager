@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommonLayer.Entities
 {
-    public class EmployeeSesion
+    public class Employees
     {
         public int EmployeeId { get; set; }
         public string Names { get; set; }

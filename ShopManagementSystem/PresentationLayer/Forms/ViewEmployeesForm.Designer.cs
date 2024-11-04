@@ -37,20 +37,20 @@
             btnAddEmployee = new Button();
             btnEditEmployee = new Button();
             btnDeteleEmployee = new Button();
-            txtName = new TextBox();
+            namesTextBox = new TextBox();
             nameEmployee = new Label();
             lastNameEmployee = new Label();
-            txtLastName = new TextBox();
+            lastNamesTextBox = new TextBox();
             passwordEmployee = new Label();
-            txtPassword = new TextBox();
+            passwordTextBox = new TextBox();
             usuarioEmployee = new Label();
-            txtUsuario = new TextBox();
+            UserTextBox = new TextBox();
             emailEmployee = new Label();
-            txtGmail = new TextBox();
+            emailTextBox = new TextBox();
             duiEmployee = new Label();
-            txtDui = new TextBox();
+            duiTextBox = new TextBox();
             addEmployeegroupBox = new GroupBox();
-            roleComboBox = new ComboBox();
+            rolesComboBox = new ComboBox();
             roleLabel = new Label();
             viewRoleButton = new Button();
             panel1.SuspendLayout();
@@ -130,6 +130,7 @@
             btnAddEmployee.TabIndex = 3;
             btnAddEmployee.Text = "Agregar nuevo empledo";
             btnAddEmployee.UseVisualStyleBackColor = false;
+            btnAddEmployee.Click += btnAddEmployee_Click;
             // 
             // btnEditEmployee
             // 
@@ -157,14 +158,14 @@
             btnDeteleEmployee.Text = "Borrar empleado";
             btnDeteleEmployee.UseVisualStyleBackColor = false;
             // 
-            // txtName
+            // namesTextBox
             // 
-            txtName.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
-            txtName.Location = new Point(192, 171);
-            txtName.Margin = new Padding(3, 4, 3, 4);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(229, 32);
-            txtName.TabIndex = 6;
+            namesTextBox.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
+            namesTextBox.Location = new Point(192, 171);
+            namesTextBox.Margin = new Padding(3, 4, 3, 4);
+            namesTextBox.Name = "namesTextBox";
+            namesTextBox.Size = new Size(229, 32);
+            namesTextBox.TabIndex = 6;
             // 
             // nameEmployee
             // 
@@ -186,14 +187,14 @@
             lastNameEmployee.TabIndex = 11;
             lastNameEmployee.Text = "Apellido:";
             // 
-            // txtLastName
+            // lastNamesTextBox
             // 
-            txtLastName.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
-            txtLastName.Location = new Point(192, 246);
-            txtLastName.Margin = new Padding(3, 4, 3, 4);
-            txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(229, 32);
-            txtLastName.TabIndex = 10;
+            lastNamesTextBox.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
+            lastNamesTextBox.Location = new Point(192, 246);
+            lastNamesTextBox.Margin = new Padding(3, 4, 3, 4);
+            lastNamesTextBox.Name = "lastNamesTextBox";
+            lastNamesTextBox.Size = new Size(229, 32);
+            lastNamesTextBox.TabIndex = 10;
             // 
             // passwordEmployee
             // 
@@ -205,14 +206,14 @@
             passwordEmployee.TabIndex = 15;
             passwordEmployee.Text = "Contraseña:";
             // 
-            // txtPassword
+            // passwordTextBox
             // 
-            txtPassword.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
-            txtPassword.Location = new Point(684, 316);
-            txtPassword.Margin = new Padding(3, 4, 3, 4);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(229, 32);
-            txtPassword.TabIndex = 14;
+            passwordTextBox.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
+            passwordTextBox.Location = new Point(684, 316);
+            passwordTextBox.Margin = new Padding(3, 4, 3, 4);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Size = new Size(229, 32);
+            passwordTextBox.TabIndex = 14;
             // 
             // usuarioEmployee
             // 
@@ -224,14 +225,14 @@
             usuarioEmployee.TabIndex = 13;
             usuarioEmployee.Text = "Usuario:";
             // 
-            // txtUsuario
+            // UserTextBox
             // 
-            txtUsuario.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
-            txtUsuario.Location = new Point(192, 309);
-            txtUsuario.Margin = new Padding(3, 4, 3, 4);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(229, 32);
-            txtUsuario.TabIndex = 12;
+            UserTextBox.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
+            UserTextBox.Location = new Point(192, 309);
+            UserTextBox.Margin = new Padding(3, 4, 3, 4);
+            UserTextBox.Name = "UserTextBox";
+            UserTextBox.Size = new Size(229, 32);
+            UserTextBox.TabIndex = 12;
             // 
             // emailEmployee
             // 
@@ -243,14 +244,14 @@
             emailEmployee.TabIndex = 19;
             emailEmployee.Text = "Gmail:";
             // 
-            // txtGmail
+            // emailTextBox
             // 
-            txtGmail.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
-            txtGmail.Location = new Point(684, 246);
-            txtGmail.Margin = new Padding(3, 4, 3, 4);
-            txtGmail.Name = "txtGmail";
-            txtGmail.Size = new Size(229, 32);
-            txtGmail.TabIndex = 18;
+            emailTextBox.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
+            emailTextBox.Location = new Point(684, 246);
+            emailTextBox.Margin = new Padding(3, 4, 3, 4);
+            emailTextBox.Name = "emailTextBox";
+            emailTextBox.Size = new Size(229, 32);
+            emailTextBox.TabIndex = 18;
             // 
             // duiEmployee
             // 
@@ -262,32 +263,32 @@
             duiEmployee.TabIndex = 17;
             duiEmployee.Text = "DUI:";
             // 
-            // txtDui
+            // duiTextBox
             // 
-            txtDui.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
-            txtDui.Location = new Point(684, 174);
-            txtDui.Margin = new Padding(3, 4, 3, 4);
-            txtDui.Name = "txtDui";
-            txtDui.Size = new Size(229, 32);
-            txtDui.TabIndex = 16;
+            duiTextBox.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
+            duiTextBox.Location = new Point(684, 174);
+            duiTextBox.Margin = new Padding(3, 4, 3, 4);
+            duiTextBox.Name = "duiTextBox";
+            duiTextBox.Size = new Size(229, 32);
+            duiTextBox.TabIndex = 16;
             // 
             // addEmployeegroupBox
             // 
-            addEmployeegroupBox.Controls.Add(roleComboBox);
+            addEmployeegroupBox.Controls.Add(rolesComboBox);
             addEmployeegroupBox.Controls.Add(roleLabel);
-            addEmployeegroupBox.Controls.Add(txtName);
+            addEmployeegroupBox.Controls.Add(namesTextBox);
             addEmployeegroupBox.Controls.Add(emailEmployee);
             addEmployeegroupBox.Controls.Add(nameEmployee);
             addEmployeegroupBox.Controls.Add(btnAddEmployee);
-            addEmployeegroupBox.Controls.Add(txtGmail);
-            addEmployeegroupBox.Controls.Add(txtLastName);
+            addEmployeegroupBox.Controls.Add(emailTextBox);
+            addEmployeegroupBox.Controls.Add(lastNamesTextBox);
             addEmployeegroupBox.Controls.Add(duiEmployee);
             addEmployeegroupBox.Controls.Add(lastNameEmployee);
-            addEmployeegroupBox.Controls.Add(txtDui);
-            addEmployeegroupBox.Controls.Add(txtUsuario);
+            addEmployeegroupBox.Controls.Add(duiTextBox);
+            addEmployeegroupBox.Controls.Add(UserTextBox);
             addEmployeegroupBox.Controls.Add(passwordEmployee);
             addEmployeegroupBox.Controls.Add(usuarioEmployee);
-            addEmployeegroupBox.Controls.Add(txtPassword);
+            addEmployeegroupBox.Controls.Add(passwordTextBox);
             addEmployeegroupBox.Location = new Point(27, 501);
             addEmployeegroupBox.Name = "addEmployeegroupBox";
             addEmployeegroupBox.Size = new Size(1350, 390);
@@ -295,13 +296,15 @@
             addEmployeegroupBox.TabStop = false;
             addEmployeegroupBox.Text = "agregar nuevo empleado";
             // 
-            // roleComboBox
+            // rolesComboBox
             // 
-            roleComboBox.FormattingEnabled = true;
-            roleComboBox.Location = new Point(1142, 172);
-            roleComboBox.Name = "roleComboBox";
-            roleComboBox.Size = new Size(151, 28);
-            roleComboBox.TabIndex = 21;
+            rolesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            rolesComboBox.FormattingEnabled = true;
+            rolesComboBox.Location = new Point(1142, 172);
+            rolesComboBox.MaxDropDownItems = 10;
+            rolesComboBox.Name = "rolesComboBox";
+            rolesComboBox.Size = new Size(151, 28);
+            rolesComboBox.TabIndex = 21;
             // 
             // roleLabel
             // 
@@ -358,21 +361,21 @@
         private Button btnAddEmployee;
         private Button btnEditEmployee;
         private Button btnDeteleEmployee;
-        private TextBox txtName;
+        private TextBox namesTextBox;
         private PictureBox emplyeesIconPictureBox;
         private Label nameEmployee;
         private Label lastNameEmployee;
-        private TextBox txtLastName;
+        private TextBox lastNamesTextBox;
         private Label passwordEmployee;
-        private TextBox txtPassword;
+        private TextBox passwordTextBox;
         private Label usuarioEmployee;
-        private TextBox txtUsuario;
+        private TextBox UserTextBox;
         private Label emailEmployee;
-        private TextBox txtGmail;
+        private TextBox emailTextBox;
         private Label duiEmployee;
-        private TextBox txtDui;
+        private TextBox duiTextBox;
         private GroupBox addEmployeegroupBox;
-        private ComboBox roleComboBox;
+        private ComboBox rolesComboBox;
         private Label roleLabel;
         private Button viewRoleButton;
     }

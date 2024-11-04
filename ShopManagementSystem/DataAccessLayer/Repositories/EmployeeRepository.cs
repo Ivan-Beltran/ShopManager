@@ -38,15 +38,53 @@ namespace DataAccessLayer.Repositories
                     INNER JOIN Roles AS R
                     ON E.RoleId = R.RoleId";
 
-                // Ejecutamos la consulta y llenamos el DataTable
+                
                 using (var reader = connection.ExecuteReader(query))
                 {
-                    // Llenamos el DataTable con los resultados
+                    
                     employeesTable.Load(reader);
                 }
             }
 
             return employeesTable;
+        }
+
+        public DataTable GetRoles()
+        {
+            DataTable rolesTable= new DataTable();
+            
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "SELECT RoleId,RoleType AS 'Cargos' FROM Roles";
+
+                using(var reader = connection.ExecuteReader(query))
+                {
+                    rolesTable.Load(reader);
+                }
+            }
+
+            return rolesTable;
+        }
+
+        public void AddEmployee(Employees employeeSesion)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = @"INSERT INTO Employees
+                               VALUES(@Names,@LastNames,@UserEmployee,@PasswordEmployee,@DUI,@Email,@RoleId)";
+
+                connection.Query<Employees>(query,
+                    new
+                    {
+                        employeeSesion.Names,
+                        employeeSesion.LastNames,
+                        employeeSesion.UserEmployee,
+                        employeeSesion.PasswordEmployee,
+                        employeeSesion.DUI,
+                        employeeSesion.Email,
+                        employeeSesion.RoleId
+                    });
+            }
         }
     }
 }

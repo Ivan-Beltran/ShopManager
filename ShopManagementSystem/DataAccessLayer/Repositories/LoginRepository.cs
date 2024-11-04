@@ -9,7 +9,7 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Security.Cryptography.X509Certificates;
 using Dapper;
-using CommonLayer.InputEntities;
+
 
 namespace DataAccessLayer.Repositories
 {
@@ -24,7 +24,7 @@ namespace DataAccessLayer.Repositories
 
         //metoedo para crear un objeto con los atributos del empleado usando dapper
 
-        public async Task<EmployeeSesion> GetSessionAsync(EmployeesInput employeesInput)
+        public async Task<Employees> GetSessionAsync(Employees employeesInput)
         {
             using (var connection = _dbConnection.GetConnection())
             {
@@ -42,7 +42,7 @@ namespace DataAccessLayer.Repositories
                         ON E.RoleId = R.RoleId
                         WHERE E.UserEmployee = @UserEmployee";
 
-                return await connection.QueryFirstOrDefaultAsync<EmployeeSesion>(query, new { UserEmployee = employeesInput.User });
+                return await connection.QueryFirstOrDefaultAsync<Employees>(query, new { UserEmployee = employeesInput.UserEmployee });
             }
         }
     }

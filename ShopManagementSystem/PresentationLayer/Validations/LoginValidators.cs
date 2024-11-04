@@ -1,4 +1,4 @@
-﻿using CommonLayer.InputEntities;
+﻿using CommonLayer.Entities;
 using FluentValidation;
 using PresentationLayer.Forms;
 using System;
@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace PresentationLayer.Validations
 {
-    public class LoginValidators : AbstractValidator<EmployeesInput>
+    public class LoginValidators : AbstractValidator<Employees>
     {
         public LoginValidators()
         {
             RuleLevelCascadeMode = CascadeMode.Stop;
 
-            RuleFor(employeesInput => employeesInput.User)
+            RuleFor(employees => employees.UserEmployee)
                 .NotEmpty().WithMessage("Usuario rellenar campo obligatorio");
 
-            RuleFor(employeesInput => employeesInput.Password)
+            RuleFor(employees => employees.PasswordEmployee)
                 .NotEmpty().WithMessage("La contraseña no puede estar vacia");
         }
     }

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLayer.Services;
 using CommonLayer.Entities;
-using CommonLayer.InputEntities;
 using FluentValidation.Results;
 using PresentationLayer.Validations;
 
@@ -46,10 +45,10 @@ namespace PresentationLayer.Forms
             LoginButton.Enabled = false;
             
 
-            EmployeesInput employeesInput = new EmployeesInput
+            Employees employeesInput = new Employees
             {
-                User = UserTextBox.Text,
-                Password = PasswordTextBox.Text
+                UserEmployee = UserTextBox.Text,
+                PasswordEmployee = PasswordTextBox.Text
             };
 
             LoginValidators loginValidator = new LoginValidators();
@@ -65,7 +64,7 @@ namespace PresentationLayer.Forms
 
             try
             {
-                EmployeeSesion employeeSesion = await _loginServices.GetSessionAsync(employeesInput);
+                Employees employeeSesion = await _loginServices.GetSessionAsync(employeesInput);
 
                 if (employeeSesion == null)
                 {
@@ -73,7 +72,7 @@ namespace PresentationLayer.Forms
                 }
                 else
                 {
-                    if (employeeSesion.PasswordEmployee == employeesInput.Password)
+                    if (employeeSesion.PasswordEmployee == employeesInput.PasswordEmployee)
                     {
                         switch (employeeSesion.RoleId)
                         {
@@ -115,10 +114,10 @@ namespace PresentationLayer.Forms
             {
                 switch (error.PropertyName)
                 {
-                    case nameof(EmployeesInput.User):
+                    case nameof(Employees.UserEmployee):
                         validationsErrorProvider.SetError(UserTextBox, error.ErrorMessage);
                         break;
-                    case nameof(EmployeesInput.Password):
+                    case nameof(Employees.PasswordEmployee):
                         validationsErrorProvider.SetError(PasswordTextBox, error.ErrorMessage);
                         break;
                 }

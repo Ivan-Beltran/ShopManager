@@ -9,11 +9,11 @@ using System.Data;
 
 namespace BussinessLayer.Services
 {
-    public class EmployeeService : IEmployeeService
+    public class EmployeesServices : IEmployeeService
     {
         private IEmployeesRepository _employeeRepository;
 
-        public EmployeeService(IEmployeesRepository employeesRepository)
+        public EmployeesServices(IEmployeesRepository employeesRepository)
         {
             _employeeRepository = employeesRepository;
         }
@@ -21,6 +21,16 @@ namespace BussinessLayer.Services
         public DataTable GetEmployees()
         {
             return _employeeRepository.GetEmployees();
+        }
+
+        public DataTable GetRoles()
+        {
+            return _employeeRepository.GetRoles();
+        }
+
+        public void AddEmployee(Employees employeeSesion)
+        {
+            _employeeRepository.AddEmployee(employeeSesion);
         }
     }
 }

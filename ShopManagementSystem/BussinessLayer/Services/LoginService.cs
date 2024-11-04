@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Repositories;
 using CommonLayer.Entities;
-using CommonLayer.InputEntities;
+
 
 namespace BussinessLayer.Services
 {
@@ -19,9 +19,9 @@ namespace BussinessLayer.Services
         }
 
 
-        public async Task<EmployeeSesion> GetSessionAsync(EmployeesInput employees)
+        public async Task<Employees> GetSessionAsync(Employees employeesInput)
         {
-            return await _loginRepository.GetSessionAsync(employees);
+            return await _loginRepository.GetSessionAsync(employeesInput);
         }
         
 

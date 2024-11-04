@@ -11,5 +11,9 @@ namespace DataAccessLayer.Repositories
     public interface IEmployeesRepository
     {
         DataTable GetEmployees();
+
+        DataTable GetRoles();
+
+        void AddEmployee(Employees employeeSesion);
     }
 }
