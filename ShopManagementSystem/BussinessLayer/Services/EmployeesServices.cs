@@ -28,9 +28,14 @@ namespace BussinessLayer.Services
             return _employeeRepository.GetRoles();
         }
 
-        public void AddEmployee(Employees employeeSesion)
+        public void AddEmployee(Employees employeeAdded)
         {
-            _employeeRepository.AddEmployee(employeeSesion);
+            _employeeRepository.AddEmployee(employeeAdded);
+        }
+
+        public void EditEmployee(Employees employeeEdited)
+        {
+            _employeeRepository.EditEmployee(employeeEdited);
         }
     }
 }

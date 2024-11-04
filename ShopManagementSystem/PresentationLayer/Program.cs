@@ -24,7 +24,7 @@ namespace PresentationLayer
             var host = CreateHostBuilder().Build();
             ServiceProvider = host.Services;
 
-            Application.Run(ServiceProvider.GetRequiredService<LoginForm>());
+            Application.Run(ServiceProvider.GetRequiredService<ViewEmployeesForm>());
         }
 
         public static IServiceProvider ServiceProvider { get; private set; }

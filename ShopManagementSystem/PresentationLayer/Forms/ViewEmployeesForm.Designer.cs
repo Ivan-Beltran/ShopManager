@@ -117,6 +117,7 @@
             EmployeesDataGridView.RowHeadersWidth = 51;
             EmployeesDataGridView.Size = new Size(1350, 336);
             EmployeesDataGridView.TabIndex = 2;
+            EmployeesDataGridView.CellClick += EmployeesDataGridView_CellClick;
             // 
             // btnAddEmployee
             // 
@@ -144,6 +145,7 @@
             btnEditEmployee.TabIndex = 4;
             btnEditEmployee.Text = "Editar empleado";
             btnEditEmployee.UseVisualStyleBackColor = false;
+            btnEditEmployee.Click += btnEditEmployee_Click;
             // 
             // btnDeteleEmployee
             // 

@@ -9,7 +9,9 @@ namespace BussinessLayer.Services
 
         DataTable GetRoles();
 
-        void AddEmployee(Employees employeeSesion);
+        void AddEmployee(Employees employeeAdded);
+
+        void EditEmployee(Employees EmployeeEdited);
     }
 
 }

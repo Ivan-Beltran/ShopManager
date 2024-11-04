@@ -38,10 +38,10 @@ namespace DataAccessLayer.Repositories
                     INNER JOIN Roles AS R
                     ON E.RoleId = R.RoleId";
 
-                
+
                 using (var reader = connection.ExecuteReader(query))
                 {
-                    
+
                     employeesTable.Load(reader);
                 }
             }
@@ -51,13 +51,13 @@ namespace DataAccessLayer.Repositories
 
         public DataTable GetRoles()
         {
-            DataTable rolesTable= new DataTable();
-            
+            DataTable rolesTable = new DataTable();
+
             using (var connection = _dbConnection.GetConnection())
             {
                 string query = "SELECT RoleId,RoleType AS 'Cargos' FROM Roles";
 
-                using(var reader = connection.ExecuteReader(query))
+                using (var reader = connection.ExecuteReader(query))
                 {
                     rolesTable.Load(reader);
                 }
@@ -66,9 +66,9 @@ namespace DataAccessLayer.Repositories
             return rolesTable;
         }
 
-        public void AddEmployee(Employees employeeSesion)
+        public void AddEmployee(Employees employeeAdded)
         {
-            using(var connection = _dbConnection.GetConnection())
+            using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"INSERT INTO Employees
                                VALUES(@Names,@LastNames,@UserEmployee,@PasswordEmployee,@DUI,@Email,@RoleId)";
@@ -76,13 +76,42 @@ namespace DataAccessLayer.Repositories
                 connection.Query<Employees>(query,
                     new
                     {
-                        employeeSesion.Names,
-                        employeeSesion.LastNames,
-                        employeeSesion.UserEmployee,
-                        employeeSesion.PasswordEmployee,
-                        employeeSesion.DUI,
-                        employeeSesion.Email,
-                        employeeSesion.RoleId
+                        employeeAdded.Names,
+                        employeeAdded.LastNames,
+                        employeeAdded.UserEmployee,
+                        employeeAdded.PasswordEmployee,
+                        employeeAdded.DUI,
+                        employeeAdded.Email,
+                        employeeAdded.RoleId
+                    });
+            }
+        } 
+
+        public void EditEmployee(Employees employeeEdited)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"UPDATE Employees
+                                 SET Names=@Names,
+                                     LastNames=@LastNames,
+                                     UserEmployee=@UserEmployee,
+                                     PasswordEmployee=@PasswordEmployee,
+                                     DUI=@DUI,
+                                     Email=@Email,
+                                     RoleId=@RoleId
+                                     Where EmployeeId=@EmployeeId";
+
+                connection.Query<Employees>(query,
+                    new
+                    {
+                        employeeEdited.EmployeeId,
+                        employeeEdited.Names,
+                        employeeEdited.LastNames,
+                        employeeEdited.UserEmployee,
+                        employeeEdited.PasswordEmployee,
+                        employeeEdited.DUI,
+                        employeeEdited.Email,
+                        employeeEdited.RoleId
                     });
             }
         }

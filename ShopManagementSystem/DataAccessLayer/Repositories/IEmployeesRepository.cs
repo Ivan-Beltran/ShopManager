@@ -14,6 +14,8 @@ namespace DataAccessLayer.Repositories
 
         DataTable GetRoles();
 
-        void AddEmployee(Employees employeeSesion);
+        void AddEmployee(Employees employeeAdded);
+
+        void EditEmployee(Employees employeeEdited);
     }
 }
