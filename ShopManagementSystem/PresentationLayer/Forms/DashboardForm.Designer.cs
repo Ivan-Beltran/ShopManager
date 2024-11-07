@@ -30,20 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             sidebarPanel = new Panel();
-            welcomePanel = new Panel();
             employeeNameLabel = new Label();
             welcomeLabel = new Label();
             inventarioIconButton = new FontAwesome.Sharp.IconButton();
             ventasIconButton = new FontAwesome.Sharp.IconButton();
             personalIconButton = new FontAwesome.Sharp.IconButton();
             HomeButton = new FontAwesome.Sharp.IconButton();
-            pictureBox1 = new PictureBox();
+            logoPictureBox = new PictureBox();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             PrincipalPanel = new Panel();
             pictureBox2 = new PictureBox();
             sidebarPanel.SuspendLayout();
-            welcomePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             PrincipalPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -51,49 +49,43 @@
             // sidebarPanel
             // 
             sidebarPanel.BackColor = Color.FromArgb(0, 166, 225);
-            sidebarPanel.Controls.Add(welcomePanel);
+            sidebarPanel.BorderStyle = BorderStyle.FixedSingle;
+            sidebarPanel.Controls.Add(employeeNameLabel);
+            sidebarPanel.Controls.Add(welcomeLabel);
             sidebarPanel.Controls.Add(inventarioIconButton);
             sidebarPanel.Controls.Add(ventasIconButton);
             sidebarPanel.Controls.Add(personalIconButton);
             sidebarPanel.Controls.Add(HomeButton);
-            sidebarPanel.Controls.Add(pictureBox1);
+            sidebarPanel.Controls.Add(logoPictureBox);
             sidebarPanel.Dock = DockStyle.Left;
             sidebarPanel.Location = new Point(0, 0);
-            sidebarPanel.Margin = new Padding(1, 2, 1, 2);
+            sidebarPanel.Margin = new Padding(1, 3, 1, 3);
             sidebarPanel.Name = "sidebarPanel";
-            sidebarPanel.Size = new Size(230, 449);
+            sidebarPanel.Size = new Size(263, 652);
             sidebarPanel.TabIndex = 0;
-            // 
-            // welcomePanel
-            // 
-            welcomePanel.BackColor = Color.FromArgb(0, 166, 225);
-            welcomePanel.Controls.Add(employeeNameLabel);
-            welcomePanel.Controls.Add(welcomeLabel);
-            welcomePanel.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold);
-            welcomePanel.Location = new Point(0, 157);
-            welcomePanel.Margin = new Padding(3, 2, 3, 2);
-            welcomePanel.Name = "welcomePanel";
-            welcomePanel.Size = new Size(223, 47);
-            welcomePanel.TabIndex = 5;
             // 
             // employeeNameLabel
             // 
-            employeeNameLabel.AutoSize = true;
+            employeeNameLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            employeeNameLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             employeeNameLabel.ForeColor = Color.White;
-            employeeNameLabel.Location = new Point(34, 29);
+            employeeNameLabel.Location = new Point(3, 246);
             employeeNameLabel.Name = "employeeNameLabel";
-            employeeNameLabel.Size = new Size(0, 20);
+            employeeNameLabel.Size = new Size(255, 30);
             employeeNameLabel.TabIndex = 1;
+            employeeNameLabel.Text = "josue ivan";
+            employeeNameLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // welcomeLabel
             // 
-            welcomeLabel.AutoSize = true;
+            welcomeLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             welcomeLabel.ForeColor = Color.White;
-            welcomeLabel.Location = new Point(62, 0);
+            welcomeLabel.Location = new Point(3, 205);
             welcomeLabel.Name = "welcomeLabel";
-            welcomeLabel.Size = new Size(93, 20);
+            welcomeLabel.Size = new Size(263, 41);
             welcomeLabel.TabIndex = 0;
             welcomeLabel.Text = "Bienvenido";
+            welcomeLabel.TextAlign = ContentAlignment.TopCenter;
             // 
             // inventarioIconButton
             // 
@@ -107,10 +99,10 @@
             inventarioIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             inventarioIconButton.IconSize = 32;
             inventarioIconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            inventarioIconButton.Location = new Point(0, 371);
-            inventarioIconButton.Margin = new Padding(1, 2, 1, 2);
+            inventarioIconButton.Location = new Point(0, 525);
+            inventarioIconButton.Margin = new Padding(1, 3, 1, 3);
             inventarioIconButton.Name = "inventarioIconButton";
-            inventarioIconButton.Size = new Size(230, 33);
+            inventarioIconButton.Size = new Size(263, 44);
             inventarioIconButton.TabIndex = 4;
             inventarioIconButton.Text = "Inventario";
             inventarioIconButton.UseVisualStyleBackColor = false;
@@ -127,10 +119,10 @@
             ventasIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ventasIconButton.IconSize = 32;
             ventasIconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            ventasIconButton.Location = new Point(0, 273);
-            ventasIconButton.Margin = new Padding(1, 2, 1, 2);
+            ventasIconButton.Location = new Point(0, 394);
+            ventasIconButton.Margin = new Padding(1, 3, 1, 3);
             ventasIconButton.Name = "ventasIconButton";
-            ventasIconButton.Size = new Size(230, 33);
+            ventasIconButton.Size = new Size(263, 44);
             ventasIconButton.TabIndex = 3;
             ventasIconButton.Text = "Ventas";
             ventasIconButton.UseVisualStyleBackColor = false;
@@ -147,10 +139,10 @@
             personalIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             personalIconButton.IconSize = 32;
             personalIconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            personalIconButton.Location = new Point(-1, 323);
-            personalIconButton.Margin = new Padding(1, 2, 1, 2);
+            personalIconButton.Location = new Point(-1, 461);
+            personalIconButton.Margin = new Padding(1, 3, 1, 3);
             personalIconButton.Name = "personalIconButton";
-            personalIconButton.Size = new Size(230, 33);
+            personalIconButton.Size = new Size(263, 44);
             personalIconButton.TabIndex = 2;
             personalIconButton.Text = "Personal";
             personalIconButton.UseVisualStyleBackColor = false;
@@ -168,26 +160,25 @@
             HomeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             HomeButton.IconSize = 32;
             HomeButton.ImageAlign = ContentAlignment.MiddleLeft;
-            HomeButton.Location = new Point(0, 224);
-            HomeButton.Margin = new Padding(1, 2, 1, 2);
+            HomeButton.Location = new Point(0, 329);
+            HomeButton.Margin = new Padding(1, 3, 1, 3);
             HomeButton.Name = "HomeButton";
-            HomeButton.Size = new Size(230, 33);
+            HomeButton.Size = new Size(263, 44);
             HomeButton.TabIndex = 1;
             HomeButton.Text = "Inicio";
             HomeButton.UseVisualStyleBackColor = false;
             HomeButton.Click += HomeButton_Click;
             // 
-            // pictureBox1
+            // logoPictureBox
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 2);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(225, 170);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            logoPictureBox.BackColor = Color.Transparent;
+            logoPictureBox.Image = (Image)resources.GetObject("logoPictureBox.Image");
+            logoPictureBox.Location = new Point(0, 3);
+            logoPictureBox.Name = "logoPictureBox";
+            logoPictureBox.Size = new Size(257, 227);
+            logoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            logoPictureBox.TabIndex = 0;
+            logoPictureBox.TabStop = false;
             // 
             // sqlCommand1
             // 
@@ -198,10 +189,9 @@
             // 
             PrincipalPanel.Controls.Add(pictureBox2);
             PrincipalPanel.Dock = DockStyle.Fill;
-            PrincipalPanel.Location = new Point(230, 0);
-            PrincipalPanel.Margin = new Padding(3, 2, 3, 2);
+            PrincipalPanel.Location = new Point(263, 0);
             PrincipalPanel.Name = "PrincipalPanel";
-            PrincipalPanel.Size = new Size(729, 449);
+            PrincipalPanel.Size = new Size(1040, 652);
             PrincipalPanel.TabIndex = 1;
             // 
             // pictureBox2
@@ -209,29 +199,26 @@
             pictureBox2.Enabled = false;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(-1, 0);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1453, 743);
+            pictureBox2.Size = new Size(1661, 991);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
             // DashboardForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(959, 449);
+            ClientSize = new Size(1303, 652);
             Controls.Add(PrincipalPanel);
             Controls.Add(sidebarPanel);
-            Margin = new Padding(1, 2, 1, 2);
+            Margin = new Padding(1, 3, 1, 3);
             Name = "DashboardForm";
             Text = "Dashboard";
             WindowState = FormWindowState.Maximized;
             sidebarPanel.ResumeLayout(false);
-            welcomePanel.ResumeLayout(false);
-            welcomePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
             PrincipalPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -246,9 +233,8 @@
         private FontAwesome.Sharp.IconButton personalIconButton;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private Panel PrincipalPanel;
-        private PictureBox pictureBox1;
+        private PictureBox logoPictureBox;
         private PictureBox pictureBox2;
-        private Panel welcomePanel;
         private Label employeeNameLabel;
         private Label welcomeLabel;
     }

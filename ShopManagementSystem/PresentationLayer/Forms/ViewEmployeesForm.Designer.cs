@@ -58,6 +58,7 @@
             editEmployeeButton = new FontAwesome.Sharp.IconButton();
             deteleEmployeeButton = new FontAwesome.Sharp.IconButton();
             employeeButtonsgroupBox = new GroupBox();
+            clearRowButton = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)emplyeesIconPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)EmployeesDataGridView).BeginInit();
@@ -156,18 +157,21 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.ActiveCaptionText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             EmployeesDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            EmployeesDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             EmployeesDataGridView.Location = new Point(27, 141);
             EmployeesDataGridView.Margin = new Padding(3, 4, 3, 4);
             EmployeesDataGridView.MultiSelect = false;
             EmployeesDataGridView.Name = "EmployeesDataGridView";
+            EmployeesDataGridView.ReadOnly = true;
             EmployeesDataGridView.RowHeadersVisible = false;
             EmployeesDataGridView.RowHeadersWidth = 35;
             EmployeesDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             EmployeesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            EmployeesDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             EmployeesDataGridView.Size = new Size(1287, 367);
             EmployeesDataGridView.TabIndex = 2;
-            EmployeesDataGridView.CellClick += EmployeesDataGridView_CellClick;
+            EmployeesDataGridView.SelectionChanged += EmployeesDataGridView_SelectionChanged_1;
             // 
             // namesTextBox
             // 
@@ -351,15 +355,15 @@
             addEmployeeButton.FlatStyle = FlatStyle.Popup;
             addEmployeeButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addEmployeeButton.ForeColor = Color.White;
-            addEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
+            addEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
             addEmployeeButton.IconColor = Color.White;
             addEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addEmployeeButton.IconSize = 38;
             addEmployeeButton.ImageAlign = ContentAlignment.MiddleLeft;
-            addEmployeeButton.Location = new Point(19, 71);
+            addEmployeeButton.Location = new Point(19, 40);
             addEmployeeButton.Margin = new Padding(1);
             addEmployeeButton.Name = "addEmployeeButton";
-            addEmployeeButton.Size = new Size(222, 67);
+            addEmployeeButton.Size = new Size(222, 53);
             addEmployeeButton.TabIndex = 22;
             addEmployeeButton.Text = "    Agregar empleado";
             addEmployeeButton.TextAlign = ContentAlignment.MiddleRight;
@@ -377,10 +381,10 @@
             editEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editEmployeeButton.IconSize = 38;
             editEmployeeButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editEmployeeButton.Location = new Point(19, 162);
+            editEmployeeButton.Location = new Point(19, 111);
             editEmployeeButton.Margin = new Padding(3, 4, 3, 4);
             editEmployeeButton.Name = "editEmployeeButton";
-            editEmployeeButton.Size = new Size(222, 67);
+            editEmployeeButton.Size = new Size(222, 53);
             editEmployeeButton.TabIndex = 21;
             editEmployeeButton.Text = "        Editar empleado";
             editEmployeeButton.TextAlign = ContentAlignment.MiddleRight;
@@ -398,10 +402,10 @@
             deteleEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deteleEmployeeButton.IconSize = 38;
             deteleEmployeeButton.ImageAlign = ContentAlignment.MiddleLeft;
-            deteleEmployeeButton.Location = new Point(19, 250);
+            deteleEmployeeButton.Location = new Point(19, 197);
             deteleEmployeeButton.Margin = new Padding(3, 4, 3, 4);
             deteleEmployeeButton.Name = "deteleEmployeeButton";
-            deteleEmployeeButton.Size = new Size(222, 67);
+            deteleEmployeeButton.Size = new Size(222, 53);
             deteleEmployeeButton.TabIndex = 22;
             deteleEmployeeButton.Text = "        Borrar empleado";
             deteleEmployeeButton.TextAlign = ContentAlignment.MiddleRight;
@@ -410,6 +414,7 @@
             // 
             // employeeButtonsgroupBox
             // 
+            employeeButtonsgroupBox.Controls.Add(clearRowButton);
             employeeButtonsgroupBox.Controls.Add(addEmployeeButton);
             employeeButtonsgroupBox.Controls.Add(editEmployeeButton);
             employeeButtonsgroupBox.Controls.Add(deteleEmployeeButton);
@@ -419,6 +424,27 @@
             employeeButtonsgroupBox.TabIndex = 23;
             employeeButtonsgroupBox.TabStop = false;
             employeeButtonsgroupBox.Text = "acciones";
+            // 
+            // clearRowButton
+            // 
+            clearRowButton.BackColor = Color.FromArgb(0, 166, 225);
+            clearRowButton.FlatStyle = FlatStyle.Popup;
+            clearRowButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clearRowButton.ForeColor = Color.White;
+            clearRowButton.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            clearRowButton.IconColor = Color.White;
+            clearRowButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            clearRowButton.IconSize = 38;
+            clearRowButton.ImageAlign = ContentAlignment.MiddleLeft;
+            clearRowButton.Location = new Point(19, 286);
+            clearRowButton.Margin = new Padding(3, 4, 3, 4);
+            clearRowButton.Name = "clearRowButton";
+            clearRowButton.Size = new Size(222, 53);
+            clearRowButton.TabIndex = 23;
+            clearRowButton.Text = "Quitar seleccion";
+            clearRowButton.TextAlign = ContentAlignment.MiddleRight;
+            clearRowButton.UseVisualStyleBackColor = false;
+            clearRowButton.Click += clearRowButton_Click;
             // 
             // ViewEmployeesForm
             // 
@@ -472,5 +498,6 @@
         private Label label1;
         private TextBox searchEmployeeTextBox;
         private FontAwesome.Sharp.IconButton searchEmployeeButton;
+        private FontAwesome.Sharp.IconButton clearRowButton;
     }
 }

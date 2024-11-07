@@ -54,7 +54,7 @@ namespace PresentationLayer.Forms
         {
               
 
-              openChildForm(new ViewEmployeesForm(employeeService));
+              openChildForm(new ViewEmployeesForm(employeeService,_employeeSesion));
         }
     }
 }
