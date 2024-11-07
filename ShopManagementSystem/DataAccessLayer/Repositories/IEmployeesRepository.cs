@@ -19,5 +19,7 @@ namespace DataAccessLayer.Repositories
         void EditEmployee(Employees employeeEdited);
 
         void DeleteEmployee(int Id);
+
+        DataTable SearchEmployee(string search);
     }
 }

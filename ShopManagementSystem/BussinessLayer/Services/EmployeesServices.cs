@@ -42,5 +42,10 @@ namespace BussinessLayer.Services
         {
             _employeeRepository.DeleteEmployee(Id);
         }
+
+        public DataTable SearchEmployee(string search)
+        {
+            return _employeeRepository.SearchEmployee(search);
+        }
     }
 }

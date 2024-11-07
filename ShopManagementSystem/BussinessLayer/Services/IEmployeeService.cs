@@ -14,6 +14,8 @@ namespace BussinessLayer.Services
         void EditEmployee(Employees EmployeeEdited);
 
         void DeleteEmployee(int Id);
+
+        DataTable SearchEmployee(string search);
     }
 
 }

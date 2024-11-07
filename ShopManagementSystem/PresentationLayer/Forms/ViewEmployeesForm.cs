@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BussinessLayer.Services;
 using CommonLayer.Entities;
 using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 
 namespace PresentationLayer.Forms
 {
@@ -23,13 +24,29 @@ namespace PresentationLayer.Forms
             LoadEmployees();
             LoadRoles();
             EmployeesDataGridView.CellClick += EmployeesDataGridView_CellClick;
+            //searchEmployeeTextBox.TextChanged += searchEmployeeTextBox_TextChanged;
         }
 
-
+       
 
         public void LoadEmployees()
         {
             EmployeesDataGridView.DataSource = _employeeService.GetEmployees();
+            EmployeesDataGridView.ClearSelection();
+
+            EmployeesDataGridView.Columns["ID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            EmployeesDataGridView.Columns["Cargo"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            EmployeesDataGridView.Columns["DUI"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+            EmployeesDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            foreach (DataGridViewColumn column in EmployeesDataGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+
+
 
         }
 
@@ -122,6 +139,28 @@ namespace PresentationLayer.Forms
             int Id = Convert.ToInt32(EmployeesDataGridView.CurrentRow.Cells[0].Value.ToString());
             _employeeService.DeleteEmployee(Id);
             LoadEmployees();
+        }
+
+        private void searchEmployeeButton_Click(object sender, EventArgs e)
+        {
+            if (searchEmployeeTextBox.Text.IsNullOrEmpty())
+            {
+                LoadEmployees();
+            }
+            else
+            {
+                string search = searchEmployeeTextBox.Text;
+                EmployeesDataGridView.DataSource = _employeeService.SearchEmployee(search);
+            }
+        }
+
+        private void searchEmployeeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(searchEmployeeTextBox.Text))
+            {
+                
+                LoadEmployees();
+            }
         }
     }
 }

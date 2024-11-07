@@ -125,5 +125,40 @@ namespace DataAccessLayer.Repositories
                 connection.Query<Employees>(query, new { EmployeeId });
             }
         }
+
+        public DataTable SearchEmployee(string search)
+        {
+            DataTable searchEmployeeTable = new DataTable();
+
+            using (var connection = _dbConnection.GetConnection())
+            {
+                // Corregir la sintaxis de la consulta
+                string query = @"SELECT
+            E.EmployeeId AS ID,
+            E.Names AS Nombres,
+            E.LastNames AS Apellidos,
+            E.UserEmployee AS Usuario,
+            E.PasswordEmployee AS Contraseña,
+            E.DUI,
+            E.Email,
+            R.RoleType AS Cargo
+            FROM Employees AS E
+            INNER JOIN Roles AS R ON E.RoleId = R.RoleId
+            WHERE E.Names LIKE @search 
+            OR E.LastNames LIKE @search
+            OR E.UserEmployee LIKE @search"; // Agregar la búsqueda en varios campos
+
+                // Usar ExecuteReader con el parámetro correctamente
+                using (var reader = connection.ExecuteReader(query, new { search = "%" + search + "%" }))
+                {
+                    searchEmployeeTable.Load(reader); // Cargar los resultados en el DataTable
+                }
+            }
+
+            return searchEmployeeTable;
+        }
+
+    
+    
     }
 }
