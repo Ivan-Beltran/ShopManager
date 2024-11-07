@@ -117,5 +117,11 @@ namespace PresentationLayer.Forms
             }
         }
 
+        private void deteleEmployeeButton_Click(object sender, EventArgs e)
+        {
+            int Id = Convert.ToInt32(EmployeesDataGridView.CurrentRow.Cells[0].Value.ToString());
+            _employeeService.DeleteEmployee(Id);
+            LoadEmployees();
+        }
     }
 }

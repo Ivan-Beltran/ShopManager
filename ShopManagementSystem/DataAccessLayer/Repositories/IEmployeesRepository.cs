@@ -17,5 +17,7 @@ namespace DataAccessLayer.Repositories
         void AddEmployee(Employees employeeAdded);
 
         void EditEmployee(Employees employeeEdited);
+
+        void DeleteEmployee(int Id);
     }
 }

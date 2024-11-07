@@ -12,6 +12,8 @@ namespace BussinessLayer.Services
         void AddEmployee(Employees employeeAdded);
 
         void EditEmployee(Employees EmployeeEdited);
+
+        void DeleteEmployee(int Id);
     }
 
 }

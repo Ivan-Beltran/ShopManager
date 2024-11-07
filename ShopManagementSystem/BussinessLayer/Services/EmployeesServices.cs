@@ -37,5 +37,10 @@ namespace BussinessLayer.Services
         {
             _employeeRepository.EditEmployee(employeeEdited);
         }
+
+        public void DeleteEmployee(int Id)
+        {
+            _employeeRepository.DeleteEmployee(Id);
+        }
     }
 }

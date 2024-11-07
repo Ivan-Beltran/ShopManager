@@ -52,7 +52,6 @@
             roleLabel = new Label();
             editEmployeeButton = new FontAwesome.Sharp.IconButton();
             deteleEmployeeButton = new FontAwesome.Sharp.IconButton();
-            rolesEmployeeButton = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)emplyeesIconPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)EmployeesDataGridView).BeginInit();
@@ -332,31 +331,13 @@
             deteleEmployeeButton.TabIndex = 22;
             deteleEmployeeButton.Text = "        Borrar empleado";
             deteleEmployeeButton.UseVisualStyleBackColor = false;
-            // 
-            // rolesEmployeeButton
-            // 
-            rolesEmployeeButton.BackColor = Color.FromArgb(0, 166, 225);
-            rolesEmployeeButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rolesEmployeeButton.ForeColor = Color.White;
-            rolesEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.Add;
-            rolesEmployeeButton.IconColor = Color.White;
-            rolesEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            rolesEmployeeButton.IconSize = 38;
-            rolesEmployeeButton.ImageAlign = ContentAlignment.MiddleLeft;
-            rolesEmployeeButton.Location = new Point(1384, 380);
-            rolesEmployeeButton.Margin = new Padding(3, 4, 3, 4);
-            rolesEmployeeButton.Name = "rolesEmployeeButton";
-            rolesEmployeeButton.Size = new Size(208, 67);
-            rolesEmployeeButton.TabIndex = 23;
-            rolesEmployeeButton.Text = "        Agregar cargos";
-            rolesEmployeeButton.UseVisualStyleBackColor = false;
+            deteleEmployeeButton.Click += deteleEmployeeButton_Click;
             // 
             // ViewEmployeesForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1566, 999);
-            Controls.Add(rolesEmployeeButton);
             Controls.Add(deteleEmployeeButton);
             Controls.Add(editEmployeeButton);
             Controls.Add(addEmployeegroupBox);
@@ -399,7 +380,6 @@
         private Label roleLabel;
         private FontAwesome.Sharp.IconButton editEmployeeButton;
         private FontAwesome.Sharp.IconButton deteleEmployeeButton;
-        private FontAwesome.Sharp.IconButton rolesEmployeeButton;
         private FontAwesome.Sharp.IconButton addEmployeeButton;
     }
 }

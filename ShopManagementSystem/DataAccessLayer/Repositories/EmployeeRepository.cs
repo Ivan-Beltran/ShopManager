@@ -115,5 +115,15 @@ namespace DataAccessLayer.Repositories
                     });
             }
         }
+
+        public void DeleteEmployee(int EmployeeId)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = "DELETE FROM Employees WHERE EmployeeId = @EmployeeId";
+
+                connection.Query<Employees>(query, new { EmployeeId });
+            }
+        }
     }
 }
