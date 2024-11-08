@@ -147,7 +147,6 @@
             inventoryButton.TabIndex = 4;
             inventoryButton.Text = "Inventario";
             inventoryButton.UseVisualStyleBackColor = false;
-            inventoryButton.Click += inventoryButton_Click;
             // 
             // salesReportButton
             // 
@@ -209,7 +208,7 @@
             shopButton.TabIndex = 1;
             shopButton.Text = "Tienda";
             shopButton.UseVisualStyleBackColor = false;
-            shopButton.Click += HomeButton_Click;
+            shopButton.Click += shopButton_Click;
             // 
             // logoPictureBox
             // 

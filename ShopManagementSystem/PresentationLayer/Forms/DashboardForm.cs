@@ -25,11 +25,8 @@ namespace PresentationLayer.Forms
 
             _employeeSesion = employeeSesion;
             employeeService = _employeeService;
-
             employeeNameLabel.Text = _employeeSesion.Names;
-
             this.PrincipalPanel.Resize += (s, e) => AdjustChildFormSize();
-
             Permissions();
         }
 
@@ -91,9 +88,9 @@ namespace PresentationLayer.Forms
             }
         }
 
-        private void inventoryButton_Click(object sender, EventArgs e)
+        private void shopButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new ViewEmployeesForm(employeeService, _employeeSesion));
+            openChildForm(new HomeForm());
         }
     }
 }
