@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BussinessLayer.Services;
+using CommonLayer.Entities;
+using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,18 +11,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BussinessLayer.Services;
-using CommonLayer.Entities;
-using Microsoft.Data.SqlClient;
-using Microsoft.IdentityModel.Tokens;
 
 namespace PresentationLayer.Forms
 {
-    public partial class ViewEmployeesForm : Form
+    public partial class EmployeesForm : Form
     {
         private readonly IEmployeeService _employeeService;
         private Employees _employeeSession;
-        public ViewEmployeesForm(IEmployeeService employeeService, Employees employeeSession)
+        public EmployeesForm(IEmployeeService employeeService, Employees employeeSession)
         {
             InitializeComponent();
             _employeeService = employeeService;
@@ -249,7 +249,7 @@ namespace PresentationLayer.Forms
                 duiTextBox.Text = EmployeesDataGridView.CurrentRow.Cells[5].Value.ToString();
                 emailTextBox.Text = EmployeesDataGridView.CurrentRow.Cells[6].Value.ToString();
                 rolesComboBox.Text = EmployeesDataGridView.CurrentRow.Cells[7].Value.ToString();
-            }  
+            }
         }
     }
 }

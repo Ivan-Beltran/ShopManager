@@ -74,17 +74,9 @@ namespace PresentationLayer.Forms
                 {
                     if (employeeSesion.PasswordEmployee == employeesInput.PasswordEmployee)
                     {
-                        switch (employeeSesion.RoleId)
-                        {
-                            case 1:
-                                this.Hide();
-                                DashboardForm dashboardForm = new DashboardForm(employeeSesion,_employeeServices);
-                                dashboardForm.Show();
-                                break;
-                            case 2:
-                                MessageBox.Show("Eres cajero.");
-                                break;
-                        }
+                        this.Hide();
+                        DashboardForm dashboardForm = new DashboardForm(employeeSesion, _employeeServices);
+                        dashboardForm.Show();
                     }
                     else
                     {

@@ -17,30 +17,54 @@ namespace PresentationLayer.Forms
 
         private Employees _employeeSesion;
         private readonly IEmployeeService employeeService;
-        
 
-        public DashboardForm(Employees employeeSesion,IEmployeeService _employeeService)
+
+        public DashboardForm(Employees employeeSesion, IEmployeeService _employeeService)
         {
             InitializeComponent();
-            _employeeSesion = employeeSesion;
-            employeeNameLabel.Text = _employeeSesion.Names;
-            employeeService=_employeeService;
-            
 
+            _employeeSesion = employeeSesion;
+            employeeService = _employeeService;
+
+            employeeNameLabel.Text = _employeeSesion.Names;
+
+            this.PrincipalPanel.Resize += (s, e) => AdjustChildFormSize();
+
+            Permissions();
         }
-        private Form activeForm = null;
-        private void openChildForm(Form childForm)
+
+        private void openChildForm(object _childForm)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
+            // Cierra cualquier formulario existente en el panel
+            if (this.PrincipalPanel.Controls.Count > 0)
+            {
+                this.PrincipalPanel.Controls.RemoveAt(0);
+            }
+
+            // Agrega el nuevo formulario como hijo del panel
+            Form childForm = _childForm as Form;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            PrincipalPanel.Controls.Add(childForm);
-            PrincipalPanel.Tag = childForm;
-            childForm.BringToFront();
+            this.PrincipalPanel.Controls.Add(childForm);
+            this.PrincipalPanel.Tag = childForm;
             childForm.Show();
+
+            AdjustChildFormSize();
+        }
+
+
+        private void AdjustChildFormSize()
+        {
+            if (PrincipalPanel.Controls.Count > 0)
+            {
+                var childForm = PrincipalPanel.Controls[0] as Form;
+                if (childForm != null)
+                {
+                    childForm.Dock = DockStyle.Fill;
+                    childForm.Refresh();
+                }
+            }
         }
 
         private void HomeButton_Click(object sender, EventArgs e)
@@ -48,13 +72,28 @@ namespace PresentationLayer.Forms
             openChildForm(new HomeForm());
         }
 
-       
-        
         private void personalIconButton_Click(object sender, EventArgs e)
         {
-              
 
-              openChildForm(new ViewEmployeesForm(employeeService,_employeeSesion));
+            openChildForm(new EmployeesForm(employeeService, _employeeSesion));
+        }
+
+        private void Permissions()
+        {
+            if (_employeeSesion.RoleId == 2)
+            {
+                inventoryButton.Enabled = false;
+                inventoryButton.Visible = false;
+                employeesButton.Enabled = false;
+                employeesButton.Visible = false;
+                shoppingOrdersButton.Enabled = false;
+                shoppingOrdersButton.Visible = false;
+            }
+        }
+
+        private void inventoryButton_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ViewEmployeesForm(employeeService, _employeeSesion));
         }
     }
 }
