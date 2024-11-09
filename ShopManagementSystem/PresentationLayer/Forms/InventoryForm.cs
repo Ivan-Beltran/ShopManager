@@ -16,5 +16,10 @@ namespace PresentationLayer.Forms
         {
             InitializeComponent();
         }
+
+        private void groupBoxInventory_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

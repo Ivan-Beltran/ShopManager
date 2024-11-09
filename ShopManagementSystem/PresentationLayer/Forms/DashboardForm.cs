@@ -92,5 +92,10 @@ namespace PresentationLayer.Forms
         {
             openChildForm(new HomeForm());
         }
+
+        private void inventoryButton_Click(object sender, EventArgs e)
+        {
+            openChildForm(new InventoryForm());
+        }
     }
 }

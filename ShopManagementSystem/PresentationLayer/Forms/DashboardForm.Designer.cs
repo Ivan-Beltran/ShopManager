@@ -147,6 +147,7 @@
             inventoryButton.TabIndex = 4;
             inventoryButton.Text = "Inventario";
             inventoryButton.UseVisualStyleBackColor = false;
+            inventoryButton.Click += inventoryButton_Click;
             // 
             // salesReportButton
             // 

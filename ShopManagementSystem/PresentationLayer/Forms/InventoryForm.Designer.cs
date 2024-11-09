@@ -29,449 +29,627 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryForm));
-            dataGridViewInventory = new DataGridView();
-            pictureBoxLaptop = new PictureBox();
-            groupBoxInventory = new GroupBox();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
-            button5 = new Button();
-            pictureBoxAccesories = new PictureBox();
-            quantityAccessories = new Label();
-            resultearphonesLabel = new Label();
-            resultAccesoriesLabel = new Label();
-            quantityEarphones = new Label();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            pictureBoxEarphones = new PictureBox();
-            button4 = new Button();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            button3 = new Button();
-            resultCellPhonesLabel = new Label();
-            quantityCellPhones = new Label();
-            pictureBoxCellPhones = new PictureBox();
-            tabletsButton = new FontAwesome.Sharp.IconButton();
-            button2 = new Button();
-            resultTabletsLabel = new Label();
-            quantityTablets = new Label();
-            pictureBoxTablets = new PictureBox();
-            computerButton = new FontAwesome.Sharp.IconButton();
-            button1 = new Button();
-            resultComputerLabel = new Label();
-            quantityComputer = new Label();
-            pictureBoxComputer = new PictureBox();
-            laptopsButton = new FontAwesome.Sharp.IconButton();
-            viewDetailsButton = new Button();
-            resultLaptopsLabel = new Label();
-            quantityLaptop = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewInventory).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxLaptop).BeginInit();
-            groupBoxInventory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxAccesories).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxEarphones).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCellPhones).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxTablets).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxComputer).BeginInit();
+            invetoryDataGridView = new DataGridView();
+            categoryGroupBox = new GroupBox();
+            accesoriesGroupBox = new GroupBox();
+            showAccesoriesButton = new FontAwesome.Sharp.IconButton();
+            label20 = new Label();
+            AccesoryLabel = new Label();
+            accesoriesPictureBox = new PictureBox();
+            label22 = new Label();
+            totalAccesoriesLabel = new Label();
+            quantityAccesoriesLabel = new Label();
+            pcGroupBox = new GroupBox();
+            showPcButton = new FontAwesome.Sharp.IconButton();
+            pcDownLabel = new Label();
+            pcLabel = new Label();
+            pcPictureBox = new PictureBox();
+            pcTopLineLabel = new Label();
+            pcTotalLabel = new Label();
+            pcQuantityLabel = new Label();
+            LaptopGroupBox = new GroupBox();
+            showLaptopsButton = new FontAwesome.Sharp.IconButton();
+            laptosLineDownLabel = new Label();
+            laptosLabel = new Label();
+            laptopPictureBox = new PictureBox();
+            laptosLineUpLabel = new Label();
+            totalLaptosLabel = new Label();
+            quntaityLaptopsLabel = new Label();
+            movilGroupBox = new GroupBox();
+            showMovilesButton = new FontAwesome.Sharp.IconButton();
+            label5 = new Label();
+            movilesLabel = new Label();
+            movilPictureBox = new PictureBox();
+            label7 = new Label();
+            totalMovilesLabel = new Label();
+            quantityMovilesLabel = new Label();
+            TabletsGroupBox = new GroupBox();
+            showTabletsButton = new FontAwesome.Sharp.IconButton();
+            label4 = new Label();
+            tabletsLabel = new Label();
+            tabletsPictureBox = new PictureBox();
+            tabletsLineUPlabel = new Label();
+            totalTabletsLabel = new Label();
+            quantityTabletsLabel = new Label();
+            ((System.ComponentModel.ISupportInitialize)invetoryDataGridView).BeginInit();
+            categoryGroupBox.SuspendLayout();
+            accesoriesGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)accesoriesPictureBox).BeginInit();
+            pcGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pcPictureBox).BeginInit();
+            LaptopGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)laptopPictureBox).BeginInit();
+            movilGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)movilPictureBox).BeginInit();
+            TabletsGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tabletsPictureBox).BeginInit();
             SuspendLayout();
             // 
-            // dataGridViewInventory
+            // invetoryDataGridView
             // 
-            dataGridViewInventory.BackgroundColor = Color.Azure;
-            dataGridViewInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewInventory.Location = new Point(208, 257);
-            dataGridViewInventory.Name = "dataGridViewInventory";
-            dataGridViewInventory.Size = new Size(987, 248);
-            dataGridViewInventory.TabIndex = 0;
+            invetoryDataGridView.BackgroundColor = Color.Azure;
+            invetoryDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            invetoryDataGridView.Location = new Point(31, 430);
+            invetoryDataGridView.Margin = new Padding(3, 4, 3, 4);
+            invetoryDataGridView.Name = "invetoryDataGridView";
+            invetoryDataGridView.RowHeadersWidth = 51;
+            invetoryDataGridView.Size = new Size(1372, 331);
+            invetoryDataGridView.TabIndex = 0;
             // 
-            // pictureBoxLaptop
+            // categoryGroupBox
             // 
-            pictureBoxLaptop.BackColor = Color.White;
-            pictureBoxLaptop.Image = (Image)resources.GetObject("pictureBoxLaptop.Image");
-            pictureBoxLaptop.Location = new Point(38, 22);
-            pictureBoxLaptop.Name = "pictureBoxLaptop";
-            pictureBoxLaptop.Size = new Size(125, 70);
-            pictureBoxLaptop.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxLaptop.TabIndex = 7;
-            pictureBoxLaptop.TabStop = false;
+            categoryGroupBox.Controls.Add(accesoriesGroupBox);
+            categoryGroupBox.Controls.Add(pcGroupBox);
+            categoryGroupBox.Controls.Add(LaptopGroupBox);
+            categoryGroupBox.Controls.Add(movilGroupBox);
+            categoryGroupBox.Controls.Add(TabletsGroupBox);
+            categoryGroupBox.Location = new Point(31, 12);
+            categoryGroupBox.Margin = new Padding(3, 4, 3, 4);
+            categoryGroupBox.Name = "categoryGroupBox";
+            categoryGroupBox.Padding = new Padding(3, 4, 3, 4);
+            categoryGroupBox.Size = new Size(1488, 323);
+            categoryGroupBox.TabIndex = 9;
+            categoryGroupBox.TabStop = false;
+            categoryGroupBox.Enter += groupBoxInventory_Enter;
             // 
-            // groupBoxInventory
+            // accesoriesGroupBox
             // 
-            groupBoxInventory.Controls.Add(iconButton3);
-            groupBoxInventory.Controls.Add(button5);
-            groupBoxInventory.Controls.Add(pictureBoxAccesories);
-            groupBoxInventory.Controls.Add(quantityAccessories);
-            groupBoxInventory.Controls.Add(resultearphonesLabel);
-            groupBoxInventory.Controls.Add(resultAccesoriesLabel);
-            groupBoxInventory.Controls.Add(quantityEarphones);
-            groupBoxInventory.Controls.Add(iconButton2);
-            groupBoxInventory.Controls.Add(pictureBoxEarphones);
-            groupBoxInventory.Controls.Add(button4);
-            groupBoxInventory.Controls.Add(iconButton1);
-            groupBoxInventory.Controls.Add(button3);
-            groupBoxInventory.Controls.Add(resultCellPhonesLabel);
-            groupBoxInventory.Controls.Add(quantityCellPhones);
-            groupBoxInventory.Controls.Add(pictureBoxCellPhones);
-            groupBoxInventory.Controls.Add(tabletsButton);
-            groupBoxInventory.Controls.Add(button2);
-            groupBoxInventory.Controls.Add(resultTabletsLabel);
-            groupBoxInventory.Controls.Add(quantityTablets);
-            groupBoxInventory.Controls.Add(pictureBoxTablets);
-            groupBoxInventory.Controls.Add(computerButton);
-            groupBoxInventory.Controls.Add(button1);
-            groupBoxInventory.Controls.Add(resultComputerLabel);
-            groupBoxInventory.Controls.Add(quantityComputer);
-            groupBoxInventory.Controls.Add(pictureBoxComputer);
-            groupBoxInventory.Controls.Add(laptopsButton);
-            groupBoxInventory.Controls.Add(viewDetailsButton);
-            groupBoxInventory.Controls.Add(resultLaptopsLabel);
-            groupBoxInventory.Controls.Add(quantityLaptop);
-            groupBoxInventory.Controls.Add(pictureBoxLaptop);
-            groupBoxInventory.Location = new Point(208, 25);
-            groupBoxInventory.Name = "groupBoxInventory";
-            groupBoxInventory.Size = new Size(987, 208);
-            groupBoxInventory.TabIndex = 9;
-            groupBoxInventory.TabStop = false;
+            accesoriesGroupBox.BackColor = Color.White;
+            accesoriesGroupBox.Controls.Add(showAccesoriesButton);
+            accesoriesGroupBox.Controls.Add(label20);
+            accesoriesGroupBox.Controls.Add(AccesoryLabel);
+            accesoriesGroupBox.Controls.Add(accesoriesPictureBox);
+            accesoriesGroupBox.Controls.Add(label22);
+            accesoriesGroupBox.Controls.Add(totalAccesoriesLabel);
+            accesoriesGroupBox.Controls.Add(quantityAccesoriesLabel);
+            accesoriesGroupBox.Location = new Point(1236, 27);
+            accesoriesGroupBox.Name = "accesoriesGroupBox";
+            accesoriesGroupBox.Size = new Size(216, 247);
+            accesoriesGroupBox.TabIndex = 21;
+            accesoriesGroupBox.TabStop = false;
             // 
-            // iconButton3
+            // showAccesoriesButton
             // 
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton3.IconColor = Color.Black;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.Location = new Point(696, 98);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(75, 23);
-            iconButton3.TabIndex = 31;
-            iconButton3.Text = "Auriculares";
-            iconButton3.UseVisualStyleBackColor = true;
+            showAccesoriesButton.BackColor = Color.FromArgb(0, 166, 225);
+            showAccesoriesButton.FlatStyle = FlatStyle.Popup;
+            showAccesoriesButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            showAccesoriesButton.ForeColor = Color.White;
+            showAccesoriesButton.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            showAccesoriesButton.IconColor = Color.Gainsboro;
+            showAccesoriesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            showAccesoriesButton.ImageAlign = ContentAlignment.MiddleLeft;
+            showAccesoriesButton.Location = new Point(0, 199);
+            showAccesoriesButton.Name = "showAccesoriesButton";
+            showAccesoriesButton.Size = new Size(216, 47);
+            showAccesoriesButton.TabIndex = 19;
+            showAccesoriesButton.Text = "ver detalles";
+            showAccesoriesButton.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // label20
             // 
-            button5.Location = new Point(687, 167);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 30;
-            button5.Text = "Ver detalles";
-            button5.UseVisualStyleBackColor = true;
+            label20.BorderStyle = BorderStyle.FixedSingle;
+            label20.Location = new Point(0, 164);
+            label20.Name = "label20";
+            label20.Size = new Size(216, 2);
+            label20.TabIndex = 18;
             // 
-            // pictureBoxAccesories
+            // AccesoryLabel
             // 
-            pictureBoxAccesories.BackColor = Color.White;
-            pictureBoxAccesories.Image = (Image)resources.GetObject("pictureBoxAccesories.Image");
-            pictureBoxAccesories.Location = new Point(831, 22);
-            pictureBoxAccesories.Name = "pictureBoxAccesories";
-            pictureBoxAccesories.Size = new Size(125, 70);
-            pictureBoxAccesories.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxAccesories.TabIndex = 12;
-            pictureBoxAccesories.TabStop = false;
+            AccesoryLabel.BackColor = Color.White;
+            AccesoryLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            AccesoryLabel.Location = new Point(0, 134);
+            AccesoryLabel.Name = "AccesoryLabel";
+            AccesoryLabel.Size = new Size(216, 31);
+            AccesoryLabel.TabIndex = 16;
+            AccesoryLabel.Text = "Accesorios";
+            AccesoryLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // quantityAccessories
+            // accesoriesPictureBox
             // 
-            quantityAccessories.AutoSize = true;
-            quantityAccessories.Location = new Point(831, 135);
-            quantityAccessories.Name = "quantityAccessories";
-            quantityAccessories.Size = new Size(58, 15);
-            quantityAccessories.TabIndex = 13;
-            quantityAccessories.Text = "Cantidad:";
+            accesoriesPictureBox.BackColor = Color.White;
+            accesoriesPictureBox.Image = (Image)resources.GetObject("accesoriesPictureBox.Image");
+            accesoriesPictureBox.Location = new Point(0, 0);
+            accesoriesPictureBox.Margin = new Padding(3, 4, 3, 4);
+            accesoriesPictureBox.Name = "accesoriesPictureBox";
+            accesoriesPictureBox.Size = new Size(217, 128);
+            accesoriesPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            accesoriesPictureBox.TabIndex = 12;
+            accesoriesPictureBox.TabStop = false;
             // 
-            // resultearphonesLabel
+            // label22
             // 
-            resultearphonesLabel.AutoSize = true;
-            resultearphonesLabel.Location = new Point(762, 135);
-            resultearphonesLabel.Name = "resultearphonesLabel";
-            resultearphonesLabel.Size = new Size(19, 15);
-            resultearphonesLabel.TabIndex = 29;
-            resultearphonesLabel.Text = "12";
+            label22.BorderStyle = BorderStyle.FixedSingle;
+            label22.Location = new Point(0, 131);
+            label22.Name = "label22";
+            label22.Size = new Size(216, 2);
+            label22.TabIndex = 17;
             // 
-            // resultAccesoriesLabel
+            // totalAccesoriesLabel
             // 
-            resultAccesoriesLabel.AutoSize = true;
-            resultAccesoriesLabel.Location = new Point(918, 135);
-            resultAccesoriesLabel.Name = "resultAccesoriesLabel";
-            resultAccesoriesLabel.Size = new Size(19, 15);
-            resultAccesoriesLabel.TabIndex = 14;
-            resultAccesoriesLabel.Text = "30";
+            totalAccesoriesLabel.BackColor = Color.White;
+            totalAccesoriesLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            totalAccesoriesLabel.Location = new Point(123, 166);
+            totalAccesoriesLabel.Name = "totalAccesoriesLabel";
+            totalAccesoriesLabel.Size = new Size(62, 30);
+            totalAccesoriesLabel.TabIndex = 1;
+            totalAccesoriesLabel.Text = "50";
+            totalAccesoriesLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // quantityEarphones
+            // quantityAccesoriesLabel
             // 
-            quantityEarphones.AutoSize = true;
-            quantityEarphones.Location = new Point(675, 135);
-            quantityEarphones.Name = "quantityEarphones";
-            quantityEarphones.Size = new Size(58, 15);
-            quantityEarphones.TabIndex = 28;
-            quantityEarphones.Text = "Cantidad:";
+            quantityAccesoriesLabel.BackColor = Color.White;
+            quantityAccesoriesLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            quantityAccesoriesLabel.Location = new Point(26, 166);
+            quantityAccesoriesLabel.Name = "quantityAccesoriesLabel";
+            quantityAccesoriesLabel.Size = new Size(107, 30);
+            quantityAccesoriesLabel.TabIndex = 0;
+            quantityAccesoriesLabel.Text = "Cantidad : ";
+            quantityAccesoriesLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // iconButton2
+            // pcGroupBox
             // 
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton2.IconColor = Color.Black;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Location = new Point(852, 98);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(75, 23);
-            iconButton2.TabIndex = 16;
-            iconButton2.Text = "Accesorios";
-            iconButton2.UseVisualStyleBackColor = true;
+            pcGroupBox.BackColor = Color.White;
+            pcGroupBox.Controls.Add(showPcButton);
+            pcGroupBox.Controls.Add(pcDownLabel);
+            pcGroupBox.Controls.Add(pcLabel);
+            pcGroupBox.Controls.Add(pcPictureBox);
+            pcGroupBox.Controls.Add(pcTopLineLabel);
+            pcGroupBox.Controls.Add(pcTotalLabel);
+            pcGroupBox.Controls.Add(pcQuantityLabel);
+            pcGroupBox.Location = new Point(28, 27);
+            pcGroupBox.Name = "pcGroupBox";
+            pcGroupBox.Size = new Size(216, 247);
+            pcGroupBox.TabIndex = 20;
+            pcGroupBox.TabStop = false;
             // 
-            // pictureBoxEarphones
+            // showPcButton
             // 
-            pictureBoxEarphones.BackColor = Color.White;
-            pictureBoxEarphones.Image = (Image)resources.GetObject("pictureBoxEarphones.Image");
-            pictureBoxEarphones.Location = new Point(675, 22);
-            pictureBoxEarphones.Name = "pictureBoxEarphones";
-            pictureBoxEarphones.Size = new Size(125, 70);
-            pictureBoxEarphones.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxEarphones.TabIndex = 27;
-            pictureBoxEarphones.TabStop = false;
+            showPcButton.BackColor = Color.FromArgb(0, 166, 225);
+            showPcButton.FlatStyle = FlatStyle.Popup;
+            showPcButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            showPcButton.ForeColor = Color.White;
+            showPcButton.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            showPcButton.IconColor = Color.Gainsboro;
+            showPcButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            showPcButton.ImageAlign = ContentAlignment.MiddleLeft;
+            showPcButton.Location = new Point(0, 199);
+            showPcButton.Name = "showPcButton";
+            showPcButton.Size = new Size(216, 47);
+            showPcButton.TabIndex = 16;
+            showPcButton.Text = "ver detalles";
+            showPcButton.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // pcDownLabel
             // 
-            button4.Location = new Point(843, 167);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 15;
-            button4.Text = "Ver detalles";
-            button4.UseVisualStyleBackColor = true;
+            pcDownLabel.BorderStyle = BorderStyle.FixedSingle;
+            pcDownLabel.Location = new Point(0, 164);
+            pcDownLabel.Name = "pcDownLabel";
+            pcDownLabel.Size = new Size(216, 2);
+            pcDownLabel.TabIndex = 18;
             // 
-            // iconButton1
+            // pcLabel
             // 
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(539, 98);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(75, 23);
-            iconButton1.TabIndex = 26;
-            iconButton1.Text = "Celulares";
-            iconButton1.UseVisualStyleBackColor = true;
+            pcLabel.BackColor = Color.White;
+            pcLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            pcLabel.Location = new Point(0, 134);
+            pcLabel.Name = "pcLabel";
+            pcLabel.Size = new Size(216, 31);
+            pcLabel.TabIndex = 16;
+            pcLabel.Text = "Ordenadores";
+            pcLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button3
+            // pcPictureBox
             // 
-            button3.Location = new Point(530, 167);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 25;
-            button3.Text = "Ver detalles";
-            button3.UseVisualStyleBackColor = true;
+            pcPictureBox.BackColor = Color.White;
+            pcPictureBox.Image = (Image)resources.GetObject("pcPictureBox.Image");
+            pcPictureBox.Location = new Point(0, 0);
+            pcPictureBox.Margin = new Padding(3, 4, 3, 4);
+            pcPictureBox.Name = "pcPictureBox";
+            pcPictureBox.Size = new Size(217, 128);
+            pcPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            pcPictureBox.TabIndex = 12;
+            pcPictureBox.TabStop = false;
             // 
-            // resultCellPhonesLabel
+            // pcTopLineLabel
             // 
-            resultCellPhonesLabel.AutoSize = true;
-            resultCellPhonesLabel.Location = new Point(605, 135);
-            resultCellPhonesLabel.Name = "resultCellPhonesLabel";
-            resultCellPhonesLabel.Size = new Size(19, 15);
-            resultCellPhonesLabel.TabIndex = 24;
-            resultCellPhonesLabel.Text = "50";
+            pcTopLineLabel.BorderStyle = BorderStyle.FixedSingle;
+            pcTopLineLabel.Location = new Point(0, 131);
+            pcTopLineLabel.Name = "pcTopLineLabel";
+            pcTopLineLabel.Size = new Size(216, 2);
+            pcTopLineLabel.TabIndex = 17;
             // 
-            // quantityCellPhones
+            // pcTotalLabel
             // 
-            quantityCellPhones.AutoSize = true;
-            quantityCellPhones.Location = new Point(518, 135);
-            quantityCellPhones.Name = "quantityCellPhones";
-            quantityCellPhones.Size = new Size(58, 15);
-            quantityCellPhones.TabIndex = 23;
-            quantityCellPhones.Text = "Cantidad:";
+            pcTotalLabel.BackColor = Color.White;
+            pcTotalLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            pcTotalLabel.Location = new Point(123, 166);
+            pcTotalLabel.Name = "pcTotalLabel";
+            pcTotalLabel.Size = new Size(62, 30);
+            pcTotalLabel.TabIndex = 1;
+            pcTotalLabel.Text = "50";
+            pcTotalLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBoxCellPhones
+            // pcQuantityLabel
             // 
-            pictureBoxCellPhones.BackColor = Color.White;
-            pictureBoxCellPhones.Image = (Image)resources.GetObject("pictureBoxCellPhones.Image");
-            pictureBoxCellPhones.Location = new Point(518, 22);
-            pictureBoxCellPhones.Name = "pictureBoxCellPhones";
-            pictureBoxCellPhones.Size = new Size(125, 70);
-            pictureBoxCellPhones.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxCellPhones.TabIndex = 22;
-            pictureBoxCellPhones.TabStop = false;
+            pcQuantityLabel.BackColor = Color.White;
+            pcQuantityLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            pcQuantityLabel.Location = new Point(26, 166);
+            pcQuantityLabel.Name = "pcQuantityLabel";
+            pcQuantityLabel.Size = new Size(107, 30);
+            pcQuantityLabel.TabIndex = 0;
+            pcQuantityLabel.Text = "Cantidad : ";
+            pcQuantityLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tabletsButton
+            // LaptopGroupBox
             // 
-            tabletsButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            tabletsButton.IconColor = Color.Black;
-            tabletsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            tabletsButton.Location = new Point(380, 98);
-            tabletsButton.Name = "tabletsButton";
-            tabletsButton.Size = new Size(75, 23);
-            tabletsButton.TabIndex = 21;
-            tabletsButton.Text = "Tablets";
-            tabletsButton.UseVisualStyleBackColor = true;
+            LaptopGroupBox.BackColor = Color.White;
+            LaptopGroupBox.Controls.Add(showLaptopsButton);
+            LaptopGroupBox.Controls.Add(laptosLineDownLabel);
+            LaptopGroupBox.Controls.Add(laptosLabel);
+            LaptopGroupBox.Controls.Add(laptopPictureBox);
+            LaptopGroupBox.Controls.Add(laptosLineUpLabel);
+            LaptopGroupBox.Controls.Add(totalLaptosLabel);
+            LaptopGroupBox.Controls.Add(quntaityLaptopsLabel);
+            LaptopGroupBox.Location = new Point(305, 28);
+            LaptopGroupBox.Name = "LaptopGroupBox";
+            LaptopGroupBox.Size = new Size(216, 247);
+            LaptopGroupBox.TabIndex = 19;
+            LaptopGroupBox.TabStop = false;
             // 
-            // button2
+            // showLaptopsButton
             // 
-            button2.Location = new Point(371, 167);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 20;
-            button2.Text = "Ver detalles";
-            button2.UseVisualStyleBackColor = true;
+            showLaptopsButton.BackColor = Color.FromArgb(0, 166, 225);
+            showLaptopsButton.FlatStyle = FlatStyle.Popup;
+            showLaptopsButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            showLaptopsButton.ForeColor = Color.White;
+            showLaptopsButton.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            showLaptopsButton.IconColor = Color.Gainsboro;
+            showLaptopsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            showLaptopsButton.ImageAlign = ContentAlignment.MiddleLeft;
+            showLaptopsButton.Location = new Point(0, 200);
+            showLaptopsButton.Name = "showLaptopsButton";
+            showLaptopsButton.Size = new Size(216, 47);
+            showLaptopsButton.TabIndex = 19;
+            showLaptopsButton.Text = "ver detalles";
+            showLaptopsButton.UseVisualStyleBackColor = false;
             // 
-            // resultTabletsLabel
+            // laptosLineDownLabel
             // 
-            resultTabletsLabel.AutoSize = true;
-            resultTabletsLabel.Location = new Point(446, 135);
-            resultTabletsLabel.Name = "resultTabletsLabel";
-            resultTabletsLabel.Size = new Size(19, 15);
-            resultTabletsLabel.TabIndex = 19;
-            resultTabletsLabel.Text = "10";
+            laptosLineDownLabel.BorderStyle = BorderStyle.FixedSingle;
+            laptosLineDownLabel.Location = new Point(0, 164);
+            laptosLineDownLabel.Name = "laptosLineDownLabel";
+            laptosLineDownLabel.Size = new Size(216, 2);
+            laptosLineDownLabel.TabIndex = 18;
             // 
-            // quantityTablets
+            // laptosLabel
             // 
-            quantityTablets.AutoSize = true;
-            quantityTablets.Location = new Point(359, 135);
-            quantityTablets.Name = "quantityTablets";
-            quantityTablets.Size = new Size(58, 15);
-            quantityTablets.TabIndex = 18;
-            quantityTablets.Text = "Cantidad:";
+            laptosLabel.BackColor = Color.White;
+            laptosLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            laptosLabel.Location = new Point(0, 134);
+            laptosLabel.Name = "laptosLabel";
+            laptosLabel.Size = new Size(216, 31);
+            laptosLabel.TabIndex = 16;
+            laptosLabel.Text = "Laptops";
+            laptosLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBoxTablets
+            // laptopPictureBox
             // 
-            pictureBoxTablets.BackColor = Color.White;
-            pictureBoxTablets.Image = (Image)resources.GetObject("pictureBoxTablets.Image");
-            pictureBoxTablets.Location = new Point(359, 22);
-            pictureBoxTablets.Name = "pictureBoxTablets";
-            pictureBoxTablets.Size = new Size(125, 70);
-            pictureBoxTablets.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxTablets.TabIndex = 17;
-            pictureBoxTablets.TabStop = false;
+            laptopPictureBox.BackColor = Color.White;
+            laptopPictureBox.Image = (Image)resources.GetObject("laptopPictureBox.Image");
+            laptopPictureBox.Location = new Point(0, 0);
+            laptopPictureBox.Margin = new Padding(3, 4, 3, 4);
+            laptopPictureBox.Name = "laptopPictureBox";
+            laptopPictureBox.Size = new Size(217, 128);
+            laptopPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            laptopPictureBox.TabIndex = 12;
+            laptopPictureBox.TabStop = false;
             // 
-            // computerButton
+            // laptosLineUpLabel
             // 
-            computerButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            computerButton.IconColor = Color.Black;
-            computerButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            computerButton.Location = new Point(209, 98);
-            computerButton.Name = "computerButton";
-            computerButton.Size = new Size(104, 23);
-            computerButton.TabIndex = 16;
-            computerButton.Text = "Computadoras";
-            computerButton.UseVisualStyleBackColor = true;
+            laptosLineUpLabel.BorderStyle = BorderStyle.FixedSingle;
+            laptosLineUpLabel.Location = new Point(0, 131);
+            laptosLineUpLabel.Name = "laptosLineUpLabel";
+            laptosLineUpLabel.Size = new Size(216, 2);
+            laptosLineUpLabel.TabIndex = 17;
             // 
-            // button1
+            // totalLaptosLabel
             // 
-            button1.Location = new Point(209, 167);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 15;
-            button1.Text = "Ver detalles";
-            button1.UseVisualStyleBackColor = true;
+            totalLaptosLabel.BackColor = Color.White;
+            totalLaptosLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            totalLaptosLabel.Location = new Point(123, 166);
+            totalLaptosLabel.Name = "totalLaptosLabel";
+            totalLaptosLabel.Size = new Size(62, 30);
+            totalLaptosLabel.TabIndex = 1;
+            totalLaptosLabel.Text = "50";
+            totalLaptosLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // resultComputerLabel
+            // quntaityLaptopsLabel
             // 
-            resultComputerLabel.AutoSize = true;
-            resultComputerLabel.Location = new Point(284, 135);
-            resultComputerLabel.Name = "resultComputerLabel";
-            resultComputerLabel.Size = new Size(19, 15);
-            resultComputerLabel.TabIndex = 14;
-            resultComputerLabel.Text = "15";
+            quntaityLaptopsLabel.BackColor = Color.White;
+            quntaityLaptopsLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            quntaityLaptopsLabel.Location = new Point(26, 166);
+            quntaityLaptopsLabel.Name = "quntaityLaptopsLabel";
+            quntaityLaptopsLabel.Size = new Size(107, 30);
+            quntaityLaptopsLabel.TabIndex = 0;
+            quntaityLaptopsLabel.Text = "Cantidad : ";
+            quntaityLaptopsLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // quantityComputer
+            // movilGroupBox
             // 
-            quantityComputer.AutoSize = true;
-            quantityComputer.Location = new Point(197, 135);
-            quantityComputer.Name = "quantityComputer";
-            quantityComputer.Size = new Size(58, 15);
-            quantityComputer.TabIndex = 13;
-            quantityComputer.Text = "Cantidad:";
+            movilGroupBox.BackColor = Color.White;
+            movilGroupBox.Controls.Add(showMovilesButton);
+            movilGroupBox.Controls.Add(label5);
+            movilGroupBox.Controls.Add(movilesLabel);
+            movilGroupBox.Controls.Add(movilPictureBox);
+            movilGroupBox.Controls.Add(label7);
+            movilGroupBox.Controls.Add(totalMovilesLabel);
+            movilGroupBox.Controls.Add(quantityMovilesLabel);
+            movilGroupBox.Location = new Point(621, 28);
+            movilGroupBox.Name = "movilGroupBox";
+            movilGroupBox.Size = new Size(216, 247);
+            movilGroupBox.TabIndex = 18;
+            movilGroupBox.TabStop = false;
             // 
-            // pictureBoxComputer
+            // showMovilesButton
             // 
-            pictureBoxComputer.BackColor = Color.White;
-            pictureBoxComputer.Image = (Image)resources.GetObject("pictureBoxComputer.Image");
-            pictureBoxComputer.Location = new Point(197, 22);
-            pictureBoxComputer.Name = "pictureBoxComputer";
-            pictureBoxComputer.Size = new Size(125, 70);
-            pictureBoxComputer.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxComputer.TabIndex = 12;
-            pictureBoxComputer.TabStop = false;
+            showMovilesButton.BackColor = Color.FromArgb(0, 166, 225);
+            showMovilesButton.FlatStyle = FlatStyle.Popup;
+            showMovilesButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            showMovilesButton.ForeColor = Color.White;
+            showMovilesButton.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            showMovilesButton.IconColor = Color.Gainsboro;
+            showMovilesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            showMovilesButton.ImageAlign = ContentAlignment.MiddleLeft;
+            showMovilesButton.Location = new Point(0, 198);
+            showMovilesButton.Name = "showMovilesButton";
+            showMovilesButton.Size = new Size(216, 47);
+            showMovilesButton.TabIndex = 19;
+            showMovilesButton.Text = "ver detalles";
+            showMovilesButton.UseVisualStyleBackColor = false;
             // 
-            // laptopsButton
+            // label5
             // 
-            laptopsButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            laptopsButton.IconColor = Color.Black;
-            laptopsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            laptopsButton.Location = new Point(59, 98);
-            laptopsButton.Name = "laptopsButton";
-            laptopsButton.Size = new Size(75, 23);
-            laptopsButton.TabIndex = 11;
-            laptopsButton.Text = "Laptops";
-            laptopsButton.UseVisualStyleBackColor = true;
+            label5.BorderStyle = BorderStyle.FixedSingle;
+            label5.Location = new Point(0, 164);
+            label5.Name = "label5";
+            label5.Size = new Size(216, 2);
+            label5.TabIndex = 18;
             // 
-            // viewDetailsButton
+            // movilesLabel
             // 
-            viewDetailsButton.Location = new Point(50, 167);
-            viewDetailsButton.Name = "viewDetailsButton";
-            viewDetailsButton.Size = new Size(75, 23);
-            viewDetailsButton.TabIndex = 10;
-            viewDetailsButton.Text = "Ver detalles";
-            viewDetailsButton.UseVisualStyleBackColor = true;
+            movilesLabel.BackColor = Color.White;
+            movilesLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            movilesLabel.Location = new Point(0, 134);
+            movilesLabel.Name = "movilesLabel";
+            movilesLabel.Size = new Size(216, 31);
+            movilesLabel.TabIndex = 16;
+            movilesLabel.Text = "Moviles";
+            movilesLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // resultLaptopsLabel
+            // movilPictureBox
             // 
-            resultLaptopsLabel.AutoSize = true;
-            resultLaptopsLabel.Location = new Point(125, 135);
-            resultLaptopsLabel.Name = "resultLaptopsLabel";
-            resultLaptopsLabel.Size = new Size(19, 15);
-            resultLaptopsLabel.TabIndex = 9;
-            resultLaptopsLabel.Text = "20";
+            movilPictureBox.BackColor = Color.White;
+            movilPictureBox.Image = (Image)resources.GetObject("movilPictureBox.Image");
+            movilPictureBox.Location = new Point(0, 0);
+            movilPictureBox.Margin = new Padding(3, 4, 3, 4);
+            movilPictureBox.Name = "movilPictureBox";
+            movilPictureBox.Size = new Size(217, 128);
+            movilPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            movilPictureBox.TabIndex = 12;
+            movilPictureBox.TabStop = false;
             // 
-            // quantityLaptop
+            // label7
             // 
-            quantityLaptop.AutoSize = true;
-            quantityLaptop.Location = new Point(38, 135);
-            quantityLaptop.Name = "quantityLaptop";
-            quantityLaptop.Size = new Size(58, 15);
-            quantityLaptop.TabIndex = 8;
-            quantityLaptop.Text = "Cantidad:";
+            label7.BorderStyle = BorderStyle.FixedSingle;
+            label7.Location = new Point(0, 131);
+            label7.Name = "label7";
+            label7.Size = new Size(216, 2);
+            label7.TabIndex = 17;
+            // 
+            // totalMovilesLabel
+            // 
+            totalMovilesLabel.BackColor = Color.White;
+            totalMovilesLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            totalMovilesLabel.Location = new Point(123, 166);
+            totalMovilesLabel.Name = "totalMovilesLabel";
+            totalMovilesLabel.Size = new Size(62, 30);
+            totalMovilesLabel.TabIndex = 1;
+            totalMovilesLabel.Text = "50";
+            totalMovilesLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // quantityMovilesLabel
+            // 
+            quantityMovilesLabel.BackColor = Color.White;
+            quantityMovilesLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            quantityMovilesLabel.Location = new Point(26, 166);
+            quantityMovilesLabel.Name = "quantityMovilesLabel";
+            quantityMovilesLabel.Size = new Size(107, 30);
+            quantityMovilesLabel.TabIndex = 0;
+            quantityMovilesLabel.Text = "Cantidad : ";
+            quantityMovilesLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // TabletsGroupBox
+            // 
+            TabletsGroupBox.BackColor = Color.White;
+            TabletsGroupBox.Controls.Add(showTabletsButton);
+            TabletsGroupBox.Controls.Add(label4);
+            TabletsGroupBox.Controls.Add(tabletsLabel);
+            TabletsGroupBox.Controls.Add(tabletsPictureBox);
+            TabletsGroupBox.Controls.Add(tabletsLineUPlabel);
+            TabletsGroupBox.Controls.Add(totalTabletsLabel);
+            TabletsGroupBox.Controls.Add(quantityTabletsLabel);
+            TabletsGroupBox.Location = new Point(945, 28);
+            TabletsGroupBox.Name = "TabletsGroupBox";
+            TabletsGroupBox.Size = new Size(216, 247);
+            TabletsGroupBox.TabIndex = 17;
+            TabletsGroupBox.TabStop = false;
+            // 
+            // showTabletsButton
+            // 
+            showTabletsButton.BackColor = Color.FromArgb(0, 166, 225);
+            showTabletsButton.FlatStyle = FlatStyle.Popup;
+            showTabletsButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            showTabletsButton.ForeColor = Color.White;
+            showTabletsButton.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            showTabletsButton.IconColor = Color.Gainsboro;
+            showTabletsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            showTabletsButton.ImageAlign = ContentAlignment.MiddleLeft;
+            showTabletsButton.Location = new Point(0, 198);
+            showTabletsButton.Name = "showTabletsButton";
+            showTabletsButton.Size = new Size(216, 47);
+            showTabletsButton.TabIndex = 19;
+            showTabletsButton.Text = "ver detalles";
+            showTabletsButton.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            label4.BorderStyle = BorderStyle.FixedSingle;
+            label4.Location = new Point(0, 164);
+            label4.Name = "label4";
+            label4.Size = new Size(216, 2);
+            label4.TabIndex = 18;
+            // 
+            // tabletsLabel
+            // 
+            tabletsLabel.BackColor = Color.White;
+            tabletsLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            tabletsLabel.Location = new Point(0, 134);
+            tabletsLabel.Name = "tabletsLabel";
+            tabletsLabel.Size = new Size(216, 31);
+            tabletsLabel.TabIndex = 16;
+            tabletsLabel.Text = "Tablets";
+            tabletsLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tabletsPictureBox
+            // 
+            tabletsPictureBox.BackColor = Color.White;
+            tabletsPictureBox.Image = (Image)resources.GetObject("tabletsPictureBox.Image");
+            tabletsPictureBox.Location = new Point(0, 0);
+            tabletsPictureBox.Margin = new Padding(3, 4, 3, 4);
+            tabletsPictureBox.Name = "tabletsPictureBox";
+            tabletsPictureBox.Size = new Size(217, 128);
+            tabletsPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            tabletsPictureBox.TabIndex = 12;
+            tabletsPictureBox.TabStop = false;
+            // 
+            // tabletsLineUPlabel
+            // 
+            tabletsLineUPlabel.BorderStyle = BorderStyle.FixedSingle;
+            tabletsLineUPlabel.Location = new Point(0, 131);
+            tabletsLineUPlabel.Name = "tabletsLineUPlabel";
+            tabletsLineUPlabel.Size = new Size(216, 2);
+            tabletsLineUPlabel.TabIndex = 17;
+            // 
+            // totalTabletsLabel
+            // 
+            totalTabletsLabel.BackColor = Color.White;
+            totalTabletsLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            totalTabletsLabel.Location = new Point(123, 166);
+            totalTabletsLabel.Name = "totalTabletsLabel";
+            totalTabletsLabel.Size = new Size(62, 30);
+            totalTabletsLabel.TabIndex = 1;
+            totalTabletsLabel.Text = "50";
+            totalTabletsLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // quantityTabletsLabel
+            // 
+            quantityTabletsLabel.BackColor = Color.White;
+            quantityTabletsLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            quantityTabletsLabel.Location = new Point(26, 166);
+            quantityTabletsLabel.Name = "quantityTabletsLabel";
+            quantityTabletsLabel.Size = new Size(107, 30);
+            quantityTabletsLabel.TabIndex = 0;
+            quantityTabletsLabel.Text = "Cantidad : ";
+            quantityTabletsLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // InventoryForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1461, 589);
-            Controls.Add(groupBoxInventory);
-            Controls.Add(dataGridViewInventory);
+            ClientSize = new Size(1531, 956);
+            Controls.Add(categoryGroupBox);
+            Controls.Add(invetoryDataGridView);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "InventoryForm";
             Text = "InventoryForm";
-            ((System.ComponentModel.ISupportInitialize)dataGridViewInventory).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxLaptop).EndInit();
-            groupBoxInventory.ResumeLayout(false);
-            groupBoxInventory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxAccesories).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxEarphones).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCellPhones).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxTablets).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxComputer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)invetoryDataGridView).EndInit();
+            categoryGroupBox.ResumeLayout(false);
+            accesoriesGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)accesoriesPictureBox).EndInit();
+            pcGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pcPictureBox).EndInit();
+            LaptopGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)laptopPictureBox).EndInit();
+            movilGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)movilPictureBox).EndInit();
+            TabletsGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)tabletsPictureBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridViewInventory;
-        private PictureBox pictureBoxLaptop;
-        private GroupBox groupBoxInventory;
-        private Button viewDetailsButton;
-        private Label resultLaptopsLabel;
-        private Label quantityLaptop;
-        private FontAwesome.Sharp.IconButton computerButton;
-        private Button button1;
-        private Label resultComputerLabel;
-        private Label quantityComputer;
-        private PictureBox pictureBoxComputer;
-        private FontAwesome.Sharp.IconButton laptopsButton;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private Button button4;
-        private Button button3;
-        private Label resultAccesoriesLabel;
-        private Label resultCellPhonesLabel;
-        private Label quantityAccessories;
-        private Label quantityCellPhones;
-        private PictureBox pictureBoxAccesories;
-        private PictureBox pictureBoxCellPhones;
-        private FontAwesome.Sharp.IconButton tabletsButton;
-        private Button button2;
-        private Label resultTabletsLabel;
-        private Label quantityTablets;
-        private PictureBox pictureBoxTablets;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private Button button5;
-        private Label resultearphonesLabel;
-        private Label quantityEarphones;
-        private PictureBox pictureBoxEarphones;
+        private DataGridView invetoryDataGridView;
+        private GroupBox categoryGroupBox;
+        private PictureBox tabletsPictureBox;
+        private GroupBox TabletsGroupBox;
+        private Label tabletsLabel;
+        private Label totalTabletsLabel;
+        private Label quantityTabletsLabel;
+        private Label label4;
+        private Label tabletsLineUPlabel;
+        private GroupBox pcGroupBox;
+        private Label pcDownLabel;
+        private Label pcLabel;
+        private PictureBox pcPictureBox;
+        private Label pcTopLineLabel;
+        private Label pcTotalLabel;
+        private Label pcQuantityLabel;
+        private GroupBox LaptopGroupBox;
+        private Label laptosLineDownLabel;
+        private Label laptosLabel;
+        private PictureBox laptopPictureBox;
+        private Label laptosLineUpLabel;
+        private Label totalLaptosLabel;
+        private Label quntaityLaptopsLabel;
+        private GroupBox movilGroupBox;
+        private Label label5;
+        private Label movilesLabel;
+        private PictureBox movilPictureBox;
+        private Label label7;
+        private Label totalMovilesLabel;
+        private Label quantityMovilesLabel;
+        private GroupBox accesoriesGroupBox;
+        private Label label20;
+        private Label AccesoryLabel;
+        private PictureBox accesoriesPictureBox;
+        private Label label22;
+        private Label totalAccesoriesLabel;
+        private Label quantityAccesoriesLabel;
+        private FontAwesome.Sharp.IconButton showPcButton;
+        private FontAwesome.Sharp.IconButton showAccesoriesButton;
+        private FontAwesome.Sharp.IconButton showLaptopsButton;
+        private FontAwesome.Sharp.IconButton showMovilesButton;
+        private FontAwesome.Sharp.IconButton showTabletsButton;
     }
 }

@@ -36,8 +36,9 @@ namespace PresentationLayer
                     //Forms
                     services.AddTransient<LoginForm>();
                     services.AddTransient<DashboardForm>();
-                    services.AddTransient<ViewEmployeesForm>();
+                    services.AddTransient<EmployeesForm>();
                     services.AddTransient<SalesForm>(); 
+                    services.AddTransient<InventoryForm>();
 
                     //Repositories
                     services.AddScoped<ILoginRepository,LoginRepository>();
