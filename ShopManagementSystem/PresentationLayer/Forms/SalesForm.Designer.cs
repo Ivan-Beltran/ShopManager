@@ -30,110 +30,125 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesForm));
             sidebarPanel = new Panel();
+            pictureBox = new PictureBox();
             welcomeLabel = new Label();
-            inventarioIconButton = new FontAwesome.Sharp.IconButton();
             salesPictureBox = new PictureBox();
             PrincipalPanel = new Panel();
+            categoryComboBox = new ComboBox();
+            orderDateTimePicker = new DateTimePicker();
             deleteSaleButton = new Button();
             editSaleButton = new Button();
             addSaleButton = new Button();
             saleDataGridView = new DataGridView();
-
-            
+            generatePdfReportButton = new Button();
             sidebarPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)salesPictureBox).BeginInit();
             PrincipalPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)saleDataGridView).BeginInit();
             SuspendLayout();
             // 
-
-        
             // sidebarPanel
             // 
+            sidebarPanel.AccessibleRole = AccessibleRole.None;
             sidebarPanel.BackColor = Color.FromArgb(0, 166, 225);
+            sidebarPanel.BackgroundImageLayout = ImageLayout.None;
+            sidebarPanel.Controls.Add(pictureBox);
             sidebarPanel.Controls.Add(welcomeLabel);
-            sidebarPanel.Controls.Add(inventarioIconButton);
             sidebarPanel.Controls.Add(salesPictureBox);
             sidebarPanel.Dock = DockStyle.Top;
             sidebarPanel.Location = new Point(0, 0);
-            sidebarPanel.Margin = new Padding(2, 3, 2, 3);
+            sidebarPanel.Margin = new Padding(1, 2, 1, 2);
             sidebarPanel.Name = "sidebarPanel";
-            sidebarPanel.Size = new Size(1456, 73);
+            sidebarPanel.Size = new Size(1347, 56);
             sidebarPanel.TabIndex = 2;
+            // 
+            // pictureBox
+            // 
+            pictureBox.BackColor = Color.Transparent;
+            pictureBox.ErrorImage = null;
+            pictureBox.Image = (Image)resources.GetObject("pictureBox.Image");
+            pictureBox.Location = new Point(0, 0);
+            pictureBox.Margin = new Padding(4, 3, 4, 3);
+            pictureBox.Name = "pictureBox";
+            pictureBox.Size = new Size(88, 53);
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox.TabIndex = 1;
+            pictureBox.TabStop = false;
             // 
             // welcomeLabel
             // 
             welcomeLabel.AutoSize = true;
             welcomeLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             welcomeLabel.ForeColor = Color.White;
-
-            welcomeLabel.Location = new Point(782, 49);
+            welcomeLabel.Location = new Point(694, 32);
             welcomeLabel.Margin = new Padding(4, 0, 4, 0);
             welcomeLabel.Name = "welcomeLabel";
-            welcomeLabel.Size = new Size(164, 38);
-
-            welcomeLabel.Location = new Point(608, 40);
-            welcomeLabel.Name = "welcomeLabel";
-            welcomeLabel.Size = new Size(83, 20);
-
+            welcomeLabel.Size = new Size(112, 25);
             welcomeLabel.TabIndex = 0;
             welcomeLabel.Text = "Bienvenido";
             // 
-            // inventarioIconButton
-            // 
-            inventarioIconButton.BackColor = Color.White;
-            inventarioIconButton.FlatAppearance.BorderSize = 0;
-            inventarioIconButton.FlatStyle = FlatStyle.Flat;
-            inventarioIconButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            inventarioIconButton.ForeColor = SystemColors.ActiveCaptionText;
-            inventarioIconButton.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
-            inventarioIconButton.IconColor = Color.Black;
-            inventarioIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            inventarioIconButton.IconSize = 32;
-            inventarioIconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            inventarioIconButton.Location = new Point(2, 480);
-            inventarioIconButton.Margin = new Padding(2, 3, 2, 3);
-            inventarioIconButton.Name = "inventarioIconButton";
-            inventarioIconButton.Size = new Size(255, 39);
-            inventarioIconButton.TabIndex = 4;
-            inventarioIconButton.Text = "Inventario";
-            inventarioIconButton.UseVisualStyleBackColor = false;
-            // 
             // salesPictureBox
             // 
-
             salesPictureBox.BackColor = Color.Transparent;
             salesPictureBox.Image = (Image)resources.GetObject("salesPictureBox.Image");
-            salesPictureBox.Location = new Point(741, -29);
-            salesPictureBox.Margin = new Padding(4);
+            salesPictureBox.Location = new Point(642, -25);
+            salesPictureBox.Margin = new Padding(4, 3, 4, 3);
             salesPictureBox.Name = "salesPictureBox";
-            salesPictureBox.Size = new Size(237, 116);
+            salesPictureBox.Size = new Size(216, 82);
             salesPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             salesPictureBox.TabIndex = 0;
             salesPictureBox.TabStop = false;
-
-
             // 
             // PrincipalPanel
             // 
+            PrincipalPanel.BackColor = Color.Transparent;
+            PrincipalPanel.BackgroundImage = (Image)resources.GetObject("PrincipalPanel.BackgroundImage");
+            PrincipalPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            PrincipalPanel.Controls.Add(generatePdfReportButton);
+            PrincipalPanel.Controls.Add(categoryComboBox);
+            PrincipalPanel.Controls.Add(orderDateTimePicker);
             PrincipalPanel.Controls.Add(deleteSaleButton);
             PrincipalPanel.Controls.Add(editSaleButton);
             PrincipalPanel.Controls.Add(addSaleButton);
             PrincipalPanel.Controls.Add(saleDataGridView);
             PrincipalPanel.Dock = DockStyle.Fill;
+            PrincipalPanel.ForeColor = SystemColors.ActiveCaptionText;
             PrincipalPanel.Location = new Point(0, 0);
+            PrincipalPanel.Margin = new Padding(3, 2, 3, 2);
             PrincipalPanel.Name = "PrincipalPanel";
-            PrincipalPanel.Size = new Size(1456, 464);
+            PrincipalPanel.Size = new Size(1347, 630);
             PrincipalPanel.TabIndex = 3;
+            // 
+            // categoryComboBox
+            // 
+            categoryComboBox.BackColor = Color.FromArgb(0, 166, 225);
+            categoryComboBox.FormattingEnabled = true;
+            categoryComboBox.Location = new Point(113, 227);
+            categoryComboBox.Margin = new Padding(2);
+            categoryComboBox.Name = "categoryComboBox";
+            categoryComboBox.Size = new Size(309, 23);
+            categoryComboBox.TabIndex = 9;
+            // 
+            // orderDateTimePicker
+            // 
+            orderDateTimePicker.CalendarFont = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            orderDateTimePicker.CalendarMonthBackground = Color.FromArgb(0, 166, 225);
+            orderDateTimePicker.CalendarTitleBackColor = Color.White;
+            orderDateTimePicker.Location = new Point(113, 180);
+            orderDateTimePicker.Margin = new Padding(2);
+            orderDateTimePicker.Name = "orderDateTimePicker";
+            orderDateTimePicker.Size = new Size(309, 23);
+            orderDateTimePicker.TabIndex = 8;
             // 
             // deleteSaleButton
             // 
-
             deleteSaleButton.BackColor = Color.FromArgb(0, 166, 225);
             deleteSaleButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            deleteSaleButton.Location = new Point(442, 419);
+            deleteSaleButton.Location = new Point(113, 403);
+            deleteSaleButton.Margin = new Padding(3, 2, 3, 2);
             deleteSaleButton.Name = "deleteSaleButton";
-            deleteSaleButton.Size = new Size(353, 65);
+            deleteSaleButton.Size = new Size(309, 50);
             deleteSaleButton.TabIndex = 7;
             deleteSaleButton.Text = "Eliminar";
             deleteSaleButton.UseVisualStyleBackColor = false;
@@ -142,9 +157,10 @@
             // 
             editSaleButton.BackColor = Color.FromArgb(0, 166, 225);
             editSaleButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            editSaleButton.Location = new Point(442, 323);
+            editSaleButton.Location = new Point(113, 338);
+            editSaleButton.Margin = new Padding(3, 2, 3, 2);
             editSaleButton.Name = "editSaleButton";
-            editSaleButton.Size = new Size(353, 65);
+            editSaleButton.Size = new Size(309, 49);
             editSaleButton.TabIndex = 6;
             editSaleButton.Text = "Editar";
             editSaleButton.UseVisualStyleBackColor = false;
@@ -153,38 +169,50 @@
             // 
             addSaleButton.BackColor = Color.FromArgb(0, 166, 225);
             addSaleButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            addSaleButton.Location = new Point(442, 235);
+            addSaleButton.Location = new Point(113, 272);
+            addSaleButton.Margin = new Padding(3, 2, 3, 2);
             addSaleButton.Name = "addSaleButton";
-            addSaleButton.Size = new Size(353, 65);
+            addSaleButton.Size = new Size(309, 49);
             addSaleButton.TabIndex = 5;
             addSaleButton.Text = "Agregar";
             addSaleButton.UseVisualStyleBackColor = false;
-
-       
             // 
             // saleDataGridView
             // 
+            saleDataGridView.BackgroundColor = SystemColors.Control;
             saleDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-
-            saleDataGridView.Location = new Point(1028, 98);
+            saleDataGridView.Location = new Point(862, 56);
+            saleDataGridView.Margin = new Padding(1);
             saleDataGridView.Name = "saleDataGridView";
             saleDataGridView.RowHeadersWidth = 62;
-            saleDataGridView.Size = new Size(616, 489);
-            saleDataGridView.Margin = new Padding(2, 2, 2, 2);
+            saleDataGridView.Size = new Size(581, 574);
             saleDataGridView.TabIndex = 4;
+            // 
+            // generatePdfReportButton
+            // 
+            generatePdfReportButton.BackColor = Color.FromArgb(0, 166, 225);
+            generatePdfReportButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            generatePdfReportButton.Location = new Point(113, 475);
+            generatePdfReportButton.Margin = new Padding(3, 2, 3, 2);
+            generatePdfReportButton.Name = "generatePdfReportButton";
+            generatePdfReportButton.Size = new Size(309, 50);
+            generatePdfReportButton.TabIndex = 10;
+            generatePdfReportButton.Text = "Generar Reporte PDF";
+            generatePdfReportButton.UseVisualStyleBackColor = false;
             // 
             // SalesForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1456, 464);
+            ClientSize = new Size(1347, 630);
             Controls.Add(sidebarPanel);
             Controls.Add(PrincipalPanel);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(1);
             Name = "SalesForm";
             Text = "SaleForm";
             sidebarPanel.ResumeLayout(false);
             sidebarPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)salesPictureBox).EndInit();
             PrincipalPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)saleDataGridView).EndInit();
@@ -194,12 +222,15 @@
         #endregion
         private Panel sidebarPanel;
         private Label welcomeLabel;
-        private FontAwesome.Sharp.IconButton inventarioIconButton;
         private PictureBox salesPictureBox;
         private Panel PrincipalPanel;
         private DataGridView saleDataGridView;
         private Button deleteSaleButton;
         private Button editSaleButton;
         private Button addSaleButton;
+        private PictureBox pictureBox;
+        private ComboBox categoryComboBox;
+        private DateTimePicker orderDateTimePicker;
+        private Button generatePdfReportButton;
     }
 }
