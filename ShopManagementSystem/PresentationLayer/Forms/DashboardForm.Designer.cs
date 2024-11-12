@@ -72,17 +72,17 @@
             iconButton1.FlatStyle = FlatStyle.Flat;
             iconButton1.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             iconButton1.ForeColor = SystemColors.ActiveCaptionText;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Shopify;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ChevronCircleLeft;
             iconButton1.IconColor = Color.Black;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 32;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(-1, 937);
+            iconButton1.Location = new Point(-1, 918);
             iconButton1.Margin = new Padding(1, 3, 1, 3);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(263, 44);
             iconButton1.TabIndex = 6;
-            iconButton1.Text = "Ordenes de compra";
+            iconButton1.Text = "Cerrar Sescion";
             iconButton1.UseVisualStyleBackColor = false;
             // 
             // shoppingOrdersButton

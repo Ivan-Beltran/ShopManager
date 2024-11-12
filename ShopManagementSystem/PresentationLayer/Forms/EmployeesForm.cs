@@ -1,4 +1,4 @@
-﻿using BussinessLayer.Services;
+﻿using BussinessLayer.Services.ServicesForEmployees;
 using CommonLayer.Entities;
 using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
@@ -166,8 +166,6 @@ namespace PresentationLayer.Forms
                         LoadEmployees();
                         this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
                         ClearParameters();
-                        ClearParameters();
-
                     }
                 }
             }
@@ -223,7 +221,6 @@ namespace PresentationLayer.Forms
             }
         }
 
-        // metodos para seleccion y limpieza de parametros
         private void ClearParameters()
         {
             namesTextBox.Text = "";

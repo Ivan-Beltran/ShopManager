@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CommonLayer.Entities;
 
-namespace DataAccessLayer.Repositories
+namespace DataAccessLayer.Repositories.EmployeesRepo
 {
     public interface IEmployeesRepository
     {

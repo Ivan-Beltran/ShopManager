@@ -8,7 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BussinessLayer.Services;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskBand;
+using BussinessLayer.Services.ServicesForEmployees;
+using FontAwesome.Sharp;
+using BussinessLayer.Services.ServicesForInventory;
 
 namespace PresentationLayer.Forms
 {
@@ -16,19 +19,24 @@ namespace PresentationLayer.Forms
     {
 
         private Employees _employeeSesion;
-        private readonly IEmployeeService employeeService;
+        private readonly IEmployeeService _employeeService;
+        private readonly IInventoryService _inventoryServies;
+        private IconButton lastButton;
 
 
-        public DashboardForm(Employees employeeSesion, IEmployeeService _employeeService)
+        public DashboardForm(Employees employeeSesion,
+            IEmployeeService employeeService,
+            IInventoryService inventoryServices)
         {
             InitializeComponent();
 
             _employeeSesion = employeeSesion;
-            employeeService = _employeeService;
+            _employeeService = employeeService;
+            _inventoryServies = inventoryServices;
             employeeNameLabel.Text = _employeeSesion.Names;
             this.PrincipalPanel.Resize += (s, e) => AdjustChildFormSize();
             Permissions();
-        }
+    }
 
         private void openChildForm(object _childForm)
         {
@@ -71,8 +79,9 @@ namespace PresentationLayer.Forms
 
         private void personalIconButton_Click(object sender, EventArgs e)
         {
+            openChildForm(new EmployeesForm(_employeeService, _employeeSesion));
+            ChangeButtonColor(employeesButton);
 
-            openChildForm(new EmployeesForm(employeeService, _employeeSesion));
         }
 
         private void Permissions()
@@ -95,7 +104,28 @@ namespace PresentationLayer.Forms
 
         private void inventoryButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new InventoryForm());
+            openChildForm(new InventoryForm(_inventoryServies));
+            ChangeButtonColor(inventoryButton);
         }
+
+        public void ChangeButtonColor(IconButton button)
+        {
+            // Si hay un botón previo seleccionado, se le restaura el color original
+            if (lastButton != null)
+            {
+                lastButton.BackColor = Color.White; 
+                lastButton.ForeColor = Color.Black;
+                lastButton.IconColor = Color.Black;
+            }
+
+            // Cambiar el color del botón actual
+            button.BackColor = Color.Black;
+            button.ForeColor = Color.White;
+            button.IconColor = Color.White;
+
+            // Actualizar la referencia del último botón clicado
+            lastButton = button;
+        }
+
     }
 }

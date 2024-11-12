@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BussinessLayer.Services;
+using BussinessLayer.Services.ServicesForEmployees;
+using BussinessLayer.Services.ServicesForLogin;
 using CommonLayer.Entities;
 using FluentValidation.Results;
 using PresentationLayer.Validations;
+using BussinessLayer.Services.ServicesForInventory;
 
 namespace PresentationLayer.Forms
 {
@@ -18,13 +20,17 @@ namespace PresentationLayer.Forms
     {
         private ILoginService _loginServices;
         private IEmployeeService _employeeServices;
-        public LoginForm(ILoginService loginServices, IEmployeeService employeeServices)
+        private IInventoryService _inventoryServices;
+        public LoginForm(ILoginService loginServices,
+            IEmployeeService employeeServices,
+            IInventoryService inventoryServices)
         {
             InitializeComponent();
             _loginServices = loginServices;
+            _inventoryServices = inventoryServices;
+            _employeeServices = employeeServices;
             PasswordTextBox.PasswordChar = '*';
             ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
-            _employeeServices = employeeServices;
         }
 
         private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -75,7 +81,10 @@ namespace PresentationLayer.Forms
                     if (employeeSesion.PasswordEmployee == employeesInput.PasswordEmployee)
                     {
                         this.Hide();
-                        DashboardForm dashboardForm = new DashboardForm(employeeSesion, _employeeServices);
+                        DashboardForm dashboardForm = new DashboardForm(
+                            employeeSesion,
+                            _employeeServices,
+                            _inventoryServices);
                         dashboardForm.Show();
                     }
                     else

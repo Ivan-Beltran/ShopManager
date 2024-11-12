@@ -34,13 +34,13 @@
             welcomeLabel = new Label();
             salesPictureBox = new PictureBox();
             PrincipalPanel = new Panel();
+            generatePdfReportButton = new Button();
             categoryComboBox = new ComboBox();
             orderDateTimePicker = new DateTimePicker();
             deleteSaleButton = new Button();
             editSaleButton = new Button();
             addSaleButton = new Button();
             saleDataGridView = new DataGridView();
-            generatePdfReportButton = new Button();
             sidebarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)salesPictureBox).BeginInit();
@@ -58,9 +58,9 @@
             sidebarPanel.Controls.Add(salesPictureBox);
             sidebarPanel.Dock = DockStyle.Top;
             sidebarPanel.Location = new Point(0, 0);
-            sidebarPanel.Margin = new Padding(1, 2, 1, 2);
+            sidebarPanel.Margin = new Padding(1, 3, 1, 3);
             sidebarPanel.Name = "sidebarPanel";
-            sidebarPanel.Size = new Size(1347, 56);
+            sidebarPanel.Size = new Size(1539, 75);
             sidebarPanel.TabIndex = 2;
             // 
             // pictureBox
@@ -68,10 +68,10 @@
             pictureBox.BackColor = Color.Transparent;
             pictureBox.ErrorImage = null;
             pictureBox.Image = (Image)resources.GetObject("pictureBox.Image");
-            pictureBox.Location = new Point(0, 0);
-            pictureBox.Margin = new Padding(4, 3, 4, 3);
+            pictureBox.Location = new Point(280, 5);
+            pictureBox.Margin = new Padding(5, 4, 5, 4);
             pictureBox.Name = "pictureBox";
-            pictureBox.Size = new Size(88, 53);
+            pictureBox.Size = new Size(101, 71);
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.TabIndex = 1;
             pictureBox.TabStop = false;
@@ -81,10 +81,10 @@
             welcomeLabel.AutoSize = true;
             welcomeLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             welcomeLabel.ForeColor = Color.White;
-            welcomeLabel.Location = new Point(694, 32);
-            welcomeLabel.Margin = new Padding(4, 0, 4, 0);
+            welcomeLabel.Location = new Point(793, 43);
+            welcomeLabel.Margin = new Padding(5, 0, 5, 0);
             welcomeLabel.Name = "welcomeLabel";
-            welcomeLabel.Size = new Size(112, 25);
+            welcomeLabel.Size = new Size(135, 31);
             welcomeLabel.TabIndex = 0;
             welcomeLabel.Text = "Bienvenido";
             // 
@@ -92,10 +92,10 @@
             // 
             salesPictureBox.BackColor = Color.Transparent;
             salesPictureBox.Image = (Image)resources.GetObject("salesPictureBox.Image");
-            salesPictureBox.Location = new Point(642, -25);
-            salesPictureBox.Margin = new Padding(4, 3, 4, 3);
+            salesPictureBox.Location = new Point(734, -33);
+            salesPictureBox.Margin = new Padding(5, 4, 5, 4);
             salesPictureBox.Name = "salesPictureBox";
-            salesPictureBox.Size = new Size(216, 82);
+            salesPictureBox.Size = new Size(247, 109);
             salesPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             salesPictureBox.TabIndex = 0;
             salesPictureBox.TabStop = false;
@@ -115,19 +115,29 @@
             PrincipalPanel.Dock = DockStyle.Fill;
             PrincipalPanel.ForeColor = SystemColors.ActiveCaptionText;
             PrincipalPanel.Location = new Point(0, 0);
-            PrincipalPanel.Margin = new Padding(3, 2, 3, 2);
             PrincipalPanel.Name = "PrincipalPanel";
-            PrincipalPanel.Size = new Size(1347, 630);
+            PrincipalPanel.Size = new Size(1539, 840);
             PrincipalPanel.TabIndex = 3;
+            // 
+            // generatePdfReportButton
+            // 
+            generatePdfReportButton.BackColor = Color.FromArgb(0, 166, 225);
+            generatePdfReportButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            generatePdfReportButton.Location = new Point(129, 633);
+            generatePdfReportButton.Name = "generatePdfReportButton";
+            generatePdfReportButton.Size = new Size(353, 67);
+            generatePdfReportButton.TabIndex = 10;
+            generatePdfReportButton.Text = "Generar Reporte PDF";
+            generatePdfReportButton.UseVisualStyleBackColor = false;
             // 
             // categoryComboBox
             // 
             categoryComboBox.BackColor = Color.FromArgb(0, 166, 225);
             categoryComboBox.FormattingEnabled = true;
-            categoryComboBox.Location = new Point(113, 227);
-            categoryComboBox.Margin = new Padding(2);
+            categoryComboBox.Location = new Point(129, 303);
+            categoryComboBox.Margin = new Padding(2, 3, 2, 3);
             categoryComboBox.Name = "categoryComboBox";
-            categoryComboBox.Size = new Size(309, 23);
+            categoryComboBox.Size = new Size(353, 28);
             categoryComboBox.TabIndex = 9;
             // 
             // orderDateTimePicker
@@ -135,20 +145,19 @@
             orderDateTimePicker.CalendarFont = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             orderDateTimePicker.CalendarMonthBackground = Color.FromArgb(0, 166, 225);
             orderDateTimePicker.CalendarTitleBackColor = Color.White;
-            orderDateTimePicker.Location = new Point(113, 180);
-            orderDateTimePicker.Margin = new Padding(2);
+            orderDateTimePicker.Location = new Point(129, 240);
+            orderDateTimePicker.Margin = new Padding(2, 3, 2, 3);
             orderDateTimePicker.Name = "orderDateTimePicker";
-            orderDateTimePicker.Size = new Size(309, 23);
+            orderDateTimePicker.Size = new Size(353, 27);
             orderDateTimePicker.TabIndex = 8;
             // 
             // deleteSaleButton
             // 
             deleteSaleButton.BackColor = Color.FromArgb(0, 166, 225);
             deleteSaleButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            deleteSaleButton.Location = new Point(113, 403);
-            deleteSaleButton.Margin = new Padding(3, 2, 3, 2);
+            deleteSaleButton.Location = new Point(129, 537);
             deleteSaleButton.Name = "deleteSaleButton";
-            deleteSaleButton.Size = new Size(309, 50);
+            deleteSaleButton.Size = new Size(353, 67);
             deleteSaleButton.TabIndex = 7;
             deleteSaleButton.Text = "Eliminar";
             deleteSaleButton.UseVisualStyleBackColor = false;
@@ -157,10 +166,9 @@
             // 
             editSaleButton.BackColor = Color.FromArgb(0, 166, 225);
             editSaleButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            editSaleButton.Location = new Point(113, 338);
-            editSaleButton.Margin = new Padding(3, 2, 3, 2);
+            editSaleButton.Location = new Point(129, 451);
             editSaleButton.Name = "editSaleButton";
-            editSaleButton.Size = new Size(309, 49);
+            editSaleButton.Size = new Size(353, 65);
             editSaleButton.TabIndex = 6;
             editSaleButton.Text = "Editar";
             editSaleButton.UseVisualStyleBackColor = false;
@@ -169,10 +177,9 @@
             // 
             addSaleButton.BackColor = Color.FromArgb(0, 166, 225);
             addSaleButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            addSaleButton.Location = new Point(113, 272);
-            addSaleButton.Margin = new Padding(3, 2, 3, 2);
+            addSaleButton.Location = new Point(129, 363);
             addSaleButton.Name = "addSaleButton";
-            addSaleButton.Size = new Size(309, 49);
+            addSaleButton.Size = new Size(353, 65);
             addSaleButton.TabIndex = 5;
             addSaleButton.Text = "Agregar";
             addSaleButton.UseVisualStyleBackColor = false;
@@ -181,30 +188,18 @@
             // 
             saleDataGridView.BackgroundColor = SystemColors.Control;
             saleDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            saleDataGridView.Location = new Point(862, 56);
+            saleDataGridView.Location = new Point(985, 75);
             saleDataGridView.Margin = new Padding(1);
             saleDataGridView.Name = "saleDataGridView";
             saleDataGridView.RowHeadersWidth = 62;
-            saleDataGridView.Size = new Size(581, 574);
+            saleDataGridView.Size = new Size(664, 765);
             saleDataGridView.TabIndex = 4;
-            // 
-            // generatePdfReportButton
-            // 
-            generatePdfReportButton.BackColor = Color.FromArgb(0, 166, 225);
-            generatePdfReportButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            generatePdfReportButton.Location = new Point(113, 475);
-            generatePdfReportButton.Margin = new Padding(3, 2, 3, 2);
-            generatePdfReportButton.Name = "generatePdfReportButton";
-            generatePdfReportButton.Size = new Size(309, 50);
-            generatePdfReportButton.TabIndex = 10;
-            generatePdfReportButton.Text = "Generar Reporte PDF";
-            generatePdfReportButton.UseVisualStyleBackColor = false;
             // 
             // SalesForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1347, 630);
+            ClientSize = new Size(1539, 840);
             Controls.Add(sidebarPanel);
             Controls.Add(PrincipalPanel);
             Margin = new Padding(1);

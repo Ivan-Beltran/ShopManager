@@ -1,12 +1,14 @@
-using BussinessLayer.Services;
+using BussinessLayer.Services.ServicesForEmployees;
+using BussinessLayer.Services.ServicesForLogin;
 using CommonLayer.Entities;
 using DataAccessLayer.dbConnect;
-using DataAccessLayer.Repositories;
-
-
+using DataAccessLayer.Repositories.EmployeesRepo;
+using DataAccessLayer.Repositories.LoginRepo;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PresentationLayer.Forms;
+using DataAccessLayer.Repositories.invetoryRepo;
+using BussinessLayer.Services.ServicesForInventory;
 
 namespace PresentationLayer
 {
@@ -42,13 +44,14 @@ namespace PresentationLayer
 
                     //Repositories
                     services.AddScoped<ILoginRepository,LoginRepository>();
-                    services.AddScoped<IEmployeesRepository,EmployeeRepository>();  
-                    
+                    services.AddScoped<IEmployeesRepository,EmployeeRepository>();
+                    services.AddScoped<IInventoryRepository, InventoryRepository>();
 
                     //Services
                     services.AddScoped<ILoginService,LoginService>();
                     services.AddScoped<IEmployeeService,EmployeesServices>();
-                    
+                    services.AddScoped<IInventoryService, InventoryService>();
+
 
                     //Connection
                     services.AddSingleton<ISqlConnect,SqlConnect>();

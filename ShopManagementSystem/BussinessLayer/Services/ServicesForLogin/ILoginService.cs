@@ -1,7 +1,7 @@
 ﻿using CommonLayer.Entities;
 
 
-namespace BussinessLayer.Services
+namespace BussinessLayer.Services.ServicesForLogin
 {
     public interface ILoginService
     {

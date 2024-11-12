@@ -1,7 +1,7 @@
 ﻿using CommonLayer.Entities;
 using System.Data;
 
-namespace BussinessLayer.Services
+namespace BussinessLayer.Services.ServicesForEmployees
 {
     public interface IEmployeeService
     {

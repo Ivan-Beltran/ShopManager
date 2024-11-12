@@ -16,6 +16,6 @@ namespace CommonLayer.Entities
         public float Price { get; set; }
         public int ProductAmount { get; set; }
 
-        public int ProdutTypeId {  get; set; }
+        public int ProductTypeId {  get; set; }
     }
 }

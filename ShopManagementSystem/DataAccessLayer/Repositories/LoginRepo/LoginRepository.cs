@@ -11,13 +11,13 @@ using System.Security.Cryptography.X509Certificates;
 using Dapper;
 
 
-namespace DataAccessLayer.Repositories
+namespace DataAccessLayer.Repositories.LoginRepo
 {
-    public class LoginRepository: ILoginRepository
+    public class LoginRepository : ILoginRepository
     {
         private ISqlConnect _dbConnection;
 
-        public LoginRepository( ISqlConnect dbconnection)
+        public LoginRepository(ISqlConnect dbconnection)
         {
             _dbConnection = dbconnection;
         }
@@ -42,7 +42,7 @@ namespace DataAccessLayer.Repositories
                         ON E.RoleId = R.RoleId
                         WHERE E.UserEmployee = @UserEmployee";
 
-                return await connection.QueryFirstOrDefaultAsync<Employees>(query, new { UserEmployee = employeesInput.UserEmployee });
+                return await connection.QueryFirstOrDefaultAsync<Employees>(query, new { employeesInput.UserEmployee });
             }
         }
     }

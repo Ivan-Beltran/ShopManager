@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccessLayer.Repositories;
 using CommonLayer.Entities;
+using DataAccessLayer.Repositories.LoginRepo;
 
 
-namespace BussinessLayer.Services
+namespace BussinessLayer.Services.ServicesForLogin
 {
     public class LoginService : ILoginService
     {
@@ -23,7 +23,7 @@ namespace BussinessLayer.Services
         {
             return await _loginRepository.GetSessionAsync(employeesInput);
         }
-        
+
 
 
     }

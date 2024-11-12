@@ -1,13 +1,13 @@
-﻿using DataAccessLayer.Repositories;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommonLayer.Entities;
 using System.Data;
+using DataAccessLayer.Repositories.EmployeesRepo;
 
-namespace BussinessLayer.Services
+namespace BussinessLayer.Services.ServicesForEmployees
 {
     public class EmployeesServices : IEmployeeService
     {

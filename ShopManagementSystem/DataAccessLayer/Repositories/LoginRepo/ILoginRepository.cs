@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using CommonLayer.Entities;
 
-namespace DataAccessLayer.Repositories
+namespace DataAccessLayer.Repositories.LoginRepo
 {
     public interface ILoginRepository
     {
-         Task<Employees> GetSessionAsync(Employees employeesInput);
-        
+        Task<Employees> GetSessionAsync(Employees employeesInput);
+
     }
 }

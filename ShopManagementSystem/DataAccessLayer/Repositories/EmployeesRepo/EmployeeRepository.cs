@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Repositories
+namespace DataAccessLayer.Repositories.EmployeesRepo
 {
     public class EmployeeRepository : IEmployeesRepository
     {
@@ -85,7 +85,7 @@ namespace DataAccessLayer.Repositories
                         employeeAdded.RoleId
                     });
             }
-        } 
+        }
 
         public void EditEmployee(Employees employeeEdited)
         {
@@ -158,7 +158,7 @@ namespace DataAccessLayer.Repositories
             return searchEmployeeTable;
         }
 
-    
-    
+
+
     }
 }
