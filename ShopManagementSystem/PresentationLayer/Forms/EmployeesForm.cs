@@ -2,15 +2,18 @@
 using CommonLayer.Entities;
 using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
+using PresentationLayer.Validations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using FluentValidation;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FluentValidation.Results;
 
 namespace PresentationLayer.Forms
 {
@@ -54,7 +57,7 @@ namespace PresentationLayer.Forms
         private void addEmployeeButton_Click(object sender, EventArgs e)
         {
 
-            Employees empleyeeAdded = new Employees()
+            Employees employeeAdded = new Employees()
             {
                 Names = namesTextBox.Text,
                 LastNames = lastNamesTextBox.Text,
@@ -67,7 +70,15 @@ namespace PresentationLayer.Forms
 
             try
             {
-                _employeeService.AddEmployee(empleyeeAdded);
+                EmployeesValidator employeesValidator = new EmployeesValidator();
+                ValidationResult result= employeesValidator.Validate(employeeAdded);
+                if (!result.IsValid)
+                {
+                    DisplayValidationErrors(result);
+                    return;
+                }
+
+                _employeeService.AddEmployee(employeeAdded);
                 MessageBox.Show("empleado agregado exitosamente", "mensaje");
                 LoadEmployees();
                 this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
@@ -85,8 +96,31 @@ namespace PresentationLayer.Forms
                 }
             }
         }
+        private void DisplayValidationErrors(ValidationResult result)
+        {
+            validationErrorProvider.Clear();
 
-        private void editEmployeeButton_Click(object sender, EventArgs e)
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(Employees.Names):
+                        validationErrorProvider.SetError(namesTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Employees.LastNames):
+                        validationErrorProvider.SetError(lastNamesTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Employees.UserEmployee):
+                        validationErrorProvider.SetError(UserTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Employees.PasswordEmployee):
+                               validationErrorProvider.SetError(passwordTextBox, error.ErrorMessage);
+                        break;
+                }
+            }
+
+        }
+            private void editEmployeeButton_Click(object sender, EventArgs e)
         {
             if (EmployeesDataGridView.SelectedRows.Count == 0)
             {
@@ -108,10 +142,17 @@ namespace PresentationLayer.Forms
                     Email = emailTextBox.Text,
                     RoleId = Convert.ToInt32(rolesComboBox.SelectedValue)
                 };
-
+                EmployeesValidator employeesValidator = new EmployeesValidator();
+                ValidationResult result = employeesValidator.Validate(employeeEdited);
+                if (!result.IsValid)
+                {
+                    DisplayValidationErrors(result);
+                    return;
+                }
                 try
                 {
                     _employeeService.EditEmployee(employeeEdited);
+
                 }
 
                 catch (SqlException ex)
@@ -187,6 +228,7 @@ namespace PresentationLayer.Forms
                 this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
                 EmployeesDataGridView.ClearSelection();
                 ClearParameters();
+
 
             }
         }
