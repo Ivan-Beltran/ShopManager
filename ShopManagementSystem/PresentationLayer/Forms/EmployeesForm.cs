@@ -89,7 +89,7 @@ namespace PresentationLayer.Forms
             {
                 if (ex.Number == 2627)
                 {
-                    MessageBox.Show("por favor limpie los datos para agregar uno nuevo",
+                    MessageBox.Show("ya hay un empleado que ocupa este nombre de usuario",
                         "error",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
@@ -116,6 +116,18 @@ namespace PresentationLayer.Forms
                     case nameof(Employees.PasswordEmployee):
                                validationErrorProvider.SetError(passwordTextBox, error.ErrorMessage);
                         break;
+                    case nameof(Employees.Email):
+                        validationErrorProvider.SetError(emailTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Employees.DUI):
+                        validationErrorProvider.SetError(duiTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Employees.RoleId):
+                        validationErrorProvider.SetError(rolesComboBox, error.ErrorMessage);
+                        break;
+
+
+
                 }
             }
 
@@ -290,5 +302,7 @@ namespace PresentationLayer.Forms
                 rolesComboBox.Text = EmployeesDataGridView.CurrentRow.Cells[7].Value.ToString();
             }
         }
+
+        
     }
 }

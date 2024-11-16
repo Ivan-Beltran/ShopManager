@@ -26,6 +26,16 @@ namespace PresentationLayer.Validations
             RuleFor(employees => employees.PasswordEmployee)
                 .NotEmpty().WithMessage("La contraseña no puede estar vacia");
 
+            RuleFor(employees => employees.DUI)
+                .NotEmpty().WithMessage("el DUI no puede estar vacio");
+
+            RuleFor(employees=> employees.Email)
+                .NotEmpty().WithMessage("el DUI no puede estar vacio");
+
+            RuleFor(employees => employees.RoleId)
+                .NotEmpty().WithMessage("tiene que seleccionar un rol");
+            
+
         }
     }
 }

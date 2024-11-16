@@ -47,9 +47,9 @@
             // 
             suppliersLabel.AutoSize = true;
             suppliersLabel.Font = new Font("Segoe UI Historic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            suppliersLabel.Location = new Point(520, 48);
+            suppliersLabel.Location = new Point(594, 64);
             suppliersLabel.Name = "suppliersLabel";
-            suppliersLabel.Size = new Size(198, 25);
+            suppliersLabel.Size = new Size(242, 32);
             suppliersLabel.TabIndex = 1;
             suppliersLabel.Text = "Registrar Proveedor";
             // 
@@ -57,67 +57,71 @@
             // 
             nameSupplierLabel.AutoSize = true;
             nameSupplierLabel.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nameSupplierLabel.Location = new Point(481, 146);
+            nameSupplierLabel.Location = new Point(550, 195);
             nameSupplierLabel.Name = "nameSupplierLabel";
-            nameSupplierLabel.Size = new Size(67, 20);
+            nameSupplierLabel.Size = new Size(85, 25);
             nameSupplierLabel.TabIndex = 2;
             nameSupplierLabel.Text = "Nombre:";
             // 
             // txtNameSupplier
             // 
-            txtNameSupplier.Location = new Point(617, 138);
+            txtNameSupplier.Location = new Point(705, 184);
+            txtNameSupplier.Margin = new Padding(3, 4, 3, 4);
             txtNameSupplier.Name = "txtNameSupplier";
-            txtNameSupplier.Size = new Size(213, 23);
+            txtNameSupplier.Size = new Size(243, 27);
             txtNameSupplier.TabIndex = 3;
             // 
             // txtPhoneSupplier
             // 
-            txtPhoneSupplier.Location = new Point(617, 206);
+            txtPhoneSupplier.Location = new Point(705, 275);
+            txtPhoneSupplier.Margin = new Padding(3, 4, 3, 4);
             txtPhoneSupplier.Name = "txtPhoneSupplier";
-            txtPhoneSupplier.Size = new Size(213, 23);
+            txtPhoneSupplier.Size = new Size(243, 27);
             txtPhoneSupplier.TabIndex = 5;
             // 
             // phoneSupplierLabel
             // 
             phoneSupplierLabel.AutoSize = true;
             phoneSupplierLabel.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            phoneSupplierLabel.Location = new Point(481, 209);
+            phoneSupplierLabel.Location = new Point(550, 279);
             phoneSupplierLabel.Name = "phoneSupplierLabel";
-            phoneSupplierLabel.Size = new Size(71, 20);
+            phoneSupplierLabel.Size = new Size(90, 25);
             phoneSupplierLabel.TabIndex = 4;
             phoneSupplierLabel.Text = "Teléfono:";
             // 
             // txtEmailSupplier
             // 
-            txtEmailSupplier.Location = new Point(617, 276);
+            txtEmailSupplier.Location = new Point(705, 368);
+            txtEmailSupplier.Margin = new Padding(3, 4, 3, 4);
             txtEmailSupplier.Name = "txtEmailSupplier";
-            txtEmailSupplier.Size = new Size(213, 23);
+            txtEmailSupplier.Size = new Size(243, 27);
             txtEmailSupplier.TabIndex = 7;
             // 
             // emailSupplierLabel
             // 
             emailSupplierLabel.AutoSize = true;
             emailSupplierLabel.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            emailSupplierLabel.Location = new Point(481, 279);
+            emailSupplierLabel.Location = new Point(550, 372);
             emailSupplierLabel.Name = "emailSupplierLabel";
-            emailSupplierLabel.Size = new Size(51, 20);
+            emailSupplierLabel.Size = new Size(65, 25);
             emailSupplierLabel.TabIndex = 6;
             emailSupplierLabel.Text = "Gmail:";
             // 
             // txtAddressSupplier
             // 
-            txtAddressSupplier.Location = new Point(617, 349);
+            txtAddressSupplier.Location = new Point(705, 465);
+            txtAddressSupplier.Margin = new Padding(3, 4, 3, 4);
             txtAddressSupplier.Name = "txtAddressSupplier";
-            txtAddressSupplier.Size = new Size(213, 23);
+            txtAddressSupplier.Size = new Size(243, 27);
             txtAddressSupplier.TabIndex = 9;
             // 
             // addressSupplierLabel
             // 
             addressSupplierLabel.AutoSize = true;
             addressSupplierLabel.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addressSupplierLabel.Location = new Point(481, 352);
+            addressSupplierLabel.Location = new Point(550, 469);
             addressSupplierLabel.Name = "addressSupplierLabel";
-            addressSupplierLabel.Size = new Size(75, 20);
+            addressSupplierLabel.Size = new Size(96, 25);
             addressSupplierLabel.TabIndex = 8;
             addressSupplierLabel.Text = "Dirección:";
             // 
@@ -129,9 +133,10 @@
             registerSupplierButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             registerSupplierButton.IconSize = 32;
             registerSupplierButton.ImageAlign = ContentAlignment.MiddleLeft;
-            registerSupplierButton.Location = new Point(566, 431);
+            registerSupplierButton.Location = new Point(647, 575);
+            registerSupplierButton.Margin = new Padding(3, 4, 3, 4);
             registerSupplierButton.Name = "registerSupplierButton";
-            registerSupplierButton.Size = new Size(152, 37);
+            registerSupplierButton.Size = new Size(174, 49);
             registerSupplierButton.TabIndex = 10;
             registerSupplierButton.Text = "Guardar";
             registerSupplierButton.UseVisualStyleBackColor = true;
@@ -141,20 +146,19 @@
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(78, 125);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(137, 167);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(329, 275);
+            pictureBox1.Size = new Size(376, 367);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
             // RegisterSuppliersForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(994, 610);
+            ClientSize = new Size(1233, 813);
             Controls.Add(pictureBox1);
             Controls.Add(registerSupplierButton);
             Controls.Add(txtAddressSupplier);
@@ -166,6 +170,7 @@
             Controls.Add(txtNameSupplier);
             Controls.Add(nameSupplierLabel);
             Controls.Add(suppliersLabel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "RegisterSuppliersForm";
             Text = "RegisterSuppliersForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -27,20 +27,23 @@ namespace PresentationLayer.Forms
         public void LoadAllProducts()
         {
             inventoryDataGridView.DataSource = _inventoryServices.GetAllProduct();
+            inventoryDataGridView.Columns["ID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            inventoryDataGridView.Columns["Unidades"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            inventoryDataGridView.Columns["Precio"].DefaultCellStyle.Format = "C2";
 
         }
 
-        public void TotalProductLabels(Label totalLabel, int productTypeId)
+        public void TotalProductLabels(Label totalLabel, string productType)
         {
             int totalProduct = 0;
 
             foreach (DataGridViewRow row in inventoryDataGridView.Rows)
             {
-                if (row.Cells["ProductTypeId"].Value != null && Convert.ToInt32(row.Cells["ProductTypeId"].Value) == productTypeId)
+                if (row.Cells["Categoria"].Value != null && row.Cells["Categoria"].Value.ToString() == productType)
                 {
-                    if (row.Cells["ProductAmount"].Value != null)
+                    if (row.Cells["Unidades"].Value != null)
                     {
-                        totalProduct += Convert.ToInt32(row.Cells["ProductAmount"].Value);
+                        totalProduct += Convert.ToInt32(row.Cells["Unidades"].Value);
                     }
                 }
             }
@@ -49,52 +52,79 @@ namespace PresentationLayer.Forms
 
         public void LoadTotalProductsLabels()
         {
-            TotalProductLabels(pcTotalLabel, 1);
-            TotalProductLabels(totalLaptosLabel, 2);
-            TotalProductLabels(totalMovilesLabel, 3);
-            TotalProductLabels(totalTabletsLabel, 4);
-            TotalProductLabels(totalAccesoriesLabel, 5);
+            TotalProductLabels(pcTotalLabel, "Ordenadores");
+            TotalProductLabels(totalLaptosLabel, "Laptops");
+            TotalProductLabels(totalMovilesLabel, "Moviles");
+            TotalProductLabels(totalTabletsLabel, "Tablets");
+            TotalProductLabels(totalAccesoriesLabel, "Accesorios");
         }
 
         private void showPcButton_Click(object sender, EventArgs e)
         {
-            int productTypeId = 1;
+            string productType = "Ordenadores";
 
-            inventoryDataGridView.DataSource = _inventoryServices.GetProductsType(productTypeId);
+            inventoryDataGridView.DataSource = _inventoryServices.GetProductsType(productType);
 
         }
 
         private void showLaptopsButton_Click(object sender, EventArgs e)
         {
-            int productTypeId = 2;
+            string productType = "Laptops";
 
-            inventoryDataGridView.DataSource = _inventoryServices.GetProductsType(productTypeId);
+            inventoryDataGridView.DataSource = _inventoryServices.GetProductsType(productType);
         }
 
         private void showMovilesButton_Click(object sender, EventArgs e)
         {
-            int productTypeId = 3;
+            string productType = "Moviles";
 
-            inventoryDataGridView.DataSource = _inventoryServices.GetProductsType(productTypeId);
+            inventoryDataGridView.DataSource = _inventoryServices.GetProductsType(productType);
         }
 
         private void showTabletsButton_Click(object sender, EventArgs e)
         {
-            int productTypeId = 4;
+            string productType = "Tablets";
 
-            inventoryDataGridView.DataSource = _inventoryServices.GetProductsType(productTypeId);
+            inventoryDataGridView.DataSource = _inventoryServices.GetProductsType(productType);
         }
 
         private void showAccesoriesButton_Click(object sender, EventArgs e)
         {
-            int productTypeId = 5;
+            string productType = "Accesorios";
 
-            inventoryDataGridView.DataSource = _inventoryServices.GetProductsType(productTypeId);
+            inventoryDataGridView.DataSource = _inventoryServices.GetProductsType(productType);
         }
 
         private void showAllProductsButton_Click(object sender, EventArgs e)
         {
             LoadAllProducts();
+        }
+
+        private void searchProductButton_Click(object sender, EventArgs e)
+        {
+            string searchProductTerm = searchProductTextBox.Text;
+
+            inventoryDataGridView.DataSource = _inventoryServices.SearchProduct(searchProductTerm);
+
+        }
+
+        private void searchProductTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(searchProductTextBox.Text))
+            {
+
+                LoadAllProducts();
+            }
+        }
+
+        private void searchProductTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string searchProductTerm = searchProductTextBox.Text;
+
+                inventoryDataGridView.DataSource = _inventoryServices.SearchProduct(searchProductTerm);
+            }
         }
     }
 }

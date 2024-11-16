@@ -73,7 +73,7 @@ namespace DataAccessLayer.Repositories.EmployeesRepo
                 string query = @"INSERT INTO Employees
                                VALUES(@Names,@LastNames,@UserEmployee,@PasswordEmployee,@DUI,@Email,@RoleId)";
 
-                connection.Query<Employees>(query,
+                connection.Execute(query,
                     new
                     {
                         employeeAdded.Names,
@@ -101,18 +101,7 @@ namespace DataAccessLayer.Repositories.EmployeesRepo
                                      RoleId=@RoleId
                                      Where EmployeeId=@EmployeeId";
 
-                connection.Query<Employees>(query,
-                    new
-                    {
-                        employeeEdited.EmployeeId,
-                        employeeEdited.Names,
-                        employeeEdited.LastNames,
-                        employeeEdited.UserEmployee,
-                        employeeEdited.PasswordEmployee,
-                        employeeEdited.DUI,
-                        employeeEdited.Email,
-                        employeeEdited.RoleId
-                    });
+                connection.Execute(query,employeeEdited);
             }
         }
 
@@ -122,7 +111,7 @@ namespace DataAccessLayer.Repositories.EmployeesRepo
             {
                 string query = "DELETE FROM Employees WHERE EmployeeId = @EmployeeId";
 
-                connection.Query<Employees>(query, new { EmployeeId });
+                connection.Execute(query, new { EmployeeId });
             }
         }
 
@@ -132,23 +121,21 @@ namespace DataAccessLayer.Repositories.EmployeesRepo
 
             using (var connection = _dbConnection.GetConnection())
             {
-                // Corregir la sintaxis de la consulta
                 string query = @"SELECT
-            E.EmployeeId AS ID,
-            E.Names AS Nombres,
-            E.LastNames AS Apellidos,
-            E.UserEmployee AS Usuario,
-            E.PasswordEmployee AS Contraseña,
-            E.DUI,
-            E.Email,
-            R.RoleType AS Cargo
-            FROM Employees AS E
-            INNER JOIN Roles AS R ON E.RoleId = R.RoleId
-            WHERE E.Names LIKE @search 
-            OR E.LastNames LIKE @search
-            OR E.UserEmployee LIKE @search"; // Agregar la búsqueda en varios campos
+                                    E.EmployeeId AS ID,
+                                    E.Names AS Nombres,
+                                    E.LastNames AS Apellidos,
+                                    E.UserEmployee AS Usuario,
+                                    E.PasswordEmployee AS Contraseña,
+                                    E.DUI,
+                                    E.Email,
+                                    R.RoleType AS Cargo
+                                FROM Employees AS E
+                                INNER JOIN Roles AS R ON E.RoleId = R.RoleId
+                                WHERE E.Names LIKE @search 
+                                OR E.LastNames LIKE @search
+                                OR E.UserEmployee LIKE @search"; 
 
-                // Usar ExecuteReader con el parámetro correctamente
                 using (var reader = connection.ExecuteReader(query, new { search = "%" + search + "%" }))
                 {
                     searchEmployeeTable.Load(reader); // Cargar los resultados en el DataTable

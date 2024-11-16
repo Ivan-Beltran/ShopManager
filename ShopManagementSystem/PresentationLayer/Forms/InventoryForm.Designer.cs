@@ -78,13 +78,19 @@
             // 
             // inventoryDataGridView
             // 
+            inventoryDataGridView.AllowUserToAddRows = false;
+            inventoryDataGridView.AllowUserToDeleteRows = false;
+            inventoryDataGridView.AllowUserToResizeColumns = false;
+            inventoryDataGridView.AllowUserToResizeRows = false;
             inventoryDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             inventoryDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             inventoryDataGridView.BackgroundColor = Color.Azure;
             inventoryDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             inventoryDataGridView.Location = new Point(134, 442);
             inventoryDataGridView.Margin = new Padding(3, 4, 3, 4);
+            inventoryDataGridView.MultiSelect = false;
             inventoryDataGridView.Name = "inventoryDataGridView";
+            inventoryDataGridView.RowHeadersVisible = false;
             inventoryDataGridView.RowHeadersWidth = 51;
             inventoryDataGridView.Size = new Size(1431, 331);
             inventoryDataGridView.TabIndex = 0;
@@ -472,6 +478,7 @@
             searchProductButton.Size = new Size(52, 36);
             searchProductButton.TabIndex = 11;
             searchProductButton.UseVisualStyleBackColor = false;
+            searchProductButton.Click += searchProductButton_Click;
             // 
             // searchProductTextBox
             // 
@@ -480,6 +487,8 @@
             searchProductTextBox.Name = "searchProductTextBox";
             searchProductTextBox.Size = new Size(664, 27);
             searchProductTextBox.TabIndex = 10;
+            searchProductTextBox.TextChanged += searchProductTextBox_TextChanged;
+            searchProductTextBox.KeyDown += searchProductTextBox_KeyDown;
             // 
             // searchProductlLabel
             // 

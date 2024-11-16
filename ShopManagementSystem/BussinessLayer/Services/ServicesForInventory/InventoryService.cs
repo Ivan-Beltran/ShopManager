@@ -23,9 +23,14 @@ namespace BussinessLayer.Services.ServicesForInventory
             return _inventoryRepository.GetAllProducts();
         }
 
-        public DataTable GetProductsType(int productTypeId)
+        public DataTable GetProductsType(string productType)
         {
-           return  _inventoryRepository.GetProductsType(productTypeId);
+           return  _inventoryRepository.GetProductsType(productType);
+        }
+
+        public DataTable SearchProduct(string search)
+        {
+            return _inventoryRepository.SearchProduct(search);
         }
 
 
