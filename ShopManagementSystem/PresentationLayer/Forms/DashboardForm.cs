@@ -36,7 +36,7 @@ namespace PresentationLayer.Forms
             employeeNameLabel.Text = _employeeSesion.Names;
             this.PrincipalPanel.Resize += (s, e) => AdjustChildFormSize();
             Permissions();
-    }
+        }
 
         private void openChildForm(object _childForm)
         {
@@ -113,7 +113,7 @@ namespace PresentationLayer.Forms
             // Si hay un botón previo seleccionado, se le restaura el color original
             if (lastButton != null)
             {
-                lastButton.BackColor = Color.White; 
+                lastButton.BackColor = Color.White;
                 lastButton.ForeColor = Color.Black;
                 lastButton.IconColor = Color.Black;
             }
@@ -127,5 +127,15 @@ namespace PresentationLayer.Forms
             lastButton = button;
         }
 
+        private void createProductsButton_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CreateProductForm(_inventoryServies));
+            ChangeButtonColor(createProductsButton);
+        }
+
+        private void shoppingOrdersButton_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PurchaseOrdersForm());
+        }
     }
 }

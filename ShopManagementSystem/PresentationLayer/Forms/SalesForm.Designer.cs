@@ -68,7 +68,7 @@
             pictureBox.BackColor = Color.Transparent;
             pictureBox.ErrorImage = null;
             pictureBox.Image = (Image)resources.GetObject("pictureBox.Image");
-            pictureBox.Location = new Point(280, 5);
+            pictureBox.Location = new Point(280, 0);
             pictureBox.Margin = new Padding(5, 4, 5, 4);
             pictureBox.Name = "pictureBox";
             pictureBox.Size = new Size(101, 71);
@@ -188,7 +188,7 @@
             // 
             saleDataGridView.BackgroundColor = SystemColors.Control;
             saleDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            saleDataGridView.Location = new Point(985, 75);
+            saleDataGridView.Location = new Point(875, 65);
             saleDataGridView.Margin = new Padding(1);
             saleDataGridView.Name = "saleDataGridView";
             saleDataGridView.RowHeadersWidth = 62;

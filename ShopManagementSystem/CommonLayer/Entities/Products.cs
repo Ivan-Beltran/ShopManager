@@ -9,13 +9,17 @@ namespace CommonLayer.Entities
    public class Products
     {
         public int ProductId { get; set; }
-        public string Brand { get; set; }
-        public string Model { get; set; }
-        public string Version {  get; set; }
-        public string Color { get; set; }
-        public float Price { get; set; }
+        public int ProductTypeId {  get; set; }
+        public string ProductBrand { get; set; }
+        public string ProductModel { get; set; }
+        public string ProductVersion {  get; set; }
+        public string ProductColor { get; set; }
+        public decimal ProductPrice { get; set; }
         public int ProductAmount { get; set; }
 
-        public int ProductTypeId {  get; set; }
+        public int Availability {  get; set; }
+
+        public string ImageUrl {  get; set; }
+
     }
 }

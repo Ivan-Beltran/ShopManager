@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             sidebarPanel = new Panel();
+            createProductsButton = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             shoppingOrdersButton = new FontAwesome.Sharp.IconButton();
             employeeNameLabel = new Label();
@@ -49,6 +50,7 @@
             // 
             sidebarPanel.BackColor = Color.FromArgb(0, 166, 225);
             sidebarPanel.BorderStyle = BorderStyle.FixedSingle;
+            sidebarPanel.Controls.Add(createProductsButton);
             sidebarPanel.Controls.Add(iconButton1);
             sidebarPanel.Controls.Add(shoppingOrdersButton);
             sidebarPanel.Controls.Add(employeeNameLabel);
@@ -64,6 +66,27 @@
             sidebarPanel.Name = "sidebarPanel";
             sidebarPanel.Size = new Size(263, 992);
             sidebarPanel.TabIndex = 0;
+            // 
+            // createProductsButton
+            // 
+            createProductsButton.BackColor = Color.White;
+            createProductsButton.FlatAppearance.BorderSize = 0;
+            createProductsButton.FlatStyle = FlatStyle.Flat;
+            createProductsButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            createProductsButton.ForeColor = SystemColors.ActiveCaptionText;
+            createProductsButton.IconChar = FontAwesome.Sharp.IconChar.Shopify;
+            createProductsButton.IconColor = Color.Black;
+            createProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            createProductsButton.IconSize = 32;
+            createProductsButton.ImageAlign = ContentAlignment.MiddleLeft;
+            createProductsButton.Location = new Point(1, 656);
+            createProductsButton.Margin = new Padding(1, 3, 1, 3);
+            createProductsButton.Name = "createProductsButton";
+            createProductsButton.Size = new Size(263, 44);
+            createProductsButton.TabIndex = 7;
+            createProductsButton.Text = "crear productos";
+            createProductsButton.UseVisualStyleBackColor = false;
+            createProductsButton.Click += createProductsButton_Click;
             // 
             // iconButton1
             // 
@@ -104,6 +127,7 @@
             shoppingOrdersButton.TabIndex = 5;
             shoppingOrdersButton.Text = "Ordenes de compra";
             shoppingOrdersButton.UseVisualStyleBackColor = false;
+            shoppingOrdersButton.Click += shoppingOrdersButton_Click;
             // 
             // employeeNameLabel
             // 
@@ -268,5 +292,6 @@
         private Label welcomeLabel;
         private FontAwesome.Sharp.IconButton shoppingOrdersButton;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton createProductsButton;
     }
 }

@@ -110,5 +110,83 @@ namespace DataAccessLayer.Repositories.invetoryRepo
 
             return searchProductTable;
         }
+
+        public DataTable GetProductsCreated()
+        {
+            DataTable ProductsTable = new DataTable();
+            using (var connection = _dbConnection.GetConnection())
+            {
+
+                string query = @"SELECT 
+                            	P.ProductId AS ID,
+                            	PT.ProductCategory AS Categoria,
+                            	P.ProductBrand AS Marca,
+                            	P.ProductModel AS Modelo,
+                            	P.ProductVersion AS Version,
+                            	P.ProductColor AS Color,
+                            	P.ProductPrice AS Precio,
+                                P.ImageUrl
+                            FROM Products AS P
+                            INNER JOIN ProductType AS PT
+                            ON P.ProductTypeId=PT.ProductTypeId";
+
+                using (var reader = connection.ExecuteReader(query))
+                {
+
+                    ProductsTable.Load(reader);
+                }
+            }
+
+            return ProductsTable;
+        }
+
+        public DataTable GetProductTypes()
+        {
+            DataTable ProductsTypeTable = new DataTable(); 
+
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT ProductTypeId AS Id, ProductCategory AS Categoria FROM ProductType";
+
+                using (var reader = connection.ExecuteReader(query))
+                {
+
+                    ProductsTypeTable.Load(reader);
+                }
+            }
+
+            return ProductsTypeTable;
+        }
+        public void CreateProduct(Products product)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query= @"INSERT INTO Products(ProductTypeId,ProductBrand,ProductModel,ProductVersion,ProductColor,ProductPrice,ImageUrl)
+                                VALUES (@ProductTypeId, @ProductBrand, @ProductModel, @ProductVersion, @ProductColor, @ProductPrice, @ImageUrl);";
+
+                connection.Execute(query, product);
+            }
+        }
+
+        public void EditProduct(Products product)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"
+            UPDATE Products
+            SET 
+                ProductTypeId = @ProductTypeId,
+                ProductBrand = @ProductBrand,
+                ProductModel = @ProductModel,
+                ProductVersion = @ProductVersion,
+                ProductColor = @ProductColor,
+                ProductPrice = @ProductPrice,
+                ImageUrl = @ImageUrl
+            WHERE 
+                ProductId = @ProductId;";
+
+                connection.Execute(query, product);
+            }
+        }
     }
 }

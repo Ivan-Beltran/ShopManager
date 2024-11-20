@@ -67,32 +67,39 @@ namespace PresentationLayer.Forms
                 Email = emailTextBox.Text,
                 RoleId = Convert.ToInt32(rolesComboBox.SelectedValue)
             };
-
-            try
+            if (EmployeesDataGridView.SelectedRows.Count > 0)
             {
-                EmployeesValidator employeesValidator = new EmployeesValidator();
-                ValidationResult result= employeesValidator.Validate(employeeAdded);
-                if (!result.IsValid)
-                {
-                    DisplayValidationErrors(result);
-                    return;
-                }
-
-                _employeeService.AddEmployee(employeeAdded);
-                MessageBox.Show("empleado agregado exitosamente", "mensaje");
-                LoadEmployees();
-                this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
-                //ClearParameters();
-
+                MessageBox.Show("no se puede agregar mientras una fila esta seleccionada");
             }
-            catch (SqlException ex)
+            else
             {
-                if (ex.Number == 2627)
+
+                try
                 {
-                    MessageBox.Show("ya hay un empleado que ocupa este nombre de usuario",
-                        "error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                    EmployeesValidator employeesValidator = new EmployeesValidator();
+                    ValidationResult result= employeesValidator.Validate(employeeAdded);
+                    if (!result.IsValid)
+                    {
+                        DisplayValidationErrors(result);
+                        return;
+                    }
+
+                    _employeeService.AddEmployee(employeeAdded);
+                    MessageBox.Show("empleado agregado exitosamente", "mensaje");
+                    LoadEmployees();
+                    this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
+                    //ClearParameters();
+
+                }
+                catch (SqlException ex)
+                {
+                    if (ex.Number == 2627)
+                    {
+                        MessageBox.Show("ya hay un empleado que ocupa este nombre de usuario",
+                            "error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -164,6 +171,9 @@ namespace PresentationLayer.Forms
                 try
                 {
                     _employeeService.EditEmployee(employeeEdited);
+                    LoadEmployees();
+                    this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
+                    ClearParameters();
 
                 }
 
@@ -177,13 +187,7 @@ namespace PresentationLayer.Forms
                             MessageBoxIcon.Error);
                     }
                 }
-                finally
-                {
-
-                    LoadEmployees();
-                    this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
-                    ClearParameters();
-                }
+                
             }
         }
 

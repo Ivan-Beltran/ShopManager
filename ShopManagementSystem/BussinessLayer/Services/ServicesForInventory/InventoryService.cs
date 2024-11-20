@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Repositories.invetoryRepo;
 using System.Data;
+using CommonLayer.Entities;
 
 namespace BussinessLayer.Services.ServicesForInventory
 {
@@ -32,6 +33,27 @@ namespace BussinessLayer.Services.ServicesForInventory
         {
             return _inventoryRepository.SearchProduct(search);
         }
+
+        public void CreateProduct(Products product)
+        {
+            _inventoryRepository.CreateProduct(product);
+        }
+
+        public DataTable GetProductsType()
+        {
+            return _inventoryRepository.GetProductTypes();
+        }
+
+        public DataTable GetProductCreated()
+        {
+            return _inventoryRepository.GetProductsCreated();
+        }
+
+        public void EditProduct(Products product)
+        {
+            _inventoryRepository.EditProduct(product);
+        }
+
 
 
     }
