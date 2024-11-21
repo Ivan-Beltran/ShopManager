@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             sidebarPanel = new Panel();
             createProductsButton = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            exitSesionButton = new FontAwesome.Sharp.IconButton();
             shoppingOrdersButton = new FontAwesome.Sharp.IconButton();
             employeeNameLabel = new Label();
             welcomeLabel = new Label();
@@ -42,6 +42,7 @@
             logoPictureBox = new PictureBox();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             PrincipalPanel = new Panel();
+            suppliersButton = new FontAwesome.Sharp.IconButton();
             sidebarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             SuspendLayout();
@@ -50,8 +51,9 @@
             // 
             sidebarPanel.BackColor = Color.FromArgb(0, 166, 225);
             sidebarPanel.BorderStyle = BorderStyle.FixedSingle;
+            sidebarPanel.Controls.Add(suppliersButton);
             sidebarPanel.Controls.Add(createProductsButton);
-            sidebarPanel.Controls.Add(iconButton1);
+            sidebarPanel.Controls.Add(exitSesionButton);
             sidebarPanel.Controls.Add(shoppingOrdersButton);
             sidebarPanel.Controls.Add(employeeNameLabel);
             sidebarPanel.Controls.Add(welcomeLabel);
@@ -88,25 +90,25 @@
             createProductsButton.UseVisualStyleBackColor = false;
             createProductsButton.Click += createProductsButton_Click;
             // 
-            // iconButton1
+            // exitSesionButton
             // 
-            iconButton1.BackColor = Color.White;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton1.ForeColor = SystemColors.ActiveCaptionText;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ChevronCircleLeft;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 32;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(-1, 918);
-            iconButton1.Margin = new Padding(1, 3, 1, 3);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(263, 44);
-            iconButton1.TabIndex = 6;
-            iconButton1.Text = "Cerrar Sescion";
-            iconButton1.UseVisualStyleBackColor = false;
+            exitSesionButton.BackColor = Color.White;
+            exitSesionButton.FlatAppearance.BorderSize = 0;
+            exitSesionButton.FlatStyle = FlatStyle.Flat;
+            exitSesionButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            exitSesionButton.ForeColor = SystemColors.ActiveCaptionText;
+            exitSesionButton.IconChar = FontAwesome.Sharp.IconChar.ChevronCircleLeft;
+            exitSesionButton.IconColor = Color.Black;
+            exitSesionButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            exitSesionButton.IconSize = 32;
+            exitSesionButton.ImageAlign = ContentAlignment.MiddleLeft;
+            exitSesionButton.Location = new Point(-1, 918);
+            exitSesionButton.Margin = new Padding(1, 3, 1, 3);
+            exitSesionButton.Name = "exitSesionButton";
+            exitSesionButton.Size = new Size(263, 44);
+            exitSesionButton.TabIndex = 6;
+            exitSesionButton.Text = "Cerrar Sescion";
+            exitSesionButton.UseVisualStyleBackColor = false;
             // 
             // shoppingOrdersButton
             // 
@@ -260,6 +262,27 @@
             PrincipalPanel.Size = new Size(1040, 992);
             PrincipalPanel.TabIndex = 1;
             // 
+            // suppliersButton
+            // 
+            suppliersButton.BackColor = Color.White;
+            suppliersButton.FlatAppearance.BorderSize = 0;
+            suppliersButton.FlatStyle = FlatStyle.Flat;
+            suppliersButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            suppliersButton.ForeColor = SystemColors.ActiveCaptionText;
+            suppliersButton.IconChar = FontAwesome.Sharp.IconChar.Shopify;
+            suppliersButton.IconColor = Color.Black;
+            suppliersButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            suppliersButton.IconSize = 32;
+            suppliersButton.ImageAlign = ContentAlignment.MiddleLeft;
+            suppliersButton.Location = new Point(-1, 724);
+            suppliersButton.Margin = new Padding(1, 3, 1, 3);
+            suppliersButton.Name = "suppliersButton";
+            suppliersButton.Size = new Size(263, 44);
+            suppliersButton.TabIndex = 8;
+            suppliersButton.Text = "Proveedores";
+            suppliersButton.UseVisualStyleBackColor = false;
+            suppliersButton.Click += suppliersButton_Click;
+            // 
             // DashboardForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -291,7 +314,8 @@
         private Label employeeNameLabel;
         private Label welcomeLabel;
         private FontAwesome.Sharp.IconButton shoppingOrdersButton;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton exitSesionButton;
         private FontAwesome.Sharp.IconButton createProductsButton;
+        private FontAwesome.Sharp.IconButton suppliersButton;
     }
 }

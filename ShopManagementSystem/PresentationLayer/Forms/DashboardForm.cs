@@ -12,6 +12,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskBand;
 using BussinessLayer.Services.ServicesForEmployees;
 using FontAwesome.Sharp;
 using BussinessLayer.Services.ServicesForInventory;
+using BussinessLayer.Services.ServicesForSuppliers;
+using BussinessLayer.Services.ServicersForPurchaseOrders;
 
 namespace PresentationLayer.Forms
 {
@@ -21,18 +23,24 @@ namespace PresentationLayer.Forms
         private Employees _employeeSesion;
         private readonly IEmployeeService _employeeService;
         private readonly IInventoryService _inventoryServies;
+        private readonly ISuppliersServices _suppliersServices;
+        private IPurchaseOrdersServices _purchaseOrderServices;
         private IconButton lastButton;
 
 
         public DashboardForm(Employees employeeSesion,
             IEmployeeService employeeService,
-            IInventoryService inventoryServices)
+            IInventoryService inventoryServices,
+            ISuppliersServices suppliersServices,
+            IPurchaseOrdersServices purchaseOrders)
         {
             InitializeComponent();
 
             _employeeSesion = employeeSesion;
             _employeeService = employeeService;
             _inventoryServies = inventoryServices;
+            _suppliersServices = suppliersServices;
+            _purchaseOrderServices = purchaseOrders;
             employeeNameLabel.Text = _employeeSesion.Names;
             this.PrincipalPanel.Resize += (s, e) => AdjustChildFormSize();
             Permissions();
@@ -135,7 +143,12 @@ namespace PresentationLayer.Forms
 
         private void shoppingOrdersButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new PurchaseOrdersForm());
+            openChildForm(new PurchaseOrdersForm(_purchaseOrderServices));
+        }
+
+        private void suppliersButton_Click(object sender, EventArgs e)
+        {
+            openChildForm(new RegisterSuppliersForm(_suppliersServices));
         }
     }
 }

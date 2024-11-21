@@ -191,6 +191,7 @@
             productsDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             productsDataGridView.BackgroundColor = Color.Azure;
             productsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            productsDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             productsDataGridView.Location = new Point(61, 536);
             productsDataGridView.Margin = new Padding(3, 4, 3, 4);
             productsDataGridView.MultiSelect = false;

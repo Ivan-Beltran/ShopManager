@@ -33,11 +33,14 @@ namespace DataAccessLayer.Repositories.invetoryRepo
                             	P.ProductVersion AS Version,
                             	P.ProductColor AS Color,
                             	P.ProductPrice AS Precio,
-                            	P.ProductAmount AS Unidades
+                            	P.ProductAmount AS Unidades,
+                                 CASE 
+                                     WHEN P.Availability = 1 THEN 'Disponible'
+                                     ELSE 'No Disponible'
+                                 END AS Disponibilidad
                             FROM Products AS P
                             INNER JOIN ProductType AS PT
-                            ON P.ProductTypeId=PT.ProductTypeId
-                            WHERE Availability= 1";
+                            ON P.ProductTypeId=PT.ProductTypeId";
 
                 using (var reader = connection.ExecuteReader(query))
                 {

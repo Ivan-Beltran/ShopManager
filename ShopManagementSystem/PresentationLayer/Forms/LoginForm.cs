@@ -13,6 +13,8 @@ using CommonLayer.Entities;
 using FluentValidation.Results;
 using PresentationLayer.Validations;
 using BussinessLayer.Services.ServicesForInventory;
+using BussinessLayer.Services.ServicesForSuppliers;
+using BussinessLayer.Services.ServicersForPurchaseOrders;
 
 namespace PresentationLayer.Forms
 {
@@ -21,16 +23,23 @@ namespace PresentationLayer.Forms
         private ILoginService _loginServices;
         private IEmployeeService _employeeServices;
         private IInventoryService _inventoryServices;
+        private ISuppliersServices _suppliersServices;
+        private IPurchaseOrdersServices _purchaseOrderServices;
+
         public LoginForm(ILoginService loginServices,
             IEmployeeService employeeServices,
-            IInventoryService inventoryServices)
+            IInventoryService inventoryServices,
+            ISuppliersServices suppliersServices,
+            IPurchaseOrdersServices purchaseOrderServices)
         {
             InitializeComponent();
             _loginServices = loginServices;
             _inventoryServices = inventoryServices;
             _employeeServices = employeeServices;
+            _suppliersServices = suppliersServices;
             PasswordTextBox.PasswordChar = '*';
             ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
+            _purchaseOrderServices = purchaseOrderServices;
         }
 
         private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -84,7 +93,9 @@ namespace PresentationLayer.Forms
                         DashboardForm dashboardForm = new DashboardForm(
                             employeeSesion,
                             _employeeServices,
-                            _inventoryServices);
+                            _inventoryServices,
+                            _suppliersServices,
+                            _purchaseOrderServices);
                         dashboardForm.Show();
                     }
                     else

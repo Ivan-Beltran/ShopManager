@@ -113,6 +113,7 @@
             searchProductButton.Size = new Size(52, 36);
             searchProductButton.TabIndex = 11;
             searchProductButton.UseVisualStyleBackColor = false;
+            searchProductButton.Click += searchProductButton_Click;
             // 
             // searchProductTextBox
             // 
@@ -121,6 +122,7 @@
             searchProductTextBox.Name = "searchProductTextBox";
             searchProductTextBox.Size = new Size(452, 27);
             searchProductTextBox.TabIndex = 10;
+            searchProductTextBox.TextChanged += searchProductTextBox_TextChanged;
             // 
             // searchProductlLabel
             // 
@@ -169,6 +171,7 @@
             addShoppingListButton.TabIndex = 30;
             addShoppingListButton.Text = " añadir";
             addShoppingListButton.UseVisualStyleBackColor = false;
+            addShoppingListButton.Click += addShoppingListButton_Click;
             // 
             // label2
             // 
@@ -217,6 +220,7 @@
             addPurchaseOrderButton.TabIndex = 33;
             addPurchaseOrderButton.Text = " realizar pedido";
             addPurchaseOrderButton.UseVisualStyleBackColor = false;
+            addPurchaseOrderButton.Click += addPurchaseOrderButton_Click;
             // 
             // ShoppingListForm
             // 

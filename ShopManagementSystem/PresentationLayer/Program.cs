@@ -9,6 +9,10 @@ using Microsoft.Extensions.Hosting;
 using PresentationLayer.Forms;
 using DataAccessLayer.Repositories.invetoryRepo;
 using BussinessLayer.Services.ServicesForInventory;
+using DataAccessLayer.Repositories.SuppliersRepo;
+using BussinessLayer.Services.ServicesForSuppliers;
+using DataAccessLayer.Repositories.PurchaseOrdersRepo;
+using BussinessLayer.Services.ServicersForPurchaseOrders;
 
 namespace PresentationLayer
 {
@@ -45,16 +49,20 @@ namespace PresentationLayer
                     services.AddTransient<PurchaseOrdersForm>();
                     services.AddTransient<RegisterSuppliersForm>();
                     services.AddTransient<HomeForm>();
+                    services.AddTransient<ShoppingListForm>();
 
                     //Repositories
                     services.AddScoped<ILoginRepository,LoginRepository>();
                     services.AddScoped<IEmployeesRepository,EmployeeRepository>();
                     services.AddScoped<IInventoryRepository, InventoryRepository>();
-
+                    services.AddScoped<ISuppliersRepository, SuppliersRepository>();
+                    services.AddScoped<IPurchaseOrderRepository, PurchaseOrderRepository>();
                     //Services
                     services.AddScoped<ILoginService,LoginService>();
                     services.AddScoped<IEmployeeService,EmployeesServices>();
                     services.AddScoped<IInventoryService, InventoryService>();
+                    services.AddScoped<ISuppliersServices, SuppliersServices>();
+                    services.AddScoped<IPurchaseOrdersServices, PurchaseOrdersServices>();
 
 
                     //Connection

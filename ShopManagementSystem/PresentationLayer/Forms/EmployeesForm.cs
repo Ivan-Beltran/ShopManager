@@ -88,7 +88,7 @@ namespace PresentationLayer.Forms
                     MessageBox.Show("empleado agregado exitosamente", "mensaje");
                     LoadEmployees();
                     this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
-                    //ClearParameters();
+ 
 
                 }
                 catch (SqlException ex)
