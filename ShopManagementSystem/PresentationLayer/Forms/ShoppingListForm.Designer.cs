@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             productsDataGridView = new DataGridView();
             shoppingListDataGridView = new DataGridView();
             searchProductPanel = new Panel();
@@ -40,9 +41,11 @@
             label2 = new Label();
             deleteShoppingListButton = new FontAwesome.Sharp.IconButton();
             addPurchaseOrderButton = new FontAwesome.Sharp.IconButton();
+            quantityErrorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)productsDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)shoppingListDataGridView).BeginInit();
             searchProductPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)quantityErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // productsDataGridView
@@ -150,7 +153,7 @@
             // 
             productQuantityTextBox.Location = new Point(165, 471);
             productQuantityTextBox.Name = "productQuantityTextBox";
-            productQuantityTextBox.Size = new Size(146, 27);
+            productQuantityTextBox.Size = new Size(92, 27);
             productQuantityTextBox.TabIndex = 29;
             // 
             // addShoppingListButton
@@ -201,6 +204,7 @@
             deleteShoppingListButton.TabIndex = 32;
             deleteShoppingListButton.Text = "eliminar seleccion";
             deleteShoppingListButton.UseVisualStyleBackColor = false;
+            deleteShoppingListButton.Click += deleteShoppingListButton_Click;
             // 
             // addPurchaseOrderButton
             // 
@@ -222,11 +226,16 @@
             addPurchaseOrderButton.UseVisualStyleBackColor = false;
             addPurchaseOrderButton.Click += addPurchaseOrderButton_Click;
             // 
+            // quantityErrorProvider
+            // 
+            quantityErrorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            quantityErrorProvider.ContainerControl = this;
+            // 
             // ShoppingListForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1608, 639);
+            ClientSize = new Size(1758, 639);
             Controls.Add(addPurchaseOrderButton);
             Controls.Add(deleteShoppingListButton);
             Controls.Add(label2);
@@ -242,6 +251,7 @@
             ((System.ComponentModel.ISupportInitialize)shoppingListDataGridView).EndInit();
             searchProductPanel.ResumeLayout(false);
             searchProductPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)quantityErrorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -260,5 +270,6 @@
         private Label label2;
         private FontAwesome.Sharp.IconButton deleteShoppingListButton;
         private FontAwesome.Sharp.IconButton addPurchaseOrderButton;
+        private ErrorProvider quantityErrorProvider;
     }
 }

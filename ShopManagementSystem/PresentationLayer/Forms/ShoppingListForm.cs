@@ -28,9 +28,11 @@ namespace PresentationLayer.Forms
         public void InitializeShoppingCartTable()
         {
             shoppingCartTable = new DataTable();
-            shoppingCartTable.Columns.Add("ProductId", typeof(int));
-            shoppingCartTable.Columns.Add("ProductName", typeof(string));
-            shoppingCartTable.Columns.Add("Quantity", typeof(int));
+            shoppingCartTable.Columns.Add("Id", typeof(int));
+            shoppingCartTable.Columns.Add("Marca", typeof(string));
+            shoppingCartTable.Columns.Add("Modelo", typeof(string));
+            shoppingCartTable.Columns.Add("Version", typeof(string));
+            shoppingCartTable.Columns.Add("Cantidad a comprar", typeof(int));
 
             // Asocia la tabla temporal al DataGridView para mostrar los productos seleccionados
             shoppingListDataGridView.DataSource = shoppingCartTable;
@@ -70,12 +72,22 @@ namespace PresentationLayer.Forms
 
         private void addShoppingListButton_Click(object sender, EventArgs e)
         {
-            int productId = Convert.ToInt32(productsDataGridView.CurrentRow.Cells[0].Value.ToString());
-            string productName = productsDataGridView.CurrentRow.Cells[1].Value.ToString(); // Suponiendo que la columna 1 es el nombre
-            int quantity = Convert.ToInt32(productQuantityTextBox.Text);
+            if(string.IsNullOrWhiteSpace(productQuantityTextBox.Text) || Convert.ToInt32(productQuantityTextBox.Text)<1)
+            {
+                quantityErrorProvider.SetError(productQuantityTextBox, "por favor ingrese una cantidad");
+            }
+            else
+            {
+                int productId = Convert.ToInt32(productsDataGridView.CurrentRow.Cells[0].Value.ToString());
+                string productBrand = productsDataGridView.CurrentRow.Cells[2].Value.ToString();
+                string productModel = productsDataGridView.CurrentRow.Cells[2].Value.ToString();
+                string productVersion = productsDataGridView.CurrentRow.Cells[2].Value.ToString();
+                int quantity = Convert.ToInt32(productQuantityTextBox.Text);
 
-            // Agregar el producto a la tabla temporal
-            shoppingCartTable.Rows.Add(productId, productName, quantity);
+                 shoppingCartTable.Rows.Add(productId, productBrand, productModel, productVersion, quantity);
+            }
+
+
         }
 
         private void addPurchaseOrderButton_Click(object sender, EventArgs e)
@@ -85,8 +97,34 @@ namespace PresentationLayer.Forms
                 int productId = Convert.ToInt32(row["ProductId"]);
                 int quantity = Convert.ToInt32(row["Quantity"]);
 
-                // Agregar producto a la lista de compras en la base de datos
+
                 _purchaseOrderServices.AddProductsToPurchaseList(_idOrder, productId, quantity);
+            }
+        }
+
+        private void deleteShoppingListButton_Click(object sender, EventArgs e)
+        {
+            if (shoppingListDataGridView.CurrentRow != null)
+            {
+
+                int rowIndex = shoppingListDataGridView.CurrentRow.Index;
+
+
+                var confirmResult = MessageBox.Show(
+                    "¿Estás seguro de que deseas eliminar esta fila?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+
+                    shoppingCartTable.Rows[rowIndex].Delete();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para eliminar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

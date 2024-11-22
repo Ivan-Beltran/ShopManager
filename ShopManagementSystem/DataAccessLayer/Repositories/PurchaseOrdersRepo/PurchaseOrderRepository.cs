@@ -122,7 +122,6 @@ namespace DataAccessLayer.Repositories.PurchaseOrdersRepo
                             	P.ProductModel AS Modelo,
                             	P.ProductVersion AS Version,
                             	P.ProductColor AS Color,
-                            	P.ProductPrice AS Precio,
                             	P.ProductAmount AS Unidades
                             FROM Products AS P
                             INNER JOIN ProductType AS PT
