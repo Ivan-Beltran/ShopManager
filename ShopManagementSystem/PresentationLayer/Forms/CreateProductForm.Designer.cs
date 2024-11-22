@@ -56,107 +56,120 @@
             // productTypeLabel
             // 
             productTypeLabel.AutoSize = true;
-            productTypeLabel.Location = new Point(205, 47);
+            productTypeLabel.Font = new Font("Segoe UI Historic", 9.75F);
+            productTypeLabel.Location = new Point(179, 35);
             productTypeLabel.Name = "productTypeLabel";
-            productTypeLabel.Size = new Size(36, 20);
+            productTypeLabel.Size = new Size(37, 17);
             productTypeLabel.TabIndex = 0;
-            productTypeLabel.Text = "tipo";
+            productTypeLabel.Text = "Tipo:";
             // 
             // productBrandLabel
             // 
             productBrandLabel.AutoSize = true;
-            productBrandLabel.Location = new Point(205, 116);
+            productBrandLabel.Font = new Font("Segoe UI Historic", 9.75F);
+            productBrandLabel.Location = new Point(179, 87);
             productBrandLabel.Name = "productBrandLabel";
-            productBrandLabel.Size = new Size(50, 20);
+            productBrandLabel.Size = new Size(48, 17);
             productBrandLabel.TabIndex = 1;
-            productBrandLabel.Text = "marca";
+            productBrandLabel.Text = "Marca:";
             // 
             // producModelLabel
             // 
             producModelLabel.AutoSize = true;
-            producModelLabel.Location = new Point(205, 177);
+            producModelLabel.Font = new Font("Segoe UI Historic", 9.75F);
+            producModelLabel.Location = new Point(179, 133);
             producModelLabel.Name = "producModelLabel";
-            producModelLabel.Size = new Size(61, 20);
+            producModelLabel.Size = new Size(57, 17);
             producModelLabel.TabIndex = 2;
-            producModelLabel.Text = "modelo";
+            producModelLabel.Text = "Modelo:";
             // 
             // productVersionLabel
             // 
             productVersionLabel.AutoSize = true;
-            productVersionLabel.Location = new Point(205, 243);
+            productVersionLabel.Font = new Font("Segoe UI Historic", 9.75F);
+            productVersionLabel.Location = new Point(179, 182);
             productVersionLabel.Name = "productVersionLabel";
-            productVersionLabel.Size = new Size(56, 20);
+            productVersionLabel.Size = new Size(55, 17);
             productVersionLabel.TabIndex = 3;
-            productVersionLabel.Text = "version";
+            productVersionLabel.Text = "Versión:";
             // 
             // productColorLabel
             // 
             productColorLabel.AutoSize = true;
-            productColorLabel.Location = new Point(205, 319);
+            productColorLabel.Font = new Font("Segoe UI Historic", 9.75F);
+            productColorLabel.Location = new Point(179, 239);
             productColorLabel.Name = "productColorLabel";
-            productColorLabel.Size = new Size(43, 20);
+            productColorLabel.Size = new Size(43, 17);
             productColorLabel.TabIndex = 4;
-            productColorLabel.Text = "color";
+            productColorLabel.Text = "Color:";
             // 
             // producPriceLabel
             // 
             producPriceLabel.AutoSize = true;
-            producPriceLabel.Location = new Point(205, 391);
+            producPriceLabel.Font = new Font("Segoe UI Historic", 9.75F);
+            producPriceLabel.Location = new Point(179, 293);
             producPriceLabel.Name = "producPriceLabel";
-            producPriceLabel.Size = new Size(51, 20);
+            producPriceLabel.Size = new Size(47, 17);
             producPriceLabel.TabIndex = 5;
-            producPriceLabel.Text = "precio";
+            producPriceLabel.Text = "Precio:";
             // 
             // productBrandTextBox
             // 
-            productBrandTextBox.Location = new Point(297, 112);
+            productBrandTextBox.Location = new Point(260, 84);
+            productBrandTextBox.Margin = new Padding(3, 2, 3, 2);
             productBrandTextBox.Name = "productBrandTextBox";
-            productBrandTextBox.Size = new Size(351, 27);
+            productBrandTextBox.Size = new Size(308, 23);
             productBrandTextBox.TabIndex = 6;
             // 
             // productModeltextBox
             // 
-            productModeltextBox.Location = new Point(297, 176);
+            productModeltextBox.Location = new Point(260, 132);
+            productModeltextBox.Margin = new Padding(3, 2, 3, 2);
             productModeltextBox.Name = "productModeltextBox";
-            productModeltextBox.Size = new Size(351, 27);
+            productModeltextBox.Size = new Size(308, 23);
             productModeltextBox.TabIndex = 7;
             // 
             // productVersionTextBox
             // 
-            productVersionTextBox.Location = new Point(297, 245);
+            productVersionTextBox.Location = new Point(260, 184);
+            productVersionTextBox.Margin = new Padding(3, 2, 3, 2);
             productVersionTextBox.Name = "productVersionTextBox";
-            productVersionTextBox.Size = new Size(351, 27);
+            productVersionTextBox.Size = new Size(308, 23);
             productVersionTextBox.TabIndex = 8;
             // 
             // productColorTextBox
             // 
-            productColorTextBox.Location = new Point(297, 316);
+            productColorTextBox.Location = new Point(260, 237);
+            productColorTextBox.Margin = new Padding(3, 2, 3, 2);
             productColorTextBox.Name = "productColorTextBox";
-            productColorTextBox.Size = new Size(351, 27);
+            productColorTextBox.Size = new Size(308, 23);
             productColorTextBox.TabIndex = 9;
             // 
             // productPriceTextBox
             // 
-            productPriceTextBox.Location = new Point(297, 388);
+            productPriceTextBox.Location = new Point(260, 291);
+            productPriceTextBox.Margin = new Padding(3, 2, 3, 2);
             productPriceTextBox.Name = "productPriceTextBox";
-            productPriceTextBox.Size = new Size(351, 27);
+            productPriceTextBox.Size = new Size(308, 23);
             productPriceTextBox.TabIndex = 10;
             // 
             // productTypeComboBox
             // 
             productTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             productTypeComboBox.FormattingEnabled = true;
-            productTypeComboBox.Location = new Point(297, 44);
+            productTypeComboBox.Location = new Point(260, 33);
+            productTypeComboBox.Margin = new Padding(3, 2, 3, 2);
             productTypeComboBox.Name = "productTypeComboBox";
-            productTypeComboBox.Size = new Size(351, 28);
+            productTypeComboBox.Size = new Size(308, 23);
             productTypeComboBox.TabIndex = 11;
             // 
             // productImgPictureBox
             // 
             productImgPictureBox.BorderStyle = BorderStyle.FixedSingle;
-            productImgPictureBox.Location = new Point(739, 47);
+            productImgPictureBox.Location = new Point(647, 35);
+            productImgPictureBox.Margin = new Padding(3, 2, 3, 2);
             productImgPictureBox.Name = "productImgPictureBox";
-            productImgPictureBox.Size = new Size(285, 239);
+            productImgPictureBox.Size = new Size(250, 180);
             productImgPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             productImgPictureBox.TabIndex = 12;
             productImgPictureBox.TabStop = false;
@@ -165,19 +178,19 @@
             // 
             loadProductImgButton.BackColor = Color.FromArgb(0, 166, 225);
             loadProductImgButton.FlatStyle = FlatStyle.Popup;
-            loadProductImgButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loadProductImgButton.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loadProductImgButton.ForeColor = Color.White;
             loadProductImgButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
             loadProductImgButton.IconColor = Color.White;
             loadProductImgButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             loadProductImgButton.IconSize = 38;
             loadProductImgButton.ImageAlign = ContentAlignment.MiddleLeft;
-            loadProductImgButton.Location = new Point(777, 322);
+            loadProductImgButton.Location = new Point(668, 239);
             loadProductImgButton.Margin = new Padding(1);
             loadProductImgButton.Name = "loadProductImgButton";
-            loadProductImgButton.Size = new Size(222, 53);
+            loadProductImgButton.Size = new Size(217, 40);
             loadProductImgButton.TabIndex = 23;
-            loadProductImgButton.Text = " cargar imagen";
+            loadProductImgButton.Text = " Cargar imagen";
             loadProductImgButton.UseVisualStyleBackColor = false;
             loadProductImgButton.Click += loadProductImgButton_Click;
             // 
@@ -192,14 +205,13 @@
             productsDataGridView.BackgroundColor = Color.Azure;
             productsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             productsDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-            productsDataGridView.Location = new Point(61, 536);
-            productsDataGridView.Margin = new Padding(3, 4, 3, 4);
+            productsDataGridView.Location = new Point(53, 402);
             productsDataGridView.MultiSelect = false;
             productsDataGridView.Name = "productsDataGridView";
             productsDataGridView.RowHeadersVisible = false;
             productsDataGridView.RowHeadersWidth = 51;
             productsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            productsDataGridView.Size = new Size(1092, 331);
+            productsDataGridView.Size = new Size(956, 248);
             productsDataGridView.TabIndex = 24;
             productsDataGridView.SelectionChanged += productsDataGridView_SelectionChanged;
             // 
@@ -207,9 +219,11 @@
             // 
             optionsGroupBox.Controls.Add(removeSelectionButton);
             optionsGroupBox.Controls.Add(editProductButton);
-            optionsGroupBox.Location = new Point(1195, 536);
+            optionsGroupBox.Location = new Point(1046, 402);
+            optionsGroupBox.Margin = new Padding(3, 2, 3, 2);
             optionsGroupBox.Name = "optionsGroupBox";
-            optionsGroupBox.Size = new Size(264, 300);
+            optionsGroupBox.Padding = new Padding(3, 2, 3, 2);
+            optionsGroupBox.Size = new Size(231, 225);
             optionsGroupBox.TabIndex = 25;
             optionsGroupBox.TabStop = false;
             optionsGroupBox.Text = "opciones";
@@ -218,19 +232,19 @@
             // 
             removeSelectionButton.BackColor = Color.FromArgb(0, 166, 225);
             removeSelectionButton.FlatStyle = FlatStyle.Popup;
-            removeSelectionButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            removeSelectionButton.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold);
             removeSelectionButton.ForeColor = Color.White;
-            removeSelectionButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
+            removeSelectionButton.IconChar = FontAwesome.Sharp.IconChar.Cancel;
             removeSelectionButton.IconColor = Color.White;
             removeSelectionButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             removeSelectionButton.IconSize = 38;
             removeSelectionButton.ImageAlign = ContentAlignment.MiddleLeft;
-            removeSelectionButton.Location = new Point(24, 172);
+            removeSelectionButton.Location = new Point(21, 129);
             removeSelectionButton.Margin = new Padding(1);
             removeSelectionButton.Name = "removeSelectionButton";
-            removeSelectionButton.Size = new Size(222, 53);
+            removeSelectionButton.Size = new Size(194, 40);
             removeSelectionButton.TabIndex = 25;
-            removeSelectionButton.Text = "quitar seleccion";
+            removeSelectionButton.Text = "   Quitar selección";
             removeSelectionButton.UseVisualStyleBackColor = false;
             removeSelectionButton.Click += removeSelectionButton_Click;
             // 
@@ -238,19 +252,19 @@
             // 
             editProductButton.BackColor = Color.FromArgb(0, 166, 225);
             editProductButton.FlatStyle = FlatStyle.Popup;
-            editProductButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            editProductButton.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold);
             editProductButton.ForeColor = Color.White;
-            editProductButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
+            editProductButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
             editProductButton.IconColor = Color.White;
             editProductButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editProductButton.IconSize = 38;
             editProductButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editProductButton.Location = new Point(24, 53);
+            editProductButton.Location = new Point(21, 40);
             editProductButton.Margin = new Padding(1);
             editProductButton.Name = "editProductButton";
-            editProductButton.Size = new Size(222, 53);
+            editProductButton.Size = new Size(194, 40);
             editProductButton.TabIndex = 24;
-            editProductButton.Text = "editar";
+            editProductButton.Text = "Editar";
             editProductButton.UseVisualStyleBackColor = false;
             editProductButton.Click += editProductButton_Click;
             // 
@@ -262,27 +276,27 @@
             // 
             addProducButton.BackColor = Color.FromArgb(0, 166, 225);
             addProducButton.FlatStyle = FlatStyle.Popup;
-            addProducButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addProducButton.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addProducButton.ForeColor = Color.White;
             addProducButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
             addProducButton.IconColor = Color.White;
             addProducButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addProducButton.IconSize = 38;
             addProducButton.ImageAlign = ContentAlignment.MiddleLeft;
-            addProducButton.Location = new Point(1101, 144);
+            addProducButton.Location = new Point(921, 108);
             addProducButton.Margin = new Padding(1);
             addProducButton.Name = "addProducButton";
-            addProducButton.Size = new Size(222, 53);
+            addProducButton.Size = new Size(205, 40);
             addProducButton.TabIndex = 26;
-            addProducButton.Text = "crear producto";
+            addProducButton.Text = "Crear producto";
             addProducButton.UseVisualStyleBackColor = false;
             addProducButton.Click += addProducButton_Click;
             // 
             // CreateProductForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1503, 911);
+            ClientSize = new Size(1315, 683);
             Controls.Add(addProducButton);
             Controls.Add(optionsGroupBox);
             Controls.Add(productsDataGridView);
@@ -300,6 +314,7 @@
             Controls.Add(producModelLabel);
             Controls.Add(productBrandLabel);
             Controls.Add(productTypeLabel);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CreateProductForm";
             Text = "CreateProductForm";
             ((System.ComponentModel.ISupportInitialize)productImgPictureBox).EndInit();
