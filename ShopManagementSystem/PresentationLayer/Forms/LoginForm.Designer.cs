@@ -93,11 +93,11 @@
             // tittleLabel
             // 
             tittleLabel.AutoSize = true;
-            tittleLabel.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tittleLabel.Font = new Font("Corbel", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tittleLabel.ForeColor = Color.White;
-            tittleLabel.Location = new Point(123, 73);
+            tittleLabel.Location = new Point(32, 188);
             tittleLabel.Name = "tittleLabel";
-            tittleLabel.Size = new Size(376, 58);
+            tittleLabel.Size = new Size(553, 97);
             tittleLabel.TabIndex = 20;
             tittleLabel.Text = "BIENVENIDOS";
             // 
@@ -120,7 +120,7 @@
             PaswordLabel.AutoSize = true;
             PaswordLabel.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             PaswordLabel.ForeColor = Color.White;
-            PaswordLabel.Location = new Point(123, 469);
+            PaswordLabel.Location = new Point(123, 487);
             PaswordLabel.Name = "PaswordLabel";
             PaswordLabel.Size = new Size(165, 31);
             PaswordLabel.TabIndex = 11;
@@ -131,7 +131,7 @@
             UserLabel.AutoSize = true;
             UserLabel.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             UserLabel.ForeColor = Color.White;
-            UserLabel.Location = new Point(123, 340);
+            UserLabel.Location = new Point(123, 371);
             UserLabel.Name = "UserLabel";
             UserLabel.Size = new Size(115, 31);
             UserLabel.TabIndex = 10;
@@ -146,7 +146,7 @@
             UserIconpictureBox.Location = new Point(56, 405);
             UserIconpictureBox.Margin = new Padding(3, 4, 3, 4);
             UserIconpictureBox.Name = "UserIconpictureBox";
-            UserIconpictureBox.Size = new Size(39, 47);
+            UserIconpictureBox.Size = new Size(39, 39);
             UserIconpictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             UserIconpictureBox.TabIndex = 7;
             UserIconpictureBox.TabStop = false;
@@ -155,10 +155,10 @@
             // 
             PasworrdIconPictureBox3.BackColor = Color.Transparent;
             PasworrdIconPictureBox3.Image = (Image)resources.GetObject("PasworrdIconPictureBox3.Image");
-            PasworrdIconPictureBox3.Location = new Point(56, 507);
+            PasworrdIconPictureBox3.Location = new Point(56, 512);
             PasworrdIconPictureBox3.Margin = new Padding(3, 4, 3, 4);
             PasworrdIconPictureBox3.Name = "PasworrdIconPictureBox3";
-            PasworrdIconPictureBox3.Size = new Size(39, 44);
+            PasworrdIconPictureBox3.Size = new Size(39, 39);
             PasworrdIconPictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             PasworrdIconPictureBox3.TabIndex = 8;
             PasworrdIconPictureBox3.TabStop = false;
@@ -210,7 +210,6 @@
             PasswordTextBox.PasswordChar = '*';
             PasswordTextBox.Size = new Size(337, 30);
             PasswordTextBox.TabIndex = 3;
-            PasswordTextBox.Text = "Contraseña";
             // 
             // tableLayoutPanel1
             // 

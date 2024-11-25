@@ -43,12 +43,11 @@ namespace PresentationLayer
                     services.AddTransient<LoginForm>();
                     services.AddTransient<DashboardForm>();
                     services.AddTransient<EmployeesForm>();
-                    services.AddTransient<SalesForm>(); 
+                    services.AddTransient<SalesreportForm>(); 
                     services.AddTransient<InventoryForm>();
                     services.AddTransient<CreateProductForm>();
                     services.AddTransient<PurchaseOrdersForm>();
                     services.AddTransient<RegisterSuppliersForm>();
-                    services.AddTransient<HomeForm>();
                     services.AddTransient<ShoppingListForm>();
 
                     //Repositories

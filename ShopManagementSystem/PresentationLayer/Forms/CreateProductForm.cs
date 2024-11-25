@@ -171,7 +171,7 @@ namespace PresentationLayer.Forms
                 productVersionTextBox.Text = selectedRow.Cells[4].Value.ToString();
                 productColorTextBox.Text = selectedRow.Cells[5].Value.ToString();
                 productPriceTextBox.Text = selectedRow.Cells[6].Value.ToString();
-                productImgPictureBox.Image = Image.FromFile(selectedRow.Cells[7].Value.ToString());
+                //productImgPictureBox.Image = Image.FromFile(selectedRow.Cells[7].Value.ToString());
                 imgPath = selectedRow.Cells[7].Value.ToString();
 
             }

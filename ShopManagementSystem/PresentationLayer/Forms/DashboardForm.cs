@@ -80,10 +80,7 @@ namespace PresentationLayer.Forms
             }
         }
 
-        private void HomeButton_Click(object sender, EventArgs e)
-        {
-            openChildForm(new HomeForm());
-        }
+
 
         private void personalIconButton_Click(object sender, EventArgs e)
         {
@@ -105,10 +102,6 @@ namespace PresentationLayer.Forms
             }
         }
 
-        private void shopButton_Click(object sender, EventArgs e)
-        {
-            openChildForm(new HomeForm());
-        }
 
         private void inventoryButton_Click(object sender, EventArgs e)
         {
@@ -149,6 +142,22 @@ namespace PresentationLayer.Forms
         private void suppliersButton_Click(object sender, EventArgs e)
         {
             openChildForm(new RegisterSuppliersForm(_suppliersServices));
+        }
+
+        private void exitSesionButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void CatalogButton_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CatalogForm());
+
+        }
+
+        private void salesReportButton_Click(object sender, EventArgs e)
+        {
+            openChildForm(new SalesreportForm());
         }
     }
 }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PresentationLayer.Forms
+namespace PresentationLayer.Controls
 {
-    public partial class SalesForm : Form
+    public partial class ProductsControl : UserControl
     {
-        public SalesForm()
+        public ProductsControl()
         {
             InitializeComponent();
         }
