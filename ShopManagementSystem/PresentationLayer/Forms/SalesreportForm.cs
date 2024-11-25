@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Forms
 {
-    public partial class HomeForm : Form
+    public partial class SalesreportForm : Form
     {
-        public HomeForm()
+        public SalesreportForm()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
