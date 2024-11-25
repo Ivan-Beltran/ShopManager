@@ -9,7 +9,7 @@ using DataAccessLayer.Repositories.PurchaseOrdersRepo;
 
 namespace BussinessLayer.Services.ServicersForPurchaseOrders
 {
-    public class PurchaseOrdersServices:IPurchaseOrdersServices
+    public class PurchaseOrdersServices : IPurchaseOrdersServices
     {
         IPurchaseOrderRepository _purchaseOrderRepository;
 
@@ -33,6 +33,12 @@ namespace BussinessLayer.Services.ServicersForPurchaseOrders
             return _purchaseOrderRepository.AddPurchaseOrder(purchaseOrders);
         }
 
+        public void DeletePurchaseOrder(int purchaseOrderId)
+        {
+            _purchaseOrderRepository.DeletePurchaseOrder(purchaseOrderId);
+        }
+
+        ///---------metodos para ShoppingListForm--------------/
         public DataTable GetAllProducts()
         {
             return _purchaseOrderRepository.GetAllProducts();

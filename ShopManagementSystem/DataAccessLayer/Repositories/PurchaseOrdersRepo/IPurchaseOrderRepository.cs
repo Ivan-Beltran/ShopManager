@@ -7,6 +7,7 @@ namespace DataAccessLayer.Repositories.PurchaseOrdersRepo
     {
         void AddProductsToPurchaseList(int PurchaseOrderId, int ProductId, int Quantity);
         int AddPurchaseOrder(PurchaseOrders purchaseOrder);
+        void DeletePurchaseOrder(int purchaseOrderId);
         DataTable GetAllProducts();
         DataTable GetPurchaseOrders();
         DataTable GetShoppingList(int PurchaseOrderId);

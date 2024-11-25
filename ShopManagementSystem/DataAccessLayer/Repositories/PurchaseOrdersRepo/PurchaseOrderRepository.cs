@@ -82,6 +82,28 @@ namespace DataAccessLayer.Repositories.PurchaseOrdersRepo
             }
         }
 
+        public void DeletePurchaseOrder(int purchaseOrderId)
+        {
+            using (var connection = _dbConnection.GetConnection())
+            {
+                // Eliminar primero los detalles de la lista de compras
+                string deleteDetailsQuery = @"
+                                            DELETE FROM PurchaseList
+                                            WHERE PurchaseOrderId = @PurchaseOrderId";
+
+                connection.Execute(deleteDetailsQuery, new { PurchaseOrderId = purchaseOrderId });
+
+                // Luego eliminar la orden de compra
+                string deleteOrderQuery = @"
+                                            DELETE FROM PurchaseOrders
+                                            WHERE PurchaseOrderId = @PurchaseOrderId";
+
+                connection.Execute(deleteOrderQuery, new { purchaseOrderId });
+            }
+        }
+
+
+        ///-------------------- metodos para ShoppingLIstForm-----------------------
         public DataTable GetAllProducts()
         {
             DataTable allProductsTable = new DataTable();
