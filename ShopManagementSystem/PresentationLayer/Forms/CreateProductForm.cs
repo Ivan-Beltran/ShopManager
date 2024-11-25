@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CommonLayer.Entities;
+using Microsoft.VisualBasic.Logging;
 
 namespace PresentationLayer.Forms
 {
@@ -164,18 +165,47 @@ namespace PresentationLayer.Forms
             {
                 var selectedRow = productsDataGridView.SelectedRows[0];
 
-
                 productTypeComboBox.Text = selectedRow.Cells[1].Value.ToString();
                 productBrandTextBox.Text = selectedRow.Cells[2].Value.ToString();
                 productModeltextBox.Text = selectedRow.Cells[3].Value.ToString();
                 productVersionTextBox.Text = selectedRow.Cells[4].Value.ToString();
                 productColorTextBox.Text = selectedRow.Cells[5].Value.ToString();
                 productPriceTextBox.Text = selectedRow.Cells[6].Value.ToString();
-                productImgPictureBox.Image = Image.FromFile(selectedRow.Cells[7].Value.ToString());
-                imgPath = selectedRow.Cells[7].Value.ToString();
 
+                // Ruta de la imagen
+                string imageRelativePath = selectedRow.Cells[7].Value.ToString();
+
+                // Construir ruta completa
+                string projectBasePath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                    "ShoManager",
+                    "ShopManager"
+                );
+
+                string fullImagePath = Path.Combine(projectBasePath, "ProductsIMG", Path.GetFileName(imageRelativePath));
+
+                try
+                {
+                    if (File.Exists(fullImagePath))
+                    {
+                        productImgPictureBox.Image = Image.FromFile(fullImagePath);
+                        imgPath = imageRelativePath;
+                        MessageBox.Show($"Imagen cargada desde: {fullImagePath}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Archivo no encontrado: {fullImagePath}");
+                        productImgPictureBox.Image = null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar la imagen: {ex.Message}\nRuta: {fullImagePath}");
+                    productImgPictureBox.Image = null;
+                }
             }
         }
+
 
         public void ClearParameters()
         {
