@@ -176,31 +176,27 @@ namespace PresentationLayer.Forms
                 string imageRelativePath = selectedRow.Cells[7].Value.ToString();
 
                 // Construir ruta completa
-                string projectBasePath = Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-                    "ShoManager",
-                    "ShopManager"
-                );
+                string projectBasePath = AppDomain.CurrentDomain.BaseDirectory;
+                string imgUrl = Path.GetFullPath(Path.Combine(projectBasePath, @"..\..\..\..\..\",imageRelativePath));
 
-                string fullImagePath = Path.Combine(projectBasePath, "ProductsIMG", Path.GetFileName(imageRelativePath));
+                //string fullImagePath = Path.Combine(projectBasePath, "ProductsIMG", Path.GetFileName(imageRelativePath));
 
                 try
                 {
-                    if (File.Exists(fullImagePath))
+                    if (File.Exists(imgUrl))
                     {
-                        productImgPictureBox.Image = Image.FromFile(fullImagePath);
+                        productImgPictureBox.Image = Image.FromFile(imgUrl);
                         imgPath = imageRelativePath;
-                        MessageBox.Show($"Imagen cargada desde: {fullImagePath}");
                     }
                     else
                     {
-                        MessageBox.Show($"Archivo no encontrado: {fullImagePath}");
+                        MessageBox.Show($"Archivo no encontrado: {imgUrl}");
                         productImgPictureBox.Image = null;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al cargar la imagen: {ex.Message}\nRuta: {fullImagePath}");
+                    MessageBox.Show($"Error al cargar la imagen: {ex.Message}\nRuta: {projectBasePath}");
                     productImgPictureBox.Image = null;
                 }
             }
