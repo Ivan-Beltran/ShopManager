@@ -49,10 +49,8 @@
             editProductButton = new FontAwesome.Sharp.IconButton();
             openFileImgDialog = new OpenFileDialog();
             addProducButton = new FontAwesome.Sharp.IconButton();
-
             textBox1 = new TextBox();
             validationErrorProvider = new ErrorProvider(components);
-
             ((System.ComponentModel.ISupportInitialize)productImgPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productsDataGridView).BeginInit();
             optionsGroupBox.SuspendLayout();
@@ -232,7 +230,7 @@
             optionsGroupBox.Size = new Size(231, 225);
             optionsGroupBox.TabIndex = 25;
             optionsGroupBox.TabStop = false;
-            optionsGroupBox.Text = "opciones";
+            optionsGroupBox.Text = "Opciones";
             // 
             // removeSelectionButton
             // 
@@ -298,7 +296,6 @@
             addProducButton.UseVisualStyleBackColor = false;
             addProducButton.Click += addProducButton_Click;
             // 
-
             // textBox1
             // 
             textBox1.Location = new Point(53, 666);
@@ -311,17 +308,12 @@
             // 
             validationErrorProvider.ContainerControl = this;
             // 
-
             // CreateProductForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-
-            ClientSize = new Size(1503, 927);
-
             ClientSize = new Size(1199, 562);
             Controls.Add(textBox1);
-
             Controls.Add(addProducButton);
             Controls.Add(optionsGroupBox);
             Controls.Add(productsDataGridView);

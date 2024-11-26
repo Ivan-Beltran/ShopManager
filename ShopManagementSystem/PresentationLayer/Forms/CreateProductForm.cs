@@ -80,7 +80,7 @@ namespace PresentationLayer.Forms
         {
             if (productsDataGridView.SelectedRows.Count > 0)
             {
-                MessageBox.Show("no se puede agregar mientras hay una fila seleccionada");
+                MessageBox.Show("No se puede agregar mientras hay una fila seleccionada");
             }
             else
             {
@@ -164,7 +164,7 @@ namespace PresentationLayer.Forms
         {
             if (productsDataGridView.SelectedRows.Count < 1)
             {
-                MessageBox.Show("ninguna fila seleccionada para editar");
+                MessageBox.Show("Ninguna fila seleccionada para editar");
             }
             else
             {
