@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CommonLayer.Entities;
 using Microsoft.VisualBasic.Logging;
+using PresentationLayer.Validations;
+using FluentValidation.Results;
 
 namespace PresentationLayer.Forms
 {
@@ -101,6 +103,17 @@ namespace PresentationLayer.Forms
                         ImageUrl = imgPath
                     };
 
+                    CreateProductValidator createProductValidator = new CreateProductValidator();
+                    ValidationResult result = createProductValidator.Validate(product);
+
+                    if (!result.IsValid)
+                    {
+                        DisplayValidationErrors(result);
+
+                    
+                        return;
+                    }
+
                     _inventoryServices.CreateProduct(product);
                     MessageBox.Show("Producto creado exitosamente.");
                     LoadProductsCrated();
@@ -114,7 +127,38 @@ namespace PresentationLayer.Forms
                 }
             }
         }
+        private void DisplayValidationErrors(ValidationResult result)
+        {
+            validationErrorProvider.Clear();
 
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(Products.ProductTypeId):
+                        validationErrorProvider.SetError(productTypeComboBox, error.ErrorMessage);
+                        break;
+                    case nameof(Products.ProductBrand):
+                        validationErrorProvider.SetError(productBrandTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Products.ProductModel):
+                        validationErrorProvider.SetError(productModeltextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Products.ProductVersion):
+                        validationErrorProvider.SetError(productVersionTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Products.ProductColor):
+                        validationErrorProvider.SetError(productVersionTextBox, error.ErrorMessage);
+                        break;
+
+                    case nameof(Products.ProductPrice):
+                        validationErrorProvider.SetError(productPriceTextBox, error.ErrorMessage);
+                        break;
+
+                }
+            }
+
+        }
 
         private void editProductButton_Click(object sender, EventArgs e)
         {
@@ -143,6 +187,17 @@ namespace PresentationLayer.Forms
                         ProductPrice = Convert.ToInt32(productPriceTextBox.Text),
                         ImageUrl = imgPath
                     };
+
+                    CreateProductValidator createProductValidator = new CreateProductValidator();
+                    ValidationResult result = createProductValidator.Validate(product);
+
+                    if (!result.IsValid)
+                    {
+                        DisplayValidationErrors(result);
+
+
+                        return;
+                    }
 
                     _inventoryServices.EditProduct(product);
                     MessageBox.Show("Producto editado exitosamente.");
@@ -178,8 +233,6 @@ namespace PresentationLayer.Forms
                 // Construir ruta completa
                 string projectBasePath = AppDomain.CurrentDomain.BaseDirectory;
                 string imgUrl = Path.GetFullPath(Path.Combine(projectBasePath, @"..\..\..\..\..\",imageRelativePath));
-
-                //string fullImagePath = Path.Combine(projectBasePath, "ProductsIMG", Path.GetFileName(imageRelativePath));
 
                 try
                 {

@@ -12,6 +12,7 @@ namespace BussinessLayer.Services.ServicersForPurchaseOrders
         DataTable GetPurchaseOrders();
         DataTable GetShoppingList(int PurchaseOrderId);
         DataTable GetSuppliers();
+        void OrderReceived(int PurchaseOrderId);
         DataTable SearchProducts(string search);
     }
 }

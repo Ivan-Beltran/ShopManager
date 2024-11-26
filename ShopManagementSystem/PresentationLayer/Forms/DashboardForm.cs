@@ -14,6 +14,7 @@ using FontAwesome.Sharp;
 using BussinessLayer.Services.ServicesForInventory;
 using BussinessLayer.Services.ServicesForSuppliers;
 using BussinessLayer.Services.ServicersForPurchaseOrders;
+using BussinessLayer.Services.ServicesForProducts;
 
 namespace PresentationLayer.Forms
 {
@@ -25,6 +26,7 @@ namespace PresentationLayer.Forms
         private readonly IInventoryService _inventoryServies;
         private readonly ISuppliersServices _suppliersServices;
         private IPurchaseOrdersServices _purchaseOrderServices;
+        private IProductsService _productsService;
         private IconButton lastButton;
 
 
@@ -32,7 +34,8 @@ namespace PresentationLayer.Forms
             IEmployeeService employeeService,
             IInventoryService inventoryServices,
             ISuppliersServices suppliersServices,
-            IPurchaseOrdersServices purchaseOrders)
+            IPurchaseOrdersServices purchaseOrders,
+            IProductsService productsService)
         {
             InitializeComponent();
 
@@ -41,6 +44,7 @@ namespace PresentationLayer.Forms
             _inventoryServies = inventoryServices;
             _suppliersServices = suppliersServices;
             _purchaseOrderServices = purchaseOrders;
+            _productsService= productsService;
             employeeNameLabel.Text = _employeeSesion.Names;
             this.PrincipalPanel.Resize += (s, e) => AdjustChildFormSize();
             Permissions();
@@ -151,7 +155,7 @@ namespace PresentationLayer.Forms
 
         private void CatalogButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new CatalogForm());
+            openChildForm(new CatalogForm(_productsService));
 
         }
 

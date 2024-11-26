@@ -38,6 +38,11 @@ namespace BussinessLayer.Services.ServicersForPurchaseOrders
             _purchaseOrderRepository.DeletePurchaseOrder(purchaseOrderId);
         }
 
+        public void OrderReceived(int PurchaseOrderId)
+        {
+            _purchaseOrderRepository.OrderReceived(PurchaseOrderId);
+        }
+
         ///---------metodos para ShoppingListForm--------------/
         public DataTable GetAllProducts()
         {

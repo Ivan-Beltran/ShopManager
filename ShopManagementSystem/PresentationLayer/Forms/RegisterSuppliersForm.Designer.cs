@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             suppliersLabel = new Label();
             nameSupplierLabel = new Label();
             nameSupplierTextBox = new TextBox();
@@ -42,7 +43,9 @@
             editSupplierButton = new FontAwesome.Sharp.IconButton();
             deleteSupplierButton = new FontAwesome.Sharp.IconButton();
             clearRowButton = new FontAwesome.Sharp.IconButton();
+            validationErrorProvider = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)SupplierDataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)validationErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // suppliersLabel
@@ -219,6 +222,11 @@
             clearRowButton.UseVisualStyleBackColor = false;
             clearRowButton.Click += clearRowButton_Click;
             // 
+            // validationErrorProvider
+            // 
+            validationErrorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            validationErrorProvider.ContainerControl = this;
+            // 
             // RegisterSuppliersForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -242,6 +250,7 @@
             Name = "RegisterSuppliersForm";
             Text = "RegisterSuppliersForm";
             ((System.ComponentModel.ISupportInitialize)SupplierDataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)validationErrorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -261,5 +270,6 @@
         private FontAwesome.Sharp.IconButton editSupplierButton;
         private FontAwesome.Sharp.IconButton deleteSupplierButton;
         private FontAwesome.Sharp.IconButton clearRowButton;
+        private ErrorProvider validationErrorProvider;
     }
 }

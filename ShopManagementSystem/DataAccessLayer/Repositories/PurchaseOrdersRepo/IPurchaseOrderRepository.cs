@@ -12,6 +12,7 @@ namespace DataAccessLayer.Repositories.PurchaseOrdersRepo
         DataTable GetPurchaseOrders();
         DataTable GetShoppingList(int PurchaseOrderId);
         DataTable GetSuppliers();
+        void OrderReceived(int PurchaseOrderId);
         DataTable SearchProduct(string search);
     }
 }

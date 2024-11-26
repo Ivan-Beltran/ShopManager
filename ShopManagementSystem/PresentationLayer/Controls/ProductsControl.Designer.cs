@@ -28,131 +28,205 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductsControl));
-            pictureBox1 = new PictureBox();
-            Tittle = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            CantnumericUpDown = new NumericUpDown();
-            label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)CantnumericUpDown).BeginInit();
+            productPictureBox = new PictureBox();
+            brandLabel = new Label();
+            priceLabel = new Label();
+            modelLabel = new Label();
+            addShoppingCarButton = new Button();
+            quantitynumericUpDown = new NumericUpDown();
+            quntatityLabel = new Label();
+            versionLabel = new Label();
+            colorLabel = new Label();
+            colorTittleLabel = new Label();
+            brandTittlelabel = new Label();
+            modelTittleLabel = new Label();
+            priceTittleLabel = new Label();
+            ((System.ComponentModel.ISupportInitialize)productPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)quantitynumericUpDown).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // productPictureBox
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(25, 16);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(313, 273);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            productPictureBox.BackColor = Color.Honeydew;
+            productPictureBox.Location = new Point(17, 17);
+            productPictureBox.Name = "productPictureBox";
+            productPictureBox.Size = new Size(281, 241);
+            productPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            productPictureBox.TabIndex = 0;
+            productPictureBox.TabStop = false;
             // 
-            // Tittle
+            // brandLabel
             // 
-            Tittle.AutoSize = true;
-            Tittle.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Tittle.ForeColor = SystemColors.ControlLightLight;
-            Tittle.Location = new Point(363, 12);
-            Tittle.Name = "Tittle";
-            Tittle.Size = new Size(183, 50);
-            Tittle.TabIndex = 1;
-            Tittle.Text = "Producto";
+            brandLabel.AutoSize = true;
+            brandLabel.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            brandLabel.ForeColor = SystemColors.ControlLightLight;
+            brandLabel.Location = new Point(328, 0);
+            brandLabel.Name = "brandLabel";
+            brandLabel.Size = new Size(183, 50);
+            brandLabel.TabIndex = 1;
+            brandLabel.Text = "Producto";
             // 
-            // label2
+            // priceLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(363, 74);
-            label2.Name = "label2";
-            label2.Size = new Size(96, 31);
-            label2.TabIndex = 2;
-            label2.Text = "$ precio";
+            priceLabel.AutoSize = true;
+            priceLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            priceLabel.ForeColor = SystemColors.ControlLightLight;
+            priceLabel.Location = new Point(445, 207);
+            priceLabel.Name = "priceLabel";
+            priceLabel.Size = new Size(96, 31);
+            priceLabel.TabIndex = 2;
+            priceLabel.Text = "$ precio";
             // 
-            // label3
+            // modelLabel
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(363, 135);
-            label3.Name = "label3";
-            label3.Size = new Size(134, 31);
-            label3.TabIndex = 3;
-            label3.Text = "Descripcion";
+            modelLabel.AutoSize = true;
+            modelLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            modelLabel.ForeColor = SystemColors.ControlLightLight;
+            modelLabel.Location = new Point(449, 54);
+            modelLabel.Name = "modelLabel";
+            modelLabel.Size = new Size(92, 31);
+            modelLabel.TabIndex = 3;
+            modelLabel.Text = "modelo";
             // 
-            // button1
+            // addShoppingCarButton
             // 
-            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(363, 246);
-            button1.Name = "button1";
-            button1.Size = new Size(220, 43);
-            button1.TabIndex = 4;
-            button1.Text = "Comprar ahora";
-            button1.UseVisualStyleBackColor = true;
+            addShoppingCarButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            addShoppingCarButton.Location = new Point(345, 272);
+            addShoppingCarButton.Name = "addShoppingCarButton";
+            addShoppingCarButton.Size = new Size(270, 43);
+            addShoppingCarButton.TabIndex = 5;
+            addShoppingCarButton.Text = "Agregar al carrito";
+            addShoppingCarButton.UseVisualStyleBackColor = true;
+            addShoppingCarButton.Click += addShoppingCarButton_Click;
             // 
-            // button2
+            // quantitynumericUpDown
             // 
-            button2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(604, 246);
-            button2.Name = "button2";
-            button2.Size = new Size(225, 43);
-            button2.TabIndex = 5;
-            button2.Text = "Agregar al carrito";
-            button2.UseVisualStyleBackColor = true;
+            quantitynumericUpDown.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            quantitynumericUpDown.Location = new Point(196, 280);
+            quantitynumericUpDown.Name = "quantitynumericUpDown";
+            quantitynumericUpDown.Size = new Size(55, 38);
+            quantitynumericUpDown.TabIndex = 6;
             // 
-            // CantnumericUpDown
+            // quntatityLabel
             // 
-            CantnumericUpDown.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CantnumericUpDown.Location = new Point(526, 201);
-            CantnumericUpDown.Name = "CantnumericUpDown";
-            CantnumericUpDown.Size = new Size(55, 38);
-            CantnumericUpDown.TabIndex = 6;
+            quntatityLabel.AutoSize = true;
+            quntatityLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            quntatityLabel.ForeColor = SystemColors.ControlLightLight;
+            quntatityLabel.Location = new Point(32, 277);
+            quntatityLabel.Name = "quntatityLabel";
+            quntatityLabel.Size = new Size(142, 38);
+            quntatityLabel.TabIndex = 7;
+            quntatityLabel.Text = "Cantidad:";
             // 
-            // label1
+            // versionLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(363, 198);
-            label1.Name = "label1";
-            label1.Size = new Size(142, 38);
-            label1.TabIndex = 7;
-            label1.Text = "Cantidad:";
+            versionLabel.AutoSize = true;
+            versionLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            versionLabel.ForeColor = SystemColors.ControlLightLight;
+            versionLabel.Location = new Point(449, 106);
+            versionLabel.Name = "versionLabel";
+            versionLabel.Size = new Size(87, 31);
+            versionLabel.TabIndex = 8;
+            versionLabel.Text = "version";
+            // 
+            // colorLabel
+            // 
+            colorLabel.AutoSize = true;
+            colorLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colorLabel.ForeColor = SystemColors.ControlLightLight;
+            colorLabel.Location = new Point(449, 157);
+            colorLabel.Name = "colorLabel";
+            colorLabel.Size = new Size(65, 31);
+            colorLabel.TabIndex = 9;
+            colorLabel.Text = "color";
+            // 
+            // colorTittleLabel
+            // 
+            colorTittleLabel.AutoSize = true;
+            colorTittleLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colorTittleLabel.ForeColor = SystemColors.ControlLightLight;
+            colorTittleLabel.Location = new Point(349, 157);
+            colorTittleLabel.Name = "colorTittleLabel";
+            colorTittleLabel.Size = new Size(79, 31);
+            colorTittleLabel.TabIndex = 13;
+            colorTittleLabel.Text = "Color :";
+            // 
+            // brandTittlelabel
+            // 
+            brandTittlelabel.AutoSize = true;
+            brandTittlelabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            brandTittlelabel.ForeColor = SystemColors.ControlLightLight;
+            brandTittlelabel.Location = new Point(328, 106);
+            brandTittlelabel.Name = "brandTittlelabel";
+            brandTittlelabel.Size = new Size(100, 31);
+            brandTittlelabel.TabIndex = 12;
+            brandTittlelabel.Text = "Version :";
+            // 
+            // modelTittleLabel
+            // 
+            modelTittleLabel.AutoSize = true;
+            modelTittleLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            modelTittleLabel.ForeColor = SystemColors.ControlLightLight;
+            modelTittleLabel.Location = new Point(328, 54);
+            modelTittleLabel.Name = "modelTittleLabel";
+            modelTittleLabel.Size = new Size(104, 31);
+            modelTittleLabel.TabIndex = 11;
+            modelTittleLabel.Text = "Modelo :";
+            // 
+            // priceTittleLabel
+            // 
+            priceTittleLabel.AutoSize = true;
+            priceTittleLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            priceTittleLabel.ForeColor = SystemColors.ControlLightLight;
+            priceTittleLabel.Location = new Point(345, 207);
+            priceTittleLabel.Name = "priceTittleLabel";
+            priceTittleLabel.Size = new Size(88, 31);
+            priceTittleLabel.TabIndex = 10;
+            priceTittleLabel.Text = "Precio :";
             // 
             // ProductsControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
-            Controls.Add(label1);
-            Controls.Add(CantnumericUpDown);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(Tittle);
-            Controls.Add(pictureBox1);
+            BackColor = Color.Teal;
+            Controls.Add(colorTittleLabel);
+            Controls.Add(brandTittlelabel);
+            Controls.Add(modelTittleLabel);
+            Controls.Add(priceTittleLabel);
+            Controls.Add(colorLabel);
+            Controls.Add(versionLabel);
+            Controls.Add(quntatityLabel);
+            Controls.Add(quantitynumericUpDown);
+            Controls.Add(addShoppingCarButton);
+            Controls.Add(modelLabel);
+            Controls.Add(priceLabel);
+            Controls.Add(brandLabel);
+            Controls.Add(productPictureBox);
+            Margin = new Padding(20, 10, 20, 10);
+            MaximumSize = new Size(750, 350);
+            MinimumSize = new Size(750, 350);
             Name = "ProductsControl";
-            Size = new Size(860, 310);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)CantnumericUpDown).EndInit();
+            Size = new Size(750, 350);
+            ((System.ComponentModel.ISupportInitialize)productPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)quantitynumericUpDown).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private Label Tittle;
-        private Label label2;
-        private Label label3;
-        private Button button1;
-        private Button button2;
-        private NumericUpDown CantnumericUpDown;
-        private Label label1;
+        private PictureBox productPictureBox;
+        private Label brandLabel;
+        private Label priceLabel;
+        private Label modelLabel;
+        private Button addShoppingCarButton;
+        private NumericUpDown quantitynumericUpDown;
+        private Label quntatityLabel;
+        private Label versionLabel;
+        private Label colorLabel;
+        private Label colorTittleLabel;
+        private Label brandTittlelabel;
+        private Label modelTittleLabel;
+        private Label priceTittleLabel;
     }
 }

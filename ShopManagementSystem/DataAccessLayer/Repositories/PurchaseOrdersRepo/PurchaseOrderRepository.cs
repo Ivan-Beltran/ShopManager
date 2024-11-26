@@ -102,6 +102,16 @@ namespace DataAccessLayer.Repositories.PurchaseOrdersRepo
             }
         }
 
+        public void OrderReceived(int PurchaseOrderId)
+        {
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query = @"OrdenProcessed";
+
+                connection.Execute(query, new { PurchaseOrderId }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
 
         ///-------------------- metodos para ShoppingLIstForm-----------------------
         public DataTable GetAllProducts()
