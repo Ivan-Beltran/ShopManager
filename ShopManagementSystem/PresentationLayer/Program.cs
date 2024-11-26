@@ -52,6 +52,7 @@ namespace PresentationLayer
                     services.AddTransient<RegisterSuppliersForm>();
                     services.AddTransient<ShoppingListForm>();
                     services.AddTransient<CatalogForm>();
+                    services.AddTransient<RegisterClients>();
 
                     //Repositories
                     services.AddScoped<ILoginRepository,LoginRepository>();
