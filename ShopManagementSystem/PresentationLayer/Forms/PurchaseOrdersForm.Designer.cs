@@ -82,7 +82,7 @@
             addOrdergroupBox.Size = new Size(1182, 201);
             addOrdergroupBox.TabIndex = 33;
             addOrdergroupBox.TabStop = false;
-            addOrdergroupBox.Text = "crear nueva orden de compra";
+            addOrdergroupBox.Text = "Crear nueva orden de compra";
             // 
             // supplierLabel
             // 
@@ -106,7 +106,7 @@
             createPurchaseOrderButton.ImageAlign = ContentAlignment.MiddleLeft;
             createPurchaseOrderButton.Location = new Point(727, 64);
             createPurchaseOrderButton.Name = "createPurchaseOrderButton";
-            createPurchaseOrderButton.Size = new Size(245, 55);
+            createPurchaseOrderButton.Size = new Size(237, 55);
             createPurchaseOrderButton.TabIndex = 12;
             createPurchaseOrderButton.Text = "Seleccionar productos ";
             createPurchaseOrderButton.UseVisualStyleBackColor = false;

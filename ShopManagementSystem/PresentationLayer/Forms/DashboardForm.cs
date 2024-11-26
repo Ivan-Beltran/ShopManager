@@ -135,33 +135,38 @@ namespace PresentationLayer.Forms
         private void createProductsButton_Click(object sender, EventArgs e)
         {
             openChildForm(new CreateProductForm(_inventoryServies));
-            ChangeButtonColor(createProductsButton);
+            ChangeButtonColor(createProductsButton); //Color boton 
         }
 
         private void shoppingOrdersButton_Click(object sender, EventArgs e)
         {
             openChildForm(new PurchaseOrdersForm(_purchaseOrderServices));
+            ChangeButtonColor(shoppingOrdersButton);
         }
 
         private void suppliersButton_Click(object sender, EventArgs e)
         {
             openChildForm(new RegisterSuppliersForm(_suppliersServices));
+            ChangeButtonColor(suppliersButton);
         }
 
         private void exitSesionButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            ChangeButtonColor(exitSesionButton);
         }
 
         private void CatalogButton_Click(object sender, EventArgs e)
         {
             openChildForm(new CatalogForm(_productsService));
+            ChangeButtonColor(CatalogButton);
 
         }
 
         private void salesReportButton_Click(object sender, EventArgs e)
         {
             openChildForm(new SalesreportForm());
+            ChangeButtonColor(salesReportButton);
         }
     }
 }
