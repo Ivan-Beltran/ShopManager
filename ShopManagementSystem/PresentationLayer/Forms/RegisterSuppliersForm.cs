@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CommonLayer.Entities;
 using BussinessLayer.Services.ServicesForSuppliers;
+using PresentationLayer.Validations;
+using FluentValidation.Results;
 
 namespace PresentationLayer.Forms
 {
@@ -48,11 +50,46 @@ namespace PresentationLayer.Forms
                     SupplierEmail = emailSupplierTextBox.Text,
                     SupplierAddres = addressSupplierTextBox.Text,
                 };
+                RegisterSuppliersValidator createProductValidator = new RegisterSuppliersValidator();
+                ValidationResult result = createProductValidator.Validate(supplier);
+
+                if (!result.IsValid)
+                {
+                    DisplayValidationErrors(result);
+
+
+                    return;
+                }
 
                 _supplierServices.AddSupplier(supplier);
                 LoadSuppliers();
                 this.Shown += (s, e) => SupplierDataGridView.ClearSelection();
                 ClearParameters();
+            }
+
+        }
+        private void DisplayValidationErrors(ValidationResult result)
+        {
+            validationErrorProvider.Clear();
+
+            foreach (var error in result.Errors)
+            {
+                switch (error.PropertyName)
+                {
+                    case nameof(Suppliers.SupplierName):
+                        validationErrorProvider.SetError(nameSupplierTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Suppliers.SupplierPhone):
+                        validationErrorProvider.SetError(phoneSupplierTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Suppliers.SupplierEmail):
+                        validationErrorProvider.SetError(emailSupplierTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Suppliers.SupplierAddres):
+                        validationErrorProvider.SetError(addressSupplierTextBox, error.ErrorMessage);
+                        break;
+               
+                }
             }
 
         }
@@ -78,7 +115,16 @@ namespace PresentationLayer.Forms
                     SupplierEmail = emailSupplierTextBox.Text,
                     SupplierAddres = addressSupplierTextBox.Text
                 };
+                RegisterSuppliersValidator createProductValidator = new RegisterSuppliersValidator();
+                ValidationResult result = createProductValidator.Validate(supplier);
 
+                if (!result.IsValid)
+                {
+                    DisplayValidationErrors(result);
+
+
+                    return;
+                }
                 _supplierServices.EditSupplier(supplier);
                 LoadSuppliers();
                 this.Shown += (s, e) => SupplierDataGridView.ClearSelection();
