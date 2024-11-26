@@ -179,8 +179,6 @@ namespace PresentationLayer.Forms
                 string projectBasePath = AppDomain.CurrentDomain.BaseDirectory;
                 string imgUrl = Path.GetFullPath(Path.Combine(projectBasePath, @"..\..\..\..\..\",imageRelativePath));
 
-                //string fullImagePath = Path.Combine(projectBasePath, "ProductsIMG", Path.GetFileName(imageRelativePath));
-
                 try
                 {
                     if (File.Exists(imgUrl))

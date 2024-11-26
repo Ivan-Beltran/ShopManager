@@ -192,6 +192,7 @@
             addProductsButton.TabIndex = 11;
             addProductsButton.Text = "Añadir productos";
             addProductsButton.UseVisualStyleBackColor = false;
+            addProductsButton.Click += addProductsButton_Click;
             // 
             // purchaseOrderDataGridView
             // 

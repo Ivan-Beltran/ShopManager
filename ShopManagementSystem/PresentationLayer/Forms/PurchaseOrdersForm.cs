@@ -92,19 +92,47 @@ namespace PresentationLayer.Forms
                 {
 
                     try
-                     {
+                    {
 
                         _purchaseOrderServices.DeletePurchaseOrder(selectedOrderId);
                         MessageBox.Show("Orden de compra eliminada correctamente.");
                         LoadPurchaseOrders();
-                     }
-                     catch (SqlException ex) when (ex.Number == 547) 
-                     {
-                         MessageBox.Show("No se puede eliminar la orden de compra porque tiene elementos relacionados en la lista de compras.",
-                                         "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     }
+                    }
+                    catch (SqlException ex) when (ex.Number == 547)
+                    {
+                        MessageBox.Show("No se puede eliminar la orden de compra porque tiene elementos relacionados en la lista de compras.",
+                                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
+            }
+        }
+
+        private void addProductsButton_Click(object sender, EventArgs e)
+        {
+            if(purchaseOrderDataGridView.Rows.Count > 0)
+            {
+                if (purchaseOrderDataGridView.CurrentRow.Cells[4].Value.ToString() == "Recibida")
+                {
+                    MessageBox.Show("esta orden ya fue recivida",
+                               "advertenvia",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+
+                int PurchaseOrderId = Convert.ToInt32(purchaseOrderDataGridView.CurrentRow.Cells[0].Value);
+
+                _purchaseOrderServices.OrderReceived(PurchaseOrderId);
+
+                MessageBox.Show("productos añadidos al inventario",
+                                "notificacion",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+
+                LoadPurchaseOrders() ;
+                }
             }
         }
     }
