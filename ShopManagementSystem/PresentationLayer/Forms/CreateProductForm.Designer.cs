@@ -49,11 +49,10 @@
             editProductButton = new FontAwesome.Sharp.IconButton();
             openFileImgDialog = new OpenFileDialog();
             addProducButton = new FontAwesome.Sharp.IconButton();
-<<<<<<< HEAD
-=======
+
             textBox1 = new TextBox();
             validationErrorProvider = new ErrorProvider(components);
->>>>>>> 0bb5ef18b57a6425b12abd1fea21003b8aa0dfa8
+
             ((System.ComponentModel.ISupportInitialize)productImgPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productsDataGridView).BeginInit();
             optionsGroupBox.SuspendLayout();
@@ -299,8 +298,7 @@
             addProducButton.UseVisualStyleBackColor = false;
             addProducButton.Click += addProducButton_Click;
             // 
-<<<<<<< HEAD
-=======
+
             // textBox1
             // 
             textBox1.Location = new Point(53, 666);
@@ -313,17 +311,17 @@
             // 
             validationErrorProvider.ContainerControl = this;
             // 
->>>>>>> 0bb5ef18b57a6425b12abd1fea21003b8aa0dfa8
+
             // CreateProductForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-<<<<<<< HEAD
+
             ClientSize = new Size(1503, 927);
-=======
+
             ClientSize = new Size(1199, 562);
             Controls.Add(textBox1);
->>>>>>> 0bb5ef18b57a6425b12abd1fea21003b8aa0dfa8
+
             Controls.Add(addProducButton);
             Controls.Add(optionsGroupBox);
             Controls.Add(productsDataGridView);
@@ -374,10 +372,9 @@
         private FontAwesome.Sharp.IconButton editProductButton;
         private OpenFileDialog openFileImgDialog;
         private FontAwesome.Sharp.IconButton addProducButton;
-<<<<<<< HEAD
-=======
+
         private TextBox textBox1;
         private ErrorProvider validationErrorProvider;
->>>>>>> 0bb5ef18b57a6425b12abd1fea21003b8aa0dfa8
+
     }
 }
