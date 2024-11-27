@@ -43,13 +43,55 @@ namespace PresentationLayer.Forms
                     product.ProductModel,
                     product.ProductVersion,
                     product.ProductColor,
-                    product.ProductAmount, 
+                    product.ProductAmount,
                     product.ProductPrice
                 );
             }
 
-          
+
             shoppingKartDataGridView.DataSource = ShoppingKartTable;
+
+            decimal totalPricePurchase = 0;
+
+            foreach(Products product in _productsAdded)
+            {
+                decimal totalPriceProducts= product.ProductAmount * product.ProductPrice;
+
+                totalPricePurchase += totalPriceProducts;
+            }
+
+            totalLabel.Text = $"$: {totalPricePurchase}";
+        }
+
+        private void deleteShoppingKartButton_Click(object sender, EventArgs e)
+        {
+            if (shoppingKartDataGridView.SelectedRows.Count > 0)
+            {
+                int rowIndex = shoppingKartDataGridView.CurrentRow.Index;
+
+
+                var confirmResult = MessageBox.Show(
+                    "¿Estás seguro de que deseas eliminar esta producto de la lista?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+
+                    ShoppingKartTable.Rows[rowIndex].Delete();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para eliminar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void makePurchaseButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
+

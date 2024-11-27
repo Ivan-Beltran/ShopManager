@@ -51,9 +51,21 @@ namespace PresentationLayer.Controls
 
         private void addShoppingCarButton_Click(object sender, EventArgs e)
         {
-            _Product.ProductAmount = 1;
-            MessageBox.Show("compra agregada"+_Product.ProductId.ToString());
-            ProductAddedToCart?.Invoke(this, _Product);
+            if(quantitynumericUpDown.Value != 0)
+            {
+                _Product.ProductAmount = Convert.ToInt32( quantitynumericUpDown.Value);
+                MessageBox.Show($"compra agregada : { _Product.ProductBrand}  {_Product.ProductModel} ","notificacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                ProductAddedToCart?.Invoke(this, _Product);
+
+            }
+
+            else
+            {
+                MessageBox.Show("Por favor seleccione una cantidad mayor a 0",
+                                "error",
+                                MessageBoxButtons.OK, 
+                                MessageBoxIcon.Error);
+            }
 
 
         }

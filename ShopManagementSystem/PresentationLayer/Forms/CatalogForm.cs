@@ -127,7 +127,7 @@ namespace PresentationLayer.Forms
             if (!_shoppingCart.Contains(product))
             {
                 _shoppingCart.Add(product); // Agregar producto a la lista del carrito
-                label1.Text=product.ProductAmount.ToString();
+                productCountLabel.Text=_shoppingCart.Count().ToString ();
             }
             else
             {

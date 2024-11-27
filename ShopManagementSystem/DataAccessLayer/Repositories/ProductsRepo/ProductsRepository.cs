@@ -62,5 +62,9 @@ namespace DataAccessLayer.Repositories.ProductsRepo
             }
         }
 
+        // consultas para vender productos 
+
+       
+
     }
 }

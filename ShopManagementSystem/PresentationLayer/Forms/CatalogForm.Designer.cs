@@ -30,19 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CatalogForm));
             searchProductgroupBox = new GroupBox();
+            label1 = new Label();
             searchButton = new FontAwesome.Sharp.IconButton();
             Searchlabel = new Label();
             searchTextBox = new TextBox();
             shoppingcart = new PictureBox();
             productsFlowLayoutPanel = new FlowLayoutPanel();
-            label1 = new Label();
+            productsCountPictureBox = new PictureBox();
+            productCountLabel = new Label();
             searchProductgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)shoppingcart).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)productsCountPictureBox).BeginInit();
             SuspendLayout();
             // 
             // searchProductgroupBox
             // 
             searchProductgroupBox.BackColor = Color.Teal;
+            searchProductgroupBox.Controls.Add(productCountLabel);
+            searchProductgroupBox.Controls.Add(productsCountPictureBox);
             searchProductgroupBox.Controls.Add(label1);
             searchProductgroupBox.Controls.Add(searchButton);
             searchProductgroupBox.Controls.Add(Searchlabel);
@@ -55,6 +60,15 @@
             searchProductgroupBox.Size = new Size(1924, 134);
             searchProductgroupBox.TabIndex = 0;
             searchProductgroupBox.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(71, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
             // 
             // searchButton
             // 
@@ -99,10 +113,10 @@
             // 
             shoppingcart.BackColor = Color.Transparent;
             shoppingcart.Image = (Image)resources.GetObject("shoppingcart.Image");
-            shoppingcart.Location = new Point(1299, 37);
+            shoppingcart.Location = new Point(1332, 42);
             shoppingcart.Margin = new Padding(30, 10, 3, 3);
             shoppingcart.Name = "shoppingcart";
-            shoppingcart.Size = new Size(53, 60);
+            shoppingcart.Size = new Size(87, 73);
             shoppingcart.SizeMode = PictureBoxSizeMode.StretchImage;
             shoppingcart.TabIndex = 7;
             shoppingcart.TabStop = false;
@@ -119,14 +133,27 @@
             productsFlowLayoutPanel.Size = new Size(1924, 921);
             productsFlowLayoutPanel.TabIndex = 1;
             // 
-            // label1
+            // productsCountPictureBox
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(71, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            productsCountPictureBox.BackColor = Color.Transparent;
+            productsCountPictureBox.Image = (Image)resources.GetObject("productsCountPictureBox.Image");
+            productsCountPictureBox.Location = new Point(1411, 9);
+            productsCountPictureBox.Name = "productsCountPictureBox";
+            productsCountPictureBox.Size = new Size(65, 61);
+            productsCountPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            productsCountPictureBox.TabIndex = 0;
+            productsCountPictureBox.TabStop = false;
+            // 
+            // productCountLabel
+            // 
+            productCountLabel.BackColor = Color.Orange;
+            productCountLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            productCountLabel.ForeColor = SystemColors.ControlLightLight;
+            productCountLabel.Location = new Point(1432, 23);
+            productCountLabel.Name = "productCountLabel";
+            productCountLabel.Size = new Size(23, 29);
+            productCountLabel.TabIndex = 12;
+            productCountLabel.Text = "0";
             // 
             // CatalogForm
             // 
@@ -141,6 +168,7 @@
             searchProductgroupBox.ResumeLayout(false);
             searchProductgroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)shoppingcart).EndInit();
+            ((System.ComponentModel.ISupportInitialize)productsCountPictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -153,5 +181,7 @@
         private FlowLayoutPanel productsFlowLayoutPanel;
         private FontAwesome.Sharp.IconButton searchButton;
         private Label label1;
+        private Label productCountLabel;
+        private PictureBox productsCountPictureBox;
     }
 }

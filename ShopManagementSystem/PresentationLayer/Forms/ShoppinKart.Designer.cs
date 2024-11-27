@@ -32,6 +32,8 @@
             shoppingKartDataGridView = new DataGridView();
             makePurchaseButton = new FontAwesome.Sharp.IconButton();
             deleteShoppingKartButton = new FontAwesome.Sharp.IconButton();
+            totalTittleLabel = new Label();
+            totalLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)shoppingKartDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -76,13 +78,14 @@
             makePurchaseButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             makePurchaseButton.IconSize = 38;
             makePurchaseButton.ImageAlign = ContentAlignment.MiddleLeft;
-            makePurchaseButton.Location = new Point(715, 435);
+            makePurchaseButton.Location = new Point(525, 436);
             makePurchaseButton.Margin = new Padding(1);
             makePurchaseButton.Name = "makePurchaseButton";
             makePurchaseButton.Size = new Size(243, 44);
             makePurchaseButton.TabIndex = 35;
             makePurchaseButton.Text = " comprar";
             makePurchaseButton.UseVisualStyleBackColor = false;
+            makePurchaseButton.Click += makePurchaseButton_Click;
             // 
             // deleteShoppingKartButton
             // 
@@ -95,19 +98,42 @@
             deleteShoppingKartButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deleteShoppingKartButton.IconSize = 30;
             deleteShoppingKartButton.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteShoppingKartButton.Location = new Point(342, 435);
+            deleteShoppingKartButton.Location = new Point(152, 436);
             deleteShoppingKartButton.Margin = new Padding(1);
             deleteShoppingKartButton.Name = "deleteShoppingKartButton";
             deleteShoppingKartButton.Size = new Size(266, 44);
             deleteShoppingKartButton.TabIndex = 34;
             deleteShoppingKartButton.Text = "Quitar de la lista";
             deleteShoppingKartButton.UseVisualStyleBackColor = false;
+            deleteShoppingKartButton.Click += deleteShoppingKartButton_Click;
+            // 
+            // totalTittleLabel
+            // 
+            totalTittleLabel.AutoSize = true;
+            totalTittleLabel.Font = new Font("Segoe UI", 14F);
+            totalTittleLabel.Location = new Point(925, 441);
+            totalTittleLabel.Name = "totalTittleLabel";
+            totalTittleLabel.Size = new Size(77, 32);
+            totalTittleLabel.TabIndex = 36;
+            totalTittleLabel.Text = "Total :";
+            // 
+            // totalLabel
+            // 
+            totalLabel.AutoSize = true;
+            totalLabel.Font = new Font("Segoe UI", 14F);
+            totalLabel.Location = new Point(1024, 441);
+            totalLabel.Name = "totalLabel";
+            totalLabel.Size = new Size(27, 32);
+            totalLabel.TabIndex = 37;
+            totalLabel.Text = "$";
             // 
             // ShoppinKart
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1384, 593);
+            Controls.Add(totalLabel);
+            Controls.Add(totalTittleLabel);
             Controls.Add(makePurchaseButton);
             Controls.Add(deleteShoppingKartButton);
             Controls.Add(label2);
@@ -125,5 +151,7 @@
         private DataGridView shoppingKartDataGridView;
         private FontAwesome.Sharp.IconButton makePurchaseButton;
         private FontAwesome.Sharp.IconButton deleteShoppingKartButton;
+        private Label totalTittleLabel;
+        private Label totalLabel;
     }
 }
