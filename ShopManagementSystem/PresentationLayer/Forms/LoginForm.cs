@@ -45,15 +45,15 @@ namespace PresentationLayer.Forms
             _productsServices = productsService;
             PasswordTextBox.PasswordChar = '*';
             ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
-            
+
         }
 
         private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (ShowPasswordCheckBox.Checked)
             {
-                
-                PasswordTextBox.PasswordChar = '\0'; 
+
+                PasswordTextBox.PasswordChar = '\0';
             }
             else
             {
@@ -62,9 +62,9 @@ namespace PresentationLayer.Forms
         }
         private async void LoginButton_Click(object sender, EventArgs e)
         {
-            
+
             LoginButton.Enabled = false;
-            
+
 
             Employees employeesInput = new Employees
             {
@@ -78,7 +78,7 @@ namespace PresentationLayer.Forms
             if (!result.IsValid)
             {
                 DisplayValidationErrors(result);
-                
+
                 LoginButton.Enabled = true;
                 return;
             }
@@ -144,6 +144,19 @@ namespace PresentationLayer.Forms
 
         }
 
-      
+        private void Registredbutton_Click(object sender, EventArgs e)
+        {
+            var clientSession = new Employees() { };
+            
+            this.Hide();
+            DashboardForm dashboardForm = new DashboardForm (
+                clientSession,
+                _employeeServices,
+                _inventoryServices,
+                _suppliersServices,
+                _purchaseOrderServices,
+                _productsServices);
+            dashboardForm.Show();
+        }
     }
 }

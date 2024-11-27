@@ -103,9 +103,28 @@ namespace PresentationLayer.Forms
                 employeesButton.Visible = false;
                 shoppingOrdersButton.Enabled = false;
                 shoppingOrdersButton.Visible = false;
+                createProductsButton.Enabled = false;
+                createProductsButton.Visible = false;
+                suppliersButton.Enabled = false;
+                suppliersButton.Visible = false;
+            }
+
+            else if (_employeeSesion.RoleId == 0)
+            {
+                inventoryButton.Enabled = false;
+                inventoryButton.Visible = false;
+                employeesButton.Enabled = false;
+                employeesButton.Visible = false;
+                shoppingOrdersButton.Enabled = false;
+                shoppingOrdersButton.Visible = false;
+                createProductsButton.Enabled = false;
+                createProductsButton.Visible = false;
+                suppliersButton.Enabled = false;
+                suppliersButton.Visible = false;
+                salesReportButton.Enabled = false;
+                salesReportButton.Visible = false;
             }
         }
-
 
         private void inventoryButton_Click(object sender, EventArgs e)
         {

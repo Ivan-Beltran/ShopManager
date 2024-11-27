@@ -33,8 +33,6 @@ namespace PresentationLayer.Forms
             productCountLabel.Visible= false;
             LoadProductList();
             LoadProductGrid();
-
-
         }
 
         public void LoadProductList()
