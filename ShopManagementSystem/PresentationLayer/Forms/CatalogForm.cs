@@ -30,6 +30,7 @@ namespace PresentationLayer.Forms
             productsFlowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;  // Dirección de los controles de izquierda a derecha
             productsFlowLayoutPanel.WrapContents = true;  // Habilitar el ajuste de los controles a la siguiente línea
             productsFlowLayoutPanel.AutoScroll = true; // Permite desplazamiento si el contenido excede el panel
+            productCountLabel.Visible= false;
             LoadProductList();
             LoadProductGrid();
 
@@ -126,8 +127,13 @@ namespace PresentationLayer.Forms
         {
             if (!_shoppingCart.Contains(product))
             {
-                _shoppingCart.Add(product); // Agregar producto a la lista del carrito
-                productCountLabel.Text=_shoppingCart.Count().ToString ();
+                _shoppingCart.Add(product); 
+                if(_shoppingCart.Count > 0)
+                {
+                    productCountLabel.Visible = true;
+                    productCountLabel.Text = _shoppingCart.Count().ToString();
+                }
+               
             }
             else
             {

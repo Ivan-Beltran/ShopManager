@@ -68,7 +68,7 @@
             sidebarPanel.Location = new Point(0, 0);
             sidebarPanel.Margin = new Padding(1, 2, 1, 2);
             sidebarPanel.Name = "sidebarPanel";
-            sidebarPanel.Size = new Size(230, 1000);
+            sidebarPanel.Size = new Size(288, 1055);
             sidebarPanel.TabIndex = 0;
             // 
             // suppliersButton
@@ -83,10 +83,10 @@
             suppliersButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             suppliersButton.IconSize = 32;
             suppliersButton.ImageAlign = ContentAlignment.MiddleLeft;
-            suppliersButton.Location = new Point(1, 442);
+            suppliersButton.Location = new Point(1, 552);
             suppliersButton.Margin = new Padding(1, 2, 1, 2);
             suppliersButton.Name = "suppliersButton";
-            suppliersButton.Size = new Size(230, 33);
+            suppliersButton.Size = new Size(288, 41);
             suppliersButton.TabIndex = 8;
             suppliersButton.Text = "Proveedores";
             suppliersButton.UseVisualStyleBackColor = false;
@@ -104,10 +104,10 @@
             createProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             createProductsButton.IconSize = 32;
             createProductsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            createProductsButton.Location = new Point(1, 409);
+            createProductsButton.Location = new Point(1, 511);
             createProductsButton.Margin = new Padding(1, 2, 1, 2);
             createProductsButton.Name = "createProductsButton";
-            createProductsButton.Size = new Size(230, 33);
+            createProductsButton.Size = new Size(288, 41);
             createProductsButton.TabIndex = 7;
             createProductsButton.Text = "Añadir productos";
             createProductsButton.UseVisualStyleBackColor = false;
@@ -125,10 +125,10 @@
             exitSesionButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             exitSesionButton.IconSize = 32;
             exitSesionButton.ImageAlign = ContentAlignment.MiddleLeft;
-            exitSesionButton.Location = new Point(0, 710);
+            exitSesionButton.Location = new Point(0, 888);
             exitSesionButton.Margin = new Padding(1, 2, 1, 2);
             exitSesionButton.Name = "exitSesionButton";
-            exitSesionButton.Size = new Size(230, 33);
+            exitSesionButton.Size = new Size(288, 41);
             exitSesionButton.TabIndex = 6;
             exitSesionButton.Text = "Cerrar Sesión";
             exitSesionButton.UseVisualStyleBackColor = false;
@@ -146,10 +146,10 @@
             shoppingOrdersButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             shoppingOrdersButton.IconSize = 32;
             shoppingOrdersButton.ImageAlign = ContentAlignment.MiddleLeft;
-            shoppingOrdersButton.Location = new Point(1, 375);
+            shoppingOrdersButton.Location = new Point(1, 469);
             shoppingOrdersButton.Margin = new Padding(1, 2, 1, 2);
             shoppingOrdersButton.Name = "shoppingOrdersButton";
-            shoppingOrdersButton.Size = new Size(230, 33);
+            shoppingOrdersButton.Size = new Size(288, 41);
             shoppingOrdersButton.TabIndex = 5;
             shoppingOrdersButton.Text = "Pedidos Realizados";
             shoppingOrdersButton.UseVisualStyleBackColor = false;
@@ -160,9 +160,10 @@
             employeeNameLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             employeeNameLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             employeeNameLabel.ForeColor = Color.White;
-            employeeNameLabel.Location = new Point(3, 178);
+            employeeNameLabel.Location = new Point(4, 222);
+            employeeNameLabel.Margin = new Padding(4, 0, 4, 0);
             employeeNameLabel.Name = "employeeNameLabel";
-            employeeNameLabel.Size = new Size(225, 22);
+            employeeNameLabel.Size = new Size(281, 28);
             employeeNameLabel.TabIndex = 1;
             employeeNameLabel.Text = "josue ivan";
             employeeNameLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -171,9 +172,10 @@
             // 
             welcomeLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             welcomeLabel.ForeColor = Color.White;
-            welcomeLabel.Location = new Point(3, 154);
+            welcomeLabel.Location = new Point(4, 192);
+            welcomeLabel.Margin = new Padding(4, 0, 4, 0);
             welcomeLabel.Name = "welcomeLabel";
-            welcomeLabel.Size = new Size(230, 31);
+            welcomeLabel.Size = new Size(288, 39);
             welcomeLabel.TabIndex = 0;
             welcomeLabel.Text = "Bienvenido";
             welcomeLabel.TextAlign = ContentAlignment.TopCenter;
@@ -190,10 +192,10 @@
             inventoryButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             inventoryButton.IconSize = 32;
             inventoryButton.ImageAlign = ContentAlignment.MiddleLeft;
-            inventoryButton.Location = new Point(1, 341);
+            inventoryButton.Location = new Point(1, 426);
             inventoryButton.Margin = new Padding(1, 2, 1, 2);
             inventoryButton.Name = "inventoryButton";
-            inventoryButton.Size = new Size(230, 33);
+            inventoryButton.Size = new Size(288, 41);
             inventoryButton.TabIndex = 4;
             inventoryButton.Text = "Inventario";
             inventoryButton.UseVisualStyleBackColor = false;
@@ -211,10 +213,10 @@
             salesReportButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             salesReportButton.IconSize = 32;
             salesReportButton.ImageAlign = ContentAlignment.MiddleLeft;
-            salesReportButton.Location = new Point(-3, 274);
+            salesReportButton.Location = new Point(-4, 342);
             salesReportButton.Margin = new Padding(1, 2, 1, 2);
             salesReportButton.Name = "salesReportButton";
-            salesReportButton.Size = new Size(234, 33);
+            salesReportButton.Size = new Size(292, 41);
             salesReportButton.TabIndex = 3;
             salesReportButton.Text = "Reporte de ventas";
             salesReportButton.UseVisualStyleBackColor = false;
@@ -232,10 +234,10 @@
             employeesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             employeesButton.IconSize = 32;
             employeesButton.ImageAlign = ContentAlignment.MiddleLeft;
-            employeesButton.Location = new Point(0, 308);
+            employeesButton.Location = new Point(0, 385);
             employeesButton.Margin = new Padding(1, 2, 1, 2);
             employeesButton.Name = "employeesButton";
-            employeesButton.Size = new Size(230, 33);
+            employeesButton.Size = new Size(288, 41);
             employeesButton.TabIndex = 2;
             employeesButton.Text = "Personal";
             employeesButton.UseVisualStyleBackColor = false;
@@ -253,10 +255,10 @@
             CatalogButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             CatalogButton.IconSize = 32;
             CatalogButton.ImageAlign = ContentAlignment.MiddleLeft;
-            CatalogButton.Location = new Point(-3, 240);
+            CatalogButton.Location = new Point(-4, 300);
             CatalogButton.Margin = new Padding(1, 2, 1, 2);
             CatalogButton.Name = "CatalogButton";
-            CatalogButton.Size = new Size(234, 33);
+            CatalogButton.Size = new Size(292, 41);
             CatalogButton.TabIndex = 1;
             CatalogButton.Text = "Catalogo";
             CatalogButton.UseVisualStyleBackColor = false;
@@ -267,9 +269,9 @@
             logoPictureBox.BackColor = Color.Transparent;
             logoPictureBox.Image = (Image)resources.GetObject("logoPictureBox.Image");
             logoPictureBox.Location = new Point(0, 0);
-            logoPictureBox.Margin = new Padding(3, 2, 3, 2);
+            logoPictureBox.Margin = new Padding(4, 2, 4, 2);
             logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(225, 170);
+            logoPictureBox.Size = new Size(281, 212);
             logoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             logoPictureBox.TabIndex = 0;
             logoPictureBox.TabStop = false;
@@ -284,39 +286,37 @@
             PrincipalPanel.BackColor = Color.White;
             PrincipalPanel.Controls.Add(pictureBox1);
             PrincipalPanel.Dock = DockStyle.Fill;
-            PrincipalPanel.Location = new Point(230, 0);
-            PrincipalPanel.Margin = new Padding(3, 2, 3, 2);
+            PrincipalPanel.Location = new Point(288, 0);
+            PrincipalPanel.Margin = new Padding(4, 2, 4, 2);
             PrincipalPanel.Name = "PrincipalPanel";
-            PrincipalPanel.Size = new Size(1246, 1000);
+            PrincipalPanel.Size = new Size(1557, 1055);
             PrincipalPanel.TabIndex = 1;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-158, -98);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
-            pictureBox1.MaximumSize = new Size(1492, 1039);
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(4, 2, 4, 2);
+            pictureBox1.MaximumSize = new Size(1865, 1299);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1492, 852);
+            pictureBox1.Size = new Size(1667, 1053);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
             // DashboardForm
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
-            AutoScaleMode = AutoScaleMode.Dpi;
-            AutoSize = true;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1476, 1000);
+            ClientSize = new Size(1845, 1055);
             Controls.Add(PrincipalPanel);
             Controls.Add(sidebarPanel);
             IsMdiContainer = true;
             Margin = new Padding(1, 2, 1, 2);
             Name = "DashboardForm";
             Text = "Dashboard";
-            WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Maximized;
             sidebarPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
             PrincipalPanel.ResumeLayout(false);
