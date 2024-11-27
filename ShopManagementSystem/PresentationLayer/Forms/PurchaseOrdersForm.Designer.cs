@@ -58,12 +58,15 @@
             purchaeOrderGroupBox.Controls.Add(purchaseOrderTittleLabel);
             purchaeOrderGroupBox.Controls.Add(groupBox2);
             purchaeOrderGroupBox.Controls.Add(purchaseOrderDataGridView);
-            purchaeOrderGroupBox.Location = new Point(25, 12);
+            purchaeOrderGroupBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            purchaeOrderGroupBox.Location = new Point(22, 9);
+            purchaeOrderGroupBox.Margin = new Padding(3, 2, 3, 2);
             purchaeOrderGroupBox.Name = "purchaeOrderGroupBox";
-            purchaeOrderGroupBox.Size = new Size(1471, 965);
+            purchaeOrderGroupBox.Padding = new Padding(3, 2, 3, 2);
+            purchaeOrderGroupBox.Size = new Size(1287, 724);
             purchaeOrderGroupBox.TabIndex = 0;
             purchaeOrderGroupBox.TabStop = false;
-            purchaeOrderGroupBox.Text = "ordenes de compra";
+            purchaeOrderGroupBox.Text = "Ordenes de compra";
             // 
             // addOrdergroupBox
             // 
@@ -72,20 +75,22 @@
             addOrdergroupBox.Controls.Add(detailsTextBox);
             addOrdergroupBox.Controls.Add(supplierComboBox);
             addOrdergroupBox.Controls.Add(detailLabel);
-            addOrdergroupBox.Location = new Point(39, 59);
+            addOrdergroupBox.Location = new Point(34, 44);
+            addOrdergroupBox.Margin = new Padding(3, 2, 3, 2);
             addOrdergroupBox.Name = "addOrdergroupBox";
-            addOrdergroupBox.Size = new Size(1351, 268);
+            addOrdergroupBox.Padding = new Padding(3, 2, 3, 2);
+            addOrdergroupBox.Size = new Size(1182, 201);
             addOrdergroupBox.TabIndex = 33;
             addOrdergroupBox.TabStop = false;
-            addOrdergroupBox.Text = "crear nueva orden de compra";
+            addOrdergroupBox.Text = "Crear nueva orden de compra";
             // 
             // supplierLabel
             // 
             supplierLabel.AutoSize = true;
             supplierLabel.Font = new Font("Segoe UI Historic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            supplierLabel.Location = new Point(56, 53);
+            supplierLabel.Location = new Point(49, 40);
             supplierLabel.Name = "supplierLabel";
-            supplierLabel.Size = new Size(92, 23);
+            supplierLabel.Size = new Size(72, 17);
             supplierLabel.TabIndex = 29;
             supplierLabel.Text = "Proveedor:";
             // 
@@ -99,38 +104,39 @@
             createPurchaseOrderButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             createPurchaseOrderButton.IconSize = 32;
             createPurchaseOrderButton.ImageAlign = ContentAlignment.MiddleLeft;
-            createPurchaseOrderButton.Location = new Point(831, 86);
-            createPurchaseOrderButton.Margin = new Padding(3, 4, 3, 4);
+            createPurchaseOrderButton.Location = new Point(727, 64);
             createPurchaseOrderButton.Name = "createPurchaseOrderButton";
-            createPurchaseOrderButton.Size = new Size(280, 73);
+            createPurchaseOrderButton.Size = new Size(237, 55);
             createPurchaseOrderButton.TabIndex = 12;
-            createPurchaseOrderButton.Text = "seleccionar productos productos";
+            createPurchaseOrderButton.Text = "Seleccionar productos ";
             createPurchaseOrderButton.UseVisualStyleBackColor = false;
             createPurchaseOrderButton.Click += createPurchaseOrderButton_Click;
             // 
             // detailsTextBox
             // 
-            detailsTextBox.Location = new Point(228, 168);
+            detailsTextBox.Location = new Point(200, 126);
+            detailsTextBox.Margin = new Padding(3, 2, 3, 2);
             detailsTextBox.Name = "detailsTextBox";
-            detailsTextBox.Size = new Size(441, 27);
+            detailsTextBox.Size = new Size(386, 25);
             detailsTextBox.TabIndex = 32;
             // 
             // supplierComboBox
             // 
             supplierComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             supplierComboBox.FormattingEnabled = true;
-            supplierComboBox.Location = new Point(213, 48);
+            supplierComboBox.Location = new Point(186, 36);
+            supplierComboBox.Margin = new Padding(3, 2, 3, 2);
             supplierComboBox.Name = "supplierComboBox";
-            supplierComboBox.Size = new Size(441, 28);
+            supplierComboBox.Size = new Size(386, 25);
             supplierComboBox.TabIndex = 31;
             // 
             // detailLabel
             // 
             detailLabel.AutoSize = true;
             detailLabel.Font = new Font("Segoe UI Historic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            detailLabel.Location = new Point(56, 172);
+            detailLabel.Location = new Point(49, 129);
             detailLabel.Name = "detailLabel";
-            detailLabel.Size = new Size(166, 23);
+            detailLabel.Size = new Size(129, 17);
             detailLabel.TabIndex = 30;
             detailLabel.Text = "Detalles de la orden:";
             // 
@@ -138,9 +144,9 @@
             // 
             purchaseOrderTittleLabel.AutoSize = true;
             purchaseOrderTittleLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            purchaseOrderTittleLabel.Location = new Point(462, 487);
+            purchaseOrderTittleLabel.Location = new Point(404, 365);
             purchaseOrderTittleLabel.Name = "purchaseOrderTittleLabel";
-            purchaseOrderTittleLabel.Size = new Size(241, 32);
+            purchaseOrderTittleLabel.Size = new Size(187, 25);
             purchaseOrderTittleLabel.TabIndex = 28;
             purchaseOrderTittleLabel.Text = "Compras Realizadas";
             // 
@@ -149,12 +155,14 @@
             groupBox2.Controls.Add(deletePurchaseOrderButton);
             groupBox2.Controls.Add(addProductsButton);
             groupBox2.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            groupBox2.Location = new Point(1152, 556);
+            groupBox2.Location = new Point(1008, 417);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(288, 367);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(252, 275);
             groupBox2.TabIndex = 27;
             groupBox2.TabStop = false;
-            groupBox2.Text = "opciones";
+            groupBox2.Text = "Opciones";
             // 
             // deletePurchaseOrderButton
             // 
@@ -166,10 +174,9 @@
             deletePurchaseOrderButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deletePurchaseOrderButton.IconSize = 32;
             deletePurchaseOrderButton.ImageAlign = ContentAlignment.MiddleLeft;
-            deletePurchaseOrderButton.Location = new Point(29, 180);
-            deletePurchaseOrderButton.Margin = new Padding(3, 4, 3, 4);
+            deletePurchaseOrderButton.Location = new Point(25, 135);
             deletePurchaseOrderButton.Name = "deletePurchaseOrderButton";
-            deletePurchaseOrderButton.Size = new Size(235, 49);
+            deletePurchaseOrderButton.Size = new Size(206, 37);
             deletePurchaseOrderButton.TabIndex = 12;
             deletePurchaseOrderButton.Text = "Eliminar compra";
             deletePurchaseOrderButton.UseVisualStyleBackColor = false;
@@ -185,10 +192,9 @@
             addProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addProductsButton.IconSize = 32;
             addProductsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            addProductsButton.Location = new Point(29, 65);
-            addProductsButton.Margin = new Padding(3, 4, 3, 4);
+            addProductsButton.Location = new Point(25, 49);
             addProductsButton.Name = "addProductsButton";
-            addProductsButton.Size = new Size(235, 49);
+            addProductsButton.Size = new Size(206, 37);
             addProductsButton.TabIndex = 11;
             addProductsButton.Text = "Añadir productos";
             addProductsButton.UseVisualStyleBackColor = false;
@@ -223,8 +229,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             purchaseOrderDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             purchaseOrderDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-            purchaseOrderDataGridView.Location = new Point(39, 556);
-            purchaseOrderDataGridView.Margin = new Padding(3, 4, 3, 4);
+            purchaseOrderDataGridView.Location = new Point(34, 417);
             purchaseOrderDataGridView.MultiSelect = false;
             purchaseOrderDataGridView.Name = "purchaseOrderDataGridView";
             purchaseOrderDataGridView.ReadOnly = true;
@@ -235,7 +240,7 @@
             purchaseOrderDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             purchaseOrderDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             purchaseOrderDataGridView.ShowCellToolTips = false;
-            purchaseOrderDataGridView.Size = new Size(1066, 367);
+            purchaseOrderDataGridView.Size = new Size(933, 275);
             purchaseOrderDataGridView.TabIndex = 26;
             // 
             // purchaseOrdersErrorProvider
@@ -245,10 +250,11 @@
             // 
             // PurchaseOrdersForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1589, 1055);
+            ClientSize = new Size(1390, 791);
             Controls.Add(purchaeOrderGroupBox);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "PurchaseOrdersForm";
             Text = "purchaseOrders";
             purchaeOrderGroupBox.ResumeLayout(false);

@@ -85,7 +85,7 @@ namespace PresentationLayer.Forms
                     }
 
                     _employeeService.AddEmployee(employeeAdded);
-                    MessageBox.Show("empleado agregado exitosamente", "mensaje");
+                    MessageBox.Show("Empleado agregado exitosamente", "Mensaje");
                     LoadEmployees();
                     this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
  
@@ -95,7 +95,7 @@ namespace PresentationLayer.Forms
                 {
                     if (ex.Number == 2627)
                     {
-                        MessageBox.Show("ya hay un empleado que ocupa este nombre de usuario",
+                        MessageBox.Show("Ya hay un empleado que ocupa este nombre de usuario",
                             "error",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
@@ -181,8 +181,8 @@ namespace PresentationLayer.Forms
                 {
                     if (ex.Number == 2627)
                     {
-                        MessageBox.Show("nombre de usuario existente, por favor elija otro ",
-                            "error",
+                        MessageBox.Show("Nombre de usuario existente, por favor elija otro ",
+                            "Error",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
@@ -212,8 +212,8 @@ namespace PresentationLayer.Forms
                     int Id = Convert.ToInt32(EmployeesDataGridView.CurrentRow.Cells[0].Value.ToString());
                     if (_employeeSession.EmployeeId == Id)
                     {
-                        MessageBox.Show("no puede eliminar su propio usuario",
-                            "error",
+                        MessageBox.Show("No puede eliminar su propio usuario",
+                            "Error",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
@@ -272,8 +272,8 @@ namespace PresentationLayer.Forms
             }
             else
             {
-                MessageBox.Show("ninguna fila seleccionada",
-                            "informacion",
+                MessageBox.Show("Ninguna fila seleccionada",
+                            "Informacion",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
             }
