@@ -122,16 +122,15 @@ namespace PresentationLayer.Forms
 
         private void OnProductAddedToCart(object sender, Products product)
         {
-            if (!_shoppingCart.Contains(product))
+            if (!_shoppingCart.Any(p => p.ProductId == product.ProductId))
             {
-                _shoppingCart.Add(product);
-                LoadProductsOnShoppingKart();
-
+                MessageBox.Show("producto agregado al carrito","informacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _shoppingCart.Add(product); // Agregar al carrito solo si no existe
+                LoadProductsOnShoppingKart(); // Actualizar el contador del carrito
             }
             else
             {
-                MessageBox.Show("el producto ya se encuentra en el carrito");
-              
+                MessageBox.Show("El producto ya se encuentra en el carrito");
             }
         }
 

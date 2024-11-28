@@ -16,11 +16,13 @@ namespace PresentationLayer.Forms
     {
         public List<Products> _productsAdded;
         private ISalesServices _salesServices;
-        public RegisterClients(ISalesServices salesServices, List<Products> productsAdded)
+        private decimal _totalProductsPrice;
+        public RegisterClients(ISalesServices salesServices, List<Products> productsAdded,decimal totalProductsPrice)
         {
             InitializeComponent();
             _productsAdded = productsAdded;
             _salesServices = salesServices;
+            _totalProductsPrice = totalProductsPrice;
         }
 
         private void finishPurchaseButton_Click(object sender, EventArgs e)
@@ -39,21 +41,23 @@ namespace PresentationLayer.Forms
                 int clientId=_salesServices.AddClient(clientAdded);
                 DateTime actualDay= DateTime.Now;
 
+                var SalesReport = new Sales()
+                {
+                    SaleClientId=clientId,
+                    TotalAmount=_totalProductsPrice,
+                    SaleDate=actualDay,
+                };
+
+                 int salesId= _salesServices.AddSelesReport(SalesReport);
             
                 foreach(Products product in _productsAdded)
                 {
+                    decimal totalPrice = product.ProductAmount * product.ProductPrice;
+
                     _salesServices.UpdatesProducts(product);
+                    _salesServices.AddIntoSalesList(salesId, product.ProductId, product.ProductAmount, totalPrice);
 
-                    var SalesReport = new Sales()
-                    {
-                        SaleClientId=clientId,
-                        SaleProductId=product.ProductId,
-                        QuantitySold=product.ProductAmount,
-                        TotalAmount=(product.ProductAmount * product.ProductPrice),
-                        SaleDate=actualDay,
-                    };
-
-                    _salesServices.AddSelesReport(SalesReport);
+                    
                 }
 
                 MessageBox.Show("compra realizada con exito");

@@ -39,8 +39,7 @@ namespace DataAccessLayer.Repositories.SalesRepo
                               WHERE ClientName = @ClientName
                                 AND ClientLastName = @ClientLastName
                                 AND ClientEmail = @ClientEmail
-                                AND ClientDUI = @ClientDUI
-                                AND ClientTelephone = @ClientTelephone";
+                                AND ClientDUI = @ClientDUI";
 
                 var existingClientId = connection.QuerySingleOrDefault<int?>(checkQuery, clientAdded);
 
@@ -57,14 +56,54 @@ namespace DataAccessLayer.Repositories.SalesRepo
             }
         }
 
-        public void AddSelesReport(Sales salesAdded)
+        public void AddIntoSalesList(int SalesId,int ProductId,int QuantitySold,decimal Total)
+        {
+            using (var connection= _dbConnection.GetConnection())
+            {
+                string query = @"INSERT INTO SalesList(SalesId,ProductId,QuantitySold,Total)
+                                VALUES(@SalesId,@ProductId,@QuantitySold,@Total)";
+
+                connection.Execute(query, new { SalesId, ProductId, QuantitySold, Total });
+            }
+
+            
+        }
+
+        public DataTable GetSalesDetails(int SalesId)
+        {
+            DataTable salesDeatail = new DataTable();
+
+            using (var connection = _dbConnection.GetConnection())
+            {
+                string query = @"SELECT
+                                	PR.ProductBrand,
+                                	PR.ProductModel,
+                                	PR.ProductVersion,
+                                	PR.ProductColor,
+                                	SL.QuantitySold,
+                                	PR.ProductPrice,
+                                	SL.Total AS SubTotal
+                                FROM SalesList AS SL
+                                INNER JOIN Products AS PR ON SL.ProductId=PR.ProductId
+                                WHERE SL.SalesId=@SalesId";
+
+                using (var reader = connection.ExecuteReader(query, new { SalesId }))
+                {
+                    salesDeatail.Load(reader);
+                }
+            }
+            return salesDeatail;
+        }
+
+        public int AddSelesReport(Sales salesAdded)
         {
             using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"INSERT INTO Sales
-                                VALUES(@SaleClientId,@SaleProductId,@QuantitySold,@TotalAmount,@SaleDate)";
+                                OUTPUT INSERTED.SaleId
+                                VALUES(@SaleClientId,@TotalAmount,@SaleDate)";
 
-                connection.Execute(query, salesAdded);
+                return connection.QuerySingle<int>(query, salesAdded);
             }
         }
 
@@ -76,16 +115,10 @@ namespace DataAccessLayer.Repositories.SalesRepo
                 string query = @"SELECT 
                                 	SA.SaleId AS Id,
                                 	CONCAT(CL.ClientName,' ',CL.ClientLastName) AS Cliente,
-                                    PR.ProductBrand AS Marca,
-                                	PR.ProductModel AS Modelo,
-                                	PR.ProductVersion AS Version,
-                                	PR.ProductColor AS Color,
-                                	SA.QuantitySold AS 'Unidades vendidas',
                                 	SA.TotalAmount AS 'Total a pagar',
                                 	CONVERT(VARCHAR(16), SA.SaleDate, 120) AS Fecha
                                 FROM Sales AS SA
-                                INNER JOIN Clients AS CL ON SA.SaleClientId=CL.ClientId
-                                INNER JOIN Products AS PR ON SA.SaleProductId=PR.ProductId";
+                                INNER JOIN Clients AS CL ON SA.SaleClientId=CL.ClientId";
 
                 using (var reader = connection.ExecuteReader(query))
                 {
@@ -102,16 +135,10 @@ namespace DataAccessLayer.Repositories.SalesRepo
                 string query = @"SELECT 
                                 	SA.SaleId,
                                 	CONCAT(CL.ClientName,' ',CL.ClientLastName) AS Cliente,
-                                    PR.ProductBrand AS Marca,
-                                	PR.ProductModel AS Modelo,
-                                	PR.ProductVersion AS Version,
-                                	PR.ProductColor AS Color,
-                                	SA.QuantitySold AS 'Unidades vendidas',
                                 	SA.TotalAmount AS 'Total a pagar',
                                 	CONVERT(VARCHAR(16), SA.SaleDate, 120) AS Fecha
                                 FROM Sales AS SA
                                 INNER JOIN Clients AS CL ON SA.SaleClientId=CL.ClientId
-                                INNER JOIN Products AS PR ON SA.SaleProductId=PR.ProductId
                                 WHERE CAST(SA.SaleDate AS DATE) = @SearchTerm;";
 
 

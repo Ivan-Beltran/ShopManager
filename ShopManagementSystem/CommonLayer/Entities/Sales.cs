@@ -11,8 +11,6 @@ namespace CommonLayer.Entities
         public int SalesId { get; set; }
         public int SaleClientId {  get; set; }
 
-        public int SaleProductId {  get; set; }
-        public int QuantitySold {  get; set; }
         public decimal TotalAmount {  get; set; }
         public DateTime SaleDate {  get; set; }
 

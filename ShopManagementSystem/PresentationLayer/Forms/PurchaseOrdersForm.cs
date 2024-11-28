@@ -110,7 +110,7 @@ namespace PresentationLayer.Forms
 
         private void addProductsButton_Click(object sender, EventArgs e)
         {
-            if(purchaseOrderDataGridView.Rows.Count > 0)
+            if (purchaseOrderDataGridView.Rows.Count > 0)
             {
                 if (purchaseOrderDataGridView.CurrentRow.Cells[4].Value.ToString() == "Recibida")
                 {
@@ -122,17 +122,27 @@ namespace PresentationLayer.Forms
                 else
                 {
 
-                int PurchaseOrderId = Convert.ToInt32(purchaseOrderDataGridView.CurrentRow.Cells[0].Value);
+                    int PurchaseOrderId = Convert.ToInt32(purchaseOrderDataGridView.CurrentRow.Cells[0].Value);
 
-                _purchaseOrderServices.OrderReceived(PurchaseOrderId);
+                    _purchaseOrderServices.OrderReceived(PurchaseOrderId);
 
-                MessageBox.Show("productos añadidos al inventario",
-                                "notificacion",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
+                    MessageBox.Show("productos añadidos al inventario",
+                                    "notificacion",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
 
-                LoadPurchaseOrders() ;
+                    LoadPurchaseOrders();
                 }
+            }
+        }
+
+        private void purchaseOrderDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if(purchaseOrderDataGridView.SelectedRows.Count > 0)
+            {
+                int purchaseOrderId=Convert.ToInt32( purchaseOrderDataGridView.SelectedRows[0].Cells[0].Value);
+
+                purchaseListDataGridView.DataSource = _purchaseOrderServices.GetShoppingList(purchaseOrderId);
             }
         }
     }

@@ -28,9 +28,9 @@ namespace BussinessLayer.Services.ServicesForSales
             return _salesRepository.AddClient(clientAdded);
         }
 
-        public void AddSelesReport(Sales salesAdded)
+        public int AddSelesReport(Sales salesAdded)
         {
-            _salesRepository.AddSelesReport(salesAdded);
+           return _salesRepository.AddSelesReport(salesAdded);
         }
 
         public DataTable GetSalesReport()
@@ -44,6 +44,15 @@ namespace BussinessLayer.Services.ServicesForSales
         public DataTable SearchSalesReport(DateTime SearchTerm)
         {
             return _salesRepository.SearchSalesReport(SearchTerm);
+        }
+
+        public void AddIntoSalesList(int SalesId, int ProductId, int QuantitySold, decimal Total)
+        {
+            _salesRepository.AddIntoSalesList(SalesId, ProductId, QuantitySold, Total);
+        }
+        public DataTable GetSalesDetails(int SalesId)
+        {
+            return _salesRepository.GetSalesDetails(SalesId);
         }
     }
 }

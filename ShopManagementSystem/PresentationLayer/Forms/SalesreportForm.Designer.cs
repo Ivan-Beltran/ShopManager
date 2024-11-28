@@ -32,13 +32,16 @@
             Searchlabel = new Label();
             SearchButton = new PictureBox();
             salesReportDataGridView = new DataGridView();
-            deteleReportButton = new FontAwesome.Sharp.IconButton();
             searchGroupBox = new GroupBox();
             showAllReportsButton = new FontAwesome.Sharp.IconButton();
             searchReportdateTimePicker = new DateTimePicker();
+            productsBuyingDataGridView = new DataGridView();
+            listProductsLabel = new Label();
+            viewDetailsButton = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)SearchButton).BeginInit();
             ((System.ComponentModel.ISupportInitialize)salesReportDataGridView).BeginInit();
             searchGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)productsBuyingDataGridView).BeginInit();
             SuspendLayout();
             // 
             // Searchlabel
@@ -85,29 +88,9 @@
             salesReportDataGridView.Name = "salesReportDataGridView";
             salesReportDataGridView.RowHeadersVisible = false;
             salesReportDataGridView.RowHeadersWidth = 51;
-            salesReportDataGridView.Size = new Size(1220, 331);
+            salesReportDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            salesReportDataGridView.Size = new Size(1117, 272);
             salesReportDataGridView.TabIndex = 2;
-            // 
-            // deteleReportButton
-            // 
-            deteleReportButton.BackColor = Color.FromArgb(0, 166, 225);
-            deteleReportButton.FlatStyle = FlatStyle.Popup;
-            deteleReportButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            deteleReportButton.ForeColor = Color.White;
-            deteleReportButton.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
-            deteleReportButton.IconColor = Color.White;
-            deteleReportButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            deteleReportButton.IconSize = 38;
-            deteleReportButton.ImageAlign = ContentAlignment.MiddleLeft;
-            deteleReportButton.Location = new Point(29, 548);
-            deteleReportButton.Margin = new Padding(3, 4, 3, 4);
-            deteleReportButton.Name = "deteleReportButton";
-            deteleReportButton.Size = new Size(222, 53);
-            deteleReportButton.TabIndex = 23;
-            deteleReportButton.Text = "Eliminar Reporte";
-            deteleReportButton.TextAlign = ContentAlignment.MiddleRight;
-            deteleReportButton.UseVisualStyleBackColor = false;
-            deteleReportButton.Click += deteleReportButton_Click;
             // 
             // searchGroupBox
             // 
@@ -148,13 +131,65 @@
             searchReportdateTimePicker.Size = new Size(496, 27);
             searchReportdateTimePicker.TabIndex = 3;
             // 
+            // productsBuyingDataGridView
+            // 
+            productsBuyingDataGridView.AllowUserToAddRows = false;
+            productsBuyingDataGridView.AllowUserToDeleteRows = false;
+            productsBuyingDataGridView.AllowUserToResizeColumns = false;
+            productsBuyingDataGridView.AllowUserToResizeRows = false;
+            productsBuyingDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            productsBuyingDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            productsBuyingDataGridView.BackgroundColor = Color.Azure;
+            productsBuyingDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            productsBuyingDataGridView.Location = new Point(29, 536);
+            productsBuyingDataGridView.Margin = new Padding(3, 4, 3, 4);
+            productsBuyingDataGridView.MultiSelect = false;
+            productsBuyingDataGridView.Name = "productsBuyingDataGridView";
+            productsBuyingDataGridView.RowHeadersVisible = false;
+            productsBuyingDataGridView.RowHeadersWidth = 51;
+            productsBuyingDataGridView.Size = new Size(1117, 272);
+            productsBuyingDataGridView.TabIndex = 25;
+            // 
+            // listProductsLabel
+            // 
+            listProductsLabel.AutoSize = true;
+            listProductsLabel.Font = new Font("Segoe UI", 14F);
+            listProductsLabel.Location = new Point(463, 483);
+            listProductsLabel.Name = "listProductsLabel";
+            listProductsLabel.Size = new Size(246, 32);
+            listProductsLabel.TabIndex = 26;
+            listProductsLabel.Text = "productos comprados";
+            // 
+            // viewDetailsButton
+            // 
+            viewDetailsButton.BackColor = Color.FromArgb(0, 166, 225);
+            viewDetailsButton.FlatStyle = FlatStyle.Popup;
+            viewDetailsButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            viewDetailsButton.ForeColor = Color.White;
+            viewDetailsButton.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
+            viewDetailsButton.IconColor = Color.White;
+            viewDetailsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            viewDetailsButton.IconSize = 38;
+            viewDetailsButton.ImageAlign = ContentAlignment.MiddleLeft;
+            viewDetailsButton.Location = new Point(1179, 305);
+            viewDetailsButton.Margin = new Padding(3, 4, 3, 4);
+            viewDetailsButton.Name = "viewDetailsButton";
+            viewDetailsButton.Size = new Size(164, 53);
+            viewDetailsButton.TabIndex = 27;
+            viewDetailsButton.Text = "ver detalles";
+            viewDetailsButton.TextAlign = ContentAlignment.MiddleRight;
+            viewDetailsButton.UseVisualStyleBackColor = false;
+            viewDetailsButton.Click += viewDetailsButton_Click;
+            // 
             // SalesreportForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1370, 733);
+            ClientSize = new Size(1385, 931);
+            Controls.Add(viewDetailsButton);
+            Controls.Add(listProductsLabel);
+            Controls.Add(productsBuyingDataGridView);
             Controls.Add(searchGroupBox);
-            Controls.Add(deteleReportButton);
             Controls.Add(salesReportDataGridView);
             Name = "SalesreportForm";
             Text = "SalesreportForm";
@@ -162,16 +197,20 @@
             ((System.ComponentModel.ISupportInitialize)salesReportDataGridView).EndInit();
             searchGroupBox.ResumeLayout(false);
             searchGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)productsBuyingDataGridView).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private Label Searchlabel;
         private PictureBox SearchButton;
         private DataGridView salesReportDataGridView;
-        private FontAwesome.Sharp.IconButton deteleReportButton;
         private GroupBox searchGroupBox;
         private DateTimePicker searchReportdateTimePicker;
         private FontAwesome.Sharp.IconButton showAllReportsButton;
+        private DataGridView productsBuyingDataGridView;
+        private Label listProductsLabel;
+        private FontAwesome.Sharp.IconButton viewDetailsButton;
     }
 }

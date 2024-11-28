@@ -54,7 +54,7 @@ namespace PresentationLayer.Controls
         {
             if(quantitynumericUpDown.Value != 0)
             {
-                if (quantitynumericUpDown.Value > _Product.ProductAmount)
+                if (quantitynumericUpDown.Value > Convert.ToInt32(enableQuanatityLabel.Text))
                 {
                     MessageBox.Show("existencias insuficientes", "error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -62,8 +62,6 @@ namespace PresentationLayer.Controls
                 {
 
                     _Product.ProductAmount = Convert.ToInt32( quantitynumericUpDown.Value);
-
-                    MessageBox.Show($"compra agregada : { _Product.ProductBrand}  {_Product.ProductModel} ","notificacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     ProductAddedToCart?.Invoke(this, _Product);
                 }
 

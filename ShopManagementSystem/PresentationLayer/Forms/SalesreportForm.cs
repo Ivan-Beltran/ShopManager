@@ -28,29 +28,7 @@ namespace PresentationLayer.Forms
             salesReportDataGridView.DataSource = _salesServices.GetSalesReport();
         }
 
-        private void deteleReportButton_Click(object sender, EventArgs e)
-        {
-            if (salesReportDataGridView.Rows.Count > 0)
-            {
-                int SaleReportId = Convert.ToInt32(salesReportDataGridView.CurrentRow.Cells[0].Value);
 
-                DialogResult result = MessageBox.Show(
-                "¿Estás seguro de que deseas eliminar este reporte de venta?",
-                "Confirmar eliminación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-
-
-                if (result == DialogResult.Yes)
-                {
-                    _salesServices.DeleteSaleReport(SaleReportId);
-
-                    LoadSalesReport();
-
-                    MessageBox.Show("Reporte de venta eliminado correctamente.", "Eliminación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-        }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
@@ -62,6 +40,21 @@ namespace PresentationLayer.Forms
         private void showAllReportsButton_Click(object sender, EventArgs e)
         {
             LoadSalesReport();
+        }
+
+
+        public void LoadSalesDeatail(int SaleId)
+        {
+            productsBuyingDataGridView.DataSource = _salesServices.GetSalesDetails(SaleId);
+        }
+
+        private void viewDetailsButton_Click(object sender, EventArgs e)
+        {
+            if (salesReportDataGridView.SelectedRows.Count > 0)
+            {
+                int SaleId = Convert.ToInt32(salesReportDataGridView.CurrentRow.Cells[0].Value);
+                LoadSalesDeatail(SaleId);
+            }
         }
     }
 }

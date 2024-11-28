@@ -31,13 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             sidebarPanel = new Panel();
             dashBoardFlowLayoutPanel = new FlowLayoutPanel();
+            CatalogButton = new FontAwesome.Sharp.IconButton();
+            employeesButton = new FontAwesome.Sharp.IconButton();
+            clientsButton = new FontAwesome.Sharp.IconButton();
             suppliersButton = new FontAwesome.Sharp.IconButton();
             createProductsButton = new FontAwesome.Sharp.IconButton();
             shoppingOrdersButton = new FontAwesome.Sharp.IconButton();
             inventoryButton = new FontAwesome.Sharp.IconButton();
             salesReportButton = new FontAwesome.Sharp.IconButton();
-            employeesButton = new FontAwesome.Sharp.IconButton();
-            CatalogButton = new FontAwesome.Sharp.IconButton();
             exitSesionButton = new FontAwesome.Sharp.IconButton();
             employeeNameLabel = new Label();
             welcomeLabel = new Label();
@@ -46,7 +47,6 @@
             PrincipalPanel = new Panel();
             pictureBox1 = new PictureBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            clientsButton = new FontAwesome.Sharp.IconButton();
             sidebarPanel.SuspendLayout();
             dashBoardFlowLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
@@ -84,6 +84,68 @@
             dashBoardFlowLayoutPanel.Name = "dashBoardFlowLayoutPanel";
             dashBoardFlowLayoutPanel.Size = new Size(277, 390);
             dashBoardFlowLayoutPanel.TabIndex = 7;
+            // 
+            // CatalogButton
+            // 
+            CatalogButton.BackColor = Color.White;
+            CatalogButton.FlatAppearance.BorderSize = 0;
+            CatalogButton.FlatStyle = FlatStyle.Flat;
+            CatalogButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CatalogButton.ForeColor = SystemColors.ActiveCaptionText;
+            CatalogButton.IconChar = FontAwesome.Sharp.IconChar.ListDots;
+            CatalogButton.IconColor = Color.Black;
+            CatalogButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            CatalogButton.IconSize = 32;
+            CatalogButton.ImageAlign = ContentAlignment.MiddleLeft;
+            CatalogButton.Location = new Point(1, 3);
+            CatalogButton.Margin = new Padding(1, 3, 1, 3);
+            CatalogButton.Name = "CatalogButton";
+            CatalogButton.Size = new Size(293, 41);
+            CatalogButton.TabIndex = 9;
+            CatalogButton.Text = "Catalogo";
+            CatalogButton.UseVisualStyleBackColor = false;
+            CatalogButton.Click += CatalogButton_Click;
+            // 
+            // employeesButton
+            // 
+            employeesButton.BackColor = Color.White;
+            employeesButton.FlatAppearance.BorderSize = 0;
+            employeesButton.FlatStyle = FlatStyle.Flat;
+            employeesButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            employeesButton.ForeColor = SystemColors.ActiveCaptionText;
+            employeesButton.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            employeesButton.IconColor = Color.Black;
+            employeesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            employeesButton.IconSize = 32;
+            employeesButton.ImageAlign = ContentAlignment.MiddleLeft;
+            employeesButton.Location = new Point(1, 50);
+            employeesButton.Margin = new Padding(1, 3, 1, 3);
+            employeesButton.Name = "employeesButton";
+            employeesButton.Size = new Size(276, 41);
+            employeesButton.TabIndex = 10;
+            employeesButton.Text = "Personal";
+            employeesButton.UseVisualStyleBackColor = false;
+            employeesButton.Click += personalIconButton_Click;
+            // 
+            // clientsButton
+            // 
+            clientsButton.BackColor = Color.White;
+            clientsButton.FlatAppearance.BorderSize = 0;
+            clientsButton.FlatStyle = FlatStyle.Flat;
+            clientsButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            clientsButton.ForeColor = SystemColors.ActiveCaptionText;
+            clientsButton.IconChar = FontAwesome.Sharp.IconChar.PeopleRobbery;
+            clientsButton.IconColor = Color.Black;
+            clientsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            clientsButton.IconSize = 32;
+            clientsButton.ImageAlign = ContentAlignment.MiddleLeft;
+            clientsButton.Location = new Point(1, 97);
+            clientsButton.Margin = new Padding(1, 3, 1, 3);
+            clientsButton.Name = "clientsButton";
+            clientsButton.Size = new Size(276, 41);
+            clientsButton.TabIndex = 16;
+            clientsButton.Text = "clientes";
+            clientsButton.UseVisualStyleBackColor = false;
             // 
             // suppliersButton
             // 
@@ -190,48 +252,6 @@
             salesReportButton.UseVisualStyleBackColor = false;
             salesReportButton.Click += salesReportButton_Click;
             // 
-            // employeesButton
-            // 
-            employeesButton.BackColor = Color.White;
-            employeesButton.FlatAppearance.BorderSize = 0;
-            employeesButton.FlatStyle = FlatStyle.Flat;
-            employeesButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employeesButton.ForeColor = SystemColors.ActiveCaptionText;
-            employeesButton.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            employeesButton.IconColor = Color.Black;
-            employeesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            employeesButton.IconSize = 32;
-            employeesButton.ImageAlign = ContentAlignment.MiddleLeft;
-            employeesButton.Location = new Point(1, 50);
-            employeesButton.Margin = new Padding(1, 3, 1, 3);
-            employeesButton.Name = "employeesButton";
-            employeesButton.Size = new Size(276, 41);
-            employeesButton.TabIndex = 10;
-            employeesButton.Text = "Personal";
-            employeesButton.UseVisualStyleBackColor = false;
-            employeesButton.Click += personalIconButton_Click;
-            // 
-            // CatalogButton
-            // 
-            CatalogButton.BackColor = Color.White;
-            CatalogButton.FlatAppearance.BorderSize = 0;
-            CatalogButton.FlatStyle = FlatStyle.Flat;
-            CatalogButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CatalogButton.ForeColor = SystemColors.ActiveCaptionText;
-            CatalogButton.IconChar = FontAwesome.Sharp.IconChar.ListDots;
-            CatalogButton.IconColor = Color.Black;
-            CatalogButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            CatalogButton.IconSize = 32;
-            CatalogButton.ImageAlign = ContentAlignment.MiddleLeft;
-            CatalogButton.Location = new Point(1, 3);
-            CatalogButton.Margin = new Padding(1, 3, 1, 3);
-            CatalogButton.Name = "CatalogButton";
-            CatalogButton.Size = new Size(293, 41);
-            CatalogButton.TabIndex = 9;
-            CatalogButton.Text = "Catalogo";
-            CatalogButton.UseVisualStyleBackColor = false;
-            CatalogButton.Click += CatalogButton_Click;
-            // 
             // exitSesionButton
             // 
             exitSesionButton.BackColor = Color.White;
@@ -317,26 +337,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            // 
-            // clientsButton
-            // 
-            clientsButton.BackColor = Color.White;
-            clientsButton.FlatAppearance.BorderSize = 0;
-            clientsButton.FlatStyle = FlatStyle.Flat;
-            clientsButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            clientsButton.ForeColor = SystemColors.ActiveCaptionText;
-            clientsButton.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            clientsButton.IconColor = Color.Black;
-            clientsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            clientsButton.IconSize = 32;
-            clientsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            clientsButton.Location = new Point(1, 97);
-            clientsButton.Margin = new Padding(1, 3, 1, 3);
-            clientsButton.Name = "clientsButton";
-            clientsButton.Size = new Size(276, 41);
-            clientsButton.TabIndex = 16;
-            clientsButton.Text = "clientes";
-            clientsButton.UseVisualStyleBackColor = false;
             // 
             // DashboardForm
             // 

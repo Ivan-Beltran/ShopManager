@@ -16,7 +16,8 @@ namespace PresentationLayer.Forms
         public DataTable ShoppingKartTable;
         public List<Products> _productsAdded;
         private ISalesServices _salesServices;
-        
+        decimal totalPricePurchase = 0;
+
         public ShoppinKart(List<Products> productsAdded,ISalesServices salesServices)
         {
             _productsAdded = productsAdded;
@@ -54,7 +55,7 @@ namespace PresentationLayer.Forms
 
             shoppingKartDataGridView.DataSource = ShoppingKartTable;
 
-            decimal totalPricePurchase = 0;
+            
 
             foreach (Products product in _productsAdded)
             {
@@ -107,7 +108,7 @@ namespace PresentationLayer.Forms
 
         private void makePurchaseButton_Click(object sender, EventArgs e)
         {
-            RegisterClients registerClients= new RegisterClients(_salesServices ,_productsAdded);
+            RegisterClients registerClients= new RegisterClients(_salesServices ,_productsAdded,totalPricePurchase);
             registerClients.FormClosed += (s, arg) =>
             {
                 _productsAdded.Clear();

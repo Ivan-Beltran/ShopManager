@@ -184,7 +184,7 @@ namespace PresentationLayer.Forms
                         ProductModel = productModeltextBox.Text,
                         ProductVersion = productVersionTextBox.Text,
                         ProductColor = productColorTextBox.Text,
-                        ProductPrice = Convert.ToInt32(productPriceTextBox.Text),
+                        ProductPrice = Convert.ToDecimal(productPriceTextBox.Text),
                         ImageUrl = imgPath
                     };
 
