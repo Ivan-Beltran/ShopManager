@@ -48,8 +48,8 @@ namespace PresentationLayer.Forms
             _inventoryServies = inventoryServices;
             _suppliersServices = suppliersServices;
             _purchaseOrderServices = purchaseOrders;
-            _productsService= productsService;
-            _salesServices= salesServices;
+            _productsService = productsService;
+            _salesServices = salesServices;
             employeeNameLabel.Text = _employeeSesion.Names;
             this.PrincipalPanel.Resize += (s, e) => AdjustChildFormSize();
             Permissions();
@@ -128,6 +128,8 @@ namespace PresentationLayer.Forms
                 suppliersButton.Visible = false;
                 salesReportButton.Enabled = false;
                 salesReportButton.Visible = false;
+                clientsButton.Enabled = false;
+                clientsButton.Visible = false;
             }
         }
 
@@ -183,7 +185,7 @@ namespace PresentationLayer.Forms
 
         private void CatalogButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new CatalogForm(_productsService,_salesServices));
+            openChildForm(new CatalogForm(_productsService, _salesServices));
             ChangeButtonColor(CatalogButton);
 
         }
@@ -192,6 +194,11 @@ namespace PresentationLayer.Forms
         {
             openChildForm(new SalesreportForm(_salesServices));
             ChangeButtonColor(salesReportButton);
+        }
+
+        private void clientsButton_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ViewCustomers());
         }
     }
 }

@@ -109,7 +109,13 @@ namespace PresentationLayer.Forms
                             _productsServices,
                             _salesServices);
 
-                        dashboardForm.FormClosed += (s, arg) => this.Show();
+                        dashboardForm.FormClosed += (s, arg) =>
+                        {
+                            
+                            this.Show();
+                            UserTextBox.Text = "";
+                            PasswordTextBox.Text = "";
+                        };
                         dashboardForm.Show();
                     }
                     else
