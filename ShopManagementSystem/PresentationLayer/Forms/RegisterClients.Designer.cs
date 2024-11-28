@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             nameLabel = new Label();
             lastNameLabel = new Label();
             emailLabel = new Label();
@@ -39,16 +40,18 @@
             duiLabel = new Label();
             duiTextBox = new TextBox();
             finishPurchaseButton = new FontAwesome.Sharp.IconButton();
+            validationsErrorProvider = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)validationsErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            nameLabel.Location = new Point(170, 114);
+            nameLabel.Location = new Point(149, 86);
             nameLabel.Margin = new Padding(2, 0, 2, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(161, 46);
+            nameLabel.Size = new Size(130, 37);
             nameLabel.TabIndex = 0;
             nameLabel.Text = "Nombre:";
             // 
@@ -56,10 +59,10 @@
             // 
             lastNameLabel.AutoSize = true;
             lastNameLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lastNameLabel.Location = new Point(154, 270);
+            lastNameLabel.Location = new Point(135, 202);
             lastNameLabel.Margin = new Padding(2, 0, 2, 0);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new Size(179, 46);
+            lastNameLabel.Size = new Size(145, 37);
             lastNameLabel.TabIndex = 1;
             lastNameLabel.Text = "Apellidos:";
             // 
@@ -67,10 +70,10 @@
             // 
             emailLabel.AutoSize = true;
             emailLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            emailLabel.Location = new Point(833, 111);
+            emailLabel.Location = new Point(729, 83);
             emailLabel.Margin = new Padding(2, 0, 2, 0);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(116, 46);
+            emailLabel.Size = new Size(94, 37);
             emailLabel.TabIndex = 2;
             emailLabel.Text = "Email:";
             // 
@@ -78,62 +81,62 @@
             // 
             phoneLabel.AutoSize = true;
             phoneLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            phoneLabel.Location = new Point(135, 443);
+            phoneLabel.Location = new Point(118, 332);
             phoneLabel.Margin = new Padding(2, 0, 2, 0);
             phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new Size(326, 46);
+            phoneLabel.Size = new Size(262, 37);
             phoneLabel.TabIndex = 3;
             phoneLabel.Text = "Numero de celular:";
             // 
             // nameTextBox
             // 
-            nameTextBox.Location = new Point(336, 130);
+            nameTextBox.Location = new Point(294, 98);
             nameTextBox.Margin = new Padding(2);
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(257, 27);
+            nameTextBox.Size = new Size(225, 23);
             nameTextBox.TabIndex = 5;
             // 
             // lastNameTextBox
             // 
-            lastNameTextBox.Location = new Point(336, 286);
+            lastNameTextBox.Location = new Point(294, 214);
             lastNameTextBox.Margin = new Padding(2);
             lastNameTextBox.Name = "lastNameTextBox";
-            lastNameTextBox.Size = new Size(257, 27);
+            lastNameTextBox.Size = new Size(225, 23);
             lastNameTextBox.TabIndex = 6;
             // 
             // phoneTextBox
             // 
-            phoneTextBox.Location = new Point(448, 459);
+            phoneTextBox.Location = new Point(392, 344);
             phoneTextBox.Margin = new Padding(2);
             phoneTextBox.Name = "phoneTextBox";
-            phoneTextBox.Size = new Size(257, 27);
+            phoneTextBox.Size = new Size(225, 23);
             phoneTextBox.TabIndex = 7;
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(946, 127);
+            emailTextBox.Location = new Point(828, 95);
             emailTextBox.Margin = new Padding(2);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(257, 27);
+            emailTextBox.Size = new Size(225, 23);
             emailTextBox.TabIndex = 8;
             // 
             // duiLabel
             // 
             duiLabel.AutoSize = true;
             duiLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            duiLabel.Location = new Point(833, 270);
+            duiLabel.Location = new Point(729, 202);
             duiLabel.Margin = new Padding(2, 0, 2, 0);
             duiLabel.Name = "duiLabel";
-            duiLabel.Size = new Size(85, 46);
+            duiLabel.Size = new Size(68, 37);
             duiLabel.TabIndex = 9;
             duiLabel.Text = "Dui:";
             // 
             // duiTextBox
             // 
-            duiTextBox.Location = new Point(929, 286);
+            duiTextBox.Location = new Point(813, 214);
             duiTextBox.Margin = new Padding(2);
             duiTextBox.Name = "duiTextBox";
-            duiTextBox.Size = new Size(257, 27);
+            duiTextBox.Size = new Size(225, 23);
             duiTextBox.TabIndex = 10;
             // 
             // finishPurchaseButton
@@ -146,20 +149,25 @@
             finishPurchaseButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             finishPurchaseButton.IconSize = 32;
             finishPurchaseButton.ImageAlign = ContentAlignment.MiddleLeft;
-            finishPurchaseButton.Location = new Point(911, 459);
-            finishPurchaseButton.Margin = new Padding(3, 4, 3, 4);
+            finishPurchaseButton.Location = new Point(797, 344);
             finishPurchaseButton.Name = "finishPurchaseButton";
-            finishPurchaseButton.Size = new Size(353, 84);
+            finishPurchaseButton.Size = new Size(309, 63);
             finishPurchaseButton.TabIndex = 11;
             finishPurchaseButton.Text = "finalizar compra";
             finishPurchaseButton.UseVisualStyleBackColor = false;
             finishPurchaseButton.Click += finishPurchaseButton_Click;
             // 
+            // validationsErrorProvider
+            // 
+            validationsErrorProvider.BlinkRate = 5;
+            validationsErrorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            validationsErrorProvider.ContainerControl = this;
+            // 
             // RegisterClients
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1384, 593);
+            ClientSize = new Size(1199, 445);
             Controls.Add(finishPurchaseButton);
             Controls.Add(duiTextBox);
             Controls.Add(duiLabel);
@@ -174,6 +182,7 @@
             Margin = new Padding(2);
             Name = "RegisterClients";
             Text = "RegisterClients";
+            ((System.ComponentModel.ISupportInitialize)validationsErrorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -191,5 +200,6 @@
         private Label duiLabel;
         private TextBox duiTextBox;
         private FontAwesome.Sharp.IconButton finishPurchaseButton;
+        private ErrorProvider validationsErrorProvider;
     }
 }
