@@ -30,6 +30,7 @@ namespace DataAccessLayer.Repositories.ProductsRepo
                                 	ProductVersion,
                                 	ProductColor,
                                 	ProductPrice,
+                                    ProductAmount,
 									ImageUrl
                                 FROM Products
                                 WHERE Availability=1";

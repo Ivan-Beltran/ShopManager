@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CatalogForm));
             searchProductgroupBox = new GroupBox();
             productCountLabel = new Label();
-            label1 = new Label();
             searchButton = new FontAwesome.Sharp.IconButton();
             Searchlabel = new Label();
             searchTextBox = new TextBox();
@@ -45,7 +44,6 @@
             // 
             searchProductgroupBox.BackColor = Color.Teal;
             searchProductgroupBox.Controls.Add(productCountLabel);
-            searchProductgroupBox.Controls.Add(label1);
             searchProductgroupBox.Controls.Add(searchButton);
             searchProductgroupBox.Controls.Add(Searchlabel);
             searchProductgroupBox.Controls.Add(searchTextBox);
@@ -69,15 +67,6 @@
             productCountLabel.TabIndex = 12;
             productCountLabel.Text = "0";
             productCountLabel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(71, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(57, 20);
-            label1.TabIndex = 0;
-            label1.Text = "ClickZY";
             // 
             // searchButton
             // 
@@ -166,7 +155,6 @@
         private PictureBox shoppingcart;
         private FlowLayoutPanel productsFlowLayoutPanel;
         private FontAwesome.Sharp.IconButton searchButton;
-        private Label label1;
         private Label productCountLabel;
     }
 }

@@ -25,6 +25,7 @@ namespace PresentationLayer.Controls
             versionLabel.Text = _Product.ProductVersion;
             colorLabel.Text = _Product.ProductColor;
             priceLabel.Text = _Product.ProductPrice.ToString("C");
+            enableQuanatityLabel.Text= _Product.ProductAmount.ToString();
 
             string imageRelativePath = _Product.ImageUrl;
             string projectBasePath = AppDomain.CurrentDomain.BaseDirectory;
@@ -53,9 +54,18 @@ namespace PresentationLayer.Controls
         {
             if(quantitynumericUpDown.Value != 0)
             {
-                _Product.ProductAmount = Convert.ToInt32( quantitynumericUpDown.Value);
-                MessageBox.Show($"compra agregada : { _Product.ProductBrand}  {_Product.ProductModel} ","notificacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                ProductAddedToCart?.Invoke(this, _Product);
+                if (quantitynumericUpDown.Value > _Product.ProductAmount)
+                {
+                    MessageBox.Show("existencias insuficientes", "error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+
+                    _Product.ProductAmount = Convert.ToInt32( quantitynumericUpDown.Value);
+
+                    MessageBox.Show($"compra agregada : { _Product.ProductBrand}  {_Product.ProductModel} ","notificacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    ProductAddedToCart?.Invoke(this, _Product);
+                }
 
             }
 

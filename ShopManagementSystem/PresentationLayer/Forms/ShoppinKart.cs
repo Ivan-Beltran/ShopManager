@@ -8,16 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CommonLayer.Entities;
-
+using BussinessLayer.Services.ServicesForSales;
 namespace PresentationLayer.Forms
 {
     public partial class ShoppinKart : Form
     {
         public DataTable ShoppingKartTable;
-        private List<Products> _productsAdded;
-        public ShoppinKart(List<Products> productsAdded)
+        public List<Products> _productsAdded;
+        private ISalesServices _salesServices;
+        
+        public ShoppinKart(List<Products> productsAdded,ISalesServices salesServices)
         {
             _productsAdded = productsAdded;
+            _salesServices = salesServices;
             InitializeComponent();
             LoadShoppingKart();
             shoppingKartDataGridView.Columns["Precio"].DefaultCellStyle.Format = "C";
@@ -34,7 +37,7 @@ namespace PresentationLayer.Forms
             ShoppingKartTable.Columns.Add("Cantidad a comprar", typeof(int));
             ShoppingKartTable.Columns.Add("Precio", typeof(decimal)); // Tipo decimal para manejo de precios
 
-            // Llenar la tabla con los datos de la lista de productos
+     
             foreach (Products product in _productsAdded)
             {
                 ShoppingKartTable.Rows.Add(
@@ -53,9 +56,9 @@ namespace PresentationLayer.Forms
 
             decimal totalPricePurchase = 0;
 
-            foreach(Products product in _productsAdded)
+            foreach (Products product in _productsAdded)
             {
-                decimal totalPriceProducts= product.ProductAmount * product.ProductPrice;
+                decimal totalPriceProducts = product.ProductAmount * product.ProductPrice;
 
                 totalPricePurchase += totalPriceProducts;
             }
@@ -80,6 +83,20 @@ namespace PresentationLayer.Forms
                 {
 
                     ShoppingKartTable.Rows[rowIndex].Delete();
+                    _productsAdded.RemoveAt(rowIndex);
+
+                    decimal totalPricePurchase = 0;
+
+                    foreach (Products product in _productsAdded)
+                    {
+                        decimal totalPriceProducts = product.ProductAmount * product.ProductPrice;
+
+                        totalPricePurchase += totalPriceProducts;
+                    }
+
+                    totalLabel.Text = $"$: {totalPricePurchase}";
+
+ 
                 }
             }
             else
@@ -90,7 +107,21 @@ namespace PresentationLayer.Forms
 
         private void makePurchaseButton_Click(object sender, EventArgs e)
         {
+            RegisterClients registerClients= new RegisterClients(_salesServices ,_productsAdded);
+            registerClients.FormClosed += (s, arg) =>
+            {
+                _productsAdded.Clear();
+                this.Close();
 
+            };
+            registerClients.ShowDialog();
+
+            
+        }
+
+        private void ShoppinKart_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string productList = _productsAdded.Count.ToString();
         }
     }
 }

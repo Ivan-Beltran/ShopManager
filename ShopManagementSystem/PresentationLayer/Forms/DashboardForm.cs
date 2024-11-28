@@ -15,6 +15,7 @@ using BussinessLayer.Services.ServicesForInventory;
 using BussinessLayer.Services.ServicesForSuppliers;
 using BussinessLayer.Services.ServicersForPurchaseOrders;
 using BussinessLayer.Services.ServicesForProducts;
+using BussinessLayer.Services.ServicesForSales;
 
 namespace PresentationLayer.Forms
 {
@@ -27,6 +28,8 @@ namespace PresentationLayer.Forms
         private readonly ISuppliersServices _suppliersServices;
         private IPurchaseOrdersServices _purchaseOrderServices;
         private IProductsService _productsService;
+        private ISalesServices _salesServices;
+
         private IconButton lastButton;
 
 
@@ -35,7 +38,8 @@ namespace PresentationLayer.Forms
             IInventoryService inventoryServices,
             ISuppliersServices suppliersServices,
             IPurchaseOrdersServices purchaseOrders,
-            IProductsService productsService)
+            IProductsService productsService,
+            ISalesServices salesServices)
         {
             InitializeComponent();
 
@@ -45,6 +49,7 @@ namespace PresentationLayer.Forms
             _suppliersServices = suppliersServices;
             _purchaseOrderServices = purchaseOrders;
             _productsService= productsService;
+            _salesServices= salesServices;
             employeeNameLabel.Text = _employeeSesion.Names;
             this.PrincipalPanel.Resize += (s, e) => AdjustChildFormSize();
             Permissions();
@@ -158,14 +163,14 @@ namespace PresentationLayer.Forms
 
         private void CatalogButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new CatalogForm(_productsService));
+            openChildForm(new CatalogForm(_productsService,_salesServices));
             ChangeButtonColor(CatalogButton);
 
         }
 
         private void salesReportButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new SalesreportForm());
+            openChildForm(new SalesreportForm(_salesServices));
             ChangeButtonColor(salesReportButton);
         }
     }

@@ -15,6 +15,8 @@ using DataAccessLayer.Repositories.PurchaseOrdersRepo;
 using BussinessLayer.Services.ServicersForPurchaseOrders;
 using DataAccessLayer.Repositories.ProductsRepo;
 using BussinessLayer.Services.ServicesForProducts;
+using DataAccessLayer.Repositories.SalesRepo;
+using BussinessLayer.Services.ServicesForSales;
 
 namespace PresentationLayer
 {
@@ -53,6 +55,7 @@ namespace PresentationLayer
                     services.AddTransient<ShoppingListForm>();
                     services.AddTransient<CatalogForm>();
                     services.AddTransient<RegisterClients>();
+                    services.AddTransient<SalesreportForm>();
 
                     //Repositories
                     services.AddScoped<ILoginRepository,LoginRepository>();
@@ -61,6 +64,8 @@ namespace PresentationLayer
                     services.AddScoped<ISuppliersRepository, SuppliersRepository>();
                     services.AddScoped<IPurchaseOrderRepository, PurchaseOrderRepository>();
                     services.AddScoped<IProductsRepository, ProductsRepository>();
+                    services.AddScoped<ISalesRepository, SalesRepository>();
+
                     //Services
                     services.AddScoped<ILoginService,LoginService>();
                     services.AddScoped<IEmployeeService,EmployeesServices>();
@@ -68,6 +73,7 @@ namespace PresentationLayer
                     services.AddScoped<ISuppliersServices, SuppliersServices>();
                     services.AddScoped<IPurchaseOrdersServices, PurchaseOrdersServices>();
                     services.AddScoped<IProductsService, ProductsService>();
+                    services.AddScoped<ISalesServices, SalesServices>();
 
 
                     //Connection

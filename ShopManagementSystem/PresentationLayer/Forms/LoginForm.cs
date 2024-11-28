@@ -16,6 +16,7 @@ using BussinessLayer.Services.ServicesForInventory;
 using BussinessLayer.Services.ServicesForSuppliers;
 using BussinessLayer.Services.ServicersForPurchaseOrders;
 using BussinessLayer.Services.ServicesForProducts;
+using BussinessLayer.Services.ServicesForSales;
 
 namespace PresentationLayer.Forms
 {
@@ -27,6 +28,7 @@ namespace PresentationLayer.Forms
         private ISuppliersServices _suppliersServices;
         private IPurchaseOrdersServices _purchaseOrderServices;
         private IProductsService _productsServices;
+        private ISalesServices _salesServices;
 
 
         public LoginForm(ILoginService loginServices,
@@ -34,7 +36,8 @@ namespace PresentationLayer.Forms
             IInventoryService inventoryServices,
             ISuppliersServices suppliersServices,
             IPurchaseOrdersServices purchaseOrderServices,
-            IProductsService productsService)
+            IProductsService productsService,
+            ISalesServices salesServices)
         {
             InitializeComponent();
             _loginServices = loginServices;
@@ -43,9 +46,10 @@ namespace PresentationLayer.Forms
             _suppliersServices = suppliersServices;
             _purchaseOrderServices = purchaseOrderServices;
             _productsServices = productsService;
+            _salesServices = salesServices;
             PasswordTextBox.PasswordChar = '*';
             ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
-            
+            _salesServices = salesServices;
         }
 
         private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -102,7 +106,8 @@ namespace PresentationLayer.Forms
                             _inventoryServices,
                             _suppliersServices,
                             _purchaseOrderServices,
-                            _productsServices);
+                            _productsServices,
+                            _salesServices);
                         dashboardForm.Show();
                     }
                     else

@@ -77,7 +77,7 @@ namespace DataAccessLayer.Repositories.PurchaseOrdersRepo
             OUTPUT INSERTED.PurchaseOrderId
             VALUES (@SupplierId, @Details, @PurchaseDate)";
 
-                // Retorna el ID de la orden recién creada
+              
                 return connection.QuerySingle<int>(query, purchaseOrder);
             }
         }

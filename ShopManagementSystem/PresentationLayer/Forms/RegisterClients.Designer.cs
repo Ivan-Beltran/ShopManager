@@ -38,17 +38,17 @@
             emailTextBox = new TextBox();
             duiLabel = new Label();
             duiTextBox = new TextBox();
-            paymentMethodComboBox = new ComboBox();
-            paymentMethodLabel = new Label();
+            finishPurchaseButton = new FontAwesome.Sharp.IconButton();
             SuspendLayout();
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            nameLabel.Location = new Point(212, 142);
+            nameLabel.Location = new Point(170, 114);
+            nameLabel.Margin = new Padding(2, 0, 2, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(190, 54);
+            nameLabel.Size = new Size(161, 46);
             nameLabel.TabIndex = 0;
             nameLabel.Text = "Nombre:";
             // 
@@ -56,9 +56,10 @@
             // 
             lastNameLabel.AutoSize = true;
             lastNameLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lastNameLabel.Location = new Point(193, 337);
+            lastNameLabel.Location = new Point(154, 270);
+            lastNameLabel.Margin = new Padding(2, 0, 2, 0);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new Size(209, 54);
+            lastNameLabel.Size = new Size(179, 46);
             lastNameLabel.TabIndex = 1;
             lastNameLabel.Text = "Apellidos:";
             // 
@@ -66,9 +67,10 @@
             // 
             emailLabel.AutoSize = true;
             emailLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            emailLabel.Location = new Point(1041, 139);
+            emailLabel.Location = new Point(833, 111);
+            emailLabel.Margin = new Padding(2, 0, 2, 0);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(136, 54);
+            emailLabel.Size = new Size(116, 46);
             emailLabel.TabIndex = 2;
             emailLabel.Text = "Email:";
             // 
@@ -76,82 +78,89 @@
             // 
             phoneLabel.AutoSize = true;
             phoneLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            phoneLabel.Location = new Point(169, 554);
+            phoneLabel.Location = new Point(135, 443);
+            phoneLabel.Margin = new Padding(2, 0, 2, 0);
             phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new Size(385, 54);
+            phoneLabel.Size = new Size(326, 46);
             phoneLabel.TabIndex = 3;
             phoneLabel.Text = "Numero de celular:";
             // 
             // nameTextBox
             // 
-            nameTextBox.Location = new Point(420, 162);
+            nameTextBox.Location = new Point(336, 130);
+            nameTextBox.Margin = new Padding(2);
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(320, 31);
+            nameTextBox.Size = new Size(257, 27);
             nameTextBox.TabIndex = 5;
             // 
             // lastNameTextBox
             // 
-            lastNameTextBox.Location = new Point(420, 357);
+            lastNameTextBox.Location = new Point(336, 286);
+            lastNameTextBox.Margin = new Padding(2);
             lastNameTextBox.Name = "lastNameTextBox";
-            lastNameTextBox.Size = new Size(320, 31);
+            lastNameTextBox.Size = new Size(257, 27);
             lastNameTextBox.TabIndex = 6;
             // 
             // phoneTextBox
             // 
-            phoneTextBox.Location = new Point(560, 574);
+            phoneTextBox.Location = new Point(448, 459);
+            phoneTextBox.Margin = new Padding(2);
             phoneTextBox.Name = "phoneTextBox";
-            phoneTextBox.Size = new Size(320, 31);
+            phoneTextBox.Size = new Size(257, 27);
             phoneTextBox.TabIndex = 7;
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(1183, 159);
+            emailTextBox.Location = new Point(946, 127);
+            emailTextBox.Margin = new Padding(2);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(320, 31);
+            emailTextBox.Size = new Size(257, 27);
             emailTextBox.TabIndex = 8;
             // 
             // duiLabel
             // 
             duiLabel.AutoSize = true;
             duiLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            duiLabel.Location = new Point(1041, 337);
+            duiLabel.Location = new Point(833, 270);
+            duiLabel.Margin = new Padding(2, 0, 2, 0);
             duiLabel.Name = "duiLabel";
-            duiLabel.Size = new Size(99, 54);
+            duiLabel.Size = new Size(85, 46);
             duiLabel.TabIndex = 9;
             duiLabel.Text = "Dui:";
             // 
             // duiTextBox
             // 
-            duiTextBox.Location = new Point(1161, 357);
+            duiTextBox.Location = new Point(929, 286);
+            duiTextBox.Margin = new Padding(2);
             duiTextBox.Name = "duiTextBox";
-            duiTextBox.Size = new Size(320, 31);
+            duiTextBox.Size = new Size(257, 27);
             duiTextBox.TabIndex = 10;
             // 
-            // paymentMethodComboBox
+            // finishPurchaseButton
             // 
-            paymentMethodComboBox.FormattingEnabled = true;
-            paymentMethodComboBox.Location = new Point(1313, 575);
-            paymentMethodComboBox.Name = "paymentMethodComboBox";
-            paymentMethodComboBox.Size = new Size(331, 33);
-            paymentMethodComboBox.TabIndex = 11;
-            // 
-            // paymentMethodLabel
-            // 
-            paymentMethodLabel.AutoSize = true;
-            paymentMethodLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            paymentMethodLabel.Location = new Point(977, 555);
-            paymentMethodLabel.Name = "paymentMethodLabel";
-            paymentMethodLabel.Size = new Size(348, 54);
-            paymentMethodLabel.TabIndex = 12;
-            paymentMethodLabel.Text = "Metodo de pago:";
+            finishPurchaseButton.BackColor = Color.FromArgb(0, 166, 225);
+            finishPurchaseButton.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            finishPurchaseButton.ForeColor = Color.White;
+            finishPurchaseButton.IconChar = FontAwesome.Sharp.IconChar.Save;
+            finishPurchaseButton.IconColor = Color.White;
+            finishPurchaseButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            finishPurchaseButton.IconSize = 32;
+            finishPurchaseButton.ImageAlign = ContentAlignment.MiddleLeft;
+            finishPurchaseButton.Location = new Point(911, 459);
+            finishPurchaseButton.Margin = new Padding(3, 4, 3, 4);
+            finishPurchaseButton.Name = "finishPurchaseButton";
+            finishPurchaseButton.Size = new Size(353, 84);
+            finishPurchaseButton.TabIndex = 11;
+            finishPurchaseButton.Text = "finalizar compra";
+            finishPurchaseButton.UseVisualStyleBackColor = false;
+            finishPurchaseButton.Click += finishPurchaseButton_Click;
             // 
             // RegisterClients
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1730, 741);
-            Controls.Add(paymentMethodLabel);
-            Controls.Add(paymentMethodComboBox);
+            ClientSize = new Size(1384, 593);
+            Controls.Add(finishPurchaseButton);
             Controls.Add(duiTextBox);
             Controls.Add(duiLabel);
             Controls.Add(emailTextBox);
@@ -162,6 +171,7 @@
             Controls.Add(emailLabel);
             Controls.Add(lastNameLabel);
             Controls.Add(nameLabel);
+            Margin = new Padding(2);
             Name = "RegisterClients";
             Text = "RegisterClients";
             ResumeLayout(false);
@@ -180,7 +190,6 @@
         private TextBox emailTextBox;
         private Label duiLabel;
         private TextBox duiTextBox;
-        private ComboBox paymentMethodComboBox;
-        private Label paymentMethodLabel;
+        private FontAwesome.Sharp.IconButton finishPurchaseButton;
     }
 }

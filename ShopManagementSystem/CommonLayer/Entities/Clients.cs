@@ -13,7 +13,7 @@ namespace CommonLayer.Entities
         public string ClientLastName {  get; set; }
         public string ClientEmail{ get; set; }
         public string ClientDUI {  get; set; }
-        public string ClientPhone { get; set; }
+        public string ClientTelephone { get; set; }
 
     }
 }

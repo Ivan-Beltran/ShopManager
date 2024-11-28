@@ -140,6 +140,7 @@
             Controls.Add(shoppingKartDataGridView);
             Name = "ShoppinKart";
             Text = "ShoppinKart";
+            FormClosing += ShoppinKart_FormClosing;
             ((System.ComponentModel.ISupportInitialize)shoppingKartDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
