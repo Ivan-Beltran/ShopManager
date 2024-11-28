@@ -17,7 +17,7 @@ namespace DataAccessLayer.dbConnect
 
 
             
-            _connectionString = "Data Source=.;Initial Catalog=StoreDB;Integrated Security=True;Encrypt=False";
+            _connectionString = "Data Source=THVST24\\SQLEXPRESS01;Initial Catalog=StoreDB;Integrated Security=True;Encrypt=False";
 
         }
             public IDbConnection GetConnection()

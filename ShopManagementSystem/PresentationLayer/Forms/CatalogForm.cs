@@ -39,8 +39,11 @@ namespace PresentationLayer.Forms
             productCountLabel.Visible = false;
             LoadProductList();
             LoadProductGrid();
+<<<<<<< HEAD
             LoadProductsOnShoppingKart();
 
+=======
+>>>>>>> ae7a16b970b3978c1082e4de21a22b8087faec5d
         }
 
         public void LoadProductList()

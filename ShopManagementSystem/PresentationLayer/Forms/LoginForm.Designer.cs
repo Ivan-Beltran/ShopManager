@@ -63,9 +63,10 @@
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(839, 191);
+            pictureBox1.Location = new Point(734, 143);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(376, 367);
+            pictureBox1.Size = new Size(329, 275);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
@@ -85,9 +86,10 @@
             panel1.Controls.Add(PasswordTextBox);
             panel1.Dock = DockStyle.Fill;
             panel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(3, 2);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(679, 743);
+            panel1.Size = new Size(593, 558);
             panel1.TabIndex = 10;
             // 
             // tittleLabel
@@ -95,9 +97,9 @@
             tittleLabel.AutoSize = true;
             tittleLabel.Font = new Font("Corbel", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tittleLabel.ForeColor = Color.White;
-            tittleLabel.Location = new Point(32, 188);
+            tittleLabel.Location = new Point(28, 141);
             tittleLabel.Name = "tittleLabel";
-            tittleLabel.Size = new Size(553, 97);
+            tittleLabel.Size = new Size(444, 78);
             tittleLabel.TabIndex = 20;
             tittleLabel.Text = "BIENVENIDOS";
             // 
@@ -107,10 +109,9 @@
             ShowPasswordCheckBox.CheckAlign = ContentAlignment.MiddleRight;
             ShowPasswordCheckBox.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ShowPasswordCheckBox.ForeColor = Color.White;
-            ShowPasswordCheckBox.Location = new Point(123, 564);
-            ShowPasswordCheckBox.Margin = new Padding(3, 4, 3, 4);
+            ShowPasswordCheckBox.Location = new Point(108, 423);
             ShowPasswordCheckBox.Name = "ShowPasswordCheckBox";
-            ShowPasswordCheckBox.Size = new Size(202, 29);
+            ShowPasswordCheckBox.Size = new Size(166, 24);
             ShowPasswordCheckBox.TabIndex = 13;
             ShowPasswordCheckBox.Text = "Mostrar contraseña";
             ShowPasswordCheckBox.UseVisualStyleBackColor = true;
@@ -120,9 +121,9 @@
             PaswordLabel.AutoSize = true;
             PaswordLabel.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             PaswordLabel.ForeColor = Color.White;
-            PaswordLabel.Location = new Point(123, 487);
+            PaswordLabel.Location = new Point(108, 365);
             PaswordLabel.Name = "PaswordLabel";
-            PaswordLabel.Size = new Size(165, 31);
+            PaswordLabel.Size = new Size(133, 25);
             PaswordLabel.TabIndex = 11;
             PaswordLabel.Text = "Contraseña";
             // 
@@ -131,9 +132,9 @@
             UserLabel.AutoSize = true;
             UserLabel.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             UserLabel.ForeColor = Color.White;
-            UserLabel.Location = new Point(123, 371);
+            UserLabel.Location = new Point(108, 278);
             UserLabel.Name = "UserLabel";
-            UserLabel.Size = new Size(115, 31);
+            UserLabel.Size = new Size(93, 25);
             UserLabel.TabIndex = 10;
             UserLabel.Text = "Usuario";
             // 
@@ -143,10 +144,9 @@
             UserIconpictureBox.ErrorImage = null;
             UserIconpictureBox.Image = (Image)resources.GetObject("UserIconpictureBox.Image");
             UserIconpictureBox.InitialImage = null;
-            UserIconpictureBox.Location = new Point(56, 405);
-            UserIconpictureBox.Margin = new Padding(3, 4, 3, 4);
+            UserIconpictureBox.Location = new Point(49, 304);
             UserIconpictureBox.Name = "UserIconpictureBox";
-            UserIconpictureBox.Size = new Size(39, 39);
+            UserIconpictureBox.Size = new Size(34, 29);
             UserIconpictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             UserIconpictureBox.TabIndex = 7;
             UserIconpictureBox.TabStop = false;
@@ -155,10 +155,9 @@
             // 
             PasworrdIconPictureBox3.BackColor = Color.Transparent;
             PasworrdIconPictureBox3.Image = (Image)resources.GetObject("PasworrdIconPictureBox3.Image");
-            PasworrdIconPictureBox3.Location = new Point(56, 512);
-            PasworrdIconPictureBox3.Margin = new Padding(3, 4, 3, 4);
+            PasworrdIconPictureBox3.Location = new Point(49, 384);
             PasworrdIconPictureBox3.Name = "PasworrdIconPictureBox3";
-            PasworrdIconPictureBox3.Size = new Size(39, 39);
+            PasworrdIconPictureBox3.Size = new Size(34, 29);
             PasworrdIconPictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             PasworrdIconPictureBox3.TabIndex = 8;
             PasworrdIconPictureBox3.TabStop = false;
@@ -171,19 +170,22 @@
             Registredbutton.FlatStyle = FlatStyle.Flat;
             Registredbutton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Registredbutton.ForeColor = Color.White;
-            Registredbutton.Location = new Point(110, 659);
+            Registredbutton.Location = new Point(96, 494);
+            Registredbutton.Margin = new Padding(3, 2, 3, 2);
             Registredbutton.Name = "Registredbutton";
-            Registredbutton.Size = new Size(231, 55);
+            Registredbutton.Size = new Size(202, 41);
             Registredbutton.TabIndex = 5;
-            Registredbutton.Text = "Registarse";
+            Registredbutton.Text = "Ir a la tienda";
             Registredbutton.UseVisualStyleBackColor = false;
+            Registredbutton.Click += Registredbutton_Click;
             // 
             // UserTextBox
             // 
             UserTextBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            UserTextBox.Location = new Point(123, 405);
+            UserTextBox.Location = new Point(108, 304);
+            UserTextBox.Margin = new Padding(3, 2, 3, 2);
             UserTextBox.Name = "UserTextBox";
-            UserTextBox.Size = new Size(337, 30);
+            UserTextBox.Size = new Size(295, 26);
             UserTextBox.TabIndex = 2;
             // 
             // LoginButton
@@ -194,9 +196,10 @@
             LoginButton.FlatStyle = FlatStyle.Flat;
             LoginButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LoginButton.ForeColor = Color.White;
-            LoginButton.Location = new Point(421, 659);
+            LoginButton.Location = new Point(368, 494);
+            LoginButton.Margin = new Padding(3, 2, 3, 2);
             LoginButton.Name = "LoginButton";
-            LoginButton.Size = new Size(231, 55);
+            LoginButton.Size = new Size(202, 41);
             LoginButton.TabIndex = 4;
             LoginButton.Text = "Iniciar sesión";
             LoginButton.UseVisualStyleBackColor = false;
@@ -205,10 +208,11 @@
             // PasswordTextBox
             // 
             PasswordTextBox.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PasswordTextBox.Location = new Point(123, 521);
+            PasswordTextBox.Location = new Point(108, 391);
+            PasswordTextBox.Margin = new Padding(3, 2, 3, 2);
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.PasswordChar = '*';
-            PasswordTextBox.Size = new Size(337, 30);
+            PasswordTextBox.Size = new Size(295, 26);
             PasswordTextBox.TabIndex = 3;
             // 
             // tableLayoutPanel1
@@ -220,20 +224,22 @@
             tableLayoutPanel1.Controls.Add(pictureBox1, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1370, 749);
+            tableLayoutPanel1.Size = new Size(1199, 562);
             tableLayoutPanel1.TabIndex = 11;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.White;
-            ClientSize = new Size(1370, 749);
+            ClientSize = new Size(1199, 562);
             Controls.Add(tableLayoutPanel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "LoginForm";
             Text = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)validationsErrorProvider).EndInit();
