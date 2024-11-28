@@ -176,8 +176,9 @@ namespace PresentationLayer.Forms
 
         private void exitSesionButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
             ChangeButtonColor(exitSesionButton);
+            this.Close();
+
         }
 
         private void CatalogButton_Click(object sender, EventArgs e)

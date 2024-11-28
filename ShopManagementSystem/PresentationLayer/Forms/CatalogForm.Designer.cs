@@ -69,18 +69,8 @@
             productCountLabel.Text = "0";
             productCountLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-<<<<<<< HEAD
-=======
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(62, 7);
-            label1.Name = "label1";
-            label1.Size = new Size(47, 15);
-            label1.TabIndex = 0;
-            label1.Text = "ClickZY";
-            // 
->>>>>>> ae7a16b970b3978c1082e4de21a22b8087faec5d
+
+
             // searchButton
             // 
             searchButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);

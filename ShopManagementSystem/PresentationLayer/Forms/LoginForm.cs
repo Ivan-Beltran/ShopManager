@@ -49,11 +49,7 @@ namespace PresentationLayer.Forms
             _salesServices = salesServices;
             PasswordTextBox.PasswordChar = '*';
             ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
-<<<<<<< HEAD
-            _salesServices = salesServices;
-=======
 
->>>>>>> ae7a16b970b3978c1082e4de21a22b8087faec5d
         }
 
         private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -112,6 +108,8 @@ namespace PresentationLayer.Forms
                             _purchaseOrderServices,
                             _productsServices,
                             _salesServices);
+
+                        dashboardForm.FormClosed += (s, arg) => this.Show();
                         dashboardForm.Show();
                     }
                     else
@@ -164,7 +162,10 @@ namespace PresentationLayer.Forms
                 _inventoryServices,
                 _suppliersServices,
                 _purchaseOrderServices,
-                _productsServices);
+                _productsServices,
+                _salesServices);
+
+            dashboardForm.FormClosed += (s, arg) => this.Show();
             dashboardForm.Show();
         }
     }
