@@ -235,7 +235,7 @@
             EmployeesDataGridView.AllowUserToResizeRows = false;
             EmployeesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             EmployeesDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            EmployeesDataGridView.BackgroundColor = SystemColors.Control;
+            EmployeesDataGridView.BackgroundColor = Color.SkyBlue;
             EmployeesDataGridView.BorderStyle = BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;

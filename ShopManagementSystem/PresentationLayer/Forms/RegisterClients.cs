@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CommonLayer.Entities;
 using BussinessLayer.Services.ServicesForSales;
+using PresentationLayer.Validations;
+using FluentValidation.Results;
 
 namespace PresentationLayer.Forms
 {
@@ -37,6 +39,14 @@ namespace PresentationLayer.Forms
                     ClientDUI=duiTextBox.Text,
                     ClientTelephone=phoneTextBox.Text, 
                 };
+                RegisterClientsValidator loginValidator = new RegisterClientsValidator();
+                ValidationResult result = loginValidator.Validate(clientAdded);
+
+                if (!result.IsValid)
+                {
+                    DisplayValidationErrors(result);                   
+                    return;
+                }
 
                 int clientId=_salesServices.AddClient(clientAdded);
                 DateTime actualDay= DateTime.Now;
@@ -70,5 +80,33 @@ namespace PresentationLayer.Forms
                 MessageBox.Show(ex.Message);    
             }
         }
+    private void DisplayValidationErrors(ValidationResult result)
+    {
+        validationsErrorProvider.Clear();
+
+        foreach (var error in result.Errors)
+        {
+            switch (error.PropertyName)
+            {
+                    case nameof(Clients.ClientName):
+                        validationsErrorProvider.SetError(nameTextBox, error.ErrorMessage);
+                         break;
+                    case nameof(Clients.ClientLastName):
+                        validationsErrorProvider.SetError(lastNameTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Clients.ClientTelephone):
+                        validationsErrorProvider.SetError(phoneTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Clients.ClientEmail):
+                        validationsErrorProvider.SetError(emailTextBox, error.ErrorMessage);
+                        break;
+                    case nameof(Clients.ClientDUI):
+                        validationsErrorProvider.SetError(duiTextBox, error.ErrorMessage);
+                        break;
+            }
+        }
+
     }
 }
+
+    }
