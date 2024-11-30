@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryForm));
             inventoryDataGridView = new DataGridView();
             categoryGroupBox = new GroupBox();
@@ -85,6 +86,14 @@
             inventoryDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             inventoryDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             inventoryDataGridView.BackgroundColor = Color.Azure;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            inventoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             inventoryDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             inventoryDataGridView.Location = new Point(117, 332);
             inventoryDataGridView.MultiSelect = false;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             productTypeLabel = new Label();
             productBrandLabel = new Label();
             producModelLabel = new Label();
@@ -207,6 +208,14 @@
             productsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             productsDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             productsDataGridView.BackgroundColor = Color.Azure;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            productsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             productsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             productsDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             productsDataGridView.Location = new Point(53, 402);

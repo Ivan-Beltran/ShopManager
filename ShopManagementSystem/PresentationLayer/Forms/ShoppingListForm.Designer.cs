@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             productsDataGridView = new DataGridView();
             shoppingListDataGridView = new DataGridView();
             searchProductPanel = new Panel();
@@ -57,15 +59,22 @@
             productsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             productsDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             productsDataGridView.BackgroundColor = Color.Azure;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            productsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             productsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            productsDataGridView.Location = new Point(11, 112);
-            productsDataGridView.Margin = new Padding(3, 4, 3, 4);
+            productsDataGridView.Location = new Point(10, 84);
             productsDataGridView.MultiSelect = false;
             productsDataGridView.Name = "productsDataGridView";
             productsDataGridView.RowHeadersVisible = false;
             productsDataGridView.RowHeadersWidth = 51;
             productsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            productsDataGridView.Size = new Size(747, 309);
+            productsDataGridView.Size = new Size(654, 232);
             productsDataGridView.TabIndex = 25;
             // 
             // shoppingListDataGridView
@@ -77,15 +86,22 @@
             shoppingListDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             shoppingListDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             shoppingListDataGridView.BackgroundColor = Color.Azure;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            shoppingListDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             shoppingListDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            shoppingListDataGridView.Location = new Point(797, 112);
-            shoppingListDataGridView.Margin = new Padding(3, 4, 3, 4);
+            shoppingListDataGridView.Location = new Point(697, 84);
             shoppingListDataGridView.MultiSelect = false;
             shoppingListDataGridView.Name = "shoppingListDataGridView";
             shoppingListDataGridView.RowHeadersVisible = false;
             shoppingListDataGridView.RowHeadersWidth = 51;
             shoppingListDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            shoppingListDataGridView.Size = new Size(773, 309);
+            shoppingListDataGridView.Size = new Size(676, 232);
             shoppingListDataGridView.TabIndex = 26;
             // 
             // searchProductPanel
@@ -94,10 +110,9 @@
             searchProductPanel.Controls.Add(searchProductButton);
             searchProductPanel.Controls.Add(searchProductTextBox);
             searchProductPanel.Controls.Add(searchProductlLabel);
-            searchProductPanel.Location = new Point(11, 13);
-            searchProductPanel.Margin = new Padding(3, 4, 3, 4);
+            searchProductPanel.Location = new Point(10, 10);
             searchProductPanel.Name = "searchProductPanel";
-            searchProductPanel.Size = new Size(747, 73);
+            searchProductPanel.Size = new Size(654, 55);
             searchProductPanel.TabIndex = 27;
             // 
             // searchProductButton
@@ -111,9 +126,10 @@
             searchProductButton.IconColor = Color.White;
             searchProductButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             searchProductButton.IconSize = 30;
-            searchProductButton.Location = new Point(669, 21);
+            searchProductButton.Location = new Point(585, 16);
+            searchProductButton.Margin = new Padding(3, 2, 3, 2);
             searchProductButton.Name = "searchProductButton";
-            searchProductButton.Size = new Size(53, 36);
+            searchProductButton.Size = new Size(46, 27);
             searchProductButton.TabIndex = 11;
             searchProductButton.UseVisualStyleBackColor = false;
             searchProductButton.Click += searchProductButton_Click;
@@ -121,9 +137,10 @@
             // searchProductTextBox
             // 
             searchProductTextBox.BorderStyle = BorderStyle.FixedSingle;
-            searchProductTextBox.Location = new Point(192, 27);
+            searchProductTextBox.Location = new Point(168, 20);
+            searchProductTextBox.Margin = new Padding(3, 2, 3, 2);
             searchProductTextBox.Name = "searchProductTextBox";
-            searchProductTextBox.Size = new Size(452, 27);
+            searchProductTextBox.Size = new Size(396, 23);
             searchProductTextBox.TabIndex = 10;
             searchProductTextBox.TextChanged += searchProductTextBox_TextChanged;
             // 
@@ -133,9 +150,9 @@
             searchProductlLabel.BackColor = Color.FromArgb(224, 224, 224);
             searchProductlLabel.Font = new Font("Microsoft Sans Serif", 12.75F);
             searchProductlLabel.ForeColor = SystemColors.ActiveCaptionText;
-            searchProductlLabel.Location = new Point(13, 25);
+            searchProductlLabel.Location = new Point(11, 19);
             searchProductlLabel.Name = "searchProductlLabel";
-            searchProductlLabel.Size = new Size(170, 26);
+            searchProductlLabel.Size = new Size(133, 20);
             searchProductlLabel.TabIndex = 0;
             searchProductlLabel.Text = "Buscar producto";
             // 
@@ -143,17 +160,18 @@
             // 
             productQuantityLabel.AutoSize = true;
             productQuantityLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            productQuantityLabel.Location = new Point(43, 473);
+            productQuantityLabel.Location = new Point(38, 355);
             productQuantityLabel.Name = "productQuantityLabel";
-            productQuantityLabel.Size = new Size(101, 28);
+            productQuantityLabel.Size = new Size(83, 21);
             productQuantityLabel.TabIndex = 28;
             productQuantityLabel.Text = "Cantidad:";
             // 
             // productQuantityTextBox
             // 
-            productQuantityTextBox.Location = new Point(161, 477);
+            productQuantityTextBox.Location = new Point(141, 358);
+            productQuantityTextBox.Margin = new Padding(3, 2, 3, 2);
             productQuantityTextBox.Name = "productQuantityTextBox";
-            productQuantityTextBox.Size = new Size(146, 27);
+            productQuantityTextBox.Size = new Size(128, 23);
             productQuantityTextBox.TabIndex = 29;
             // 
             // addShoppingListButton
@@ -167,10 +185,10 @@
             addShoppingListButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addShoppingListButton.IconSize = 38;
             addShoppingListButton.ImageAlign = ContentAlignment.MiddleLeft;
-            addShoppingListButton.Location = new Point(368, 460);
+            addShoppingListButton.Location = new Point(322, 345);
             addShoppingListButton.Margin = new Padding(1);
             addShoppingListButton.Name = "addShoppingListButton";
-            addShoppingListButton.Size = new Size(251, 45);
+            addShoppingListButton.Size = new Size(220, 34);
             addShoppingListButton.TabIndex = 30;
             addShoppingListButton.Text = " Añadir a la lista";
             addShoppingListButton.UseVisualStyleBackColor = false;
@@ -180,9 +198,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F);
-            label2.Location = new Point(1134, 45);
+            label2.Location = new Point(992, 34);
             label2.Name = "label2";
-            label2.Size = new Size(70, 25);
+            label2.Size = new Size(54, 20);
             label2.TabIndex = 31;
             label2.Text = "Carrito";
             // 
@@ -197,10 +215,10 @@
             deleteShoppingListButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deleteShoppingListButton.IconSize = 30;
             deleteShoppingListButton.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteShoppingListButton.Location = new Point(856, 454);
+            deleteShoppingListButton.Location = new Point(749, 340);
             deleteShoppingListButton.Margin = new Padding(1);
             deleteShoppingListButton.Name = "deleteShoppingListButton";
-            deleteShoppingListButton.Size = new Size(266, 44);
+            deleteShoppingListButton.Size = new Size(233, 33);
             deleteShoppingListButton.TabIndex = 32;
             deleteShoppingListButton.Text = "Quitar de la lista";
             deleteShoppingListButton.UseVisualStyleBackColor = false;
@@ -217,10 +235,10 @@
             addPurchaseOrderButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addPurchaseOrderButton.IconSize = 38;
             addPurchaseOrderButton.ImageAlign = ContentAlignment.MiddleLeft;
-            addPurchaseOrderButton.Location = new Point(1229, 454);
+            addPurchaseOrderButton.Location = new Point(1075, 340);
             addPurchaseOrderButton.Margin = new Padding(1);
             addPurchaseOrderButton.Name = "addPurchaseOrderButton";
-            addPurchaseOrderButton.Size = new Size(243, 44);
+            addPurchaseOrderButton.Size = new Size(213, 33);
             addPurchaseOrderButton.TabIndex = 33;
             addPurchaseOrderButton.Text = " Realizar pedido";
             addPurchaseOrderButton.UseVisualStyleBackColor = false;
@@ -233,9 +251,9 @@
             // 
             // ShoppingListForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1608, 639);
+            ClientSize = new Size(1407, 479);
             Controls.Add(addPurchaseOrderButton);
             Controls.Add(deleteShoppingListButton);
             Controls.Add(label2);
@@ -245,6 +263,7 @@
             Controls.Add(searchProductPanel);
             Controls.Add(shoppingListDataGridView);
             Controls.Add(productsDataGridView);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ShoppingListForm";
             Text = "ShoppingListForm";
             FormClosing += ShoppingListForm_FormClosing;

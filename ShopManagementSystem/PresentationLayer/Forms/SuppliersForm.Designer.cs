@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             suppliersLabel = new Label();
             nameSupplierLabel = new Label();
             nameSupplierTextBox = new TextBox();
@@ -153,6 +154,14 @@
             SupplierDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             SupplierDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             SupplierDataGridView.BackgroundColor = Color.Azure;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            SupplierDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             SupplierDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             SupplierDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             SupplierDataGridView.Location = new Point(503, 157);
