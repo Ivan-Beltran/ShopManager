@@ -33,6 +33,8 @@ namespace PresentationLayer.Forms
         {
             productsDataGridView.DataSource = _inventoryServices.GetProductCreated();
             productsDataGridView.Columns[7].Visible = false;
+            productsDataGridView.Columns[0].Visible = false;
+            productsDataGridView.Columns["Precio"].DefaultCellStyle.Format = "C2";
         }
 
         public void LoadProductType()

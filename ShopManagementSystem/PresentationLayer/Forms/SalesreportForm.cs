@@ -21,11 +21,14 @@ namespace PresentationLayer.Forms
             InitializeComponent();
             _salesServices = salesServices;
             LoadSalesReport();
+           
         }
 
         public void LoadSalesReport()
         {
             salesReportDataGridView.DataSource = _salesServices.GetSalesReport();
+            salesReportDataGridView.Columns[0].Visible = false;
+            salesReportDataGridView.Columns["Total a pagar"].DefaultCellStyle.Format = "C2";
         }
 
 
@@ -54,6 +57,8 @@ namespace PresentationLayer.Forms
             {
                 int SaleId = Convert.ToInt32(salesReportDataGridView.CurrentRow.Cells[0].Value);
                 LoadSalesDeatail(SaleId);
+                productsBuyingDataGridView.Columns["SubTotal"].DefaultCellStyle.Format = "C2";
+               
             }
         }
     }

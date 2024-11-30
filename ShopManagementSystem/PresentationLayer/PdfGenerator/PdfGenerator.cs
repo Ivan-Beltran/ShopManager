@@ -98,7 +98,7 @@ namespace PresentationLayer.PdfGenerator
                                 }
 
                                 column.Item().PaddingTop(10) // Agregar un espacio encima del texto adicional
-                                    .Text($"Total :{totalPrice} ")
+                                    .Text($"Total :${totalPrice} ")
                                     .FontSize(12)
                                     .Italic()
                                     .FontColor(Colors.Grey.Darken2);

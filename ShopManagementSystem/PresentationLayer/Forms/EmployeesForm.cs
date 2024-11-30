@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FluentValidation.Results;
+using System.Security.Cryptography;
 
 namespace PresentationLayer.Forms
 {
@@ -21,6 +22,7 @@ namespace PresentationLayer.Forms
     {
         private readonly IEmployeeService _employeeService;
         private Employees _employeeSession;
+    
         public EmployeesForm(IEmployeeService employeeService, Employees employeeSession)
         {
             InitializeComponent();
@@ -33,9 +35,18 @@ namespace PresentationLayer.Forms
 
         public void LoadEmployees()
         {
+           
             EmployeesDataGridView.DataSource = _employeeService.GetEmployees();
             EmployeesDataGridView.Columns["ID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             EmployeesDataGridView.Columns["DUI"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+            foreach (DataGridViewRow row in EmployeesDataGridView.Rows)
+            {
+                if (row.Cells["Contraseña"].Value != null)
+                {
+                    row.Cells["Contraseña"].Value = "********"; // Reemplaza por asteriscos
+                }
+            }
 
 
             foreach (DataGridViewColumn column in EmployeesDataGridView.Columns)
@@ -43,6 +54,8 @@ namespace PresentationLayer.Forms
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
+
+        
 
         public void LoadRoles()
         {
@@ -304,6 +317,8 @@ namespace PresentationLayer.Forms
                 duiTextBox.Text = EmployeesDataGridView.CurrentRow.Cells[5].Value.ToString();
                 emailTextBox.Text = EmployeesDataGridView.CurrentRow.Cells[6].Value.ToString();
                 rolesComboBox.Text = EmployeesDataGridView.CurrentRow.Cells[7].Value.ToString();
+               
+               
             }
         }
 

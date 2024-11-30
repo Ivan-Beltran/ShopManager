@@ -26,6 +26,8 @@ namespace PresentationLayer.Forms
             InitializeComponent();
             LoadShoppingKart();
             shoppingKartDataGridView.Columns["Precio"].DefaultCellStyle.Format = "C";
+            shoppingKartDataGridView.Columns["Id"].Visible = false;
+
         }
 
         public void LoadShoppingKart()
@@ -38,7 +40,7 @@ namespace PresentationLayer.Forms
             ShoppingKartTable.Columns.Add("Color", typeof(string));
             ShoppingKartTable.Columns.Add("Cantidad a comprar", typeof(int));
             ShoppingKartTable.Columns.Add("Precio", typeof(decimal)); // Tipo decimal para manejo de precios
-
+            
      
             foreach (Products product in _productsAdded)
             {

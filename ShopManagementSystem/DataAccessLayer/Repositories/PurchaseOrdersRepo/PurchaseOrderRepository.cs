@@ -47,7 +47,7 @@ namespace DataAccessLayer.Repositories.PurchaseOrdersRepo
             using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"SELECT 
-                            	PO.PurchaseOrderId AS Id,
+                            	PO.PurchaseOrderId AS 'Numero de orden',
                             	CONCAT(SU.SupplierName, ': ', SU.SupplierAddres) AS Proveedor,
                             	PO.Details AS Detalles,
                             	FORMAT(PO.PurchaseDate, 'dd/MM/yyyy') AS Fecha,

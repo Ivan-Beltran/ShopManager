@@ -20,6 +20,7 @@ namespace PresentationLayer.Forms
             InitializeComponent();
             _clientsServices = clientsServices;
             LoadClients();
+            viewCustomersDataGridView.Columns[0].Visible = false;
         }
 
         public void LoadClients()
