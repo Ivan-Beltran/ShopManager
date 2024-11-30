@@ -50,10 +50,10 @@
             // 
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
-            nameLabel.Location = new Point(103, 95);
+            nameLabel.Location = new Point(118, 127);
             nameLabel.Margin = new Padding(2, 0, 2, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(127, 29);
+            nameLabel.Size = new Size(151, 36);
             nameLabel.TabIndex = 0;
             nameLabel.Text = "Nombres:";
             // 
@@ -61,10 +61,10 @@
             // 
             lastNameLabel.AutoSize = true;
             lastNameLabel.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
-            lastNameLabel.Location = new Point(103, 206);
+            lastNameLabel.Location = new Point(118, 275);
             lastNameLabel.Margin = new Padding(2, 0, 2, 0);
             lastNameLabel.Name = "lastNameLabel";
-            lastNameLabel.Size = new Size(130, 29);
+            lastNameLabel.Size = new Size(157, 36);
             lastNameLabel.TabIndex = 1;
             lastNameLabel.Text = "Apellidos:";
             // 
@@ -72,10 +72,10 @@
             // 
             emailLabel.AutoSize = true;
             emailLabel.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
-            emailLabel.Location = new Point(720, 89);
+            emailLabel.Location = new Point(823, 119);
             emailLabel.Margin = new Padding(2, 0, 2, 0);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(86, 29);
+            emailLabel.Size = new Size(102, 36);
             emailLabel.TabIndex = 2;
             emailLabel.Text = "Email:";
             // 
@@ -83,62 +83,62 @@
             // 
             phoneLabel.AutoSize = true;
             phoneLabel.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
-            phoneLabel.Location = new Point(53, 327);
+            phoneLabel.Location = new Point(61, 436);
             phoneLabel.Margin = new Padding(2, 0, 2, 0);
             phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new Size(236, 29);
+            phoneLabel.Size = new Size(283, 36);
             phoneLabel.TabIndex = 3;
             phoneLabel.Text = "Número de celular:";
             // 
             // nameTextBox
             // 
-            nameTextBox.Location = new Point(294, 98);
-            nameTextBox.Margin = new Padding(2);
+            nameTextBox.Location = new Point(336, 131);
+            nameTextBox.Margin = new Padding(2, 3, 2, 3);
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(225, 23);
+            nameTextBox.Size = new Size(257, 27);
             nameTextBox.TabIndex = 5;
             // 
             // lastNameTextBox
             // 
-            lastNameTextBox.Location = new Point(294, 214);
-            lastNameTextBox.Margin = new Padding(2);
+            lastNameTextBox.Location = new Point(336, 285);
+            lastNameTextBox.Margin = new Padding(2, 3, 2, 3);
             lastNameTextBox.Name = "lastNameTextBox";
-            lastNameTextBox.Size = new Size(225, 23);
+            lastNameTextBox.Size = new Size(257, 27);
             lastNameTextBox.TabIndex = 6;
             // 
             // phoneTextBox
             // 
-            phoneTextBox.Location = new Point(294, 333);
-            phoneTextBox.Margin = new Padding(2);
+            phoneTextBox.Location = new Point(336, 444);
+            phoneTextBox.Margin = new Padding(2, 3, 2, 3);
             phoneTextBox.Name = "phoneTextBox";
-            phoneTextBox.Size = new Size(225, 23);
+            phoneTextBox.Size = new Size(257, 27);
             phoneTextBox.TabIndex = 7;
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(828, 95);
-            emailTextBox.Margin = new Padding(2);
+            emailTextBox.Location = new Point(946, 127);
+            emailTextBox.Margin = new Padding(2, 3, 2, 3);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(225, 23);
+            emailTextBox.Size = new Size(257, 27);
             emailTextBox.TabIndex = 8;
             // 
             // duiLabel
             // 
             duiLabel.AutoSize = true;
             duiLabel.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold);
-            duiLabel.Location = new Point(737, 208);
+            duiLabel.Location = new Point(842, 277);
             duiLabel.Margin = new Padding(2, 0, 2, 0);
             duiLabel.Name = "duiLabel";
-            duiLabel.Size = new Size(59, 29);
+            duiLabel.Size = new Size(72, 36);
             duiLabel.TabIndex = 9;
             duiLabel.Text = "Dui:";
             // 
             // duiTextBox
             // 
-            duiTextBox.Location = new Point(828, 210);
-            duiTextBox.Margin = new Padding(2);
+            duiTextBox.Location = new Point(946, 280);
+            duiTextBox.Margin = new Padding(2, 3, 2, 3);
             duiTextBox.Name = "duiTextBox";
-            duiTextBox.Size = new Size(225, 23);
+            duiTextBox.Size = new Size(257, 27);
             duiTextBox.TabIndex = 10;
             // 
             // finishPurchaseButton
@@ -151,9 +151,10 @@
             finishPurchaseButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             finishPurchaseButton.IconSize = 32;
             finishPurchaseButton.ImageAlign = ContentAlignment.MiddleLeft;
-            finishPurchaseButton.Location = new Point(813, 294);
+            finishPurchaseButton.Location = new Point(929, 392);
+            finishPurchaseButton.Margin = new Padding(3, 4, 3, 4);
             finishPurchaseButton.Name = "finishPurchaseButton";
-            finishPurchaseButton.Size = new Size(202, 52);
+            finishPurchaseButton.Size = new Size(231, 69);
             finishPurchaseButton.TabIndex = 11;
             finishPurchaseButton.Text = "Finalizar compra";
             finishPurchaseButton.UseVisualStyleBackColor = false;
@@ -175,28 +176,31 @@
             cancelPurchaseButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             cancelPurchaseButton.IconSize = 32;
             cancelPurchaseButton.ImageAlign = ContentAlignment.MiddleLeft;
-            cancelPurchaseButton.Location = new Point(813, 371);
+            cancelPurchaseButton.Location = new Point(929, 495);
+            cancelPurchaseButton.Margin = new Padding(3, 4, 3, 4);
             cancelPurchaseButton.Name = "cancelPurchaseButton";
-            cancelPurchaseButton.Size = new Size(202, 49);
+            cancelPurchaseButton.Size = new Size(231, 65);
             cancelPurchaseButton.TabIndex = 12;
             cancelPurchaseButton.Text = "Cancelar compra";
             cancelPurchaseButton.UseVisualStyleBackColor = false;
+            cancelPurchaseButton.Click += cancelPurchaseButton_Click;
             // 
             // registerClientLabel
             // 
             registerClientLabel.AutoSize = true;
             registerClientLabel.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            registerClientLabel.Location = new Point(491, 23);
+            registerClientLabel.Location = new Point(561, 31);
             registerClientLabel.Name = "registerClientLabel";
-            registerClientLabel.Size = new Size(210, 29);
+            registerClientLabel.Size = new Size(253, 36);
             registerClientLabel.TabIndex = 13;
             registerClientLabel.Text = "Registrar Cliente";
             // 
             // RegisterClients
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1199, 445);
+            ClientSize = new Size(1370, 593);
+            ControlBox = false;
             Controls.Add(registerClientLabel);
             Controls.Add(cancelPurchaseButton);
             Controls.Add(finishPurchaseButton);
@@ -210,8 +214,9 @@
             Controls.Add(emailLabel);
             Controls.Add(lastNameLabel);
             Controls.Add(nameLabel);
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "RegisterClients";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RegisterClients";
             ((System.ComponentModel.ISupportInitialize)validationsErrorProvider).EndInit();
             ResumeLayout(false);

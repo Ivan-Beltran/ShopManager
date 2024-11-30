@@ -138,7 +138,10 @@
             Controls.Add(deleteShoppingKartButton);
             Controls.Add(label2);
             Controls.Add(shoppingKartDataGridView);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "ShoppinKart";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ShoppinKart";
             FormClosing += ShoppinKart_FormClosing;
             ((System.ComponentModel.ISupportInitialize)shoppingKartDataGridView).EndInit();

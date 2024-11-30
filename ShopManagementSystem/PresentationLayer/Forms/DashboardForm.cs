@@ -16,6 +16,7 @@ using BussinessLayer.Services.ServicesForSuppliers;
 using BussinessLayer.Services.ServicersForPurchaseOrders;
 using BussinessLayer.Services.ServicesForProducts;
 using BussinessLayer.Services.ServicesForSales;
+using BussinessLayer.Services.ServicesForClients;
 
 namespace PresentationLayer.Forms
 {
@@ -29,6 +30,7 @@ namespace PresentationLayer.Forms
         private IPurchaseOrdersServices _purchaseOrderServices;
         private IProductsService _productsService;
         private ISalesServices _salesServices;
+        private IClientsServices _clientsServices;
 
         private IconButton lastButton;
 
@@ -39,7 +41,8 @@ namespace PresentationLayer.Forms
             ISuppliersServices suppliersServices,
             IPurchaseOrdersServices purchaseOrders,
             IProductsService productsService,
-            ISalesServices salesServices)
+            ISalesServices salesServices,
+            IClientsServices clientsServices)
         {
             InitializeComponent();
 
@@ -51,6 +54,7 @@ namespace PresentationLayer.Forms
             _productsService = productsService;
             _salesServices = salesServices;
             employeeNameLabel.Text = _employeeSesion.Names;
+            _clientsServices = clientsServices;
             this.PrincipalPanel.Resize += (s, e) => AdjustChildFormSize();
             Permissions();
         }
@@ -130,6 +134,7 @@ namespace PresentationLayer.Forms
                 salesReportButton.Visible = false;
                 clientsButton.Enabled = false;
                 clientsButton.Visible = false;
+                employeeNameLabel.Text = "Cliente";
             }
         }
 
@@ -198,7 +203,7 @@ namespace PresentationLayer.Forms
 
         private void clientsButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new ViewCustomers());
+            openChildForm(new ViewCustomers(_clientsServices));
         }
     }
 }

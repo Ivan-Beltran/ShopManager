@@ -17,6 +17,7 @@ namespace PresentationLayer.Forms
         public List<Products> _productsAdded;
         private ISalesServices _salesServices;
         decimal totalPricePurchase = 0;
+        private RegisterClients registerClients;
 
         public ShoppinKart(List<Products> productsAdded,ISalesServices salesServices)
         {
@@ -108,16 +109,35 @@ namespace PresentationLayer.Forms
 
         private void makePurchaseButton_Click(object sender, EventArgs e)
         {
-            RegisterClients registerClients= new RegisterClients(_salesServices ,_productsAdded,totalPricePurchase);
-            registerClients.FormClosed += (s, arg) =>
+            if (_productsAdded.Count > 0)
             {
-                _productsAdded.Clear();
-                this.Close();
+           
+                if (registerClients == null || registerClients.IsDisposed)
+                {
+     
+                    registerClients = new RegisterClients(_salesServices, _productsAdded, totalPricePurchase);
 
-            };
-            registerClients.ShowDialog();
+                    registerClients.FormClosed += (s, args) =>
+                    {
+                        _productsAdded.Clear(); 
+                        this.Close(); 
+                    };
+                    registerClients.ReturnForm += (sender, arg) => this.Show();
+                }
 
-            
+          
+                this.Hide();
+                registerClients.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("El carrito de compras está vacío.",
+                    "Notificación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
+
         }
 
         private void ShoppinKart_FormClosing(object sender, FormClosingEventArgs e)

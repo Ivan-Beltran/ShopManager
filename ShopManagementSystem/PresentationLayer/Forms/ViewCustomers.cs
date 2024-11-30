@@ -7,16 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BussinessLayer.Services.ServicesForSales;
+
+using BussinessLayer.Services.ServicesForClients;
 
 namespace PresentationLayer.Forms
 {
     public partial class ViewCustomers : Form
     {
-        private ISalesServices _isalesServices;
-        public ViewCustomers()
+        private IClientsServices _clientsServices;
+        public ViewCustomers(IClientsServices clientsServices)
         {
             InitializeComponent();
+            _clientsServices = clientsServices;
+            LoadClients();
+        }
+
+        public void LoadClients()
+        {
+            viewCustomersDataGridView.DataSource=_clientsServices.GetClients();
         }
     }
 }

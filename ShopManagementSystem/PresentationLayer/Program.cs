@@ -17,6 +17,9 @@ using DataAccessLayer.Repositories.ProductsRepo;
 using BussinessLayer.Services.ServicesForProducts;
 using DataAccessLayer.Repositories.SalesRepo;
 using BussinessLayer.Services.ServicesForSales;
+using BussinessLayer.Services.ServicesForClients;
+using DataAccessLayer.Repositories.ClientsRepo;
+using QuestPDF.Infrastructure;
 
 namespace PresentationLayer
 {
@@ -28,6 +31,7 @@ namespace PresentationLayer
         [STAThread]
         static void Main()
         {
+            QuestPDF.Settings.License = LicenseType.Professional;
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
@@ -65,6 +69,7 @@ namespace PresentationLayer
                     services.AddScoped<IPurchaseOrderRepository, PurchaseOrderRepository>();
                     services.AddScoped<IProductsRepository, ProductsRepository>();
                     services.AddScoped<ISalesRepository, SalesRepository>();
+                    services.AddScoped<IClientsRepository, ClientsRepository>();
 
                     //Services
                     services.AddScoped<ILoginService,LoginService>();
@@ -74,6 +79,7 @@ namespace PresentationLayer
                     services.AddScoped<IPurchaseOrdersServices, PurchaseOrdersServices>();
                     services.AddScoped<IProductsService, ProductsService>();
                     services.AddScoped<ISalesServices, SalesServices>();
+                    services.AddScoped<IClientsServices, ClientsServices>();
 
 
                     //Connection

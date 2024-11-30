@@ -17,6 +17,7 @@ using BussinessLayer.Services.ServicesForSuppliers;
 using BussinessLayer.Services.ServicersForPurchaseOrders;
 using BussinessLayer.Services.ServicesForProducts;
 using BussinessLayer.Services.ServicesForSales;
+using BussinessLayer.Services.ServicesForClients;
 
 namespace PresentationLayer.Forms
 {
@@ -29,6 +30,7 @@ namespace PresentationLayer.Forms
         private IPurchaseOrdersServices _purchaseOrderServices;
         private IProductsService _productsServices;
         private ISalesServices _salesServices;
+        private IClientsServices _clientsServices;
 
 
         public LoginForm(ILoginService loginServices,
@@ -37,7 +39,8 @@ namespace PresentationLayer.Forms
             ISuppliersServices suppliersServices,
             IPurchaseOrdersServices purchaseOrderServices,
             IProductsService productsService,
-            ISalesServices salesServices)
+            ISalesServices salesServices,
+            IClientsServices clientsServices)
         {
             InitializeComponent();
             _loginServices = loginServices;
@@ -48,8 +51,8 @@ namespace PresentationLayer.Forms
             _productsServices = productsService;
             _salesServices = salesServices;
             PasswordTextBox.PasswordChar = '*';
+            _clientsServices = clientsServices;
             ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
-
         }
 
         private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -107,7 +110,8 @@ namespace PresentationLayer.Forms
                             _suppliersServices,
                             _purchaseOrderServices,
                             _productsServices,
-                            _salesServices);
+                            _salesServices,
+                            _clientsServices);
 
                         dashboardForm.FormClosed += (s, arg) =>
                         {
@@ -169,9 +173,17 @@ namespace PresentationLayer.Forms
                 _suppliersServices,
                 _purchaseOrderServices,
                 _productsServices,
-                _salesServices);
+                _salesServices,
+                _clientsServices);
 
-            dashboardForm.FormClosed += (s, arg) => this.Show();
+            dashboardForm.FormClosed += (s, arg) =>
+            {
+
+                this.Show();
+                UserTextBox.Text = "";
+                PasswordTextBox.Text = "";
+            };
+
             dashboardForm.Show();
         }
     }
