@@ -173,7 +173,7 @@
             clientsButton.Text = "Clientes";
             clientsButton.UseVisualStyleBackColor = false;
             clientsButton.Click += clientsButton_Click;
-if 
+ 
             // 
             // suppliersButton
             // 
