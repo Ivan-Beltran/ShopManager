@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             suppliersLabel = new Label();
             nameSupplierLabel = new Label();
             nameSupplierTextBox = new TextBox();
@@ -45,101 +45,110 @@
             deleteSupplierButton = new FontAwesome.Sharp.IconButton();
             clearRowButton = new FontAwesome.Sharp.IconButton();
             validationErrorProvider = new ErrorProvider(components);
+            TittlePanel = new Panel();
             ((System.ComponentModel.ISupportInitialize)SupplierDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)validationErrorProvider).BeginInit();
+            TittlePanel.SuspendLayout();
             SuspendLayout();
             // 
             // suppliersLabel
             // 
             suppliersLabel.AutoSize = true;
-            suppliersLabel.Font = new Font("Segoe UI Historic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            suppliersLabel.Location = new Point(145, 67);
+            suppliersLabel.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            suppliersLabel.ForeColor = Color.White;
+            suppliersLabel.Location = new Point(636, 9);
             suppliersLabel.Name = "suppliersLabel";
-            suppliersLabel.Size = new Size(198, 25);
+            suppliersLabel.Size = new Size(468, 62);
             suppliersLabel.TabIndex = 1;
             suppliersLabel.Text = "Registrar Proveedor";
             // 
             // nameSupplierLabel
             // 
             nameSupplierLabel.AutoSize = true;
-            nameSupplierLabel.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nameSupplierLabel.Location = new Point(106, 165);
+            nameSupplierLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            nameSupplierLabel.Location = new Point(113, 209);
             nameSupplierLabel.Name = "nameSupplierLabel";
-            nameSupplierLabel.Size = new Size(67, 20);
+            nameSupplierLabel.Size = new Size(142, 41);
             nameSupplierLabel.TabIndex = 2;
             nameSupplierLabel.Text = "Nombre:";
             // 
             // nameSupplierTextBox
             // 
-            nameSupplierTextBox.Location = new Point(242, 157);
+            nameSupplierTextBox.Location = new Point(277, 209);
+            nameSupplierTextBox.Margin = new Padding(3, 4, 3, 4);
             nameSupplierTextBox.Name = "nameSupplierTextBox";
-            nameSupplierTextBox.Size = new Size(213, 23);
+            nameSupplierTextBox.Size = new Size(243, 27);
             nameSupplierTextBox.TabIndex = 3;
             // 
             // phoneSupplierTextBox
             // 
-            phoneSupplierTextBox.Location = new Point(242, 225);
+            phoneSupplierTextBox.Location = new Point(277, 300);
+            phoneSupplierTextBox.Margin = new Padding(3, 4, 3, 4);
             phoneSupplierTextBox.Name = "phoneSupplierTextBox";
-            phoneSupplierTextBox.Size = new Size(213, 23);
+            phoneSupplierTextBox.Size = new Size(243, 27);
             phoneSupplierTextBox.TabIndex = 5;
             // 
             // phoneSupplierLabel
             // 
             phoneSupplierLabel.AutoSize = true;
-            phoneSupplierLabel.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            phoneSupplierLabel.Location = new Point(106, 228);
+            phoneSupplierLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            phoneSupplierLabel.Location = new Point(113, 286);
             phoneSupplierLabel.Name = "phoneSupplierLabel";
-            phoneSupplierLabel.Size = new Size(71, 20);
+            phoneSupplierLabel.Size = new Size(148, 41);
             phoneSupplierLabel.TabIndex = 4;
             phoneSupplierLabel.Text = "Teléfono:";
             // 
             // emailSupplierTextBox
             // 
-            emailSupplierTextBox.Location = new Point(242, 295);
+            emailSupplierTextBox.Location = new Point(277, 393);
+            emailSupplierTextBox.Margin = new Padding(3, 4, 3, 4);
             emailSupplierTextBox.Name = "emailSupplierTextBox";
-            emailSupplierTextBox.Size = new Size(213, 23);
+            emailSupplierTextBox.Size = new Size(243, 27);
             emailSupplierTextBox.TabIndex = 7;
             // 
             // emailSupplierLabel
             // 
             emailSupplierLabel.AutoSize = true;
-            emailSupplierLabel.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            emailSupplierLabel.Location = new Point(106, 298);
+            emailSupplierLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            emailSupplierLabel.Location = new Point(113, 379);
             emailSupplierLabel.Name = "emailSupplierLabel";
-            emailSupplierLabel.Size = new Size(51, 20);
+            emailSupplierLabel.Size = new Size(108, 41);
             emailSupplierLabel.TabIndex = 6;
             emailSupplierLabel.Text = "Gmail:";
             // 
             // addressSupplierTextBox
             // 
-            addressSupplierTextBox.Location = new Point(242, 368);
+            addressSupplierTextBox.Location = new Point(277, 491);
+            addressSupplierTextBox.Margin = new Padding(3, 4, 3, 4);
             addressSupplierTextBox.Name = "addressSupplierTextBox";
-            addressSupplierTextBox.Size = new Size(213, 23);
+            addressSupplierTextBox.Size = new Size(243, 27);
             addressSupplierTextBox.TabIndex = 9;
             // 
             // addressSupplierLabel
             // 
             addressSupplierLabel.AutoSize = true;
-            addressSupplierLabel.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addressSupplierLabel.Location = new Point(106, 371);
+            addressSupplierLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            addressSupplierLabel.Location = new Point(103, 477);
             addressSupplierLabel.Name = "addressSupplierLabel";
-            addressSupplierLabel.Size = new Size(75, 20);
+            addressSupplierLabel.Size = new Size(158, 41);
             addressSupplierLabel.TabIndex = 8;
             addressSupplierLabel.Text = "Dirección:";
             // 
             // registerSupplierButton
             // 
             registerSupplierButton.BackColor = Color.FromArgb(0, 166, 225);
-            registerSupplierButton.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            registerSupplierButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             registerSupplierButton.ForeColor = Color.White;
             registerSupplierButton.IconChar = FontAwesome.Sharp.IconChar.Save;
             registerSupplierButton.IconColor = Color.White;
             registerSupplierButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            validationErrorProvider.SetIconPadding(registerSupplierButton, 5);
             registerSupplierButton.IconSize = 32;
             registerSupplierButton.ImageAlign = ContentAlignment.MiddleLeft;
-            registerSupplierButton.Location = new Point(71, 513);
+            registerSupplierButton.Location = new Point(272, 696);
+            registerSupplierButton.Margin = new Padding(3, 4, 3, 4);
             registerSupplierButton.Name = "registerSupplierButton";
-            registerSupplierButton.Size = new Size(152, 37);
+            registerSupplierButton.Size = new Size(236, 54);
             registerSupplierButton.TabIndex = 10;
             registerSupplierButton.Text = "Guardar";
             registerSupplierButton.UseVisualStyleBackColor = false;
@@ -154,40 +163,42 @@
             SupplierDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             SupplierDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             SupplierDataGridView.BackgroundColor = Color.Azure;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            SupplierDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            SupplierDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             SupplierDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             SupplierDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-            SupplierDataGridView.Location = new Point(503, 157);
+            SupplierDataGridView.Location = new Point(575, 209);
+            SupplierDataGridView.Margin = new Padding(3, 4, 3, 4);
             SupplierDataGridView.MultiSelect = false;
             SupplierDataGridView.Name = "SupplierDataGridView";
             SupplierDataGridView.ReadOnly = true;
             SupplierDataGridView.RowHeadersVisible = false;
             SupplierDataGridView.RowHeadersWidth = 51;
             SupplierDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            SupplierDataGridView.Size = new Size(811, 280);
+            SupplierDataGridView.Size = new Size(927, 373);
             SupplierDataGridView.TabIndex = 11;
             SupplierDataGridView.SelectionChanged += SupplierDataGridView_SelectionChanged;
             // 
             // editSupplierButton
             // 
             editSupplierButton.BackColor = Color.FromArgb(0, 166, 225);
-            editSupplierButton.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            editSupplierButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
             editSupplierButton.ForeColor = Color.White;
             editSupplierButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
             editSupplierButton.IconColor = Color.White;
             editSupplierButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editSupplierButton.IconSize = 32;
             editSupplierButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editSupplierButton.Location = new Point(257, 513);
+            editSupplierButton.Location = new Point(560, 696);
+            editSupplierButton.Margin = new Padding(3, 4, 3, 4);
             editSupplierButton.Name = "editSupplierButton";
-            editSupplierButton.Size = new Size(152, 37);
+            editSupplierButton.Size = new Size(239, 54);
             editSupplierButton.TabIndex = 12;
             editSupplierButton.Text = "Editar";
             editSupplierButton.UseVisualStyleBackColor = false;
@@ -196,16 +207,17 @@
             // deleteSupplierButton
             // 
             deleteSupplierButton.BackColor = Color.FromArgb(0, 166, 225);
-            deleteSupplierButton.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            deleteSupplierButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deleteSupplierButton.ForeColor = SystemColors.Window;
             deleteSupplierButton.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
             deleteSupplierButton.IconColor = Color.White;
             deleteSupplierButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deleteSupplierButton.IconSize = 32;
             deleteSupplierButton.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteSupplierButton.Location = new Point(452, 513);
+            deleteSupplierButton.Location = new Point(853, 696);
+            deleteSupplierButton.Margin = new Padding(3, 4, 3, 4);
             deleteSupplierButton.Name = "deleteSupplierButton";
-            deleteSupplierButton.Size = new Size(152, 37);
+            deleteSupplierButton.Size = new Size(235, 53);
             deleteSupplierButton.TabIndex = 13;
             deleteSupplierButton.Text = "Eliminar";
             deleteSupplierButton.UseVisualStyleBackColor = false;
@@ -214,17 +226,18 @@
             // clearRowButton
             // 
             clearRowButton.BackColor = Color.FromArgb(0, 166, 225);
-            clearRowButton.FlatStyle = FlatStyle.Popup;
-            clearRowButton.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            clearRowButton.FlatStyle = FlatStyle.Flat;
+            clearRowButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
             clearRowButton.ForeColor = Color.White;
             clearRowButton.IconChar = FontAwesome.Sharp.IconChar.Cancel;
             clearRowButton.IconColor = Color.White;
             clearRowButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             clearRowButton.IconSize = 38;
             clearRowButton.ImageAlign = ContentAlignment.MiddleLeft;
-            clearRowButton.Location = new Point(658, 510);
+            clearRowButton.Location = new Point(1163, 696);
+            clearRowButton.Margin = new Padding(3, 4, 3, 4);
             clearRowButton.Name = "clearRowButton";
-            clearRowButton.Size = new Size(178, 40);
+            clearRowButton.Size = new Size(274, 53);
             clearRowButton.TabIndex = 24;
             clearRowButton.Text = "Quitar selección";
             clearRowButton.TextAlign = ContentAlignment.MiddleRight;
@@ -236,12 +249,24 @@
             validationErrorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             validationErrorProvider.ContainerControl = this;
             // 
+            // TittlePanel
+            // 
+            TittlePanel.BackColor = Color.FromArgb(0, 166, 225);
+            TittlePanel.Controls.Add(suppliersLabel);
+            TittlePanel.Dock = DockStyle.Top;
+            TittlePanel.Location = new Point(0, 0);
+            TittlePanel.Margin = new Padding(0);
+            TittlePanel.Name = "TittlePanel";
+            TittlePanel.Size = new Size(1565, 85);
+            TittlePanel.TabIndex = 25;
+            // 
             // RegisterSuppliersForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(1369, 610);
+            ClientSize = new Size(1565, 813);
+            Controls.Add(TittlePanel);
             Controls.Add(clearRowButton);
             Controls.Add(deleteSupplierButton);
             Controls.Add(editSupplierButton);
@@ -255,11 +280,13 @@
             Controls.Add(phoneSupplierLabel);
             Controls.Add(nameSupplierTextBox);
             Controls.Add(nameSupplierLabel);
-            Controls.Add(suppliersLabel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "RegisterSuppliersForm";
             Text = "RegisterSuppliersForm";
             ((System.ComponentModel.ISupportInitialize)SupplierDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)validationErrorProvider).EndInit();
+            TittlePanel.ResumeLayout(false);
+            TittlePanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -280,5 +307,6 @@
         private FontAwesome.Sharp.IconButton deleteSupplierButton;
         private FontAwesome.Sharp.IconButton clearRowButton;
         private ErrorProvider validationErrorProvider;
+        private Panel TittlePanel;
     }
 }

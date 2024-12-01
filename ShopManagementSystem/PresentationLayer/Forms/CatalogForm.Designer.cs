@@ -42,18 +42,18 @@
             // 
             // searchProductgroupBox
             // 
-            searchProductgroupBox.BackColor = Color.Teal;
+            searchProductgroupBox.BackColor = Color.FromArgb(0, 166, 225);
             searchProductgroupBox.Controls.Add(productCountLabel);
             searchProductgroupBox.Controls.Add(searchButton);
             searchProductgroupBox.Controls.Add(Searchlabel);
             searchProductgroupBox.Controls.Add(searchTextBox);
             searchProductgroupBox.Controls.Add(shoppingcart);
             searchProductgroupBox.Dock = DockStyle.Top;
+            searchProductgroupBox.FlatStyle = FlatStyle.System;
             searchProductgroupBox.Location = new Point(0, 0);
-            searchProductgroupBox.Margin = new Padding(4, 8, 4, 8);
+            searchProductgroupBox.Margin = new Padding(0);
             searchProductgroupBox.Name = "searchProductgroupBox";
-            searchProductgroupBox.Padding = new Padding(3, 2, 3, 2);
-            searchProductgroupBox.Size = new Size(1684, 100);
+            searchProductgroupBox.Size = new Size(1924, 116);
             searchProductgroupBox.TabIndex = 0;
             searchProductgroupBox.TabStop = false;
             // 
@@ -62,28 +62,28 @@
             productCountLabel.BackColor = Color.Orange;
             productCountLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             productCountLabel.ForeColor = SystemColors.ControlLightLight;
-            productCountLabel.Location = new Point(1181, 11);
+            productCountLabel.Location = new Point(1355, 12);
             productCountLabel.Name = "productCountLabel";
-            productCountLabel.Size = new Size(30, 29);
+            productCountLabel.Size = new Size(34, 39);
             productCountLabel.TabIndex = 12;
             productCountLabel.Text = "0";
             productCountLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-
-
             // searchButton
             // 
+            searchButton.BackColor = Color.Transparent;
+            searchButton.FlatStyle = FlatStyle.Flat;
             searchButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            searchButton.ForeColor = Color.Transparent;
             searchButton.IconChar = FontAwesome.Sharp.IconChar.Search;
-            searchButton.IconColor = Color.Black;
+            searchButton.IconColor = Color.White;
             searchButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             searchButton.IconSize = 64;
-            searchButton.Location = new Point(1018, 21);
-            searchButton.Margin = new Padding(3, 2, 3, 2);
+            searchButton.Location = new Point(1162, 30);
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(98, 57);
+            searchButton.Size = new Size(112, 76);
             searchButton.TabIndex = 11;
-            searchButton.UseVisualStyleBackColor = true;
+            searchButton.UseVisualStyleBackColor = false;
             searchButton.Click += searchButton_Click_2;
             // 
             // Searchlabel
@@ -93,10 +93,10 @@
             Searchlabel.BackColor = Color.Transparent;
             Searchlabel.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
             Searchlabel.ForeColor = SystemColors.Control;
-            Searchlabel.Location = new Point(52, 32);
-            Searchlabel.Margin = new Padding(88, 11, 0, 0);
+            Searchlabel.Location = new Point(60, 37);
+            Searchlabel.Margin = new Padding(101, 15, 0, 0);
             Searchlabel.Name = "Searchlabel";
-            Searchlabel.Size = new Size(248, 41);
+            Searchlabel.Size = new Size(308, 50);
             Searchlabel.TabIndex = 4;
             Searchlabel.Text = "Buscar producto";
             Searchlabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -104,10 +104,10 @@
             // searchTextBox
             // 
             searchTextBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            searchTextBox.Location = new Point(340, 34);
-            searchTextBox.Margin = new Padding(18, 15, 3, 2);
+            searchTextBox.Location = new Point(389, 41);
+            searchTextBox.Margin = new Padding(21, 20, 3, 3);
             searchTextBox.Name = "searchTextBox";
-            searchTextBox.Size = new Size(661, 39);
+            searchTextBox.Size = new Size(755, 47);
             searchTextBox.TabIndex = 5;
             searchTextBox.TextChanged += searchTextBox_TextChanged;
             // 
@@ -115,10 +115,10 @@
             // 
             shoppingcart.BackColor = Color.Transparent;
             shoppingcart.Image = (Image)resources.GetObject("shoppingcart.Image");
-            shoppingcart.Location = new Point(1144, 32);
-            shoppingcart.Margin = new Padding(26, 8, 3, 2);
+            shoppingcart.Location = new Point(1307, 30);
+            shoppingcart.Margin = new Padding(30, 11, 3, 3);
             shoppingcart.Name = "shoppingcart";
-            shoppingcart.Size = new Size(66, 50);
+            shoppingcart.Size = new Size(85, 76);
             shoppingcart.SizeMode = PictureBoxSizeMode.StretchImage;
             shoppingcart.TabIndex = 7;
             shoppingcart.TabStop = false;
@@ -127,23 +127,22 @@
             // productsFlowLayoutPanel
             // 
             productsFlowLayoutPanel.AutoScroll = true;
-            productsFlowLayoutPanel.BackColor = SystemColors.ControlDark;
+            productsFlowLayoutPanel.BackColor = Color.White;
             productsFlowLayoutPanel.Dock = DockStyle.Fill;
-            productsFlowLayoutPanel.Location = new Point(0, 100);
-            productsFlowLayoutPanel.Margin = new Padding(9, 22, 9, 4);
+            productsFlowLayoutPanel.Location = new Point(0, 116);
+            productsFlowLayoutPanel.Margin = new Padding(10, 29, 10, 5);
             productsFlowLayoutPanel.Name = "productsFlowLayoutPanel";
-            productsFlowLayoutPanel.Size = new Size(1684, 691);
+            productsFlowLayoutPanel.Size = new Size(1924, 939);
             productsFlowLayoutPanel.TabIndex = 1;
             // 
             // CatalogForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.Disable;
-            ClientSize = new Size(1684, 791);
+            ClientSize = new Size(1924, 1055);
             Controls.Add(productsFlowLayoutPanel);
             Controls.Add(searchProductgroupBox);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "CatalogForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CatalogForm";

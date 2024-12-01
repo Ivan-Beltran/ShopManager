@@ -59,10 +59,10 @@
             tabletsPictureBox = new PictureBox();
             totalTabletsLabel = new Label();
             searchProductPanel = new Panel();
+            showAllProductsButton = new FontAwesome.Sharp.IconButton();
             searchProductButton = new FontAwesome.Sharp.IconButton();
             searchProductTextBox = new TextBox();
             searchProductlLabel = new Label();
-            showAllProductsButton = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)inventoryDataGridView).BeginInit();
             categoryGroupBox.SuspendLayout();
             accesoriesGroupBox.SuspendLayout();
@@ -104,13 +104,13 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             inventoryDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            inventoryDataGridView.Location = new Point(12, 443);
+            inventoryDataGridView.Location = new Point(197, 445);
             inventoryDataGridView.Margin = new Padding(3, 4, 3, 4);
             inventoryDataGridView.MultiSelect = false;
             inventoryDataGridView.Name = "inventoryDataGridView";
             inventoryDataGridView.RowHeadersVisible = false;
             inventoryDataGridView.RowHeadersWidth = 51;
-            inventoryDataGridView.Size = new Size(1278, 331);
+            inventoryDataGridView.Size = new Size(1285, 488);
             inventoryDataGridView.TabIndex = 0;
             // 
             // categoryGroupBox
@@ -120,7 +120,7 @@
             categoryGroupBox.Controls.Add(LaptopGroupBox);
             categoryGroupBox.Controls.Add(movilGroupBox);
             categoryGroupBox.Controls.Add(TabletsGroupBox);
-            categoryGroupBox.Location = new Point(12, 13);
+            categoryGroupBox.Location = new Point(197, 33);
             categoryGroupBox.Margin = new Padding(3, 4, 3, 4);
             categoryGroupBox.Name = "categoryGroupBox";
             categoryGroupBox.Padding = new Padding(3, 4, 3, 4);
@@ -470,15 +470,36 @@
             // 
             // searchProductPanel
             // 
-            searchProductPanel.BackColor = Color.FromArgb(224, 224, 224);
+            searchProductPanel.BackColor = Color.FromArgb(0, 166, 225);
+            searchProductPanel.Controls.Add(showAllProductsButton);
             searchProductPanel.Controls.Add(searchProductButton);
             searchProductPanel.Controls.Add(searchProductTextBox);
             searchProductPanel.Controls.Add(searchProductlLabel);
-            searchProductPanel.Location = new Point(230, 316);
+            searchProductPanel.Location = new Point(0, 334);
             searchProductPanel.Margin = new Padding(3, 4, 3, 4);
             searchProductPanel.Name = "searchProductPanel";
-            searchProductPanel.Size = new Size(1014, 75);
+            searchProductPanel.Size = new Size(1713, 75);
             searchProductPanel.TabIndex = 10;
+            // 
+            // showAllProductsButton
+            // 
+            showAllProductsButton.BackColor = Color.FromArgb(0, 166, 225);
+            showAllProductsButton.FlatStyle = FlatStyle.Popup;
+            showAllProductsButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
+            showAllProductsButton.ForeColor = Color.White;
+            showAllProductsButton.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            showAllProductsButton.IconColor = Color.White;
+            showAllProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            showAllProductsButton.IconSize = 50;
+            showAllProductsButton.ImageAlign = ContentAlignment.MiddleLeft;
+            showAllProductsButton.Location = new Point(1299, 17);
+            showAllProductsButton.Name = "showAllProductsButton";
+            showAllProductsButton.Size = new Size(183, 45);
+            showAllProductsButton.TabIndex = 17;
+            showAllProductsButton.Text = "Ver todo";
+            showAllProductsButton.TextAlign = ContentAlignment.MiddleRight;
+            showAllProductsButton.UseVisualStyleBackColor = false;
+            showAllProductsButton.Click += showAllProductsButton_Click;
             // 
             // searchProductButton
             // 
@@ -490,10 +511,10 @@
             searchProductButton.IconChar = FontAwesome.Sharp.IconChar.Search;
             searchProductButton.IconColor = Color.White;
             searchProductButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            searchProductButton.IconSize = 30;
-            searchProductButton.Location = new Point(932, 24);
+            searchProductButton.IconSize = 50;
+            searchProductButton.Location = new Point(1213, 8);
             searchProductButton.Name = "searchProductButton";
-            searchProductButton.Size = new Size(53, 36);
+            searchProductButton.Size = new Size(53, 54);
             searchProductButton.TabIndex = 11;
             searchProductButton.UseVisualStyleBackColor = false;
             searchProductButton.Click += searchProductButton_Click;
@@ -501,9 +522,10 @@
             // searchProductTextBox
             // 
             searchProductTextBox.BorderStyle = BorderStyle.FixedSingle;
-            searchProductTextBox.Location = new Point(255, 33);
+            searchProductTextBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchProductTextBox.Location = new Point(547, 23);
             searchProductTextBox.Name = "searchProductTextBox";
-            searchProductTextBox.Size = new Size(633, 27);
+            searchProductTextBox.Size = new Size(633, 38);
             searchProductTextBox.TabIndex = 10;
             searchProductTextBox.TextChanged += searchProductTextBox_TextChanged;
             searchProductTextBox.KeyDown += searchProductTextBox_KeyDown;
@@ -511,40 +533,21 @@
             // searchProductlLabel
             // 
             searchProductlLabel.AutoSize = true;
-            searchProductlLabel.BackColor = Color.FromArgb(224, 224, 224);
-            searchProductlLabel.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            searchProductlLabel.ForeColor = SystemColors.ActiveCaptionText;
-            searchProductlLabel.Location = new Point(22, 29);
+            searchProductlLabel.BackColor = Color.Transparent;
+            searchProductlLabel.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            searchProductlLabel.ForeColor = Color.White;
+            searchProductlLabel.Location = new Point(197, 8);
             searchProductlLabel.Name = "searchProductlLabel";
-            searchProductlLabel.Size = new Size(215, 31);
+            searchProductlLabel.Size = new Size(332, 54);
             searchProductlLabel.TabIndex = 0;
-            searchProductlLabel.Text = "Buscar Producto";
-            // 
-            // showAllProductsButton
-            // 
-            showAllProductsButton.BackColor = Color.FromArgb(0, 166, 225);
-            showAllProductsButton.FlatStyle = FlatStyle.Popup;
-            showAllProductsButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            showAllProductsButton.ForeColor = Color.White;
-            showAllProductsButton.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            showAllProductsButton.IconColor = Color.Gainsboro;
-            showAllProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            showAllProductsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            showAllProductsButton.Location = new Point(58, 331);
-            showAllProductsButton.Name = "showAllProductsButton";
-            showAllProductsButton.Size = new Size(151, 45);
-            showAllProductsButton.TabIndex = 17;
-            showAllProductsButton.Text = "ver todo";
-            showAllProductsButton.TextAlign = ContentAlignment.MiddleRight;
-            showAllProductsButton.UseVisualStyleBackColor = false;
-            showAllProductsButton.Click += showAllProductsButton_Click;
+            searchProductlLabel.Text = "Buscar producto";
             // 
             // InventoryForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1589, 1055);
-            Controls.Add(showAllProductsButton);
+            BackColor = Color.White;
+            ClientSize = new Size(1613, 1055);
             Controls.Add(searchProductPanel);
             Controls.Add(categoryGroupBox);
             Controls.Add(inventoryDataGridView);

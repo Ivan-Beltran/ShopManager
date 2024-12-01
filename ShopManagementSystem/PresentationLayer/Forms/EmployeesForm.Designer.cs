@@ -33,7 +33,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            panel1 = new Panel();
+            TittlePanel = new Panel();
             searchEmployeeButton = new FontAwesome.Sharp.IconButton();
             emplyeesIconPictureBox = new PictureBox();
             searchEmployeeTextBox = new TextBox();
@@ -62,7 +62,7 @@
             passwordTextBox = new TextBox();
             validationErrorProvider = new ErrorProvider(components);
             noFoundPictureBox = new PictureBox();
-            panel1.SuspendLayout();
+            TittlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)emplyeesIconPictureBox).BeginInit();
             employeeButtonsgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)EmployeesDataGridView).BeginInit();
@@ -71,41 +71,43 @@
             ((System.ComponentModel.ISupportInitialize)noFoundPictureBox).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // TittlePanel
             // 
-            panel1.BackColor = Color.FromArgb(224, 224, 224);
-            panel1.Controls.Add(searchEmployeeButton);
-            panel1.Controls.Add(emplyeesIconPictureBox);
-            panel1.Controls.Add(searchEmployeeTextBox);
-            panel1.Controls.Add(searchEmployeeLabel);
-            panel1.Location = new Point(1, 1);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1078, 85);
-            panel1.TabIndex = 2;
+            TittlePanel.BackColor = Color.FromArgb(0, 166, 225);
+            TittlePanel.Controls.Add(searchEmployeeButton);
+            TittlePanel.Controls.Add(emplyeesIconPictureBox);
+            TittlePanel.Controls.Add(searchEmployeeTextBox);
+            TittlePanel.Controls.Add(searchEmployeeLabel);
+            TittlePanel.Location = new Point(0, 1);
+            TittlePanel.Margin = new Padding(0);
+            TittlePanel.Name = "TittlePanel";
+            TittlePanel.Size = new Size(1833, 85);
+            TittlePanel.TabIndex = 2;
             // 
             // searchEmployeeButton
             // 
-            searchEmployeeButton.BackColor = Color.FromArgb(0, 166, 225);
+            searchEmployeeButton.BackColor = Color.Transparent;
             searchEmployeeButton.FlatAppearance.BorderColor = Color.Black;
             searchEmployeeButton.FlatAppearance.BorderSize = 2;
             searchEmployeeButton.FlatStyle = FlatStyle.Popup;
+            searchEmployeeButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             searchEmployeeButton.ForeColor = SystemColors.Control;
             searchEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.Search;
             searchEmployeeButton.IconColor = Color.White;
             searchEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            searchEmployeeButton.Location = new Point(990, 22);
+            searchEmployeeButton.IconSize = 60;
+            searchEmployeeButton.Location = new Point(1163, 20);
             searchEmployeeButton.Name = "searchEmployeeButton";
-            searchEmployeeButton.Size = new Size(69, 43);
+            searchEmployeeButton.Size = new Size(69, 54);
             searchEmployeeButton.TabIndex = 11;
             searchEmployeeButton.UseVisualStyleBackColor = false;
             searchEmployeeButton.Click += searchEmployeeButton_Click;
             // 
             // emplyeesIconPictureBox
             // 
-            emplyeesIconPictureBox.BackColor = Color.FromArgb(224, 224, 224);
+            emplyeesIconPictureBox.BackColor = Color.Transparent;
             emplyeesIconPictureBox.Image = (Image)resources.GetObject("emplyeesIconPictureBox.Image");
-            emplyeesIconPictureBox.Location = new Point(13, 4);
+            emplyeesIconPictureBox.Location = new Point(79, 7);
             emplyeesIconPictureBox.Margin = new Padding(3, 4, 3, 4);
             emplyeesIconPictureBox.Name = "emplyeesIconPictureBox";
             emplyeesIconPictureBox.Size = new Size(114, 67);
@@ -115,22 +117,23 @@
             // 
             // searchEmployeeTextBox
             // 
-            searchEmployeeTextBox.BorderStyle = BorderStyle.FixedSingle;
-            searchEmployeeTextBox.Location = new Point(347, 26);
+            searchEmployeeTextBox.BorderStyle = BorderStyle.None;
+            searchEmployeeTextBox.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchEmployeeTextBox.Location = new Point(506, 26);
             searchEmployeeTextBox.Name = "searchEmployeeTextBox";
-            searchEmployeeTextBox.Size = new Size(617, 27);
+            searchEmployeeTextBox.Size = new Size(617, 40);
             searchEmployeeTextBox.TabIndex = 10;
             searchEmployeeTextBox.TextChanged += searchEmployeeTextBox_TextChanged;
             // 
             // searchEmployeeLabel
             // 
             searchEmployeeLabel.AutoSize = true;
-            searchEmployeeLabel.BackColor = Color.FromArgb(224, 224, 224);
-            searchEmployeeLabel.Font = new Font("Microsoft Sans Serif", 13.75F);
-            searchEmployeeLabel.ForeColor = SystemColors.ActiveCaptionText;
-            searchEmployeeLabel.Location = new Point(137, 26);
+            searchEmployeeLabel.BackColor = Color.Transparent;
+            searchEmployeeLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searchEmployeeLabel.ForeColor = Color.White;
+            searchEmployeeLabel.Location = new Point(222, 26);
             searchEmployeeLabel.Name = "searchEmployeeLabel";
-            searchEmployeeLabel.Size = new Size(204, 29);
+            searchEmployeeLabel.Size = new Size(241, 38);
             searchEmployeeLabel.TabIndex = 0;
             searchEmployeeLabel.Text = "Buscar Empleado";
             // 
@@ -140,18 +143,18 @@
             employeeButtonsgroupBox.Controls.Add(addEmployeeButton);
             employeeButtonsgroupBox.Controls.Add(editEmployeeButton);
             employeeButtonsgroupBox.Controls.Add(deteleEmployeeButton);
-            employeeButtonsgroupBox.Location = new Point(1103, 154);
+            employeeButtonsgroupBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            employeeButtonsgroupBox.Location = new Point(1289, 154);
             employeeButtonsgroupBox.Name = "employeeButtonsgroupBox";
-            employeeButtonsgroupBox.Size = new Size(261, 367);
+            employeeButtonsgroupBox.Size = new Size(325, 367);
             employeeButtonsgroupBox.TabIndex = 24;
             employeeButtonsgroupBox.TabStop = false;
-            employeeButtonsgroupBox.Text = "acciones";
+            employeeButtonsgroupBox.Text = "Acciones";
             // 
             // clearRowButton
             // 
             clearRowButton.BackColor = Color.FromArgb(0, 166, 225);
-            clearRowButton.FlatStyle = FlatStyle.Popup;
-            clearRowButton.Font = new Font("Microsoft Sans Serif", 10F);
+            clearRowButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             clearRowButton.ForeColor = Color.White;
             clearRowButton.IconChar = FontAwesome.Sharp.IconChar.Cancel;
             clearRowButton.IconColor = Color.White;
@@ -161,18 +164,17 @@
             clearRowButton.Location = new Point(19, 285);
             clearRowButton.Margin = new Padding(3, 4, 3, 4);
             clearRowButton.Name = "clearRowButton";
-            clearRowButton.Size = new Size(192, 53);
+            clearRowButton.Size = new Size(277, 57);
             clearRowButton.TabIndex = 23;
             clearRowButton.Text = "Quitar seleccion";
-            clearRowButton.TextAlign = ContentAlignment.MiddleRight;
             clearRowButton.UseVisualStyleBackColor = false;
             clearRowButton.Click += clearRowButton_Click;
             // 
             // addEmployeeButton
             // 
             addEmployeeButton.BackColor = Color.FromArgb(0, 166, 225);
-            addEmployeeButton.FlatStyle = FlatStyle.Popup;
-            addEmployeeButton.Font = new Font("Microsoft Sans Serif", 10F);
+            addEmployeeButton.FlatStyle = FlatStyle.Flat;
+            addEmployeeButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             addEmployeeButton.ForeColor = Color.White;
             addEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
             addEmployeeButton.IconColor = Color.White;
@@ -182,39 +184,37 @@
             addEmployeeButton.Location = new Point(19, 40);
             addEmployeeButton.Margin = new Padding(1);
             addEmployeeButton.Name = "addEmployeeButton";
-            addEmployeeButton.Size = new Size(192, 53);
+            addEmployeeButton.Size = new Size(277, 53);
             addEmployeeButton.TabIndex = 22;
-            addEmployeeButton.Text = "    Agregar empleado";
-            addEmployeeButton.TextAlign = ContentAlignment.MiddleRight;
+            addEmployeeButton.Text = "    Agregar";
             addEmployeeButton.UseVisualStyleBackColor = false;
             addEmployeeButton.Click += addEmployeeButton_Click;
             // 
             // editEmployeeButton
             // 
             editEmployeeButton.BackColor = Color.FromArgb(0, 166, 225);
-            editEmployeeButton.FlatStyle = FlatStyle.Popup;
-            editEmployeeButton.Font = new Font("Microsoft Sans Serif", 10F);
+            editEmployeeButton.FlatStyle = FlatStyle.Flat;
+            editEmployeeButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             editEmployeeButton.ForeColor = Color.White;
             editEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
             editEmployeeButton.IconColor = Color.White;
             editEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             editEmployeeButton.IconSize = 30;
             editEmployeeButton.ImageAlign = ContentAlignment.MiddleLeft;
-            editEmployeeButton.Location = new Point(19, 111);
+            editEmployeeButton.Location = new Point(19, 123);
             editEmployeeButton.Margin = new Padding(3, 4, 3, 4);
             editEmployeeButton.Name = "editEmployeeButton";
-            editEmployeeButton.Size = new Size(192, 53);
+            editEmployeeButton.Size = new Size(277, 53);
             editEmployeeButton.TabIndex = 21;
-            editEmployeeButton.Text = "        Editar empleado";
-            editEmployeeButton.TextAlign = ContentAlignment.MiddleRight;
+            editEmployeeButton.Text = "Editar ";
             editEmployeeButton.UseVisualStyleBackColor = false;
             editEmployeeButton.Click += editEmployeeButton_Click;
             // 
             // deteleEmployeeButton
             // 
             deteleEmployeeButton.BackColor = Color.FromArgb(0, 166, 225);
-            deteleEmployeeButton.FlatStyle = FlatStyle.Popup;
-            deteleEmployeeButton.Font = new Font("Microsoft Sans Serif", 10F);
+            deteleEmployeeButton.FlatStyle = FlatStyle.Flat;
+            deteleEmployeeButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             deteleEmployeeButton.ForeColor = Color.White;
             deteleEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
             deteleEmployeeButton.IconColor = Color.White;
@@ -224,10 +224,9 @@
             deteleEmployeeButton.Location = new Point(19, 197);
             deteleEmployeeButton.Margin = new Padding(3, 4, 3, 4);
             deteleEmployeeButton.Name = "deteleEmployeeButton";
-            deteleEmployeeButton.Size = new Size(192, 53);
+            deteleEmployeeButton.Size = new Size(277, 53);
             deteleEmployeeButton.TabIndex = 22;
-            deteleEmployeeButton.Text = "        Borrar empleado";
-            deteleEmployeeButton.TextAlign = ContentAlignment.MiddleRight;
+            deteleEmployeeButton.Text = "Borrar ";
             deteleEmployeeButton.UseVisualStyleBackColor = false;
             deteleEmployeeButton.Click += deteleEmployeeButton_Click;
             // 
@@ -238,7 +237,7 @@
             EmployeesDataGridView.AllowUserToResizeRows = false;
             EmployeesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             EmployeesDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            EmployeesDataGridView.BackgroundColor = Color.SkyBlue;
+            EmployeesDataGridView.BackgroundColor = Color.White;
             EmployeesDataGridView.BorderStyle = BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -260,7 +259,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             EmployeesDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             EmployeesDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-            EmployeesDataGridView.Location = new Point(14, 154);
+            EmployeesDataGridView.Location = new Point(138, 154);
             EmployeesDataGridView.Margin = new Padding(3, 4, 3, 4);
             EmployeesDataGridView.MultiSelect = false;
             EmployeesDataGridView.Name = "EmployeesDataGridView";
@@ -272,7 +271,7 @@
             EmployeesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             EmployeesDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             EmployeesDataGridView.ShowCellToolTips = false;
-            EmployeesDataGridView.Size = new Size(1065, 367);
+            EmployeesDataGridView.Size = new Size(1095, 367);
             EmployeesDataGridView.TabIndex = 25;
             EmployeesDataGridView.SelectionChanged += EmployeesDataGridView_SelectionChanged_1;
             // 
@@ -294,9 +293,9 @@
             addEmployeegroupBox.Controls.Add(usuarioEmployee);
             addEmployeegroupBox.Controls.Add(passwordTextBox);
             addEmployeegroupBox.Font = new Font("Segoe UI", 13F);
-            addEmployeegroupBox.Location = new Point(11, 538);
+            addEmployeegroupBox.Location = new Point(63, 538);
             addEmployeegroupBox.Name = "addEmployeegroupBox";
-            addEmployeegroupBox.Size = new Size(1171, 345);
+            addEmployeegroupBox.Size = new Size(1610, 465);
             addEmployeegroupBox.TabIndex = 26;
             addEmployeegroupBox.TabStop = false;
             // 
@@ -306,7 +305,7 @@
             label1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             label1.Location = new Point(3, 32);
             label1.Name = "label1";
-            label1.Size = new Size(1165, 32);
+            label1.Size = new Size(1604, 32);
             label1.TabIndex = 22;
             label1.Text = "Datos del empleado";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -460,7 +459,7 @@
             // noFoundPictureBox
             // 
             noFoundPictureBox.Image = (Image)resources.GetObject("noFoundPictureBox.Image");
-            noFoundPictureBox.Location = new Point(399, 281);
+            noFoundPictureBox.Location = new Point(453, 277);
             noFoundPictureBox.Name = "noFoundPictureBox";
             noFoundPictureBox.Size = new Size(430, 154);
             noFoundPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -473,17 +472,18 @@
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1888, 1102);
+            BackColor = Color.White;
+            ClientSize = new Size(1768, 1102);
             Controls.Add(noFoundPictureBox);
             Controls.Add(addEmployeegroupBox);
             Controls.Add(EmployeesDataGridView);
             Controls.Add(employeeButtonsgroupBox);
-            Controls.Add(panel1);
+            Controls.Add(TittlePanel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EmployeesForm";
             Text = "e";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            TittlePanel.ResumeLayout(false);
+            TittlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)emplyeesIconPictureBox).EndInit();
             employeeButtonsgroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)EmployeesDataGridView).EndInit();
@@ -496,7 +496,7 @@
 
         #endregion
 
-        private Panel panel1;
+        private Panel TittlePanel;
         private FontAwesome.Sharp.IconButton searchEmployeeButton;
         private PictureBox emplyeesIconPictureBox;
         private TextBox searchEmployeeTextBox;

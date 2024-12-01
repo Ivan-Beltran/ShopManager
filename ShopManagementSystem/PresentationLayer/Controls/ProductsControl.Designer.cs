@@ -62,7 +62,7 @@
             brandLabel.AutoSize = true;
             brandLabel.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             brandLabel.ForeColor = SystemColors.ControlLightLight;
-            brandLabel.Location = new Point(328, 0);
+            brandLabel.Location = new Point(327, 4);
             brandLabel.Name = "brandLabel";
             brandLabel.Size = new Size(183, 50);
             brandLabel.TabIndex = 1;
@@ -92,10 +92,11 @@
             // 
             // addShoppingCarButton
             // 
-            addShoppingCarButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            addShoppingCarButton.Location = new Point(514, 285);
+            addShoppingCarButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addShoppingCarButton.ForeColor = Color.Teal;
+            addShoppingCarButton.Location = new Point(462, 280);
             addShoppingCarButton.Name = "addShoppingCarButton";
-            addShoppingCarButton.Size = new Size(220, 43);
+            addShoppingCarButton.Size = new Size(273, 48);
             addShoppingCarButton.TabIndex = 5;
             addShoppingCarButton.Text = "Agregar al carrito";
             addShoppingCarButton.UseVisualStyleBackColor = true;
@@ -104,7 +105,7 @@
             // quantitynumericUpDown
             // 
             quantitynumericUpDown.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            quantitynumericUpDown.Location = new Point(167, 283);
+            quantitynumericUpDown.Location = new Point(151, 284);
             quantitynumericUpDown.Name = "quantitynumericUpDown";
             quantitynumericUpDown.Size = new Size(55, 38);
             quantitynumericUpDown.TabIndex = 6;
@@ -158,7 +159,7 @@
             brandTittlelabel.AutoSize = true;
             brandTittlelabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             brandTittlelabel.ForeColor = SystemColors.ControlLightLight;
-            brandTittlelabel.Location = new Point(310, 106);
+            brandTittlelabel.Location = new Point(331, 106);
             brandTittlelabel.Name = "brandTittlelabel";
             brandTittlelabel.Size = new Size(100, 31);
             brandTittlelabel.TabIndex = 12;
@@ -169,7 +170,7 @@
             modelTittleLabel.AutoSize = true;
             modelTittleLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             modelTittleLabel.ForeColor = SystemColors.ControlLightLight;
-            modelTittleLabel.Location = new Point(310, 54);
+            modelTittleLabel.Location = new Point(327, 54);
             modelTittleLabel.Name = "modelTittleLabel";
             modelTittleLabel.Size = new Size(104, 31);
             modelTittleLabel.TabIndex = 11;
@@ -189,22 +190,22 @@
             // tittleenableQuantityLabel
             // 
             tittleenableQuantityLabel.AutoSize = true;
-            tittleenableQuantityLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tittleenableQuantityLabel.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold);
             tittleenableQuantityLabel.ForeColor = SystemColors.ControlLightLight;
-            tittleenableQuantityLabel.Location = new Point(270, 287);
+            tittleenableQuantityLabel.Location = new Point(219, 287);
             tittleenableQuantityLabel.Name = "tittleenableQuantityLabel";
-            tittleenableQuantityLabel.Size = new Size(145, 31);
+            tittleenableQuantityLabel.Size = new Size(191, 32);
             tittleenableQuantityLabel.TabIndex = 15;
             tittleenableQuantityLabel.Text = "Disponibles :";
             // 
             // enableQuanatityLabel
             // 
             enableQuanatityLabel.AutoSize = true;
-            enableQuanatityLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            enableQuanatityLabel.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold);
             enableQuanatityLabel.ForeColor = SystemColors.ControlLightLight;
-            enableQuanatityLabel.Location = new Point(421, 285);
+            enableQuanatityLabel.Location = new Point(416, 291);
             enableQuanatityLabel.Name = "enableQuanatityLabel";
-            enableQuanatityLabel.Size = new Size(26, 31);
+            enableQuanatityLabel.Size = new Size(31, 32);
             enableQuanatityLabel.TabIndex = 14;
             enableQuanatityLabel.Text = "0";
             // 
