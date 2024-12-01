@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryForm));
             inventoryDataGridView = new DataGridView();
             categoryGroupBox = new GroupBox();
@@ -95,12 +96,21 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             inventoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             inventoryDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            inventoryDataGridView.Location = new Point(117, 332);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            inventoryDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            inventoryDataGridView.Location = new Point(12, 443);
+            inventoryDataGridView.Margin = new Padding(3, 4, 3, 4);
             inventoryDataGridView.MultiSelect = false;
             inventoryDataGridView.Name = "inventoryDataGridView";
             inventoryDataGridView.RowHeadersVisible = false;
             inventoryDataGridView.RowHeadersWidth = 51;
-            inventoryDataGridView.Size = new Size(1252, 248);
+            inventoryDataGridView.Size = new Size(1278, 331);
             inventoryDataGridView.TabIndex = 0;
             // 
             // categoryGroupBox
@@ -110,9 +120,11 @@
             categoryGroupBox.Controls.Add(LaptopGroupBox);
             categoryGroupBox.Controls.Add(movilGroupBox);
             categoryGroupBox.Controls.Add(TabletsGroupBox);
-            categoryGroupBox.Location = new Point(27, 9);
+            categoryGroupBox.Location = new Point(12, 13);
+            categoryGroupBox.Margin = new Padding(3, 4, 3, 4);
             categoryGroupBox.Name = "categoryGroupBox";
-            categoryGroupBox.Size = new Size(1302, 210);
+            categoryGroupBox.Padding = new Padding(3, 4, 3, 4);
+            categoryGroupBox.Size = new Size(1285, 280);
             categoryGroupBox.TabIndex = 9;
             categoryGroupBox.TabStop = false;
             // 
@@ -123,11 +135,9 @@
             accesoriesGroupBox.Controls.Add(AccesoryLabel);
             accesoriesGroupBox.Controls.Add(accesoriesPictureBox);
             accesoriesGroupBox.Controls.Add(totalAccesoriesLabel);
-            accesoriesGroupBox.Location = new Point(1082, 20);
-            accesoriesGroupBox.Margin = new Padding(3, 2, 3, 2);
+            accesoriesGroupBox.Location = new Point(1061, 27);
             accesoriesGroupBox.Name = "accesoriesGroupBox";
-            accesoriesGroupBox.Padding = new Padding(3, 2, 3, 2);
-            accesoriesGroupBox.Size = new Size(178, 170);
+            accesoriesGroupBox.Size = new Size(203, 227);
             accesoriesGroupBox.TabIndex = 21;
             accesoriesGroupBox.TabStop = false;
             // 
@@ -142,10 +152,9 @@
             showAccesoriesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             showAccesoriesButton.IconSize = 38;
             showAccesoriesButton.ImageAlign = ContentAlignment.MiddleLeft;
-            showAccesoriesButton.Location = new Point(0, 149);
-            showAccesoriesButton.Margin = new Padding(3, 2, 3, 2);
+            showAccesoriesButton.Location = new Point(0, 199);
             showAccesoriesButton.Name = "showAccesoriesButton";
-            showAccesoriesButton.Size = new Size(178, 21);
+            showAccesoriesButton.Size = new Size(203, 28);
             showAccesoriesButton.TabIndex = 19;
             showAccesoriesButton.Text = "ver detalles";
             showAccesoriesButton.UseVisualStyleBackColor = false;
@@ -156,9 +165,9 @@
             AccesoryLabel.BackColor = Color.White;
             AccesoryLabel.BorderStyle = BorderStyle.FixedSingle;
             AccesoryLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            AccesoryLabel.Location = new Point(0, 100);
+            AccesoryLabel.Location = new Point(0, 133);
             AccesoryLabel.Name = "AccesoryLabel";
-            AccesoryLabel.Size = new Size(178, 24);
+            AccesoryLabel.Size = new Size(203, 31);
             AccesoryLabel.TabIndex = 16;
             AccesoryLabel.Text = "Accesorios";
             AccesoryLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -168,8 +177,9 @@
             accesoriesPictureBox.BackColor = Color.White;
             accesoriesPictureBox.Image = (Image)resources.GetObject("accesoriesPictureBox.Image");
             accesoriesPictureBox.Location = new Point(0, 0);
+            accesoriesPictureBox.Margin = new Padding(3, 4, 3, 4);
             accesoriesPictureBox.Name = "accesoriesPictureBox";
-            accesoriesPictureBox.Size = new Size(190, 96);
+            accesoriesPictureBox.Size = new Size(217, 128);
             accesoriesPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             accesoriesPictureBox.TabIndex = 12;
             accesoriesPictureBox.TabStop = false;
@@ -179,9 +189,9 @@
             totalAccesoriesLabel.BackColor = Color.White;
             totalAccesoriesLabel.BorderStyle = BorderStyle.FixedSingle;
             totalAccesoriesLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            totalAccesoriesLabel.Location = new Point(0, 124);
+            totalAccesoriesLabel.Location = new Point(0, 165);
             totalAccesoriesLabel.Name = "totalAccesoriesLabel";
-            totalAccesoriesLabel.Size = new Size(178, 23);
+            totalAccesoriesLabel.Size = new Size(203, 30);
             totalAccesoriesLabel.TabIndex = 1;
             totalAccesoriesLabel.Text = "50";
             totalAccesoriesLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -193,11 +203,9 @@
             pcGroupBox.Controls.Add(pcLabel);
             pcGroupBox.Controls.Add(pcPictureBox);
             pcGroupBox.Controls.Add(pcTotalLabel);
-            pcGroupBox.Location = new Point(24, 20);
-            pcGroupBox.Margin = new Padding(3, 2, 3, 2);
+            pcGroupBox.Location = new Point(27, 27);
             pcGroupBox.Name = "pcGroupBox";
-            pcGroupBox.Padding = new Padding(3, 2, 3, 2);
-            pcGroupBox.Size = new Size(178, 170);
+            pcGroupBox.Size = new Size(203, 227);
             pcGroupBox.TabIndex = 20;
             pcGroupBox.TabStop = false;
             // 
@@ -212,10 +220,9 @@
             showPcButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             showPcButton.IconSize = 38;
             showPcButton.ImageAlign = ContentAlignment.MiddleLeft;
-            showPcButton.Location = new Point(0, 149);
-            showPcButton.Margin = new Padding(3, 2, 3, 2);
+            showPcButton.Location = new Point(0, 199);
             showPcButton.Name = "showPcButton";
-            showPcButton.Size = new Size(178, 21);
+            showPcButton.Size = new Size(203, 28);
             showPcButton.TabIndex = 16;
             showPcButton.Text = "ver detalles";
             showPcButton.UseVisualStyleBackColor = false;
@@ -226,9 +233,9 @@
             pcLabel.BackColor = Color.White;
             pcLabel.BorderStyle = BorderStyle.FixedSingle;
             pcLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            pcLabel.Location = new Point(0, 99);
+            pcLabel.Location = new Point(0, 132);
             pcLabel.Name = "pcLabel";
-            pcLabel.Size = new Size(178, 23);
+            pcLabel.Size = new Size(203, 30);
             pcLabel.TabIndex = 16;
             pcLabel.Text = "Ordenadores";
             pcLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -238,8 +245,9 @@
             pcPictureBox.BackColor = Color.White;
             pcPictureBox.Image = (Image)resources.GetObject("pcPictureBox.Image");
             pcPictureBox.Location = new Point(0, 0);
+            pcPictureBox.Margin = new Padding(3, 4, 3, 4);
             pcPictureBox.Name = "pcPictureBox";
-            pcPictureBox.Size = new Size(178, 96);
+            pcPictureBox.Size = new Size(203, 128);
             pcPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pcPictureBox.TabIndex = 12;
             pcPictureBox.TabStop = false;
@@ -249,9 +257,9 @@
             pcTotalLabel.BackColor = Color.White;
             pcTotalLabel.BorderStyle = BorderStyle.FixedSingle;
             pcTotalLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            pcTotalLabel.Location = new Point(0, 124);
+            pcTotalLabel.Location = new Point(0, 165);
             pcTotalLabel.Name = "pcTotalLabel";
-            pcTotalLabel.Size = new Size(178, 23);
+            pcTotalLabel.Size = new Size(203, 30);
             pcTotalLabel.TabIndex = 1;
             pcTotalLabel.Text = "total : 50";
             pcTotalLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -263,11 +271,9 @@
             LaptopGroupBox.Controls.Add(laptosLabel);
             LaptopGroupBox.Controls.Add(laptopPictureBox);
             LaptopGroupBox.Controls.Add(totalLaptosLabel);
-            LaptopGroupBox.Location = new Point(267, 21);
-            LaptopGroupBox.Margin = new Padding(3, 2, 3, 2);
+            LaptopGroupBox.Location = new Point(272, 28);
             LaptopGroupBox.Name = "LaptopGroupBox";
-            LaptopGroupBox.Padding = new Padding(3, 2, 3, 2);
-            LaptopGroupBox.Size = new Size(178, 170);
+            LaptopGroupBox.Size = new Size(203, 227);
             LaptopGroupBox.TabIndex = 19;
             LaptopGroupBox.TabStop = false;
             // 
@@ -282,10 +288,9 @@
             showLaptopsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             showLaptopsButton.IconSize = 38;
             showLaptopsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            showLaptopsButton.Location = new Point(0, 148);
-            showLaptopsButton.Margin = new Padding(3, 2, 3, 2);
+            showLaptopsButton.Location = new Point(0, 197);
             showLaptopsButton.Name = "showLaptopsButton";
-            showLaptopsButton.Size = new Size(178, 21);
+            showLaptopsButton.Size = new Size(203, 28);
             showLaptopsButton.TabIndex = 19;
             showLaptopsButton.Text = "ver detalles";
             showLaptopsButton.UseVisualStyleBackColor = false;
@@ -296,9 +301,9 @@
             laptosLabel.BackColor = Color.White;
             laptosLabel.BorderStyle = BorderStyle.FixedSingle;
             laptosLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            laptosLabel.Location = new Point(0, 100);
+            laptosLabel.Location = new Point(0, 133);
             laptosLabel.Name = "laptosLabel";
-            laptosLabel.Size = new Size(178, 23);
+            laptosLabel.Size = new Size(203, 30);
             laptosLabel.TabIndex = 16;
             laptosLabel.Text = "Laptops";
             laptosLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -308,8 +313,9 @@
             laptopPictureBox.BackColor = Color.White;
             laptopPictureBox.Image = (Image)resources.GetObject("laptopPictureBox.Image");
             laptopPictureBox.Location = new Point(0, 0);
+            laptopPictureBox.Margin = new Padding(3, 4, 3, 4);
             laptopPictureBox.Name = "laptopPictureBox";
-            laptopPictureBox.Size = new Size(178, 96);
+            laptopPictureBox.Size = new Size(203, 128);
             laptopPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             laptopPictureBox.TabIndex = 12;
             laptopPictureBox.TabStop = false;
@@ -319,9 +325,9 @@
             totalLaptosLabel.BackColor = Color.White;
             totalLaptosLabel.BorderStyle = BorderStyle.FixedSingle;
             totalLaptosLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            totalLaptosLabel.Location = new Point(0, 124);
+            totalLaptosLabel.Location = new Point(0, 165);
             totalLaptosLabel.Name = "totalLaptosLabel";
-            totalLaptosLabel.Size = new Size(178, 22);
+            totalLaptosLabel.Size = new Size(203, 29);
             totalLaptosLabel.TabIndex = 1;
             totalLaptosLabel.Text = "50";
             totalLaptosLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -333,11 +339,9 @@
             movilGroupBox.Controls.Add(movilesLabel);
             movilGroupBox.Controls.Add(movilPictureBox);
             movilGroupBox.Controls.Add(totalMovilesLabel);
-            movilGroupBox.Location = new Point(543, 21);
-            movilGroupBox.Margin = new Padding(3, 2, 3, 2);
+            movilGroupBox.Location = new Point(521, 28);
             movilGroupBox.Name = "movilGroupBox";
-            movilGroupBox.Padding = new Padding(3, 2, 3, 2);
-            movilGroupBox.Size = new Size(178, 170);
+            movilGroupBox.Size = new Size(203, 227);
             movilGroupBox.TabIndex = 18;
             movilGroupBox.TabStop = false;
             // 
@@ -352,10 +356,9 @@
             showMovilesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             showMovilesButton.IconSize = 38;
             showMovilesButton.ImageAlign = ContentAlignment.MiddleLeft;
-            showMovilesButton.Location = new Point(0, 148);
-            showMovilesButton.Margin = new Padding(3, 2, 3, 2);
+            showMovilesButton.Location = new Point(0, 197);
             showMovilesButton.Name = "showMovilesButton";
-            showMovilesButton.Size = new Size(178, 21);
+            showMovilesButton.Size = new Size(203, 28);
             showMovilesButton.TabIndex = 19;
             showMovilesButton.Text = "ver detalles";
             showMovilesButton.UseVisualStyleBackColor = false;
@@ -366,9 +369,9 @@
             movilesLabel.BackColor = Color.White;
             movilesLabel.BorderStyle = BorderStyle.FixedSingle;
             movilesLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            movilesLabel.Location = new Point(0, 100);
+            movilesLabel.Location = new Point(0, 133);
             movilesLabel.Name = "movilesLabel";
-            movilesLabel.Size = new Size(178, 24);
+            movilesLabel.Size = new Size(203, 31);
             movilesLabel.TabIndex = 16;
             movilesLabel.Text = "Moviles";
             movilesLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -378,8 +381,9 @@
             movilPictureBox.BackColor = Color.White;
             movilPictureBox.Image = (Image)resources.GetObject("movilPictureBox.Image");
             movilPictureBox.Location = new Point(0, 0);
+            movilPictureBox.Margin = new Padding(3, 4, 3, 4);
             movilPictureBox.Name = "movilPictureBox";
-            movilPictureBox.Size = new Size(190, 96);
+            movilPictureBox.Size = new Size(217, 128);
             movilPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             movilPictureBox.TabIndex = 12;
             movilPictureBox.TabStop = false;
@@ -389,9 +393,9 @@
             totalMovilesLabel.BackColor = Color.White;
             totalMovilesLabel.BorderStyle = BorderStyle.FixedSingle;
             totalMovilesLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            totalMovilesLabel.Location = new Point(0, 124);
+            totalMovilesLabel.Location = new Point(0, 165);
             totalMovilesLabel.Name = "totalMovilesLabel";
-            totalMovilesLabel.Size = new Size(178, 22);
+            totalMovilesLabel.Size = new Size(203, 29);
             totalMovilesLabel.TabIndex = 1;
             totalMovilesLabel.Text = "50";
             totalMovilesLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -403,11 +407,9 @@
             TabletsGroupBox.Controls.Add(tabletsLabel);
             TabletsGroupBox.Controls.Add(tabletsPictureBox);
             TabletsGroupBox.Controls.Add(totalTabletsLabel);
-            TabletsGroupBox.Location = new Point(827, 21);
-            TabletsGroupBox.Margin = new Padding(3, 2, 3, 2);
+            TabletsGroupBox.Location = new Point(793, 28);
             TabletsGroupBox.Name = "TabletsGroupBox";
-            TabletsGroupBox.Padding = new Padding(3, 2, 3, 2);
-            TabletsGroupBox.Size = new Size(178, 170);
+            TabletsGroupBox.Size = new Size(203, 227);
             TabletsGroupBox.TabIndex = 17;
             TabletsGroupBox.TabStop = false;
             // 
@@ -422,10 +424,9 @@
             showTabletsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             showTabletsButton.IconSize = 38;
             showTabletsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            showTabletsButton.Location = new Point(0, 148);
-            showTabletsButton.Margin = new Padding(3, 2, 3, 2);
+            showTabletsButton.Location = new Point(0, 197);
             showTabletsButton.Name = "showTabletsButton";
-            showTabletsButton.Size = new Size(178, 21);
+            showTabletsButton.Size = new Size(203, 28);
             showTabletsButton.TabIndex = 19;
             showTabletsButton.Text = "ver detalles";
             showTabletsButton.UseVisualStyleBackColor = false;
@@ -436,9 +437,9 @@
             tabletsLabel.BackColor = Color.White;
             tabletsLabel.BorderStyle = BorderStyle.FixedSingle;
             tabletsLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            tabletsLabel.Location = new Point(0, 100);
+            tabletsLabel.Location = new Point(0, 133);
             tabletsLabel.Name = "tabletsLabel";
-            tabletsLabel.Size = new Size(178, 24);
+            tabletsLabel.Size = new Size(203, 31);
             tabletsLabel.TabIndex = 16;
             tabletsLabel.Text = "Tablets";
             tabletsLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -448,8 +449,9 @@
             tabletsPictureBox.BackColor = Color.White;
             tabletsPictureBox.Image = (Image)resources.GetObject("tabletsPictureBox.Image");
             tabletsPictureBox.Location = new Point(0, 0);
+            tabletsPictureBox.Margin = new Padding(3, 4, 3, 4);
             tabletsPictureBox.Name = "tabletsPictureBox";
-            tabletsPictureBox.Size = new Size(190, 96);
+            tabletsPictureBox.Size = new Size(217, 128);
             tabletsPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             tabletsPictureBox.TabIndex = 12;
             tabletsPictureBox.TabStop = false;
@@ -459,9 +461,9 @@
             totalTabletsLabel.BackColor = Color.White;
             totalTabletsLabel.BorderStyle = BorderStyle.FixedSingle;
             totalTabletsLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            totalTabletsLabel.Location = new Point(0, 124);
+            totalTabletsLabel.Location = new Point(0, 165);
             totalTabletsLabel.Name = "totalTabletsLabel";
-            totalTabletsLabel.Size = new Size(178, 22);
+            totalTabletsLabel.Size = new Size(203, 29);
             totalTabletsLabel.TabIndex = 1;
             totalTabletsLabel.Text = "50";
             totalTabletsLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -472,9 +474,10 @@
             searchProductPanel.Controls.Add(searchProductButton);
             searchProductPanel.Controls.Add(searchProductTextBox);
             searchProductPanel.Controls.Add(searchProductlLabel);
-            searchProductPanel.Location = new Point(251, 237);
+            searchProductPanel.Location = new Point(230, 316);
+            searchProductPanel.Margin = new Padding(3, 4, 3, 4);
             searchProductPanel.Name = "searchProductPanel";
-            searchProductPanel.Size = new Size(932, 56);
+            searchProductPanel.Size = new Size(1014, 75);
             searchProductPanel.TabIndex = 10;
             // 
             // searchProductButton
@@ -488,10 +491,9 @@
             searchProductButton.IconColor = Color.White;
             searchProductButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             searchProductButton.IconSize = 30;
-            searchProductButton.Location = new Point(834, 18);
-            searchProductButton.Margin = new Padding(3, 2, 3, 2);
+            searchProductButton.Location = new Point(932, 24);
             searchProductButton.Name = "searchProductButton";
-            searchProductButton.Size = new Size(46, 27);
+            searchProductButton.Size = new Size(53, 36);
             searchProductButton.TabIndex = 11;
             searchProductButton.UseVisualStyleBackColor = false;
             searchProductButton.Click += searchProductButton_Click;
@@ -499,10 +501,9 @@
             // searchProductTextBox
             // 
             searchProductTextBox.BorderStyle = BorderStyle.FixedSingle;
-            searchProductTextBox.Location = new Point(223, 25);
-            searchProductTextBox.Margin = new Padding(3, 2, 3, 2);
+            searchProductTextBox.Location = new Point(255, 33);
             searchProductTextBox.Name = "searchProductTextBox";
-            searchProductTextBox.Size = new Size(581, 23);
+            searchProductTextBox.Size = new Size(633, 27);
             searchProductTextBox.TabIndex = 10;
             searchProductTextBox.TextChanged += searchProductTextBox_TextChanged;
             searchProductTextBox.KeyDown += searchProductTextBox_KeyDown;
@@ -513,9 +514,9 @@
             searchProductlLabel.BackColor = Color.FromArgb(224, 224, 224);
             searchProductlLabel.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             searchProductlLabel.ForeColor = SystemColors.ActiveCaptionText;
-            searchProductlLabel.Location = new Point(19, 22);
+            searchProductlLabel.Location = new Point(22, 29);
             searchProductlLabel.Name = "searchProductlLabel";
-            searchProductlLabel.Size = new Size(171, 25);
+            searchProductlLabel.Size = new Size(215, 31);
             searchProductlLabel.TabIndex = 0;
             searchProductlLabel.Text = "Buscar Producto";
             // 
@@ -529,10 +530,9 @@
             showAllProductsButton.IconColor = Color.Gainsboro;
             showAllProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             showAllProductsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            showAllProductsButton.Location = new Point(52, 237);
-            showAllProductsButton.Margin = new Padding(3, 2, 3, 2);
+            showAllProductsButton.Location = new Point(58, 331);
             showAllProductsButton.Name = "showAllProductsButton";
-            showAllProductsButton.Size = new Size(132, 34);
+            showAllProductsButton.Size = new Size(151, 45);
             showAllProductsButton.TabIndex = 17;
             showAllProductsButton.Text = "ver todo";
             showAllProductsButton.TextAlign = ContentAlignment.MiddleRight;
@@ -541,13 +541,14 @@
             // 
             // InventoryForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1390, 791);
+            ClientSize = new Size(1589, 1055);
             Controls.Add(showAllProductsButton);
             Controls.Add(searchProductPanel);
             Controls.Add(categoryGroupBox);
             Controls.Add(inventoryDataGridView);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "InventoryForm";
             Text = "InventoryForm";
             ((System.ComponentModel.ISupportInitialize)inventoryDataGridView).EndInit();

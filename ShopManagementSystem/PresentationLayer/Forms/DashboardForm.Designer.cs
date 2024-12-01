@@ -43,10 +43,8 @@
             employeeNameLabel = new Label();
             welcomeLabel = new Label();
             logoPictureBox = new PictureBox();
-            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             PrincipalPanel = new Panel();
             pictureBox1 = new PictureBox();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             sidebarPanel.SuspendLayout();
             dashBoardFlowLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
@@ -66,7 +64,7 @@
             sidebarPanel.Location = new Point(0, 0);
             sidebarPanel.Margin = new Padding(1, 3, 1, 3);
             sidebarPanel.Name = "sidebarPanel";
-            sidebarPanel.Size = new Size(288, 1055);
+            sidebarPanel.Size = new Size(261, 1055);
             sidebarPanel.TabIndex = 0;
             // 
             // dashBoardFlowLayoutPanel
@@ -82,7 +80,7 @@
             dashBoardFlowLayoutPanel.Location = new Point(7, 317);
             dashBoardFlowLayoutPanel.Margin = new Padding(3, 4, 3, 4);
             dashBoardFlowLayoutPanel.Name = "dashBoardFlowLayoutPanel";
-            dashBoardFlowLayoutPanel.Size = new Size(277, 389);
+            dashBoardFlowLayoutPanel.Size = new Size(245, 389);
             dashBoardFlowLayoutPanel.TabIndex = 7;
             // 
             // CatalogButton
@@ -266,10 +264,10 @@
             exitSesionButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             exitSesionButton.IconSize = 32;
             exitSesionButton.ImageAlign = ContentAlignment.MiddleLeft;
-            exitSesionButton.Location = new Point(0, 1014);
+            exitSesionButton.Location = new Point(0, 994);
             exitSesionButton.Margin = new Padding(1, 3, 1, 3);
             exitSesionButton.Name = "exitSesionButton";
-            exitSesionButton.Size = new Size(288, 41);
+            exitSesionButton.Size = new Size(261, 61);
             exitSesionButton.TabIndex = 6;
             exitSesionButton.Text = "Cerrar Sesión";
             exitSesionButton.UseVisualStyleBackColor = false;
@@ -283,7 +281,7 @@
             employeeNameLabel.Location = new Point(2, 215);
             employeeNameLabel.Margin = new Padding(5, 0, 5, 0);
             employeeNameLabel.Name = "employeeNameLabel";
-            employeeNameLabel.Size = new Size(281, 48);
+            employeeNameLabel.Size = new Size(254, 48);
             employeeNameLabel.TabIndex = 1;
             employeeNameLabel.Text = "Usuario";
             employeeNameLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -312,40 +310,34 @@
             logoPictureBox.TabIndex = 0;
             logoPictureBox.TabStop = false;
             // 
-            // sqlCommand1
-            // 
-            sqlCommand1.CommandTimeout = 30;
-            sqlCommand1.EnableOptimizedParameterBinding = false;
-            // 
             // PrincipalPanel
             // 
-            PrincipalPanel.BackColor = Color.White;
+            PrincipalPanel.AutoSize = true;
+            PrincipalPanel.BackColor = Color.Transparent;
             PrincipalPanel.Controls.Add(pictureBox1);
-            PrincipalPanel.Dock = DockStyle.Fill;
-            PrincipalPanel.Location = new Point(288, 0);
+            PrincipalPanel.Location = new Point(266, 0);
             PrincipalPanel.Margin = new Padding(5, 3, 5, 3);
             PrincipalPanel.Name = "PrincipalPanel";
-            PrincipalPanel.Size = new Size(1557, 1055);
+            PrincipalPanel.Size = new Size(1657, 1058);
             PrincipalPanel.TabIndex = 1;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, -1);
-            pictureBox1.Margin = new Padding(5, 3, 5, 3);
-            pictureBox1.MaximumSize = new Size(1865, 1299);
+            pictureBox1.Location = new Point(-2, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1667, 1053);
+            pictureBox1.Size = new Size(1656, 1055);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
+            pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // DashboardForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1845, 1055);
+            ClientSize = new Size(1923, 1055);
             Controls.Add(PrincipalPanel);
             Controls.Add(sidebarPanel);
             IsMdiContainer = true;
@@ -359,19 +351,17 @@
             PrincipalPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Panel sidebarPanel;
-        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private Panel PrincipalPanel;
         private PictureBox logoPictureBox;
         private Label employeeNameLabel;
         private Label welcomeLabel;
         private FontAwesome.Sharp.IconButton exitSesionButton;
-        private PictureBox pictureBox1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private FlowLayoutPanel dashBoardFlowLayoutPanel;
         private FontAwesome.Sharp.IconButton suppliersButton;
         private FontAwesome.Sharp.IconButton createProductsButton;
@@ -381,5 +371,7 @@
         private FontAwesome.Sharp.IconButton employeesButton;
         private FontAwesome.Sharp.IconButton CatalogButton;
         private FontAwesome.Sharp.IconButton clientsButton;
+        private Label label1;
+        private PictureBox pictureBox1;
     }
 }

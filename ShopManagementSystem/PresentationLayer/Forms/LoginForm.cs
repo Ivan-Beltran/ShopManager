@@ -96,7 +96,7 @@ namespace PresentationLayer.Forms
 
                 if (employeeSesion == null)
                 {
-                    MessageBox.Show("No se encontró ningún usuario.");
+                    MessageBox.Show("No se encontró ningún usuario.","error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -124,7 +124,7 @@ namespace PresentationLayer.Forms
                     }
                     else
                     {
-                        MessageBox.Show("Contraseña incorrecta.", "Error");
+                        MessageBox.Show("Contraseña incorrecta.", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
                 }
             }

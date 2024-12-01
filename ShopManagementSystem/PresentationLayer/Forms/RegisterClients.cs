@@ -86,7 +86,8 @@ namespace PresentationLayer.Forms
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("ya hay un cliente que ocupa este Email", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                      
                 }
             }
             else

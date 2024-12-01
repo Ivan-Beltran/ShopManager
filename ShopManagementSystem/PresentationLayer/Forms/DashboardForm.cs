@@ -204,6 +204,7 @@ namespace PresentationLayer.Forms
         private void clientsButton_Click(object sender, EventArgs e)
         {
             openChildForm(new ViewCustomers(_clientsServices));
+            ChangeButtonColor(clientsButton);
         }
     }
 }

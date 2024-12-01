@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesreportForm));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             Searchlabel = new Label();
             SearchButton = new PictureBox();
             salesReportDataGridView = new DataGridView();
@@ -39,7 +41,7 @@
             searchReportdateTimePicker = new DateTimePicker();
             productsBuyingDataGridView = new DataGridView();
             listProductsLabel = new Label();
-            viewDetailsButton = new FontAwesome.Sharp.IconButton();
+            tittleLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)SearchButton).BeginInit();
             ((System.ComponentModel.ISupportInitialize)salesReportDataGridView).BeginInit();
             searchGroupBox.SuspendLayout();
@@ -53,10 +55,10 @@
             Searchlabel.BackColor = Color.Transparent;
             Searchlabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             Searchlabel.ForeColor = SystemColors.Control;
-            Searchlabel.Location = new Point(19, 20);
-            Searchlabel.Margin = new Padding(88, 11, 0, 0);
+            Searchlabel.Location = new Point(22, 27);
+            Searchlabel.Margin = new Padding(101, 15, 0, 0);
             Searchlabel.Name = "Searchlabel";
-            Searchlabel.Size = new Size(243, 25);
+            Searchlabel.Size = new Size(312, 32);
             Searchlabel.TabIndex = 0;
             Searchlabel.Text = "Buscar reporte por fecha :";
             Searchlabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -65,10 +67,10 @@
             // 
             SearchButton.BackColor = Color.Transparent;
             SearchButton.Image = (Image)resources.GetObject("SearchButton.Image");
-            SearchButton.Location = new Point(797, 13);
-            SearchButton.Margin = new Padding(18, 11, 3, 2);
+            SearchButton.Location = new Point(911, 17);
+            SearchButton.Margin = new Padding(21, 15, 3, 3);
             SearchButton.Name = "SearchButton";
-            SearchButton.Size = new Size(47, 38);
+            SearchButton.Size = new Size(54, 51);
             SearchButton.SizeMode = PictureBoxSizeMode.StretchImage;
             SearchButton.TabIndex = 2;
             SearchButton.TabStop = false;
@@ -92,14 +94,24 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             salesReportDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             salesReportDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            salesReportDataGridView.Location = new Point(25, 132);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            salesReportDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            salesReportDataGridView.Location = new Point(28, 247);
+            salesReportDataGridView.Margin = new Padding(3, 4, 3, 4);
             salesReportDataGridView.MultiSelect = false;
             salesReportDataGridView.Name = "salesReportDataGridView";
             salesReportDataGridView.RowHeadersVisible = false;
             salesReportDataGridView.RowHeadersWidth = 51;
             salesReportDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            salesReportDataGridView.Size = new Size(977, 204);
+            salesReportDataGridView.Size = new Size(1117, 234);
             salesReportDataGridView.TabIndex = 2;
+            salesReportDataGridView.SelectionChanged += salesReportDataGridView_SelectionChanged;
             // 
             // searchGroupBox
             // 
@@ -108,11 +120,9 @@
             searchGroupBox.Controls.Add(searchReportdateTimePicker);
             searchGroupBox.Controls.Add(Searchlabel);
             searchGroupBox.Controls.Add(SearchButton);
-            searchGroupBox.Location = new Point(25, 27);
-            searchGroupBox.Margin = new Padding(3, 2, 3, 2);
+            searchGroupBox.Location = new Point(29, 36);
             searchGroupBox.Name = "searchGroupBox";
-            searchGroupBox.Padding = new Padding(3, 2, 3, 2);
-            searchGroupBox.Size = new Size(1068, 66);
+            searchGroupBox.Size = new Size(1221, 88);
             searchGroupBox.TabIndex = 24;
             searchGroupBox.TabStop = false;
             // 
@@ -126,10 +136,9 @@
             showAllReportsButton.IconColor = Color.Gainsboro;
             showAllReportsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             showAllReportsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            showAllReportsButton.Location = new Point(896, 16);
-            showAllReportsButton.Margin = new Padding(3, 2, 3, 2);
+            showAllReportsButton.Location = new Point(1024, 21);
             showAllReportsButton.Name = "showAllReportsButton";
-            showAllReportsButton.Size = new Size(132, 34);
+            showAllReportsButton.Size = new Size(151, 45);
             showAllReportsButton.TabIndex = 18;
             showAllReportsButton.Text = "ver todo";
             showAllReportsButton.TextAlign = ContentAlignment.MiddleRight;
@@ -138,10 +147,9 @@
             // 
             // searchReportdateTimePicker
             // 
-            searchReportdateTimePicker.Location = new Point(331, 23);
-            searchReportdateTimePicker.Margin = new Padding(3, 2, 3, 2);
+            searchReportdateTimePicker.Location = new Point(378, 31);
             searchReportdateTimePicker.Name = "searchReportdateTimePicker";
-            searchReportdateTimePicker.Size = new Size(434, 23);
+            searchReportdateTimePicker.Size = new Size(495, 27);
             searchReportdateTimePicker.TabIndex = 3;
             // 
             // productsBuyingDataGridView
@@ -153,64 +161,62 @@
             productsBuyingDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             productsBuyingDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             productsBuyingDataGridView.BackgroundColor = Color.Azure;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            productsBuyingDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            productsBuyingDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             productsBuyingDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            productsBuyingDataGridView.Location = new Point(25, 402);
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            productsBuyingDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            productsBuyingDataGridView.Location = new Point(34, 562);
+            productsBuyingDataGridView.Margin = new Padding(3, 4, 3, 4);
             productsBuyingDataGridView.MultiSelect = false;
             productsBuyingDataGridView.Name = "productsBuyingDataGridView";
             productsBuyingDataGridView.RowHeadersVisible = false;
             productsBuyingDataGridView.RowHeadersWidth = 51;
-            productsBuyingDataGridView.Size = new Size(977, 204);
+            productsBuyingDataGridView.Size = new Size(1117, 217);
             productsBuyingDataGridView.TabIndex = 25;
             // 
             // listProductsLabel
             // 
             listProductsLabel.AutoSize = true;
             listProductsLabel.Font = new Font("Segoe UI", 14F);
-            listProductsLabel.Location = new Point(405, 362);
+            listProductsLabel.Location = new Point(468, 509);
             listProductsLabel.Name = "listProductsLabel";
-            listProductsLabel.Size = new Size(196, 25);
+            listProductsLabel.Size = new Size(329, 32);
             listProductsLabel.TabIndex = 26;
-            listProductsLabel.Text = "productos comprados";
+            listProductsLabel.Text = "lista de productos comprados";
             // 
-            // viewDetailsButton
+            // tittleLabel
             // 
-            viewDetailsButton.BackColor = Color.FromArgb(0, 166, 225);
-            viewDetailsButton.FlatStyle = FlatStyle.Popup;
-            viewDetailsButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            viewDetailsButton.ForeColor = Color.White;
-            viewDetailsButton.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
-            viewDetailsButton.IconColor = Color.White;
-            viewDetailsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            viewDetailsButton.IconSize = 38;
-            viewDetailsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            viewDetailsButton.Location = new Point(1032, 229);
-            viewDetailsButton.Name = "viewDetailsButton";
-            viewDetailsButton.Size = new Size(144, 40);
-            viewDetailsButton.TabIndex = 27;
-            viewDetailsButton.Text = "ver detalles";
-            viewDetailsButton.TextAlign = ContentAlignment.MiddleRight;
-            viewDetailsButton.UseVisualStyleBackColor = false;
-            viewDetailsButton.Click += viewDetailsButton_Click;
+            tittleLabel.AutoSize = true;
+            tittleLabel.Font = new Font("Segoe UI", 14F);
+            tittleLabel.Location = new Point(447, 160);
+            tittleLabel.Name = "tittleLabel";
+            tittleLabel.Size = new Size(182, 32);
+            tittleLabel.TabIndex = 27;
+            tittleLabel.Text = "ventas realizdas";
             // 
             // SalesreportForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1212, 698);
-            Controls.Add(viewDetailsButton);
+            ClientSize = new Size(1385, 931);
+            Controls.Add(tittleLabel);
             Controls.Add(listProductsLabel);
             Controls.Add(productsBuyingDataGridView);
             Controls.Add(searchGroupBox);
             Controls.Add(salesReportDataGridView);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "SalesreportForm";
             Text = "SalesreportForm";
             ((System.ComponentModel.ISupportInitialize)SearchButton).EndInit();
@@ -231,6 +237,6 @@
         private FontAwesome.Sharp.IconButton showAllReportsButton;
         private DataGridView productsBuyingDataGridView;
         private Label listProductsLabel;
-        private FontAwesome.Sharp.IconButton viewDetailsButton;
+        private Label tittleLabel;
     }
 }

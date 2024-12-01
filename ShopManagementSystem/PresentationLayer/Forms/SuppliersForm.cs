@@ -11,6 +11,7 @@ using CommonLayer.Entities;
 using BussinessLayer.Services.ServicesForSuppliers;
 using PresentationLayer.Validations;
 using FluentValidation.Results;
+using Microsoft.Data.SqlClient;
 
 namespace PresentationLayer.Forms
 {
@@ -134,6 +135,7 @@ namespace PresentationLayer.Forms
 
         private void deleteSupplierButton_Click(object sender, EventArgs e)
         {
+            
             if (SupplierDataGridView.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Por favor, seleccione un proveedor a eliminar",
@@ -142,22 +144,47 @@ namespace PresentationLayer.Forms
                     MessageBoxIcon.Information);
                 return;
             }
+           
             else
             {
-                DialogResult dialogResult = MessageBox.Show("¿Está seguro de eliminar este dato?",
-                    "Warning",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
+                try
                 {
-                    int Id = Convert.ToInt32(SupplierDataGridView.CurrentRow.Cells[0].Value.ToString());
 
-                    _supplierServices.DeleteSupplier(Id);
-                    LoadSuppliers();
-                    this.Shown += (s, e) => SupplierDataGridView.ClearSelection();
-                    ClearParameters();
+                    DialogResult dialogResult = MessageBox.Show("¿Está seguro de eliminar este dato?",
+                        "Warning",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        int Id = Convert.ToInt32(SupplierDataGridView.CurrentRow.Cells[0].Value.ToString());
+
+                        _supplierServices.DeleteSupplier(Id);
+                        LoadSuppliers();
+                        this.Shown += (s, e) => SupplierDataGridView.ClearSelection();
+                        ClearParameters();
 
 
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    if (ex.Number == 547) 
+                    {
+                        MessageBox.Show("no se puede eliminar el proveedor porque se encuentra relacionado a pedidos realizado",
+                            "error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        
+                        MessageBox.Show($"Error SQL: {ex.Message}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                    MessageBox.Show($"Error: {ex.Message}");
                 }
             }
         }

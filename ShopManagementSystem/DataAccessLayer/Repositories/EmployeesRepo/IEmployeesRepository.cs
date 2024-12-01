@@ -21,5 +21,6 @@ namespace DataAccessLayer.Repositories.EmployeesRepo
         void DeleteEmployee(int Id);
 
         DataTable SearchEmployee(string search);
+        string GetEmployeePassword(int EmployeeId);
     }
 }

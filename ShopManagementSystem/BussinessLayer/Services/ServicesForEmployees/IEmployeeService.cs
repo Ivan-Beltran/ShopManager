@@ -16,6 +16,7 @@ namespace BussinessLayer.Services.ServicesForEmployees
         void DeleteEmployee(int Id);
 
         DataTable SearchEmployee(string search);
+        string GetEmployeePassword(int EmployeeId);
     }
 
 }

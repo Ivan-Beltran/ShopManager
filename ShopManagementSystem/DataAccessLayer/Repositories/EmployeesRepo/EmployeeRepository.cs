@@ -66,6 +66,19 @@ namespace DataAccessLayer.Repositories.EmployeesRepo
             return rolesTable;
         }
 
+        public string GetEmployeePassword(int EmployeeId)
+        {
+
+            using(var connection = _dbConnection.GetConnection())
+            {
+                string query ="SELECT PasswordEmployee FROM Employees WHERE EmployeeId=@EmployeeId";
+
+                var employeePassword = connection.QueryFirstOrDefault<string>(query, new { EmployeeId});
+
+                return employeePassword;
+            }
+        }
+
         public void AddEmployee(Employees employeeAdded)
         {
             using (var connection = _dbConnection.GetConnection())

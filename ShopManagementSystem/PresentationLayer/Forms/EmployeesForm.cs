@@ -38,7 +38,7 @@ namespace PresentationLayer.Forms
            
             EmployeesDataGridView.DataSource = _employeeService.GetEmployees();
             EmployeesDataGridView.Columns["ID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            EmployeesDataGridView.Columns["DUI"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            
 
             foreach (DataGridViewRow row in EmployeesDataGridView.Rows)
             {
@@ -108,7 +108,7 @@ namespace PresentationLayer.Forms
                 {
                     if (ex.Number == 2627)
                     {
-                        MessageBox.Show("Ya hay un empleado que ocupa este nombre de usuario",
+                        MessageBox.Show("Ya hay un usuario que ocupa el mismo username,correo o DUI",
                             "error",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
@@ -194,7 +194,7 @@ namespace PresentationLayer.Forms
                 {
                     if (ex.Number == 2627)
                     {
-                        MessageBox.Show("Nombre de usuario existente, por favor elija otro ",
+                        MessageBox.Show("Ya hay un usuario que ocupa el mismo username,correo o DUI",
                             "Error",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
@@ -254,6 +254,11 @@ namespace PresentationLayer.Forms
             {
                 string search = searchEmployeeTextBox.Text;
                 EmployeesDataGridView.DataSource = _employeeService.SearchEmployee(search);
+                if (EmployeesDataGridView.Rows.Count == 0)
+                {
+                    EmployeesDataGridView.Visible=false;
+                    noFoundPictureBox.Visible = true;
+                }
                 this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
                 EmployeesDataGridView.ClearSelection();
                 ClearParameters();
@@ -268,6 +273,8 @@ namespace PresentationLayer.Forms
             {
 
                 LoadEmployees();
+                noFoundPictureBox.Visible = false;
+                EmployeesDataGridView.Visible = true;
                 this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
                 EmployeesDataGridView.ClearSelection();
                 ClearParameters();
@@ -308,12 +315,12 @@ namespace PresentationLayer.Forms
             ClearParameters();
             if (EmployeesDataGridView.SelectedRows.Count > 0)
             {
-                var selectedRow = EmployeesDataGridView.SelectedRows[0];
+                int EmployeeId = Convert.ToInt32(EmployeesDataGridView.CurrentRow.Cells[0].Value);
 
                 namesTextBox.Text = EmployeesDataGridView.CurrentRow.Cells[1].Value.ToString();
                 lastNamesTextBox.Text = EmployeesDataGridView.CurrentRow.Cells[2].Value.ToString();
                 UserTextBox.Text = EmployeesDataGridView.CurrentRow.Cells[3].Value.ToString();
-                passwordTextBox.Text = EmployeesDataGridView.CurrentRow.Cells[4].Value.ToString();
+                passwordTextBox.Text = _employeeService.GetEmployeePassword(EmployeeId);
                 duiTextBox.Text = EmployeesDataGridView.CurrentRow.Cells[5].Value.ToString();
                 emailTextBox.Text = EmployeesDataGridView.CurrentRow.Cells[6].Value.ToString();
                 rolesComboBox.Text = EmployeesDataGridView.CurrentRow.Cells[7].Value.ToString();

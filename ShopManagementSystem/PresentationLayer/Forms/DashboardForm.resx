@@ -277,13 +277,10 @@
         AAAAAAAAAAAAAAAAAGDFvuzL/j8xkVbDoqs4uQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="sqlCommand1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABoUAAANaCAYAAABP70UYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAA/7JJREFUeF7snWd/FEfWt/cDPve9BgPGOQDGxuucveu112uvcw7knDMiI0Ao54Ak
+        wQAADsEBuJFr7QAA/7JJREFUeF7snWd/FEfWt/cDPve9BgPGOQDGxuucveu112uvcw7knDMiI0Ao54Ak
         JIECEsneO32G85z/OXW6T9fUjEYgsL07L65fVVdX9/T09FT31DWn6g9Xr1wiMDU2KEyMDtD4pX66cqmP
         rgz30pWhXhq72M100Wh/J13qa2faaLi3lQZ7mmmwq4kudl6g/nam9Rz1ttRTb/MZ6mk6TV0XTlL7+WPU
         fu4YtZ49Sq31R6n5zBFqOX2Imk8dpKaTByQth1+P/O3QeGJ/RS4c30cXju1NE61rOLqnwPmju5ldBRqi
@@ -16244,10 +16241,7 @@
         w/Oe9zzT3nEcx3EWPoua/w+++ZxBE5iSIAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>149, 17</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>78</value>
+    <value>133</value>
   </metadata>
 </root>

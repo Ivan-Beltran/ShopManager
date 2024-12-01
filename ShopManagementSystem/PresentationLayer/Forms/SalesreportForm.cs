@@ -21,7 +21,7 @@ namespace PresentationLayer.Forms
             InitializeComponent();
             _salesServices = salesServices;
             LoadSalesReport();
-           
+
         }
 
         public void LoadSalesReport()
@@ -51,14 +51,16 @@ namespace PresentationLayer.Forms
             productsBuyingDataGridView.DataSource = _salesServices.GetSalesDetails(SaleId);
         }
 
-        private void viewDetailsButton_Click(object sender, EventArgs e)
+       
+
+        private void salesReportDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             if (salesReportDataGridView.SelectedRows.Count > 0)
             {
                 int SaleId = Convert.ToInt32(salesReportDataGridView.CurrentRow.Cells[0].Value);
                 LoadSalesDeatail(SaleId);
                 productsBuyingDataGridView.Columns["SubTotal"].DefaultCellStyle.Format = "C2";
-               
+
             }
         }
     }

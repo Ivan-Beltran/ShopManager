@@ -61,12 +61,14 @@
             usuarioEmployee = new Label();
             passwordTextBox = new TextBox();
             validationErrorProvider = new ErrorProvider(components);
+            noFoundPictureBox = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)emplyeesIconPictureBox).BeginInit();
             employeeButtonsgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)EmployeesDataGridView).BeginInit();
             addEmployeegroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)validationErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)noFoundPictureBox).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -79,7 +81,7 @@
             panel1.Location = new Point(1, 1);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1959, 85);
+            panel1.Size = new Size(1078, 85);
             panel1.TabIndex = 2;
             // 
             // searchEmployeeButton
@@ -92,7 +94,7 @@
             searchEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.Search;
             searchEmployeeButton.IconColor = Color.White;
             searchEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            searchEmployeeButton.Location = new Point(1183, 23);
+            searchEmployeeButton.Location = new Point(990, 22);
             searchEmployeeButton.Name = "searchEmployeeButton";
             searchEmployeeButton.Size = new Size(69, 43);
             searchEmployeeButton.TabIndex = 11;
@@ -103,7 +105,7 @@
             // 
             emplyeesIconPictureBox.BackColor = Color.FromArgb(224, 224, 224);
             emplyeesIconPictureBox.Image = (Image)resources.GetObject("emplyeesIconPictureBox.Image");
-            emplyeesIconPictureBox.Location = new Point(111, 4);
+            emplyeesIconPictureBox.Location = new Point(13, 4);
             emplyeesIconPictureBox.Margin = new Padding(3, 4, 3, 4);
             emplyeesIconPictureBox.Name = "emplyeesIconPictureBox";
             emplyeesIconPictureBox.Size = new Size(114, 67);
@@ -114,9 +116,9 @@
             // searchEmployeeTextBox
             // 
             searchEmployeeTextBox.BorderStyle = BorderStyle.FixedSingle;
-            searchEmployeeTextBox.Location = new Point(485, 32);
+            searchEmployeeTextBox.Location = new Point(347, 26);
             searchEmployeeTextBox.Name = "searchEmployeeTextBox";
-            searchEmployeeTextBox.Size = new Size(664, 27);
+            searchEmployeeTextBox.Size = new Size(617, 27);
             searchEmployeeTextBox.TabIndex = 10;
             searchEmployeeTextBox.TextChanged += searchEmployeeTextBox_TextChanged;
             // 
@@ -124,11 +126,11 @@
             // 
             searchEmployeeLabel.AutoSize = true;
             searchEmployeeLabel.BackColor = Color.FromArgb(224, 224, 224);
-            searchEmployeeLabel.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchEmployeeLabel.Font = new Font("Microsoft Sans Serif", 13.75F);
             searchEmployeeLabel.ForeColor = SystemColors.ActiveCaptionText;
-            searchEmployeeLabel.Location = new Point(251, 28);
+            searchEmployeeLabel.Location = new Point(137, 26);
             searchEmployeeLabel.Name = "searchEmployeeLabel";
-            searchEmployeeLabel.Size = new Size(227, 31);
+            searchEmployeeLabel.Size = new Size(204, 29);
             searchEmployeeLabel.TabIndex = 0;
             searchEmployeeLabel.Text = "Buscar Empleado";
             // 
@@ -138,7 +140,7 @@
             employeeButtonsgroupBox.Controls.Add(addEmployeeButton);
             employeeButtonsgroupBox.Controls.Add(editEmployeeButton);
             employeeButtonsgroupBox.Controls.Add(deteleEmployeeButton);
-            employeeButtonsgroupBox.Location = new Point(1386, 131);
+            employeeButtonsgroupBox.Location = new Point(1103, 154);
             employeeButtonsgroupBox.Name = "employeeButtonsgroupBox";
             employeeButtonsgroupBox.Size = new Size(261, 367);
             employeeButtonsgroupBox.TabIndex = 24;
@@ -149,17 +151,17 @@
             // 
             clearRowButton.BackColor = Color.FromArgb(0, 166, 225);
             clearRowButton.FlatStyle = FlatStyle.Popup;
-            clearRowButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clearRowButton.Font = new Font("Microsoft Sans Serif", 10F);
             clearRowButton.ForeColor = Color.White;
             clearRowButton.IconChar = FontAwesome.Sharp.IconChar.Cancel;
             clearRowButton.IconColor = Color.White;
             clearRowButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            clearRowButton.IconSize = 38;
+            clearRowButton.IconSize = 30;
             clearRowButton.ImageAlign = ContentAlignment.MiddleLeft;
             clearRowButton.Location = new Point(19, 285);
             clearRowButton.Margin = new Padding(3, 4, 3, 4);
             clearRowButton.Name = "clearRowButton";
-            clearRowButton.Size = new Size(222, 53);
+            clearRowButton.Size = new Size(192, 53);
             clearRowButton.TabIndex = 23;
             clearRowButton.Text = "Quitar seleccion";
             clearRowButton.TextAlign = ContentAlignment.MiddleRight;
@@ -170,17 +172,17 @@
             // 
             addEmployeeButton.BackColor = Color.FromArgb(0, 166, 225);
             addEmployeeButton.FlatStyle = FlatStyle.Popup;
-            addEmployeeButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addEmployeeButton.Font = new Font("Microsoft Sans Serif", 10F);
             addEmployeeButton.ForeColor = Color.White;
             addEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
             addEmployeeButton.IconColor = Color.White;
             addEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            addEmployeeButton.IconSize = 38;
+            addEmployeeButton.IconSize = 30;
             addEmployeeButton.ImageAlign = ContentAlignment.MiddleLeft;
             addEmployeeButton.Location = new Point(19, 40);
             addEmployeeButton.Margin = new Padding(1);
             addEmployeeButton.Name = "addEmployeeButton";
-            addEmployeeButton.Size = new Size(222, 53);
+            addEmployeeButton.Size = new Size(192, 53);
             addEmployeeButton.TabIndex = 22;
             addEmployeeButton.Text = "    Agregar empleado";
             addEmployeeButton.TextAlign = ContentAlignment.MiddleRight;
@@ -191,17 +193,17 @@
             // 
             editEmployeeButton.BackColor = Color.FromArgb(0, 166, 225);
             editEmployeeButton.FlatStyle = FlatStyle.Popup;
-            editEmployeeButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            editEmployeeButton.Font = new Font("Microsoft Sans Serif", 10F);
             editEmployeeButton.ForeColor = Color.White;
             editEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
             editEmployeeButton.IconColor = Color.White;
             editEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            editEmployeeButton.IconSize = 38;
+            editEmployeeButton.IconSize = 30;
             editEmployeeButton.ImageAlign = ContentAlignment.MiddleLeft;
             editEmployeeButton.Location = new Point(19, 111);
             editEmployeeButton.Margin = new Padding(3, 4, 3, 4);
             editEmployeeButton.Name = "editEmployeeButton";
-            editEmployeeButton.Size = new Size(222, 53);
+            editEmployeeButton.Size = new Size(192, 53);
             editEmployeeButton.TabIndex = 21;
             editEmployeeButton.Text = "        Editar empleado";
             editEmployeeButton.TextAlign = ContentAlignment.MiddleRight;
@@ -212,17 +214,17 @@
             // 
             deteleEmployeeButton.BackColor = Color.FromArgb(0, 166, 225);
             deteleEmployeeButton.FlatStyle = FlatStyle.Popup;
-            deteleEmployeeButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            deteleEmployeeButton.Font = new Font("Microsoft Sans Serif", 10F);
             deteleEmployeeButton.ForeColor = Color.White;
             deteleEmployeeButton.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
             deteleEmployeeButton.IconColor = Color.White;
             deteleEmployeeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            deteleEmployeeButton.IconSize = 38;
+            deteleEmployeeButton.IconSize = 30;
             deteleEmployeeButton.ImageAlign = ContentAlignment.MiddleLeft;
             deteleEmployeeButton.Location = new Point(19, 197);
             deteleEmployeeButton.Margin = new Padding(3, 4, 3, 4);
             deteleEmployeeButton.Name = "deteleEmployeeButton";
-            deteleEmployeeButton.Size = new Size(222, 53);
+            deteleEmployeeButton.Size = new Size(192, 53);
             deteleEmployeeButton.TabIndex = 22;
             deteleEmployeeButton.Text = "        Borrar empleado";
             deteleEmployeeButton.TextAlign = ContentAlignment.MiddleRight;
@@ -258,7 +260,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             EmployeesDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             EmployeesDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-            EmployeesDataGridView.Location = new Point(11, 131);
+            EmployeesDataGridView.Location = new Point(14, 154);
             EmployeesDataGridView.Margin = new Padding(3, 4, 3, 4);
             EmployeesDataGridView.MultiSelect = false;
             EmployeesDataGridView.Name = "EmployeesDataGridView";
@@ -270,7 +272,7 @@
             EmployeesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             EmployeesDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             EmployeesDataGridView.ShowCellToolTips = false;
-            EmployeesDataGridView.Size = new Size(1342, 367);
+            EmployeesDataGridView.Size = new Size(1065, 367);
             EmployeesDataGridView.TabIndex = 25;
             EmployeesDataGridView.SelectionChanged += EmployeesDataGridView_SelectionChanged_1;
             // 
@@ -291,20 +293,20 @@
             addEmployeegroupBox.Controls.Add(passwordEmployee);
             addEmployeegroupBox.Controls.Add(usuarioEmployee);
             addEmployeegroupBox.Controls.Add(passwordTextBox);
-            addEmployeegroupBox.Font = new Font("Segoe UI", 14F);
-            addEmployeegroupBox.Location = new Point(11, 528);
+            addEmployeegroupBox.Font = new Font("Segoe UI", 13F);
+            addEmployeegroupBox.Location = new Point(11, 538);
             addEmployeegroupBox.Name = "addEmployeegroupBox";
-            addEmployeegroupBox.Size = new Size(1342, 385);
+            addEmployeegroupBox.Size = new Size(1171, 345);
             addEmployeegroupBox.TabIndex = 26;
             addEmployeegroupBox.TabStop = false;
             // 
             // label1
             // 
             label1.Dock = DockStyle.Top;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.Location = new Point(3, 35);
+            label1.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label1.Location = new Point(3, 32);
             label1.Name = "label1";
-            label1.Size = new Size(1336, 32);
+            label1.Size = new Size(1165, 32);
             label1.TabIndex = 22;
             label1.Text = "Datos del empleado";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -314,7 +316,7 @@
             rolesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             rolesComboBox.Font = new Font("Microsoft Sans Serif", 12F);
             rolesComboBox.FormattingEnabled = true;
-            rolesComboBox.Location = new Point(1125, 188);
+            rolesComboBox.Location = new Point(980, 191);
             rolesComboBox.MaxDropDownItems = 10;
             rolesComboBox.Name = "rolesComboBox";
             rolesComboBox.Size = new Size(172, 33);
@@ -324,7 +326,7 @@
             // 
             roleLabel.AutoSize = true;
             roleLabel.Font = new Font("Microsoft Sans Serif", 12F);
-            roleLabel.Location = new Point(938, 196);
+            roleLabel.Location = new Point(805, 196);
             roleLabel.Name = "roleLabel";
             roleLabel.Size = new Size(180, 25);
             roleLabel.TabIndex = 20;
@@ -334,7 +336,7 @@
             // 
             namesTextBox.BorderStyle = BorderStyle.FixedSingle;
             namesTextBox.Font = new Font("Microsoft Sans Serif", 12F);
-            namesTextBox.Location = new Point(147, 99);
+            namesTextBox.Location = new Point(137, 99);
             namesTextBox.Margin = new Padding(3, 4, 3, 4);
             namesTextBox.Name = "namesTextBox";
             namesTextBox.Size = new Size(231, 30);
@@ -344,7 +346,7 @@
             // 
             emailEmployee.AutoSize = true;
             emailEmployee.Font = new Font("Microsoft Sans Serif", 12F);
-            emailEmployee.Location = new Point(29, 280);
+            emailEmployee.Location = new Point(17, 280);
             emailEmployee.Name = "emailEmployee";
             emailEmployee.Size = new Size(68, 25);
             emailEmployee.TabIndex = 19;
@@ -354,7 +356,7 @@
             // 
             nameEmployee.AutoSize = true;
             nameEmployee.Font = new Font("Microsoft Sans Serif", 12F);
-            nameEmployee.Location = new Point(27, 101);
+            nameEmployee.Location = new Point(17, 101);
             nameEmployee.Name = "nameEmployee";
             nameEmployee.Size = new Size(87, 25);
             nameEmployee.TabIndex = 9;
@@ -364,27 +366,27 @@
             // 
             emailTextBox.BorderStyle = BorderStyle.FixedSingle;
             emailTextBox.Font = new Font("Microsoft Sans Serif", 12F);
-            emailTextBox.Location = new Point(139, 280);
+            emailTextBox.Location = new Point(127, 280);
             emailTextBox.Margin = new Padding(3, 4, 3, 4);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(413, 30);
+            emailTextBox.Size = new Size(335, 30);
             emailTextBox.TabIndex = 18;
             // 
             // lastNamesTextBox
             // 
             lastNamesTextBox.BorderStyle = BorderStyle.FixedSingle;
             lastNamesTextBox.Font = new Font("Microsoft Sans Serif", 12F);
-            lastNamesTextBox.Location = new Point(550, 99);
+            lastNamesTextBox.Location = new Point(513, 102);
             lastNamesTextBox.Margin = new Padding(3, 4, 3, 4);
             lastNamesTextBox.Name = "lastNamesTextBox";
-            lastNamesTextBox.Size = new Size(283, 30);
+            lastNamesTextBox.Size = new Size(271, 30);
             lastNamesTextBox.TabIndex = 10;
             // 
             // duiEmployee
             // 
             duiEmployee.AutoSize = true;
             duiEmployee.Font = new Font("Microsoft Sans Serif", 12F);
-            duiEmployee.Location = new Point(1027, 101);
+            duiEmployee.Location = new Point(894, 101);
             duiEmployee.Name = "duiEmployee";
             duiEmployee.Size = new Size(51, 25);
             duiEmployee.TabIndex = 17;
@@ -394,7 +396,7 @@
             // 
             lastNameEmployee.AutoSize = true;
             lastNameEmployee.Font = new Font("Microsoft Sans Serif", 12F);
-            lastNameEmployee.Location = new Point(456, 101);
+            lastNameEmployee.Location = new Point(420, 104);
             lastNameEmployee.Name = "lastNameEmployee";
             lastNameEmployee.Size = new Size(88, 25);
             lastNameEmployee.TabIndex = 11;
@@ -404,7 +406,7 @@
             // 
             duiTextBox.BorderStyle = BorderStyle.FixedSingle;
             duiTextBox.Font = new Font("Microsoft Sans Serif", 12F);
-            duiTextBox.Location = new Point(1125, 99);
+            duiTextBox.Location = new Point(980, 102);
             duiTextBox.Margin = new Padding(3, 4, 3, 4);
             duiTextBox.Name = "duiTextBox";
             duiTextBox.Size = new Size(172, 30);
@@ -414,7 +416,7 @@
             // 
             UserTextBox.BorderStyle = BorderStyle.FixedSingle;
             UserTextBox.Font = new Font("Microsoft Sans Serif", 12F);
-            UserTextBox.Location = new Point(149, 197);
+            UserTextBox.Location = new Point(139, 197);
             UserTextBox.Margin = new Padding(3, 4, 3, 4);
             UserTextBox.Name = "UserTextBox";
             UserTextBox.Size = new Size(229, 30);
@@ -424,7 +426,7 @@
             // 
             passwordEmployee.AutoSize = true;
             passwordEmployee.Font = new Font("Microsoft Sans Serif", 12F);
-            passwordEmployee.Location = new Point(426, 196);
+            passwordEmployee.Location = new Point(390, 199);
             passwordEmployee.Name = "passwordEmployee";
             passwordEmployee.Size = new Size(120, 25);
             passwordEmployee.TabIndex = 15;
@@ -434,7 +436,7 @@
             // 
             usuarioEmployee.AutoSize = true;
             usuarioEmployee.Font = new Font("Microsoft Sans Serif", 12F);
-            usuarioEmployee.Location = new Point(29, 201);
+            usuarioEmployee.Location = new Point(19, 201);
             usuarioEmployee.Name = "usuarioEmployee";
             usuarioEmployee.Size = new Size(85, 25);
             usuarioEmployee.TabIndex = 13;
@@ -444,10 +446,10 @@
             // 
             passwordTextBox.BorderStyle = BorderStyle.FixedSingle;
             passwordTextBox.Font = new Font("Microsoft Sans Serif", 12F);
-            passwordTextBox.Location = new Point(552, 193);
+            passwordTextBox.Location = new Point(515, 196);
             passwordTextBox.Margin = new Padding(3, 4, 3, 4);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(283, 30);
+            passwordTextBox.Size = new Size(269, 30);
             passwordTextBox.TabIndex = 14;
             // 
             // validationErrorProvider
@@ -455,11 +457,24 @@
             validationErrorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             validationErrorProvider.ContainerControl = this;
             // 
+            // noFoundPictureBox
+            // 
+            noFoundPictureBox.Image = (Image)resources.GetObject("noFoundPictureBox.Image");
+            noFoundPictureBox.Location = new Point(399, 281);
+            noFoundPictureBox.Name = "noFoundPictureBox";
+            noFoundPictureBox.Size = new Size(430, 154);
+            noFoundPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            noFoundPictureBox.TabIndex = 27;
+            noFoundPictureBox.TabStop = false;
+            noFoundPictureBox.Visible = false;
+            // 
             // EmployeesForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1707, 788);
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(1888, 1102);
+            Controls.Add(noFoundPictureBox);
             Controls.Add(addEmployeegroupBox);
             Controls.Add(EmployeesDataGridView);
             Controls.Add(employeeButtonsgroupBox);
@@ -475,6 +490,7 @@
             addEmployeegroupBox.ResumeLayout(false);
             addEmployeegroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)validationErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)noFoundPictureBox).EndInit();
             ResumeLayout(false);
         }
 
@@ -508,5 +524,6 @@
         private Label usuarioEmployee;
         private TextBox passwordTextBox;
         private ErrorProvider validationErrorProvider;
+        private PictureBox noFoundPictureBox;
     }
 }

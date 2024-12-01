@@ -47,5 +47,9 @@ namespace BussinessLayer.Services.ServicesForEmployees
         {
             return _employeeRepository.SearchEmployee(search);
         }
+        public string GetEmployeePassword(int EmployeeId)
+        {
+            return _employeeRepository.GetEmployeePassword(EmployeeId);
+        }
     }
 }
