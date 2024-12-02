@@ -62,9 +62,9 @@
             sidebarPanel.Controls.Add(logoPictureBox);
             sidebarPanel.Dock = DockStyle.Left;
             sidebarPanel.Location = new Point(0, 0);
-            sidebarPanel.Margin = new Padding(1, 3, 1, 3);
+            sidebarPanel.Margin = new Padding(0);
             sidebarPanel.Name = "sidebarPanel";
-            sidebarPanel.Size = new Size(261, 1055);
+            sidebarPanel.Size = new Size(266, 1055);
             sidebarPanel.TabIndex = 0;
             // 
             // dashBoardFlowLayoutPanel
@@ -80,7 +80,7 @@
             dashBoardFlowLayoutPanel.Location = new Point(7, 317);
             dashBoardFlowLayoutPanel.Margin = new Padding(3, 4, 3, 4);
             dashBoardFlowLayoutPanel.Name = "dashBoardFlowLayoutPanel";
-            dashBoardFlowLayoutPanel.Size = new Size(245, 389);
+            dashBoardFlowLayoutPanel.Size = new Size(251, 389);
             dashBoardFlowLayoutPanel.TabIndex = 7;
             // 
             // CatalogButton
@@ -111,7 +111,7 @@
             employeesButton.FlatStyle = FlatStyle.Flat;
             employeesButton.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             employeesButton.ForeColor = SystemColors.ActiveCaptionText;
-            employeesButton.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            employeesButton.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
             employeesButton.IconColor = Color.Black;
             employeesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             employeesButton.IconSize = 32;
@@ -264,10 +264,10 @@
             exitSesionButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             exitSesionButton.IconSize = 32;
             exitSesionButton.ImageAlign = ContentAlignment.MiddleLeft;
-            exitSesionButton.Location = new Point(0, 994);
+            exitSesionButton.Location = new Point(0, 1003);
             exitSesionButton.Margin = new Padding(1, 3, 1, 3);
             exitSesionButton.Name = "exitSesionButton";
-            exitSesionButton.Size = new Size(261, 61);
+            exitSesionButton.Size = new Size(266, 52);
             exitSesionButton.TabIndex = 6;
             exitSesionButton.Text = "Cerrar Sesión";
             exitSesionButton.UseVisualStyleBackColor = false;
@@ -281,7 +281,7 @@
             employeeNameLabel.Location = new Point(2, 215);
             employeeNameLabel.Margin = new Padding(5, 0, 5, 0);
             employeeNameLabel.Name = "employeeNameLabel";
-            employeeNameLabel.Size = new Size(254, 48);
+            employeeNameLabel.Size = new Size(259, 48);
             employeeNameLabel.TabIndex = 1;
             employeeNameLabel.Text = "Usuario";
             employeeNameLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -302,10 +302,10 @@
             // 
             logoPictureBox.BackColor = Color.Transparent;
             logoPictureBox.Image = (Image)resources.GetObject("logoPictureBox.Image");
-            logoPictureBox.Location = new Point(0, 0);
+            logoPictureBox.Location = new Point(-8, -45);
             logoPictureBox.Margin = new Padding(5, 3, 5, 3);
             logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(281, 212);
+            logoPictureBox.Size = new Size(281, 273);
             logoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             logoPictureBox.TabIndex = 0;
             logoPictureBox.TabStop = false;
@@ -316,17 +316,17 @@
             PrincipalPanel.BackColor = Color.Transparent;
             PrincipalPanel.Controls.Add(pictureBox1);
             PrincipalPanel.Location = new Point(266, 0);
-            PrincipalPanel.Margin = new Padding(5, 3, 5, 3);
+            PrincipalPanel.Margin = new Padding(0);
             PrincipalPanel.Name = "PrincipalPanel";
-            PrincipalPanel.Size = new Size(1657, 1058);
+            PrincipalPanel.Size = new Size(1811, 1058);
             PrincipalPanel.TabIndex = 1;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-2, 0);
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1656, 1055);
+            pictureBox1.Size = new Size(1808, 1055);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;

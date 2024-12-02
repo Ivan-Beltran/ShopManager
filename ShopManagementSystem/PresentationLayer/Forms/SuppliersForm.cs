@@ -35,7 +35,7 @@ namespace PresentationLayer.Forms
         private void registerSupplierButton_Click(object sender, EventArgs e)
         {
 
-            if(SupplierDataGridView.SelectedRows.Count > 0 )
+            if (SupplierDataGridView.SelectedRows.Count > 0)
             {
                 MessageBox.Show("no se puede agregar mientras una fila este seleccionada",
                    "Advertencia",
@@ -89,7 +89,7 @@ namespace PresentationLayer.Forms
                     case nameof(Suppliers.SupplierAddres):
                         validationErrorProvider.SetError(addressSupplierTextBox, error.ErrorMessage);
                         break;
-               
+
                 }
             }
 
@@ -135,7 +135,7 @@ namespace PresentationLayer.Forms
 
         private void deleteSupplierButton_Click(object sender, EventArgs e)
         {
-            
+
             if (SupplierDataGridView.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Por favor, seleccione un proveedor a eliminar",
@@ -144,7 +144,7 @@ namespace PresentationLayer.Forms
                     MessageBoxIcon.Information);
                 return;
             }
-           
+
             else
             {
                 try
@@ -168,7 +168,7 @@ namespace PresentationLayer.Forms
                 }
                 catch (SqlException ex)
                 {
-                    if (ex.Number == 547) 
+                    if (ex.Number == 547)
                     {
                         MessageBox.Show("no se puede eliminar el proveedor porque se encuentra relacionado a pedidos realizado",
                             "error",
@@ -177,13 +177,13 @@ namespace PresentationLayer.Forms
                     }
                     else
                     {
-                        
+
                         MessageBox.Show($"Error SQL: {ex.Message}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    
+
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }
@@ -227,5 +227,7 @@ namespace PresentationLayer.Forms
             emailSupplierTextBox.Text = "";
             addressSupplierTextBox.Text = "";
         }
+
+        
     }
 }

@@ -50,16 +50,20 @@
             addProductsButton = new FontAwesome.Sharp.IconButton();
             purchaseOrderDataGridView = new DataGridView();
             purchaseOrdersErrorProvider = new ErrorProvider(components);
+            TittlePanel = new Panel();
+            OrdersTittleLabel = new Label();
             purchaeOrderGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)purchaseListDataGridView).BeginInit();
             addOrdergroupBox.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)purchaseOrderDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)purchaseOrdersErrorProvider).BeginInit();
+            TittlePanel.SuspendLayout();
             SuspendLayout();
             // 
             // purchaeOrderGroupBox
             // 
+            purchaeOrderGroupBox.BackColor = Color.White;
             purchaeOrderGroupBox.Controls.Add(purchaseDetailsLabel);
             purchaeOrderGroupBox.Controls.Add(purchaseListDataGridView);
             purchaeOrderGroupBox.Controls.Add(addOrdergroupBox);
@@ -67,7 +71,7 @@
             purchaeOrderGroupBox.Controls.Add(groupBox2);
             purchaeOrderGroupBox.Controls.Add(purchaseOrderDataGridView);
             purchaeOrderGroupBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            purchaeOrderGroupBox.Location = new Point(25, 12);
+            purchaeOrderGroupBox.Location = new Point(12, 89);
             purchaeOrderGroupBox.Name = "purchaeOrderGroupBox";
             purchaeOrderGroupBox.Size = new Size(1471, 1004);
             purchaeOrderGroupBox.TabIndex = 0;
@@ -78,7 +82,7 @@
             // 
             purchaseDetailsLabel.AutoSize = true;
             purchaseDetailsLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            purchaseDetailsLabel.Location = new Point(452, 662);
+            purchaseDetailsLabel.Location = new Point(451, 638);
             purchaseDetailsLabel.Name = "purchaseDetailsLabel";
             purchaseDetailsLabel.Size = new Size(242, 32);
             purchaseDetailsLabel.TabIndex = 35;
@@ -113,7 +117,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             purchaseListDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             purchaseListDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-            purchaseListDataGridView.Location = new Point(49, 698);
+            purchaseListDataGridView.Location = new Point(39, 684);
             purchaseListDataGridView.Margin = new Padding(3, 4, 3, 4);
             purchaseListDataGridView.MultiSelect = false;
             purchaseListDataGridView.Name = "purchaseListDataGridView";
@@ -125,7 +129,7 @@
             purchaseListDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             purchaseListDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             purchaseListDataGridView.ShowCellToolTips = false;
-            purchaseListDataGridView.Size = new Size(1066, 224);
+            purchaseListDataGridView.Size = new Size(1066, 255);
             purchaseListDataGridView.TabIndex = 34;
             // 
             // addOrdergroupBox
@@ -155,7 +159,8 @@
             // createPurchaseOrderButton
             // 
             createPurchaseOrderButton.BackColor = Color.FromArgb(0, 166, 225);
-            createPurchaseOrderButton.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            createPurchaseOrderButton.FlatStyle = FlatStyle.Flat;
+            createPurchaseOrderButton.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             createPurchaseOrderButton.ForeColor = Color.White;
             createPurchaseOrderButton.IconChar = FontAwesome.Sharp.IconChar.ShoppingBag;
             createPurchaseOrderButton.IconColor = Color.White;
@@ -165,9 +170,10 @@
             createPurchaseOrderButton.Location = new Point(750, 72);
             createPurchaseOrderButton.Margin = new Padding(3, 4, 3, 4);
             createPurchaseOrderButton.Name = "createPurchaseOrderButton";
-            createPurchaseOrderButton.Size = new Size(271, 73);
+            createPurchaseOrderButton.Size = new Size(316, 73);
             createPurchaseOrderButton.TabIndex = 12;
             createPurchaseOrderButton.Text = "Seleccionar productos ";
+            createPurchaseOrderButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             createPurchaseOrderButton.UseVisualStyleBackColor = false;
             createPurchaseOrderButton.Click += createPurchaseOrderButton_Click;
             // 
@@ -201,7 +207,7 @@
             // 
             purchaseOrderTittleLabel.AutoSize = true;
             purchaseOrderTittleLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            purchaseOrderTittleLabel.Location = new Point(452, 275);
+            purchaseOrderTittleLabel.Location = new Point(452, 265);
             purchaseOrderTittleLabel.Name = "purchaseOrderTittleLabel";
             purchaseOrderTittleLabel.Size = new Size(236, 32);
             purchaseOrderTittleLabel.TabIndex = 28;
@@ -222,17 +228,18 @@
             // deletePurchaseOrderButton
             // 
             deletePurchaseOrderButton.BackColor = Color.FromArgb(0, 166, 225);
-            deletePurchaseOrderButton.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            deletePurchaseOrderButton.FlatStyle = FlatStyle.Flat;
+            deletePurchaseOrderButton.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold);
             deletePurchaseOrderButton.ForeColor = Color.White;
             deletePurchaseOrderButton.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
             deletePurchaseOrderButton.IconColor = Color.White;
             deletePurchaseOrderButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             deletePurchaseOrderButton.IconSize = 32;
             deletePurchaseOrderButton.ImageAlign = ContentAlignment.MiddleLeft;
-            deletePurchaseOrderButton.Location = new Point(29, 180);
+            deletePurchaseOrderButton.Location = new Point(6, 180);
             deletePurchaseOrderButton.Margin = new Padding(3, 4, 3, 4);
             deletePurchaseOrderButton.Name = "deletePurchaseOrderButton";
-            deletePurchaseOrderButton.Size = new Size(235, 49);
+            deletePurchaseOrderButton.Size = new Size(276, 49);
             deletePurchaseOrderButton.TabIndex = 12;
             deletePurchaseOrderButton.Text = "Quitar de la lista";
             deletePurchaseOrderButton.UseVisualStyleBackColor = false;
@@ -241,17 +248,18 @@
             // addProductsButton
             // 
             addProductsButton.BackColor = Color.FromArgb(0, 166, 225);
-            addProductsButton.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addProductsButton.FlatStyle = FlatStyle.Flat;
+            addProductsButton.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold);
             addProductsButton.ForeColor = Color.White;
             addProductsButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
             addProductsButton.IconColor = Color.White;
             addProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addProductsButton.IconSize = 32;
             addProductsButton.ImageAlign = ContentAlignment.MiddleLeft;
-            addProductsButton.Location = new Point(29, 65);
+            addProductsButton.Location = new Point(6, 65);
             addProductsButton.Margin = new Padding(3, 4, 3, 4);
             addProductsButton.Name = "addProductsButton";
-            addProductsButton.Size = new Size(235, 49);
+            addProductsButton.Size = new Size(276, 49);
             addProductsButton.TabIndex = 11;
             addProductsButton.Text = "Añadir productos";
             addProductsButton.UseVisualStyleBackColor = false;
@@ -286,7 +294,7 @@
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
             purchaseOrderDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             purchaseOrderDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
-            purchaseOrderDataGridView.Location = new Point(39, 321);
+            purchaseOrderDataGridView.Location = new Point(39, 301);
             purchaseOrderDataGridView.Margin = new Padding(3, 4, 3, 4);
             purchaseOrderDataGridView.MultiSelect = false;
             purchaseOrderDataGridView.Name = "purchaseOrderDataGridView";
@@ -307,11 +315,35 @@
             purchaseOrdersErrorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             purchaseOrdersErrorProvider.ContainerControl = this;
             // 
+            // TittlePanel
+            // 
+            TittlePanel.BackColor = Color.FromArgb(0, 166, 225);
+            TittlePanel.Controls.Add(OrdersTittleLabel);
+            TittlePanel.Dock = DockStyle.Top;
+            TittlePanel.Location = new Point(0, 0);
+            TittlePanel.Margin = new Padding(0);
+            TittlePanel.Name = "TittlePanel";
+            TittlePanel.Size = new Size(1589, 85);
+            TittlePanel.TabIndex = 27;
+            // 
+            // OrdersTittleLabel
+            // 
+            OrdersTittleLabel.AutoSize = true;
+            OrdersTittleLabel.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            OrdersTittleLabel.ForeColor = Color.White;
+            OrdersTittleLabel.Location = new Point(559, 9);
+            OrdersTittleLabel.Name = "OrdersTittleLabel";
+            OrdersTittleLabel.Size = new Size(436, 62);
+            OrdersTittleLabel.TabIndex = 13;
+            OrdersTittleLabel.Text = "Pedidos realizados";
+            // 
             // PurchaseOrdersForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1589, 1055);
+            Controls.Add(TittlePanel);
             Controls.Add(purchaeOrderGroupBox);
             Name = "PurchaseOrdersForm";
             Text = "purchaseOrders";
@@ -323,6 +355,8 @@
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)purchaseOrderDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)purchaseOrdersErrorProvider).EndInit();
+            TittlePanel.ResumeLayout(false);
+            TittlePanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -343,5 +377,7 @@
         private GroupBox addOrdergroupBox;
         private DataGridView purchaseListDataGridView;
         private Label purchaseDetailsLabel;
+        private Panel TittlePanel;
+        private Label OrdersTittleLabel;
     }
 }

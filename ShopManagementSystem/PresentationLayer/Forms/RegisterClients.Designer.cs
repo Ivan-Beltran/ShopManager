@@ -43,7 +43,9 @@
             validationsErrorProvider = new ErrorProvider(components);
             cancelPurchaseButton = new FontAwesome.Sharp.IconButton();
             registerClientLabel = new Label();
+            TittlePanel = new Panel();
             ((System.ComponentModel.ISupportInitialize)validationsErrorProvider).BeginInit();
+            TittlePanel.SuspendLayout();
             SuspendLayout();
             // 
             // nameLabel
@@ -144,7 +146,8 @@
             // finishPurchaseButton
             // 
             finishPurchaseButton.BackColor = Color.FromArgb(0, 166, 225);
-            finishPurchaseButton.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            finishPurchaseButton.FlatStyle = FlatStyle.Flat;
+            finishPurchaseButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             finishPurchaseButton.ForeColor = Color.White;
             finishPurchaseButton.IconChar = FontAwesome.Sharp.IconChar.Save;
             finishPurchaseButton.IconColor = Color.White;
@@ -154,7 +157,7 @@
             finishPurchaseButton.Location = new Point(929, 392);
             finishPurchaseButton.Margin = new Padding(3, 4, 3, 4);
             finishPurchaseButton.Name = "finishPurchaseButton";
-            finishPurchaseButton.Size = new Size(231, 69);
+            finishPurchaseButton.Size = new Size(274, 69);
             finishPurchaseButton.TabIndex = 11;
             finishPurchaseButton.Text = "Finalizar compra";
             finishPurchaseButton.UseVisualStyleBackColor = false;
@@ -169,7 +172,8 @@
             // cancelPurchaseButton
             // 
             cancelPurchaseButton.BackColor = Color.FromArgb(0, 166, 225);
-            cancelPurchaseButton.Font = new Font("Segoe UI Historic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancelPurchaseButton.FlatStyle = FlatStyle.Flat;
+            cancelPurchaseButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             cancelPurchaseButton.ForeColor = Color.White;
             cancelPurchaseButton.IconChar = FontAwesome.Sharp.IconChar.Cancel;
             cancelPurchaseButton.IconColor = Color.White;
@@ -177,9 +181,9 @@
             cancelPurchaseButton.IconSize = 32;
             cancelPurchaseButton.ImageAlign = ContentAlignment.MiddleLeft;
             cancelPurchaseButton.Location = new Point(929, 495);
-            cancelPurchaseButton.Margin = new Padding(3, 4, 3, 4);
+            cancelPurchaseButton.Margin = new Padding(8, 4, 3, 4);
             cancelPurchaseButton.Name = "cancelPurchaseButton";
-            cancelPurchaseButton.Size = new Size(231, 65);
+            cancelPurchaseButton.Size = new Size(274, 65);
             cancelPurchaseButton.TabIndex = 12;
             cancelPurchaseButton.Text = "Cancelar compra";
             cancelPurchaseButton.UseVisualStyleBackColor = false;
@@ -188,12 +192,24 @@
             // registerClientLabel
             // 
             registerClientLabel.AutoSize = true;
-            registerClientLabel.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            registerClientLabel.Location = new Point(561, 31);
+            registerClientLabel.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            registerClientLabel.ForeColor = Color.White;
+            registerClientLabel.Location = new Point(559, 9);
             registerClientLabel.Name = "registerClientLabel";
-            registerClientLabel.Size = new Size(253, 36);
+            registerClientLabel.Size = new Size(390, 62);
             registerClientLabel.TabIndex = 13;
             registerClientLabel.Text = "Registrar Cliente";
+            // 
+            // TittlePanel
+            // 
+            TittlePanel.BackColor = Color.FromArgb(0, 166, 225);
+            TittlePanel.Controls.Add(registerClientLabel);
+            TittlePanel.Dock = DockStyle.Top;
+            TittlePanel.Location = new Point(0, 0);
+            TittlePanel.Margin = new Padding(0);
+            TittlePanel.Name = "TittlePanel";
+            TittlePanel.Size = new Size(1370, 85);
+            TittlePanel.TabIndex = 26;
             // 
             // RegisterClients
             // 
@@ -201,7 +217,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1370, 593);
             ControlBox = false;
-            Controls.Add(registerClientLabel);
             Controls.Add(cancelPurchaseButton);
             Controls.Add(finishPurchaseButton);
             Controls.Add(duiTextBox);
@@ -214,11 +229,14 @@
             Controls.Add(emailLabel);
             Controls.Add(lastNameLabel);
             Controls.Add(nameLabel);
+            Controls.Add(TittlePanel);
             Margin = new Padding(2, 3, 2, 3);
             Name = "RegisterClients";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RegisterClients";
             ((System.ComponentModel.ISupportInitialize)validationsErrorProvider).EndInit();
+            TittlePanel.ResumeLayout(false);
+            TittlePanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -239,5 +257,6 @@
         private ErrorProvider validationsErrorProvider;
         private FontAwesome.Sharp.IconButton cancelPurchaseButton;
         private Label registerClientLabel;
+        private Panel TittlePanel;
     }
 }
