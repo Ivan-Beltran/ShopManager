@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             suppliersLabel = new Label();
             nameSupplierLabel = new Label();
             nameSupplierTextBox = new TextBox();
@@ -137,6 +137,8 @@
             // registerSupplierButton
             // 
             registerSupplierButton.BackColor = Color.FromArgb(0, 166, 225);
+            registerSupplierButton.BackgroundImageLayout = ImageLayout.None;
+            registerSupplierButton.FlatStyle = FlatStyle.Flat;
             registerSupplierButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             registerSupplierButton.ForeColor = Color.White;
             registerSupplierButton.IconChar = FontAwesome.Sharp.IconChar.Save;
@@ -163,14 +165,14 @@
             SupplierDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             SupplierDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             SupplierDataGridView.BackgroundColor = Color.Azure;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            SupplierDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            SupplierDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             SupplierDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             SupplierDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             SupplierDataGridView.Location = new Point(575, 209);
@@ -188,6 +190,7 @@
             // editSupplierButton
             // 
             editSupplierButton.BackColor = Color.FromArgb(0, 166, 225);
+            editSupplierButton.FlatStyle = FlatStyle.Flat;
             editSupplierButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
             editSupplierButton.ForeColor = Color.White;
             editSupplierButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
@@ -207,8 +210,10 @@
             // deleteSupplierButton
             // 
             deleteSupplierButton.BackColor = Color.FromArgb(0, 166, 225);
+            deleteSupplierButton.FlatStyle = FlatStyle.Flat;
             deleteSupplierButton.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deleteSupplierButton.ForeColor = SystemColors.Window;
+            validationErrorProvider.SetIconAlignment(deleteSupplierButton, ErrorIconAlignment.TopRight);
             deleteSupplierButton.IconChar = FontAwesome.Sharp.IconChar.DeleteLeft;
             deleteSupplierButton.IconColor = Color.White;
             deleteSupplierButton.IconFont = FontAwesome.Sharp.IconFont.Auto;

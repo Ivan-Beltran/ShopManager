@@ -146,6 +146,7 @@
             // finishPurchaseButton
             // 
             finishPurchaseButton.BackColor = Color.FromArgb(0, 166, 225);
+            finishPurchaseButton.FlatStyle = FlatStyle.Flat;
             finishPurchaseButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             finishPurchaseButton.ForeColor = Color.White;
             finishPurchaseButton.IconChar = FontAwesome.Sharp.IconChar.Save;
@@ -171,6 +172,7 @@
             // cancelPurchaseButton
             // 
             cancelPurchaseButton.BackColor = Color.FromArgb(0, 166, 225);
+            cancelPurchaseButton.FlatStyle = FlatStyle.Flat;
             cancelPurchaseButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             cancelPurchaseButton.ForeColor = Color.White;
             cancelPurchaseButton.IconChar = FontAwesome.Sharp.IconChar.Cancel;

@@ -32,7 +32,7 @@
             searchProductgroupBox = new GroupBox();
             productCountLabel = new Label();
             searchButton = new FontAwesome.Sharp.IconButton();
-            Searchlabel = new Label();
+            TitleFormLabel = new Label();
             searchTextBox = new TextBox();
             shoppingcart = new PictureBox();
             productsFlowLayoutPanel = new FlowLayoutPanel();
@@ -45,7 +45,7 @@
             searchProductgroupBox.BackColor = Color.FromArgb(0, 166, 225);
             searchProductgroupBox.Controls.Add(productCountLabel);
             searchProductgroupBox.Controls.Add(searchButton);
-            searchProductgroupBox.Controls.Add(Searchlabel);
+            searchProductgroupBox.Controls.Add(TitleFormLabel);
             searchProductgroupBox.Controls.Add(searchTextBox);
             searchProductgroupBox.Controls.Add(shoppingcart);
             searchProductgroupBox.Dock = DockStyle.Top;
@@ -86,20 +86,20 @@
             searchButton.UseVisualStyleBackColor = false;
             searchButton.Click += searchButton_Click_2;
             // 
-            // Searchlabel
+            // TitleFormLabel
             // 
-            Searchlabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Searchlabel.AutoSize = true;
-            Searchlabel.BackColor = Color.Transparent;
-            Searchlabel.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
-            Searchlabel.ForeColor = SystemColors.Control;
-            Searchlabel.Location = new Point(60, 37);
-            Searchlabel.Margin = new Padding(101, 15, 0, 0);
-            Searchlabel.Name = "Searchlabel";
-            Searchlabel.Size = new Size(308, 50);
-            Searchlabel.TabIndex = 4;
-            Searchlabel.Text = "Buscar producto";
-            Searchlabel.TextAlign = ContentAlignment.MiddleCenter;
+            TitleFormLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TitleFormLabel.AutoSize = true;
+            TitleFormLabel.BackColor = Color.Transparent;
+            TitleFormLabel.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
+            TitleFormLabel.ForeColor = SystemColors.Control;
+            TitleFormLabel.Location = new Point(60, 37);
+            TitleFormLabel.Margin = new Padding(101, 15, 0, 0);
+            TitleFormLabel.Name = "TitleFormLabel";
+            TitleFormLabel.Size = new Size(308, 50);
+            TitleFormLabel.TabIndex = 4;
+            TitleFormLabel.Text = "Buscar producto";
+            TitleFormLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // searchTextBox
             // 
@@ -155,7 +155,7 @@
         #endregion
 
         private GroupBox searchProductgroupBox;
-        private Label Searchlabel;
+        private Label TitleFormLabel;
         private TextBox searchTextBox;
         private PictureBox shoppingcart;
         private FlowLayoutPanel productsFlowLayoutPanel;

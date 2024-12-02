@@ -94,7 +94,7 @@
             // makePurchaseButton
             // 
             makePurchaseButton.BackColor = Color.FromArgb(0, 166, 225);
-            makePurchaseButton.FlatStyle = FlatStyle.Popup;
+            makePurchaseButton.FlatStyle = FlatStyle.Flat;
             makePurchaseButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             makePurchaseButton.ForeColor = Color.White;
             makePurchaseButton.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
@@ -114,7 +114,7 @@
             // deleteShoppingKartButton
             // 
             deleteShoppingKartButton.BackColor = Color.FromArgb(0, 166, 225);
-            deleteShoppingKartButton.FlatStyle = FlatStyle.Popup;
+            deleteShoppingKartButton.FlatStyle = FlatStyle.Flat;
             deleteShoppingKartButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deleteShoppingKartButton.ForeColor = Color.White;
             deleteShoppingKartButton.IconChar = FontAwesome.Sharp.IconChar.X;

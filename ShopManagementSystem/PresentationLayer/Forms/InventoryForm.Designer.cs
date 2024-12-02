@@ -144,7 +144,7 @@
             // showAccesoriesButton
             // 
             showAccesoriesButton.BackColor = Color.FromArgb(0, 166, 225);
-            showAccesoriesButton.FlatStyle = FlatStyle.Popup;
+            showAccesoriesButton.FlatStyle = FlatStyle.Flat;
             showAccesoriesButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             showAccesoriesButton.ForeColor = Color.White;
             showAccesoriesButton.IconChar = FontAwesome.Sharp.IconChar.Eye;
@@ -212,7 +212,7 @@
             // showPcButton
             // 
             showPcButton.BackColor = Color.FromArgb(0, 166, 225);
-            showPcButton.FlatStyle = FlatStyle.Popup;
+            showPcButton.FlatStyle = FlatStyle.Flat;
             showPcButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             showPcButton.ForeColor = Color.White;
             showPcButton.IconChar = FontAwesome.Sharp.IconChar.Eye;
@@ -280,7 +280,7 @@
             // showLaptopsButton
             // 
             showLaptopsButton.BackColor = Color.FromArgb(0, 166, 225);
-            showLaptopsButton.FlatStyle = FlatStyle.Popup;
+            showLaptopsButton.FlatStyle = FlatStyle.Flat;
             showLaptopsButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             showLaptopsButton.ForeColor = Color.White;
             showLaptopsButton.IconChar = FontAwesome.Sharp.IconChar.Eye;
@@ -348,7 +348,7 @@
             // showMovilesButton
             // 
             showMovilesButton.BackColor = Color.FromArgb(0, 166, 225);
-            showMovilesButton.FlatStyle = FlatStyle.Popup;
+            showMovilesButton.FlatStyle = FlatStyle.Flat;
             showMovilesButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             showMovilesButton.ForeColor = Color.White;
             showMovilesButton.IconChar = FontAwesome.Sharp.IconChar.Eye;
@@ -416,7 +416,7 @@
             // showTabletsButton
             // 
             showTabletsButton.BackColor = Color.FromArgb(0, 166, 225);
-            showTabletsButton.FlatStyle = FlatStyle.Popup;
+            showTabletsButton.FlatStyle = FlatStyle.Flat;
             showTabletsButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             showTabletsButton.ForeColor = Color.White;
             showTabletsButton.IconChar = FontAwesome.Sharp.IconChar.Eye;

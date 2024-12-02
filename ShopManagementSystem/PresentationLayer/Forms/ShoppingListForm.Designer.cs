@@ -170,7 +170,7 @@
             searchProductlLabel.BackColor = Color.Transparent;
             searchProductlLabel.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             searchProductlLabel.ForeColor = Color.White;
-            searchProductlLabel.Location = new Point(12, 22);
+            searchProductlLabel.Location = new Point(12, 19);
             searchProductlLabel.Name = "searchProductlLabel";
             searchProductlLabel.Size = new Size(231, 38);
             searchProductlLabel.TabIndex = 0;
@@ -196,7 +196,7 @@
             // addShoppingListButton
             // 
             addShoppingListButton.BackColor = Color.FromArgb(0, 166, 225);
-            addShoppingListButton.FlatStyle = FlatStyle.Popup;
+            addShoppingListButton.FlatStyle = FlatStyle.Flat;
             addShoppingListButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             addShoppingListButton.ForeColor = Color.White;
             addShoppingListButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
@@ -226,7 +226,7 @@
             // deleteShoppingListButton
             // 
             deleteShoppingListButton.BackColor = Color.FromArgb(0, 166, 225);
-            deleteShoppingListButton.FlatStyle = FlatStyle.Popup;
+            deleteShoppingListButton.FlatStyle = FlatStyle.Flat;
             deleteShoppingListButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deleteShoppingListButton.ForeColor = Color.White;
             deleteShoppingListButton.IconChar = FontAwesome.Sharp.IconChar.X;
@@ -246,7 +246,7 @@
             // addPurchaseOrderButton
             // 
             addPurchaseOrderButton.BackColor = Color.FromArgb(0, 166, 225);
-            addPurchaseOrderButton.FlatStyle = FlatStyle.Popup;
+            addPurchaseOrderButton.FlatStyle = FlatStyle.Flat;
             addPurchaseOrderButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             addPurchaseOrderButton.ForeColor = Color.White;
             addPurchaseOrderButton.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;

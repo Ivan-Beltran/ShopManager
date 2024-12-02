@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             productTypeLabel = new Label();
             productBrandLabel = new Label();
             producModelLabel = new Label();
@@ -177,7 +177,7 @@
             // loadProductImgButton
             // 
             loadProductImgButton.BackColor = Color.FromArgb(0, 166, 225);
-            loadProductImgButton.FlatStyle = FlatStyle.Popup;
+            loadProductImgButton.FlatStyle = FlatStyle.Flat;
             loadProductImgButton.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loadProductImgButton.ForeColor = Color.White;
             loadProductImgButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
@@ -203,14 +203,14 @@
             productsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             productsDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             productsDataGridView.BackgroundColor = Color.Azure;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            productsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            productsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             productsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             productsDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             productsDataGridView.Location = new Point(61, 536);
@@ -238,7 +238,7 @@
             // removeSelectionButton
             // 
             removeSelectionButton.BackColor = Color.FromArgb(0, 166, 225);
-            removeSelectionButton.FlatStyle = FlatStyle.Popup;
+            removeSelectionButton.FlatStyle = FlatStyle.Flat;
             removeSelectionButton.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold);
             removeSelectionButton.ForeColor = Color.White;
             removeSelectionButton.IconChar = FontAwesome.Sharp.IconChar.Cancel;
@@ -258,7 +258,7 @@
             // editProductButton
             // 
             editProductButton.BackColor = Color.FromArgb(0, 166, 225);
-            editProductButton.FlatStyle = FlatStyle.Popup;
+            editProductButton.FlatStyle = FlatStyle.Flat;
             editProductButton.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold);
             editProductButton.ForeColor = Color.White;
             editProductButton.IconChar = FontAwesome.Sharp.IconChar.Edit;
@@ -282,7 +282,7 @@
             // addProducButton
             // 
             addProducButton.BackColor = Color.FromArgb(0, 166, 225);
-            addProducButton.FlatStyle = FlatStyle.Popup;
+            addProducButton.FlatStyle = FlatStyle.Flat;
             addProducButton.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addProducButton.ForeColor = Color.White;
             addProducButton.IconChar = FontAwesome.Sharp.IconChar.CirclePlus;
