@@ -96,7 +96,7 @@ namespace PresentationLayer.Forms
 
                 if (employeeSesion == null)
                 {
-                    MessageBox.Show("No se encontró ningún usuario.","error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se encontró ningún usuario.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -115,7 +115,7 @@ namespace PresentationLayer.Forms
 
                         dashboardForm.FormClosed += (s, arg) =>
                         {
-                            
+
                             this.Show();
                             UserTextBox.Text = "";
                             PasswordTextBox.Text = "";
@@ -124,7 +124,7 @@ namespace PresentationLayer.Forms
                     }
                     else
                     {
-                        MessageBox.Show("Contraseña incorrecta.", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -164,9 +164,9 @@ namespace PresentationLayer.Forms
         private void Registredbutton_Click(object sender, EventArgs e)
         {
             var clientSession = new Employees() { };
-            
+
             this.Hide();
-            DashboardForm dashboardForm = new DashboardForm (
+            DashboardForm dashboardForm = new DashboardForm(
                 clientSession,
                 _employeeServices,
                 _inventoryServices,
@@ -185,6 +185,16 @@ namespace PresentationLayer.Forms
             };
 
             dashboardForm.Show();
+        }
+
+        private void UserTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationsErrorProvider.Clear();
+        }
+
+        private void PasswordTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationsErrorProvider.Clear();
         }
     }
 }

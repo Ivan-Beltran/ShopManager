@@ -17,7 +17,7 @@ namespace PresentationLayer.Forms
 {
     public partial class RegisterClients : Form
     {
-        
+
         public List<Products> _productsAdded;
         private ISalesServices _salesServices;
         private decimal _totalProductsPrice;
@@ -28,7 +28,7 @@ namespace PresentationLayer.Forms
             _productsAdded = productsAdded;
             _salesServices = salesServices;
             _totalProductsPrice = totalProductsPrice;
-           
+
         }
 
         private void finishPurchaseButton_Click(object sender, EventArgs e)
@@ -79,7 +79,7 @@ namespace PresentationLayer.Forms
 
                     MessageBox.Show("compra realizada con exito");
                     PdfGenerate pdfGenerator = new PdfGenerate();
-                    pdfGenerator.GenerateClientsTickets(_productsAdded,clientAdded,salesId,_totalProductsPrice);
+                    pdfGenerator.GenerateClientsTickets(_productsAdded, clientAdded, salesId, _totalProductsPrice);
                     this.Close();
 
 
@@ -87,7 +87,7 @@ namespace PresentationLayer.Forms
                 catch (Exception ex)
                 {
                     MessageBox.Show("ya hay un cliente que ocupa este Email", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                      
+
                 }
             }
             else
@@ -97,7 +97,7 @@ namespace PresentationLayer.Forms
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
-                
+
             }
         }
         private void DisplayValidationErrors(ValidationResult result)
@@ -135,13 +135,38 @@ namespace PresentationLayer.Forms
 
         private void RegisterClients_VisibleChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         protected virtual void OnReturnForm()
         {
             ReturnForm?.Invoke(this, EventArgs.Empty);
             this.Hide();
+        }
+
+        private void nameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationsErrorProvider.Clear();
+        }
+
+        private void lastNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationsErrorProvider.Clear();
+        }
+
+        private void phoneTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationsErrorProvider.Clear();
+        }
+
+        private void emailTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationsErrorProvider.Clear();
+        }
+
+        private void duiTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationsErrorProvider.Clear();
         }
     }
 

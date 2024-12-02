@@ -109,7 +109,7 @@
             salesReportDataGridView.RowHeadersVisible = false;
             salesReportDataGridView.RowHeadersWidth = 51;
             salesReportDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            salesReportDataGridView.Size = new Size(1117, 234);
+            salesReportDataGridView.Size = new Size(1117, 192);
             salesReportDataGridView.TabIndex = 2;
             salesReportDataGridView.SelectionChanged += salesReportDataGridView_SelectionChanged;
             // 
@@ -179,20 +179,20 @@
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
             productsBuyingDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
-            productsBuyingDataGridView.Location = new Point(78, 619);
+            productsBuyingDataGridView.Location = new Point(83, 570);
             productsBuyingDataGridView.Margin = new Padding(3, 4, 3, 4);
             productsBuyingDataGridView.MultiSelect = false;
             productsBuyingDataGridView.Name = "productsBuyingDataGridView";
             productsBuyingDataGridView.RowHeadersVisible = false;
             productsBuyingDataGridView.RowHeadersWidth = 51;
-            productsBuyingDataGridView.Size = new Size(1117, 217);
+            productsBuyingDataGridView.Size = new Size(1117, 200);
             productsBuyingDataGridView.TabIndex = 25;
             // 
             // listProductsLabel
             // 
             listProductsLabel.AutoSize = true;
             listProductsLabel.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            listProductsLabel.Location = new Point(290, 533);
+            listProductsLabel.Location = new Point(295, 484);
             listProductsLabel.Name = "listProductsLabel";
             listProductsLabel.Size = new Size(693, 62);
             listProductsLabel.TabIndex = 26;

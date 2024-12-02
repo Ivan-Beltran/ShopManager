@@ -99,6 +99,7 @@
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(257, 27);
             nameTextBox.TabIndex = 5;
+            nameTextBox.TextChanged += nameTextBox_TextChanged;
             // 
             // lastNameTextBox
             // 
@@ -107,14 +108,16 @@
             lastNameTextBox.Name = "lastNameTextBox";
             lastNameTextBox.Size = new Size(257, 27);
             lastNameTextBox.TabIndex = 6;
+            lastNameTextBox.TextChanged += lastNameTextBox_TextChanged;
             // 
             // phoneTextBox
             // 
-            phoneTextBox.Location = new Point(336, 444);
+            phoneTextBox.Location = new Point(348, 445);
             phoneTextBox.Margin = new Padding(2, 3, 2, 3);
             phoneTextBox.Name = "phoneTextBox";
             phoneTextBox.Size = new Size(257, 27);
             phoneTextBox.TabIndex = 7;
+            phoneTextBox.TextChanged += phoneTextBox_TextChanged;
             // 
             // emailTextBox
             // 
@@ -123,6 +126,7 @@
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(257, 27);
             emailTextBox.TabIndex = 8;
+            emailTextBox.TextChanged += emailTextBox_TextChanged;
             // 
             // duiLabel
             // 
@@ -142,6 +146,7 @@
             duiTextBox.Name = "duiTextBox";
             duiTextBox.Size = new Size(257, 27);
             duiTextBox.TabIndex = 10;
+            duiTextBox.TextChanged += duiTextBox_TextChanged;
             // 
             // finishPurchaseButton
             // 

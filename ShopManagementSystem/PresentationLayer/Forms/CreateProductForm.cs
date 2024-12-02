@@ -53,8 +53,8 @@ namespace PresentationLayer.Forms
             {
                 if (openFileImgDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string fileName = Path.GetFileName(openFileImgDialog.FileName); 
-                    string destinationPath = Path.Combine(Application.StartupPath, "ProductsIMG", fileName); 
+                    string fileName = Path.GetFileName(openFileImgDialog.FileName);
+                    string destinationPath = Path.Combine(Application.StartupPath, "ProductsIMG", fileName);
 
                     // Crear carpeta si no existe
                     if (!Directory.Exists(Path.Combine(Application.StartupPath, "ProductsIMG")))
@@ -62,14 +62,14 @@ namespace PresentationLayer.Forms
                         Directory.CreateDirectory(Path.Combine(Application.StartupPath, "ProductsIMG"));
                     }
 
-                  
+
                     File.Copy(openFileImgDialog.FileName, destinationPath, true);
 
-                   
+
                     productImgPictureBox.Image = Image.FromFile(destinationPath);
 
-                    
-                    imgPath = Path.Combine("ProductsIMG", fileName); 
+
+                    imgPath = Path.Combine("ProductsIMG", fileName);
                 }
             }
             catch (Exception ex)
@@ -86,7 +86,7 @@ namespace PresentationLayer.Forms
             }
             else
             {
-                if (productImgPictureBox.Image==null)
+                if (productImgPictureBox.Image == null)
                 {
                     MessageBox.Show("Por favor, selecciona una imagen antes de continuar.");
                     return;
@@ -107,45 +107,45 @@ namespace PresentationLayer.Forms
                     validationErrorProvider.SetError(productPriceTextBox, string.Empty);
                 }
                 var product = new Products()
-                    {
-                        ProductTypeId = Convert.ToInt32(productTypeComboBox.SelectedValue),
-                        ProductBrand = productBrandTextBox.Text,
-                        ProductModel = productModeltextBox.Text,
-                        ProductVersion = productVersionTextBox.Text,
-                        ProductColor = productColorTextBox.Text,
-                        ProductPrice=productPrice,
-                        ImageUrl = imgPath
-                 };
+                {
+                    ProductTypeId = Convert.ToInt32(productTypeComboBox.SelectedValue),
+                    ProductBrand = productBrandTextBox.Text,
+                    ProductModel = productModeltextBox.Text,
+                    ProductVersion = productVersionTextBox.Text,
+                    ProductColor = productColorTextBox.Text,
+                    ProductPrice = productPrice,
+                    ImageUrl = imgPath
+                };
 
-                    CreateProductValidator createProductValidator = new CreateProductValidator();
-                    ValidationResult result = createProductValidator.Validate(product);
-                    if (!result.IsValid)
-                    {
-                        DisplayValidationErrors(result);
+                CreateProductValidator createProductValidator = new CreateProductValidator();
+                ValidationResult result = createProductValidator.Validate(product);
+                if (!result.IsValid)
+                {
+                    DisplayValidationErrors(result);
 
-                        return;
-                    }
+                    return;
+                }
 
-                    else
+                else
+                {
+                    try
                     {
-                        try
-                        {
 
                         _inventoryServices.CreateProduct(product);
-                         MessageBox.Show("Producto creado exitosamente.");
-                         LoadProductsCrated();
-                         this.Shown += (s, e) => productsDataGridView.ClearSelection();
-                         productsDataGridView.ClearSelection();
-                         ClearParameters();
+                        MessageBox.Show("Producto creado exitosamente.");
+                        LoadProductsCrated();
+                        this.Shown += (s, e) => productsDataGridView.ClearSelection();
+                        productsDataGridView.ClearSelection();
+                        ClearParameters();
 
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error al crear el producto: {ex.Message}");
-                        }
                     }
-                
-                
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al crear el producto: {ex.Message}");
+                    }
+                }
+
+
             }
         }
         private void DisplayValidationErrors(ValidationResult result)
@@ -171,7 +171,7 @@ namespace PresentationLayer.Forms
                     case nameof(Products.ProductColor):
                         validationErrorProvider.SetError(productColorTextBox, error.ErrorMessage);
                         break;
-                    
+
                     case nameof(Products.ProductPrice):
                         validationErrorProvider.SetError(productPriceTextBox, error.ErrorMessage);
                         break;
@@ -195,7 +195,7 @@ namespace PresentationLayer.Forms
                     MessageBox.Show("Por favor, selecciona una imagen antes de continuar.");
                     return;
                 }
-                
+
                 var product = new Products()
                 {
                     ProductId = Convert.ToInt32(productsDataGridView.CurrentRow.Cells[0].Value.ToString()),
@@ -204,7 +204,7 @@ namespace PresentationLayer.Forms
                     ProductModel = productModeltextBox.Text,
                     ProductVersion = productVersionTextBox.Text,
                     ProductColor = productColorTextBox.Text,
-                    ProductPrice = Convert.ToDecimal (productPriceTextBox.Text),
+                    ProductPrice = Convert.ToDecimal(productPriceTextBox.Text),
                     ImageUrl = imgPath
                 };
 
@@ -236,7 +236,7 @@ namespace PresentationLayer.Forms
                     }
                 }
 
-                
+
             }
         }
 
@@ -259,7 +259,7 @@ namespace PresentationLayer.Forms
 
                 // Construir ruta completa
                 string projectBasePath = AppDomain.CurrentDomain.BaseDirectory;
-                string imgUrl = Path.GetFullPath(Path.Combine(projectBasePath, @"..\..\..\..\..\",imageRelativePath));
+                string imgUrl = Path.GetFullPath(Path.Combine(projectBasePath, @"..\..\..\..\..\", imageRelativePath));
 
                 try
                 {
@@ -311,6 +311,36 @@ namespace PresentationLayer.Forms
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
             }
+        }
+
+        private void productBrandTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void productModeltextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void productVersionTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void productColorTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void productPriceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void productTypeComboBox_Click(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
         }
     }
 }

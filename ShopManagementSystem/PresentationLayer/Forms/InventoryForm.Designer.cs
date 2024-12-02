@@ -110,6 +110,7 @@
             inventoryDataGridView.Name = "inventoryDataGridView";
             inventoryDataGridView.RowHeadersVisible = false;
             inventoryDataGridView.RowHeadersWidth = 51;
+            inventoryDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             inventoryDataGridView.Size = new Size(1285, 488);
             inventoryDataGridView.TabIndex = 0;
             // 

@@ -76,7 +76,7 @@ namespace PresentationLayer.Forms
 
         private void addPurchaseOrderButton_Click(object sender, EventArgs e)
         {
-            if(shoppingCartTable.Rows.Count == 0)
+            if (shoppingCartTable.Rows.Count == 0)
             {
                 MessageBox.Show("seleccione al menos un producto para realizar el pedido",
                                 "advertencia",
@@ -113,7 +113,7 @@ namespace PresentationLayer.Forms
                 string productColor = productsDataGridView.CurrentRow.Cells[5].Value.ToString();
                 int quantity = Convert.ToInt32(productQuantityTextBox.Text);
 
-                shoppingCartTable.Rows.Add(productId, productBrand, productModel, productVersion,productColor, quantity);
+                shoppingCartTable.Rows.Add(productId, productBrand, productModel, productVersion, productColor, quantity);
             }
 
 
@@ -167,8 +167,13 @@ namespace PresentationLayer.Forms
                 }
 
             }
-            
-            
+
+
+        }
+
+        private void productQuantityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            quantityErrorProvider.Clear();
         }
     }
 }

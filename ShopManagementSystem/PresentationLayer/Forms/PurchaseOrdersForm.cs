@@ -138,12 +138,22 @@ namespace PresentationLayer.Forms
 
         private void purchaseOrderDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            if(purchaseOrderDataGridView.SelectedRows.Count > 0)
+            if (purchaseOrderDataGridView.SelectedRows.Count > 0)
             {
-                int purchaseOrderId=Convert.ToInt32( purchaseOrderDataGridView.SelectedRows[0].Cells[0].Value);
+                int purchaseOrderId = Convert.ToInt32(purchaseOrderDataGridView.SelectedRows[0].Cells[0].Value);
 
                 purchaseListDataGridView.DataSource = _purchaseOrderServices.GetShoppingList(purchaseOrderId);
             }
+        }
+
+        private void supplierComboBox_Click(object sender, EventArgs e)
+        {
+            purchaseOrdersErrorProvider.Clear();
+        }
+
+        private void detailsTextBox_TextChanged(object sender, EventArgs e)
+        {
+            purchaseOrdersErrorProvider.Clear();
         }
     }
 }

@@ -186,6 +186,7 @@
             UserTextBox.Name = "UserTextBox";
             UserTextBox.Size = new Size(337, 30);
             UserTextBox.TabIndex = 2;
+            UserTextBox.TextChanged += UserTextBox_TextChanged;
             // 
             // LoginButton
             // 
@@ -211,6 +212,7 @@
             PasswordTextBox.PasswordChar = '*';
             PasswordTextBox.Size = new Size(337, 30);
             PasswordTextBox.TabIndex = 3;
+            PasswordTextBox.TextChanged += PasswordTextBox_TextChanged;
             // 
             // tableLayoutPanel1
             // 

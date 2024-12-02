@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             suppliersLabel = new Label();
             nameSupplierLabel = new Label();
             nameSupplierTextBox = new TextBox();
@@ -77,6 +77,7 @@
             nameSupplierTextBox.Name = "nameSupplierTextBox";
             nameSupplierTextBox.Size = new Size(243, 27);
             nameSupplierTextBox.TabIndex = 3;
+            nameSupplierTextBox.TextChanged += nameSupplierTextBox_TextChanged;
             // 
             // phoneSupplierTextBox
             // 
@@ -85,6 +86,7 @@
             phoneSupplierTextBox.Name = "phoneSupplierTextBox";
             phoneSupplierTextBox.Size = new Size(243, 27);
             phoneSupplierTextBox.TabIndex = 5;
+            phoneSupplierTextBox.TextChanged += phoneSupplierTextBox_TextChanged;
             // 
             // phoneSupplierLabel
             // 
@@ -103,6 +105,7 @@
             emailSupplierTextBox.Name = "emailSupplierTextBox";
             emailSupplierTextBox.Size = new Size(243, 27);
             emailSupplierTextBox.TabIndex = 7;
+            emailSupplierTextBox.TextChanged += emailSupplierTextBox_TextChanged;
             // 
             // emailSupplierLabel
             // 
@@ -121,6 +124,7 @@
             addressSupplierTextBox.Name = "addressSupplierTextBox";
             addressSupplierTextBox.Size = new Size(243, 27);
             addressSupplierTextBox.TabIndex = 9;
+            addressSupplierTextBox.TextChanged += addressSupplierTextBox_TextChanged;
             // 
             // addressSupplierLabel
             // 
@@ -160,23 +164,23 @@
             SupplierDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             SupplierDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             SupplierDataGridView.BackgroundColor = Color.Azure;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            SupplierDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            SupplierDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             SupplierDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            SupplierDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            SupplierDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             SupplierDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             SupplierDataGridView.Location = new Point(575, 209);
             SupplierDataGridView.Margin = new Padding(3, 4, 3, 4);

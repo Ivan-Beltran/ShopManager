@@ -64,181 +64,117 @@
             // productTypeLabel
             // 
             productTypeLabel.AutoSize = true;
-
-            productTypeLabel.Font = new Font("Segoe UI Historic", 9.75F);
-            productTypeLabel.Location = new Point(205, 47);
-            productTypeLabel.Name = "productTypeLabel";
-            productTypeLabel.Size = new Size(47, 23);
-
             productTypeLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             productTypeLabel.Location = new Point(192, 128);
             productTypeLabel.Name = "productTypeLabel";
             productTypeLabel.Size = new Size(68, 31);
-
             productTypeLabel.TabIndex = 0;
             productTypeLabel.Text = "Tipo:";
             // 
             // productBrandLabel
             // 
             productBrandLabel.AutoSize = true;
-
-            productBrandLabel.Font = new Font("Segoe UI Historic", 9.75F);
-            productBrandLabel.Location = new Point(205, 116);
-            productBrandLabel.Name = "productBrandLabel";
-            productBrandLabel.Size = new Size(61, 23);
-
             productBrandLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             productBrandLabel.Location = new Point(192, 197);
             productBrandLabel.Name = "productBrandLabel";
             productBrandLabel.Size = new Size(86, 31);
-
             productBrandLabel.TabIndex = 1;
             productBrandLabel.Text = "Marca:";
             // 
             // producModelLabel
             // 
             producModelLabel.AutoSize = true;
-
-            producModelLabel.Font = new Font("Segoe UI Historic", 9.75F);
-            producModelLabel.Location = new Point(205, 177);
-            producModelLabel.Name = "producModelLabel";
-            producModelLabel.Size = new Size(72, 23);
-
             producModelLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             producModelLabel.Location = new Point(192, 258);
             producModelLabel.Name = "producModelLabel";
             producModelLabel.Size = new Size(103, 31);
-
             producModelLabel.TabIndex = 2;
             producModelLabel.Text = "Modelo:";
             // 
             // productVersionLabel
             // 
             productVersionLabel.AutoSize = true;
-
-            productVersionLabel.Font = new Font("Segoe UI Historic", 9.75F);
-            productVersionLabel.Location = new Point(205, 243);
-            productVersionLabel.Name = "productVersionLabel";
-            productVersionLabel.Size = new Size(71, 23);
-
             productVersionLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             productVersionLabel.Location = new Point(192, 324);
             productVersionLabel.Name = "productVersionLabel";
             productVersionLabel.Size = new Size(100, 31);
-
             productVersionLabel.TabIndex = 3;
             productVersionLabel.Text = "Versión:";
             // 
             // productColorLabel
             // 
             productColorLabel.AutoSize = true;
-
-            productColorLabel.Font = new Font("Segoe UI Historic", 9.75F);
-            productColorLabel.Location = new Point(205, 319);
-            productColorLabel.Name = "productColorLabel";
-            productColorLabel.Size = new Size(55, 23);
-
             productColorLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             productColorLabel.Location = new Point(192, 400);
             productColorLabel.Name = "productColorLabel";
             productColorLabel.Size = new Size(79, 31);
-
             productColorLabel.TabIndex = 4;
             productColorLabel.Text = "Color:";
             // 
             // producPriceLabel
             // 
             producPriceLabel.AutoSize = true;
-
-            producPriceLabel.Font = new Font("Segoe UI Historic", 9.75F);
-            producPriceLabel.Location = new Point(205, 391);
-            producPriceLabel.Name = "producPriceLabel";
-            producPriceLabel.Size = new Size(61, 23);
-
             producPriceLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             producPriceLabel.Location = new Point(192, 472);
             producPriceLabel.Name = "producPriceLabel";
             producPriceLabel.Size = new Size(87, 31);
-
             producPriceLabel.TabIndex = 5;
             producPriceLabel.Text = "Precio:";
             // 
             // productBrandTextBox
             // 
-
-            productBrandTextBox.Location = new Point(297, 112);
-
             productBrandTextBox.Location = new Point(295, 202);
-
             productBrandTextBox.Name = "productBrandTextBox";
             productBrandTextBox.Size = new Size(351, 27);
             productBrandTextBox.TabIndex = 6;
+            productBrandTextBox.TextChanged += productBrandTextBox_TextChanged;
             // 
             // productModeltextBox
             // 
-
-            productModeltextBox.Location = new Point(297, 176);
-
             productModeltextBox.Location = new Point(295, 266);
-
             productModeltextBox.Name = "productModeltextBox";
             productModeltextBox.Size = new Size(351, 27);
             productModeltextBox.TabIndex = 7;
+            productModeltextBox.TextChanged += productModeltextBox_TextChanged;
             // 
             // productVersionTextBox
             // 
-
-            productVersionTextBox.Location = new Point(297, 245);
-
             productVersionTextBox.Location = new Point(295, 335);
-
             productVersionTextBox.Name = "productVersionTextBox";
             productVersionTextBox.Size = new Size(351, 27);
             productVersionTextBox.TabIndex = 8;
+            productVersionTextBox.TextChanged += productVersionTextBox_TextChanged;
             // 
             // productColorTextBox
             // 
-
-            productColorTextBox.Location = new Point(297, 316);
-
             productColorTextBox.Location = new Point(295, 406);
-
             productColorTextBox.Name = "productColorTextBox";
             productColorTextBox.Size = new Size(351, 27);
             productColorTextBox.TabIndex = 9;
+            productColorTextBox.TextChanged += productColorTextBox_TextChanged;
             // 
             // productPriceTextBox
             // 
-
-            productPriceTextBox.Location = new Point(297, 388);
-
             productPriceTextBox.Location = new Point(295, 478);
-
             productPriceTextBox.Name = "productPriceTextBox";
             productPriceTextBox.Size = new Size(351, 27);
             productPriceTextBox.TabIndex = 10;
+            productPriceTextBox.TextChanged += productPriceTextBox_TextChanged;
             // 
             // productTypeComboBox
             // 
             productTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             productTypeComboBox.FormattingEnabled = true;
-
-            productTypeComboBox.Location = new Point(297, 44);
-
             productTypeComboBox.Location = new Point(295, 134);
-
             productTypeComboBox.Name = "productTypeComboBox";
             productTypeComboBox.Size = new Size(351, 28);
             productTypeComboBox.TabIndex = 11;
+            productTypeComboBox.Click += productTypeComboBox_Click;
             // 
             // productImgPictureBox
             // 
             productImgPictureBox.BorderStyle = BorderStyle.FixedSingle;
-
-            productImgPictureBox.Location = new Point(739, 47);
-
             productImgPictureBox.Location = new Point(737, 137);
-
             productImgPictureBox.Name = "productImgPictureBox";
             productImgPictureBox.Size = new Size(285, 239);
             productImgPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -256,11 +192,7 @@
             loadProductImgButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             loadProductImgButton.IconSize = 38;
             loadProductImgButton.ImageAlign = ContentAlignment.MiddleLeft;
-
-            loadProductImgButton.Location = new Point(763, 319);
-
             loadProductImgButton.Location = new Point(1054, 202);
-
             loadProductImgButton.Margin = new Padding(1);
             loadProductImgButton.Name = "loadProductImgButton";
             loadProductImgButton.Size = new Size(248, 53);
@@ -373,11 +305,7 @@
             addProducButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             addProducButton.IconSize = 38;
             addProducButton.ImageAlign = ContentAlignment.MiddleLeft;
-
-            addProducButton.Location = new Point(1053, 144);
-
             addProducButton.Location = new Point(752, 450);
-
             addProducButton.Margin = new Padding(1);
             addProducButton.Name = "addProducButton";
             addProducButton.Size = new Size(234, 53);
@@ -386,10 +314,9 @@
             addProducButton.UseVisualStyleBackColor = false;
             addProducButton.Click += addProducButton_Click;
             // 
-
-
             // validationErrorProvider
             // 
+            validationErrorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             validationErrorProvider.ContainerControl = this;
             // 
             // TittlePanel
@@ -418,14 +345,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-
-            ClientSize = new Size(1370, 749);
-          
-
             BackColor = Color.White;
             ClientSize = new Size(1370, 938);
             Controls.Add(TittlePanel);
-
             Controls.Add(addProducButton);
             Controls.Add(optionsGroupBox);
             Controls.Add(productsDataGridView);

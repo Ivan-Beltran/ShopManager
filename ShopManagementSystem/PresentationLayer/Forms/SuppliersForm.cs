@@ -228,6 +228,24 @@ namespace PresentationLayer.Forms
             addressSupplierTextBox.Text = "";
         }
 
-        
+        private void nameSupplierTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void phoneSupplierTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void emailSupplierTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void addressSupplierTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
     }
 }

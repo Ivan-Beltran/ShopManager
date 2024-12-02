@@ -22,7 +22,7 @@ namespace PresentationLayer.Forms
     {
         private readonly IEmployeeService _employeeService;
         private Employees _employeeSession;
-    
+
         public EmployeesForm(IEmployeeService employeeService, Employees employeeSession)
         {
             InitializeComponent();
@@ -35,10 +35,10 @@ namespace PresentationLayer.Forms
 
         public void LoadEmployees()
         {
-           
+
             EmployeesDataGridView.DataSource = _employeeService.GetEmployees();
             EmployeesDataGridView.Columns["ID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            
+
 
             foreach (DataGridViewRow row in EmployeesDataGridView.Rows)
             {
@@ -55,7 +55,7 @@ namespace PresentationLayer.Forms
             }
         }
 
-        
+
 
         public void LoadRoles()
         {
@@ -90,7 +90,7 @@ namespace PresentationLayer.Forms
                 try
                 {
                     EmployeesValidator employeesValidator = new EmployeesValidator();
-                    ValidationResult result= employeesValidator.Validate(employeeAdded);
+                    ValidationResult result = employeesValidator.Validate(employeeAdded);
                     if (!result.IsValid)
                     {
                         DisplayValidationErrors(result);
@@ -101,7 +101,7 @@ namespace PresentationLayer.Forms
                     MessageBox.Show("Empleado agregado exitosamente", "Mensaje");
                     LoadEmployees();
                     this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
- 
+
 
                 }
                 catch (SqlException ex)
@@ -134,7 +134,7 @@ namespace PresentationLayer.Forms
                         validationErrorProvider.SetError(UserTextBox, error.ErrorMessage);
                         break;
                     case nameof(Employees.PasswordEmployee):
-                               validationErrorProvider.SetError(passwordTextBox, error.ErrorMessage);
+                        validationErrorProvider.SetError(passwordTextBox, error.ErrorMessage);
                         break;
                     case nameof(Employees.Email):
                         validationErrorProvider.SetError(emailTextBox, error.ErrorMessage);
@@ -152,7 +152,7 @@ namespace PresentationLayer.Forms
             }
 
         }
-            private void editEmployeeButton_Click(object sender, EventArgs e)
+        private void editEmployeeButton_Click(object sender, EventArgs e)
         {
             if (EmployeesDataGridView.SelectedRows.Count == 0)
             {
@@ -200,7 +200,7 @@ namespace PresentationLayer.Forms
                             MessageBoxIcon.Error);
                     }
                 }
-                
+
             }
         }
 
@@ -256,7 +256,7 @@ namespace PresentationLayer.Forms
                 EmployeesDataGridView.DataSource = _employeeService.SearchEmployee(search);
                 if (EmployeesDataGridView.Rows.Count == 0)
                 {
-                    EmployeesDataGridView.Visible=false;
+                    EmployeesDataGridView.Visible = false;
                     noFoundPictureBox.Visible = true;
                 }
                 this.Shown += (s, e) => EmployeesDataGridView.ClearSelection();
@@ -324,11 +324,44 @@ namespace PresentationLayer.Forms
                 duiTextBox.Text = EmployeesDataGridView.CurrentRow.Cells[5].Value.ToString();
                 emailTextBox.Text = EmployeesDataGridView.CurrentRow.Cells[6].Value.ToString();
                 rolesComboBox.Text = EmployeesDataGridView.CurrentRow.Cells[7].Value.ToString();
-               
-               
+
+
             }
         }
 
-        
+        private void namesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void UserTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void emailTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void lastNamesTextBox_TextAlignChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void passwordTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void duiTextBox_TextChanged(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
+
+        private void rolesComboBox_Click(object sender, EventArgs e)
+        {
+            validationErrorProvider.Clear();
+        }
     }
 }

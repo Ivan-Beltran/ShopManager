@@ -30,9 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeesForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
             TittlePanel = new Panel();
             searchEmployeeButton = new FontAwesome.Sharp.IconButton();
             emplyeesIconPictureBox = new PictureBox();
@@ -239,25 +239,25 @@
             EmployeesDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             EmployeesDataGridView.BackgroundColor = Color.White;
             EmployeesDataGridView.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            EmployeesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = SystemColors.Control;
+            dataGridViewCellStyle19.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle19.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = Color.White;
+            dataGridViewCellStyle19.SelectionForeColor = Color.White;
+            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.True;
+            EmployeesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             EmployeesDataGridView.ColumnHeadersHeight = 29;
             EmployeesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             EmployeesDataGridView.Cursor = Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 166, 225);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            EmployeesDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = SystemColors.Window;
+            dataGridViewCellStyle20.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle20.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = Color.FromArgb(0, 166, 225);
+            dataGridViewCellStyle20.SelectionForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.False;
+            EmployeesDataGridView.DefaultCellStyle = dataGridViewCellStyle20;
             EmployeesDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
             EmployeesDataGridView.Location = new Point(138, 154);
             EmployeesDataGridView.Margin = new Padding(3, 4, 3, 4);
@@ -267,8 +267,8 @@
             EmployeesDataGridView.RowHeadersVisible = false;
             EmployeesDataGridView.RowHeadersWidth = 35;
             EmployeesDataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            EmployeesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            EmployeesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle21;
             EmployeesDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             EmployeesDataGridView.ShowCellToolTips = false;
             EmployeesDataGridView.Size = new Size(1095, 367);
@@ -320,6 +320,7 @@
             rolesComboBox.Name = "rolesComboBox";
             rolesComboBox.Size = new Size(172, 33);
             rolesComboBox.TabIndex = 21;
+            rolesComboBox.Click += rolesComboBox_Click;
             // 
             // roleLabel
             // 
@@ -340,6 +341,7 @@
             namesTextBox.Name = "namesTextBox";
             namesTextBox.Size = new Size(231, 30);
             namesTextBox.TabIndex = 6;
+            namesTextBox.TextChanged += namesTextBox_TextChanged;
             // 
             // emailEmployee
             // 
@@ -370,6 +372,7 @@
             emailTextBox.Name = "emailTextBox";
             emailTextBox.Size = new Size(335, 30);
             emailTextBox.TabIndex = 18;
+            emailTextBox.TextChanged += emailTextBox_TextChanged;
             // 
             // lastNamesTextBox
             // 
@@ -380,6 +383,7 @@
             lastNamesTextBox.Name = "lastNamesTextBox";
             lastNamesTextBox.Size = new Size(271, 30);
             lastNamesTextBox.TabIndex = 10;
+            lastNamesTextBox.TextAlignChanged += lastNamesTextBox_TextAlignChanged;
             // 
             // duiEmployee
             // 
@@ -410,6 +414,7 @@
             duiTextBox.Name = "duiTextBox";
             duiTextBox.Size = new Size(172, 30);
             duiTextBox.TabIndex = 16;
+            duiTextBox.TextChanged += duiTextBox_TextChanged;
             // 
             // UserTextBox
             // 
@@ -420,6 +425,7 @@
             UserTextBox.Name = "UserTextBox";
             UserTextBox.Size = new Size(229, 30);
             UserTextBox.TabIndex = 12;
+            UserTextBox.TextChanged += UserTextBox_TextChanged;
             // 
             // passwordEmployee
             // 
@@ -450,6 +456,7 @@
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.Size = new Size(269, 30);
             passwordTextBox.TabIndex = 14;
+            passwordTextBox.TextChanged += passwordTextBox_TextChanged;
             // 
             // validationErrorProvider
             // 

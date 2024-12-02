@@ -67,6 +67,7 @@
             viewCustomersDataGridView.Name = "viewCustomersDataGridView";
             viewCustomersDataGridView.RowHeadersVisible = false;
             viewCustomersDataGridView.RowHeadersWidth = 51;
+            viewCustomersDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             viewCustomersDataGridView.Size = new Size(1221, 603);
             viewCustomersDataGridView.TabIndex = 0;
             // 
