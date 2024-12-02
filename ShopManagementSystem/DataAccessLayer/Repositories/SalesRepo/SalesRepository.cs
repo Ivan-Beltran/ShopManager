@@ -76,12 +76,12 @@ namespace DataAccessLayer.Repositories.SalesRepo
             using (var connection = _dbConnection.GetConnection())
             {
                 string query = @"SELECT
-                                	PR.ProductBrand,
-                                	PR.ProductModel,
-                                	PR.ProductVersion,
-                                	PR.ProductColor,
-                                	SL.QuantitySold,
-                                	PR.ProductPrice,
+                                	PR.ProductBrand AS Marca,
+                                	PR.ProductModel as Modelo,
+                                	PR.ProductVersion as Version,
+                                	PR.ProductColor As Color,
+                                	SL.QuantitySold As 'Cantidad vendida',
+                                	PR.ProductPrice As 'Precio Por unidad',
                                 	SL.Total AS SubTotal
                                 FROM SalesList AS SL
                                 INNER JOIN Products AS PR ON SL.ProductId=PR.ProductId

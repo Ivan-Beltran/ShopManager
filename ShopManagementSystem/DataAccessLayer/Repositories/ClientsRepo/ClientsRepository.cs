@@ -24,7 +24,12 @@ namespace DataAccessLayer.Repositories.ClientsRepo
 
             using (var connection = _dbConnection.GetConnection())
             {
-                string query = @"SELECT * FROM Clients";
+                string query = @"SELECT ClientName AS Nombre,
+                                    ClientLastName AS Apellido,
+                                    ClientEmail AS Email,
+                                    ClientDUI AS DUI,
+                                    ClientTelephone AS TELEFONO
+                                    FROM Clients";
 
                 using (var reader = connection.ExecuteReader(query))
                 {

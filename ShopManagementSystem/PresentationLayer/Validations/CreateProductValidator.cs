@@ -15,6 +15,7 @@ namespace PresentationLayer.Validations
             RuleLevelCascadeMode = CascadeMode.Stop;
 
             RuleFor(products => products.ProductTypeId)
+          .NotEmpty().WithMessage("Debe seleccionear un tipo")
           .NotEqual(0).WithMessage("Debe seleccionar un tipo");
 
             RuleFor(products => products.ProductBrand)
@@ -30,6 +31,7 @@ namespace PresentationLayer.Validations
           .NotEmpty().WithMessage("Debe escribir el color");
 
             RuleFor(products => products.ProductPrice) 
+            .NotEmpty().WithMessage("Debe ingresar un precio valido")
            .GreaterThan(0).WithMessage("La cantidad debe ser mayor que cero.");
         }
     }

@@ -86,41 +86,52 @@ namespace PresentationLayer.Forms
             }
             else
             {
-                if (string.IsNullOrEmpty(imgPath))
+                if (productImgPictureBox.Image==null)
                 {
                     MessageBox.Show("Por favor, selecciona una imagen antes de continuar.");
                     return;
                 }
+                decimal productPrice;
+                bool isValidPrice = decimal.TryParse(productPriceTextBox.Text, out productPrice);
 
-                
-                    var product = new Products()
+                // Verificar si la conversión fue exitosa
+                if (!isValidPrice)
+                {
+                    // Si la conversión falla, mostrar el error y salir del método
+                    validationErrorProvider.SetError(productPriceTextBox, "Por favor ingrese un precio válido");
+                    return;
+                }
+                else
+                {
+                    // Limpiar el error si la validación es correcta
+                    validationErrorProvider.SetError(productPriceTextBox, string.Empty);
+                }
+                var product = new Products()
                     {
                         ProductTypeId = Convert.ToInt32(productTypeComboBox.SelectedValue),
                         ProductBrand = productBrandTextBox.Text,
                         ProductModel = productModeltextBox.Text,
                         ProductVersion = productVersionTextBox.Text,
                         ProductColor = productColorTextBox.Text,
-                        ProductPrice = string.IsNullOrWhiteSpace(productPriceTextBox.Text)
-                        ? 0
-                        : Convert.ToInt32(productPriceTextBox.Text),
+                        ProductPrice=productPrice,
                         ImageUrl = imgPath
-                    };
+                 };
 
                     CreateProductValidator createProductValidator = new CreateProductValidator();
                     ValidationResult result = createProductValidator.Validate(product);
-
                     if (!result.IsValid)
                     {
                         DisplayValidationErrors(result);
 
-                    
                         return;
                     }
+
                     else
                     {
                         try
                         {
-                         _inventoryServices.CreateProduct(product);
+
+                        _inventoryServices.CreateProduct(product);
                          MessageBox.Show("Producto creado exitosamente.");
                          LoadProductsCrated();
                          this.Shown += (s, e) => productsDataGridView.ClearSelection();
@@ -158,9 +169,9 @@ namespace PresentationLayer.Forms
                         validationErrorProvider.SetError(productVersionTextBox, error.ErrorMessage);
                         break;
                     case nameof(Products.ProductColor):
-                        validationErrorProvider.SetError(productVersionTextBox, error.ErrorMessage);
+                        validationErrorProvider.SetError(productColorTextBox, error.ErrorMessage);
                         break;
-
+                    
                     case nameof(Products.ProductPrice):
                         validationErrorProvider.SetError(productPriceTextBox, error.ErrorMessage);
                         break;
@@ -193,7 +204,7 @@ namespace PresentationLayer.Forms
                     ProductModel = productModeltextBox.Text,
                     ProductVersion = productVersionTextBox.Text,
                     ProductColor = productColorTextBox.Text,
-                    ProductPrice = Convert.ToDecimal(productPriceTextBox.Text),
+                    ProductPrice = Convert.ToDecimal (productPriceTextBox.Text),
                     ImageUrl = imgPath
                 };
 

@@ -281,6 +281,8 @@
             Controls.Add(searchProductPanel);
             Controls.Add(shoppingListDataGridView);
             Controls.Add(productsDataGridView);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "ShoppingListForm";
             Text = "ShoppingListForm";
             FormClosing += ShoppingListForm_FormClosing;

@@ -37,6 +37,9 @@
             // 
             // viewCustomersDataGridView
             // 
+            viewCustomersDataGridView.AllowUserToDeleteRows = false;
+            viewCustomersDataGridView.AllowUserToResizeColumns = false;
+            viewCustomersDataGridView.AllowUserToResizeRows = false;
             viewCustomersDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             viewCustomersDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             viewCustomersDataGridView.BackgroundColor = Color.SkyBlue;
@@ -60,6 +63,7 @@
             viewCustomersDataGridView.Location = new Point(73, 249);
             viewCustomersDataGridView.Margin = new Padding(3, 4, 3, 4);
             viewCustomersDataGridView.Name = "viewCustomersDataGridView";
+            viewCustomersDataGridView.RowHeadersVisible = false;
             viewCustomersDataGridView.RowHeadersWidth = 51;
             viewCustomersDataGridView.Size = new Size(1066, 363);
             viewCustomersDataGridView.TabIndex = 0;

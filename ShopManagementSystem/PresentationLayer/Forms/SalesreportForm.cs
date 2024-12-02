@@ -62,6 +62,10 @@ namespace PresentationLayer.Forms
                 productsBuyingDataGridView.Columns["SubTotal"].DefaultCellStyle.Format = "C2";
 
             }
+            else
+            {
+                productsBuyingDataGridView.DataSource= null;    
+            }
         }
     }
 }
